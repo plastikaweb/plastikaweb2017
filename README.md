@@ -1,5 +1,9 @@
 # Plastikaweb2017
 
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=flat-square)](https://travis-ci.org/plastikaweb/plastikaweb2017)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Codecov](https://img.shields.io/codecov/c/github/codecov/example-python.svg?style=flat-square)]()
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.2.
 
 ## Development server
