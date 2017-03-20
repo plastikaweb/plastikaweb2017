@@ -22,11 +22,10 @@ before_script:
   - export DISPLAY=:99.0
 script:
   - ng lint
-  - ng test --single-run
+  - ng test --single-run --code-coverage
   - ng e2e
-  - npm run coverage:check
 after_success:
-  - npm run coverage:report
+  - npm run report-coverage
 branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+  only:
+    - master
