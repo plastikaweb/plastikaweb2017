@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { CovalentCoreModule } from '@covalent/core';
+
+import './rxjs-extensions';
 
 import { AppComponent } from './app.component';
+
 
 @NgModule({
   declarations: [
@@ -11,8 +13,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    CovalentCoreModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
