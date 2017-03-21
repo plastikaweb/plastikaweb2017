@@ -1,3 +1,10 @@
 <td-layout-nav>
-  <h1>{{title}}</h1>
+  <app-header td-toolbar-content layout="row"
+              flex></app-header>
+
+  <app-activity-indicator [pending]="true">
+  </app-activity-indicator>
+
+  <app-sidenav></app-sidenav>
+
 </td-layout-nav>

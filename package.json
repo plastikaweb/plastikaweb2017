@@ -14,10 +14,10 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "test:single": "npm test -- --single-run",
+    "test:single": "npm test -- --code-coverage --single-run",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "precommit": "run-s lint test:single -- --code-coverage e2e",
+    "precommit": "run-s lint test:single e2e",
     "report-coverage": "cat ./coverage/lcov.info | codecov"
   },
   "private": true,
