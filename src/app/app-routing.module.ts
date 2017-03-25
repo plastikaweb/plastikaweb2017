@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
+import { WhoComponent } from './who/who.component';
+import { WorksComponent } from './works/works.component';
+import { ContactComponent } from './contact/contact.component';
 
 const appRoutes: Routes = [
-  {path: '', component: AppComponent}
+  { path: 'who', component: WhoComponent },
+  { path: 'works', component: WorksComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: '', redirectTo: '/who', pathMatch: 'full' },
+  { path: '**', redirectTo: '/who', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes, { enableTracing: false })
+    RouterModule.forRoot(appRoutes)
   ],
   exports: [
     RouterModule

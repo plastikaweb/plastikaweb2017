@@ -1,9 +1,28 @@
-<td-layout-manage-list #manageList
+<td-layout-manage-list #menuList
                        [opened]="media.registerQuery('gt-sm') | async"
                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
   <md-toolbar td-sidenav-content>
     <span>Menu</span>
   </md-toolbar>
-  content
+  <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && menuList.close()">
+    <a md-list-item [routerLink]="['/who']">
+      <md-icon md-list-avatar>face</md-icon>
+      <h3 md-line> Plastikaweb </h3>
+      <p md-line> who, what, why? </p>
+    </a>
+    <a md-list-item [routerLink]="['/works']">
+      <md-icon md-list-avatar>developer_board</md-icon>
+      <h3 md-line> Works </h3>
+      <p md-line> some examples </p>
+    </a>
+    <a md-list-item [routerLink]="['/contact']">
+      <md-icon md-list-avatar>message</md-icon>
+      <h3 md-line> Contact </h3>
+      <p md-line> say hi! </p>
+    </a>
+  </md-nav-list>
+
+  <router-outlet></router-outlet>
+
 </td-layout-manage-list>
