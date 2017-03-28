@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WhoComponent } from './who.component';
 
-describe('WhoComponent', () => {
+describe('Who Component', () => {
   let component: WhoComponent;
   let fixture: ComponentFixture<WhoComponent>;
 
@@ -19,7 +19,7 @@ describe('WhoComponent', () => {
     fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create who component', () => {
     expect(component).toBeTruthy();
   });
 });

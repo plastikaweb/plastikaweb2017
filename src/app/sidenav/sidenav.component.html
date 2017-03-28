@@ -1,25 +1,24 @@
 <td-layout-manage-list #menuList
+                       class="light-blue-red"
                        [opened]="media.registerQuery('gt-sm') | async"
                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-  <md-toolbar td-sidenav-content>
-    <span>Menu</span>
-  </md-toolbar>
   <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && menuList.close()">
+
     <a md-list-item [routerLink]="['/who']">
       <md-icon md-list-avatar>face</md-icon>
-      <h3 md-line> Plastikaweb </h3>
-      <p md-line> who, what, why? </p>
+      <h3 md-line> {{ 'who.title' | translate }} </h3>
+      <p md-line> {{ 'who.sub' | translate }} </p>
     </a>
     <a md-list-item [routerLink]="['/works']">
       <md-icon md-list-avatar>developer_board</md-icon>
-      <h3 md-line> Works </h3>
-      <p md-line> some examples </p>
+      <h3 md-line> {{ 'works.title' | translate }} </h3>
+      <p md-line> {{ 'works.sub' | translate }} </p>
     </a>
     <a md-list-item [routerLink]="['/contact']">
       <md-icon md-list-avatar>message</md-icon>
-      <h3 md-line> Contact </h3>
-      <p md-line> say hi! </p>
+      <h3 md-line> {{ 'contact.title' | translate }} </h3>
+      <p md-line> {{ 'contact.sub' | translate }} </p>
     </a>
   </md-nav-list>
 

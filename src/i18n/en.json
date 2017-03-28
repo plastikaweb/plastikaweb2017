@@ -1,0 +1,14 @@
+{
+  "who": {
+    "title": "Plastikaweb",
+    "sub": "who, what, why?"
+  },
+  "works": {
+    "title": "Treballs",
+    "sub": "some projects"
+  },
+  "contact": {
+    "title": "Contacte",
+    "sub": "say hi!"
+  }
+}

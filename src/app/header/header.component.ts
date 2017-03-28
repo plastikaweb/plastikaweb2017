@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: [ './header.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
 
-  constructor(private iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
+  constructor(private iconRegistry: MdIconRegistry,
+              private sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon(
       'plastika-web',
       sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/w.svg'));

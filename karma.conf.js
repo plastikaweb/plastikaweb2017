@@ -26,32 +26,26 @@ module.exports = function (config) {
       'text/x-typescript': ['ts', 'tsx']
     },
     coverageIstanbulReporter: {
-      reports: ['html', 'json', 'lcovonly'],
-      fixWebpackSourcePaths: true
-    },
-    istanbulThresholdReporter: {
-      src: 'coverage/coverage-final.json',
-      reporters: ['text'],
+      reports: ['html', 'lcovonly', 'text-summary'],
+      dir: './coverage',
+      fixWebpackSourcePaths: true,
+      'report-config': {
+        html: {
+          subdir: 'html'
+        }
+      },
       thresholds: {
-        global: {
-          statements: 70,
-          branches: 70,
-          lines: 60,
-          functions: 60
-        },
-        each: {
-          statements: 60,
-          branches: 60,
-          lines: 40,
-          functions: 40
-        },
+        statements: 80,
+        branches: 80,
+        lines: 60,
+        functions: 80
       }
     },
     angularCli: {
       environment: 'dev'
     },
     reporters: config.angularCli && config.angularCli.codeCoverage
-      ? ['progress', 'coverage-istanbul', 'istanbul-threshold']
+      ? ['progress', 'coverage-istanbul']
       : ['progress', 'kjhtml'],
     port: 9876,
     colors: true,

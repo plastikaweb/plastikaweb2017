@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivityIndicatorComponent } from './activity-indicator.component';
 import { CovalentCoreModule } from '@covalent/core';
 
-describe('ActivityIndicatorComponent', () => {
+describe('Activity Indicator Component', () => {
   let component: ActivityIndicatorComponent;
   let fixture: ComponentFixture<ActivityIndicatorComponent>;
 

@@ -1,5 +1,10 @@
+@import 'theme';
+
 // <app-activity-indicator> //
 app-activity-indicator {
   height: 5px;
   z-index: 1;
+}
+.mat-list-item.lang-selected {
+  background-color: mat-color($accent, 300);
 }
