@@ -1,6 +1,6 @@
 # Plastikaweb2017
 
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=flat-square)](https://travis-ci.org/plastikaweb/plastikaweb2017)
+[![Travis](https://img.shields.io/travis/plastikaweb/plastikaweb2017.svg)](https://travis-ci.org/plastikaweb/plastikaweb2017)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![codecov](https://codecov.io/gh/plastikaweb/plastikaweb2017/branch/master/graph/badge.svg)](https://codecov.io/gh/plastikaweb/plastikaweb2017)
 
