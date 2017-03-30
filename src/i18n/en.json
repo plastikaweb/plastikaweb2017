@@ -1,13 +1,14 @@
 {
-  "who": {
+  "WHO": {
     "title": "Plastikaweb",
-    "sub": "who, what, why?"
+    "sub": "who, what, why?",
+    "position": "Freelance FrontEnd Developer"
   },
-  "works": {
+  "WORKS": {
     "title": "Projects",
     "sub": "some projects"
   },
-  "contact": {
+  "CONTACT": {
     "title": "Contact",
     "sub": "say hi!"
   }

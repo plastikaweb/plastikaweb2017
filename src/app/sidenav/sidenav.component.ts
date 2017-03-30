@@ -21,9 +21,9 @@ export class SidenavComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.translate.onLangChange.subscribe((e: LangChangeEvent) => {
       this.translate.getTranslation(e.lang).subscribe(data => {
-        this.breadcrumbService.addFriendlyNameForRoute('/who', data.who.title);
-        this.breadcrumbService.addFriendlyNameForRoute('/works', data.works.title);
-        this.breadcrumbService.addFriendlyNameForRoute('/contact', data.contact.title);
+        this.breadcrumbService.addFriendlyNameForRoute('/who', data.WHO.title);
+        this.breadcrumbService.addFriendlyNameForRoute('/works', data.WORKS.title);
+        this.breadcrumbService.addFriendlyNameForRoute('/contact', data.CONTACT.title);
       });
     });
   }

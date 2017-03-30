@@ -1,10 +1,16 @@
 @import 'theme';
 
 // <app-activity-indicator> //
-app-activity-indicator {
-  height: 5px;
-  z-index: 1;
-}
+//app-activity-indicator {
+//  height: 5px;
+//  z-index: 1;
+//}
+// Any Menu item selected
 .mat-list-item.active .mat-list-item-content {
   background-color: mat-color($accent, 200);
+}
+// avatar icon for Plastikaweb section
+.mat-card [md-card-avatar].size-72 {
+  height: 72px;
+  width: 72px;
 }

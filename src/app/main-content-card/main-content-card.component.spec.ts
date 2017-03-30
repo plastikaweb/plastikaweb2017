@@ -9,8 +9,9 @@ import { AppRoutingModule } from '../app-routing.module';
 import { WorksComponent } from '../works/works.component';
 import { ContactComponent } from '../contact/contact.component';
 import { WhoComponent } from '../who/who.component';
+import { TranslateModule } from 'ng2-translate';
 
-describe('MainContentCardComponent', () => {
+describe('Main Content Card Component', () => {
   let component: MainContentCardComponent;
   let fixture: ComponentFixture<MainContentCardComponent>;
 
@@ -18,11 +19,16 @@ describe('MainContentCardComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         CovalentCoreModule.forRoot(),
+        TranslateModule.forRoot(),
         RouterModule,
         AppRoutingModule
       ],
-      providers: [ { provide: APP_BASE_HREF, useValue: '/' }, ChangeDetectorRef],
-      declarations: [ MainContentCardComponent,
+      providers: [
+        { provide: APP_BASE_HREF, useValue: '/' },
+        ChangeDetectorRef
+      ],
+      declarations: [
+        MainContentCardComponent,
         WorksComponent,
         WhoComponent,
         ContactComponent ]
@@ -36,7 +42,7 @@ describe('MainContentCardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create main content card component', () => {
     expect(component).toBeTruthy();
   });
 });

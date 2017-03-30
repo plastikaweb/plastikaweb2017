@@ -5,7 +5,7 @@ import { TranslateModule, TranslateService } from 'ng2-translate';
 import { LanguageMenuComponent } from './language-menu.component';
 import { TranslateServiceMock } from './translateServiceMock';
 
-describe('LanguageMenuComponent', () => {
+describe('Language Menu Component', () => {
   let component: LanguageMenuComponent;
   let fixture: ComponentFixture<LanguageMenuComponent>;
 

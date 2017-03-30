@@ -8,7 +8,6 @@ import './rxjs-extensions';
 
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { ActivityIndicatorComponent } from './activity-indicator/activity-indicator.component';
 import { WhoComponent } from './who/who.component';
 import { WorksComponent } from './works/works.component';
 import { ContactComponent } from './contact/contact.component';
@@ -24,7 +23,6 @@ export function createTranslateLoader(http: Http) {
   declarations: [
     AppComponent,
     SidenavComponent,
-    ActivityIndicatorComponent,
     WhoComponent,
     WorksComponent,
     ContactComponent,
