@@ -1,0 +1,34 @@
+
+
+<md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+  <md-card-header>
+    <img md-card-avatar src="http://lorempixel.com/40/40/people/9" />
+    <md-card-title>Firstname Lastname</md-card-title>
+    <md-card-subtitle>Tuesday, January 3 2017 at 8:39 PM</md-card-subtitle>
+    <span flex></span>
+    <div class="pad-top pad-right">
+      <button md-icon-button><md-icon>reply</md-icon></button>
+      <button md-icon-button><md-icon>forward</md-icon></button>
+      <button md-icon-button><md-icon>more_vert</md-icon></button>
+    </div>
+  </md-card-header>
+  <md-divider></md-divider>
+  <div class="md-padding">
+    <router-outlet></router-outlet>
+  </div>
+  <md-divider></md-divider>
+  <div layout="row" layout-align="space-around center" class="pad">
+    <button md-button class="tc-grey-600">
+      <md-icon class="pull-bottom">reply</md-icon>
+      <div class="md-caption">Reply</div>
+    </button>
+    <button md-button class="tc-grey-600">
+      <md-icon class="pull-bottom">reply_all</md-icon>
+      <div class="md-caption">Reply All</div>
+    </button>
+    <button md-button class="tc-grey-600">
+      <md-icon class="pull-bottom">forward</md-icon>
+      <div class="md-caption">Forward</div>
+    </button>
+  </div>
+</md-card>
