@@ -13,8 +13,8 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
 
-$primary: mat-palette($mat-deep-orange, 800, 600, 400);
-$accent:  mat-palette($mat-grey, 600, 300);
+$primary: mat-palette($mat-deep-orange, 800, 400, 100);
+$accent:  mat-palette($mat-grey, 400, 200, 100);
 $warn:    mat-palette($mat-red, 600);
 
 // Create the theme object (a Sass map containing all of the palettes).

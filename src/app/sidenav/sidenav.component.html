@@ -3,25 +3,34 @@
                        [opened]="media.registerQuery('gt-sm') | async"
                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-  <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && menuList.close()">
 
-    <a md-list-item [routerLink]="['/who']">
+  <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && menuList.close()">
+    <a md-list-item [routerLink]="['/who']"
+       [routerLinkActiveOptions]="{exact:true}"
+       routerLinkActive="active">
       <md-icon md-list-avatar>face</md-icon>
       <h3 md-line> {{ 'who.title' | translate }} </h3>
       <p md-line> {{ 'who.sub' | translate }} </p>
     </a>
-    <a md-list-item [routerLink]="['/works']">
+    <a md-list-item [routerLink]="['/works']"
+       routerLinkActive="active">
       <md-icon md-list-avatar>developer_board</md-icon>
       <h3 md-line> {{ 'works.title' | translate }} </h3>
       <p md-line> {{ 'works.sub' | translate }} </p>
     </a>
-    <a md-list-item [routerLink]="['/contact']">
+    <a md-list-item [routerLink]="['/contact']"
+       [routerLinkActiveOptions]="{exact:true}"
+       routerLinkActive="active">
       <md-icon md-list-avatar>message</md-icon>
       <h3 md-line> {{ 'contact.title' | translate }} </h3>
       <p md-line> {{ 'contact.sub' | translate }} </p>
     </a>
   </md-nav-list>
 
-  <router-outlet></router-outlet>
+  <div td-toolbar-content layout="row" layout-align="start center" flex>
+    <breadcrumb></breadcrumb>
+  </div>
+
+  <app-main-content-card></app-main-content-card>
 
 </td-layout-manage-list>

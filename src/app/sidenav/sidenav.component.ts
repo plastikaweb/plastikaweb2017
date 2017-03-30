@@ -1,5 +1,7 @@
-import { Component, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, AfterViewInit, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
 import { TdMediaService } from '@covalent/core';
+import { BreadcrumbService } from 'ng2-breadcrumb/ng2-breadcrumb';
+import { TranslateService, LangChangeEvent } from 'ng2-translate';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,11 +9,26 @@ import { TdMediaService } from '@covalent/core';
   styleUrls: [ './sidenav.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SidenavComponent implements AfterViewInit {
+export class SidenavComponent implements OnInit, AfterViewInit {
 
-  constructor(public media: TdMediaService, private cdr: ChangeDetectorRef) { }
+  constructor(public media: TdMediaService,
+              private translate: TranslateService,
+              private cdr: ChangeDetectorRef,
+              private breadcrumbService: BreadcrumbService) {
 
-  ngAfterViewInit(): void {
+  }
+
+  ngOnInit() {
+    this.translate.onLangChange.subscribe((e: LangChangeEvent) => {
+      this.translate.getTranslation(e.lang).subscribe(data => {
+        this.breadcrumbService.addFriendlyNameForRoute('/who', data.who.title);
+        this.breadcrumbService.addFriendlyNameForRoute('/works', data.works.title);
+        this.breadcrumbService.addFriendlyNameForRoute('/contact', data.contact.title);
+      });
+    });
+  }
+
+  ngAfterViewInit() {
     // broadcast to all listener observables when loading the page
     this.cdr.detectChanges();
     this.media.broadcast();
