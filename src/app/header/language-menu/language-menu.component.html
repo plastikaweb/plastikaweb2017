@@ -4,11 +4,13 @@
 <md-menu #menu="mdMenu">
   <td-menu>
     <md-nav-list dense>
-      <a md-list-item
-         [ngClass]="{'active': lang === translate.currentLang}"
-         *ngFor="let lang of translate.getLangs()"
+      <a id="lang-{{ lang }}" md-list-item
+         *ngFor="let lang of languages"
+         [ngClass]="{'active': lang === currentLang}"
          (click)="changeLang(lang)">
-        <h4 md-line><span class="text-wrap">{{ lang }}</span></h4>
+        <h4 md-line>
+          <span class="text-wrap">{{ lang }}</span>
+        </h4>
       </a>
     </md-nav-list>
   </td-menu>

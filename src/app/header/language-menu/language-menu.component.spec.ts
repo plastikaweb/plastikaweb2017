@@ -1,9 +1,13 @@
-import { async, ComponentFixture, TestBed, fakeAsync, inject } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async, fakeAsync, tick } from '@angular/core/testing';
 import { CovalentCoreModule } from '@covalent/core';
 import { TranslateModule, TranslateService } from 'ng2-translate';
-
 import { LanguageMenuComponent } from './language-menu.component';
-import { TranslateServiceMock } from './translateServiceMock';
+
+class MockedTranslateService extends TranslateService {
+  getBrowserLang() {
+    return 'es';
+  }
+}
 
 describe('Language Menu Component', () => {
   let component: LanguageMenuComponent;
@@ -12,7 +16,7 @@ describe('Language Menu Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       providers: [
-        { provide: TranslateService, useClass: TranslateServiceMock }
+        { provide: TranslateService, useClass: MockedTranslateService }
       ],
       imports: [
         CovalentCoreModule.forRoot(),
@@ -26,42 +30,38 @@ describe('Language Menu Component', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LanguageMenuComponent);
     component = fixture.componentInstance;
+    component.languages = [ 'ca', 'en', 'es' ];
     component.defaultLang = 'en';
-    fixture.detectChanges();
   });
 
-  it('should create language menu component', () => {
+  it('should create language menu component', fakeAsync(() => {
+    fixture.detectChanges();
     expect(component).toBeTruthy();
-  });
+  }));
 
   it('should has the app language to browser language on loading if browser language is on list',
-    (inject([ TranslateService ], (translate) => {
-      component.languages = [ 'en', 'es' ];
+    fakeAsync(() => {
       component.ngOnInit();
-
-      fixture.whenStable().then(() => {
-        expect(translate.currentLang).toEqual('es');
-      });
-    })));
-
-  it('should has the app language to default language on loading if browser language is not on list',
-    inject([ TranslateService ], (translate) => {
-      component.languages = [ 'en', 'ca' ];
-      component.ngOnInit();
-
-      fixture.whenStable().then(() => {
-        expect(translate.currentLang).toEqual('en');
-      });
+      tick();
+      fixture.detectChanges();
+      expect(component.currentLang).toEqual('es');
     }));
 
-  it('should apply the app language to spanish on changing it',
-    fakeAsync(inject([ TranslateService ], (translate) => {
-      component.languages = [ 'es', 'en', 'ca' ];
+  it('should has the app language to default language on loading if browser language is not on list',
+    fakeAsync(() => {
+      component.languages = [ 'en', 'ca' ];
       component.ngOnInit();
-      component.changeLang('es');
+      tick();
+      fixture.detectChanges();
+      expect(component.currentLang).toEqual('en');
+    }));
 
-      fixture.whenStable().then(() => {
-        expect(translate.currentLang).toEqual('es');
-      });
-    })));
+  it('should apply the app language to catalan from spanish on changing it',
+    fakeAsync(() => {
+      component.ngOnInit();
+      tick();
+      fixture.detectChanges();
+      component.changeLang('ca');
+      expect(component.currentLang).toEqual('ca');
+    }));
 });
