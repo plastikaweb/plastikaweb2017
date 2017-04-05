@@ -8,6 +8,9 @@
 // Any Menu item selected
 .mat-list-item.active .mat-list-item-content {
   background-color: mat-color($accent, 200);
+  md-icon[md-list-avatar], .mat-list-text > h3 {
+    color: mat-color($primary, 800);
+  }
 }
 // avatar icon for Plastikaweb section
 .mat-card [md-card-avatar].size-72 {
