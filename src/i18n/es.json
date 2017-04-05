@@ -2,7 +2,8 @@
   "WHO": {
     "title": "Plastikaweb",
     "sub": "¿quién, qué, porqué?",
-    "position": "Programador Freelance de FrontEnd"
+    "position": "Programador Freelance de FrontEnd",
+        "description": "Vivo en Barcelona, y desde hace más de 10 años me dedico al desarrollo web, en los últimos años centrado en frontend y últimamente, enamorado de angular y typescript.<br>Intento que mi trabajo sea socialmente responsable y acerque las tecnologías más avanzadas a la gente."
   },
   "WORKS": {
     "title": "Proyectos",

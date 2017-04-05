@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-main-content-card',
-  templateUrl: './main-content-card.component.html',
-  styleUrls: ['./main-content-card.component.scss']
+  templateUrl: './main-content-card.component.html'
 })
-export class MainContentCardComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class MainContentCardComponent {
 }

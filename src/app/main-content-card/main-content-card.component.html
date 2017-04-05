@@ -1,30 +1,3 @@
-
-
 <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
-  <md-card-header>
-    <img md-card-avatar class="size-72" src="assets/images/carlos.jpg">
-    <md-card-title>
-      <h3>Carlos Matheu Armengol</h3>
-    </md-card-title>
-    <md-card-subtitle>{{ 'WHO.position' | translate }}</md-card-subtitle>
-  </md-card-header>
-  <md-divider></md-divider>
-  <div class="md-padding">
-    <router-outlet></router-outlet>
-  </div>
-  <md-divider></md-divider>
-  <div layout="row" layout-align="space-around center" class="pad">
-    <button md-button class="tc-grey-600">
-      <md-icon class="pull-bottom">reply</md-icon>
-      <div class="md-caption">Reply</div>
-    </button>
-    <button md-button class="tc-grey-600">
-      <md-icon class="pull-bottom">reply_all</md-icon>
-      <div class="md-caption">Reply All</div>
-    </button>
-    <button md-button class="tc-grey-600">
-      <md-icon class="pull-bottom">forward</md-icon>
-      <div class="md-caption">Forward</div>
-    </button>
-  </div>
+  <router-outlet></router-outlet>
 </md-card>

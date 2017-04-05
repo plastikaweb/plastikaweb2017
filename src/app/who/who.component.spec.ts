@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WhoComponent } from './who.component';
+import { TranslateModule } from 'ng2-translate';
+import { CovalentCoreModule } from '@covalent/core';
 
 describe('Who Component', () => {
   let component: WhoComponent;
@@ -8,6 +10,10 @@ describe('Who Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        CovalentCoreModule.forRoot(),
+        TranslateModule.forRoot()
+      ],
       declarations: [ WhoComponent ]
     })
     .compileComponents();
