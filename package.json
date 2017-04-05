@@ -46,7 +46,7 @@
     "zone.js": "^0.7.8"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-rc.2",
+    "@angular/cli": "1.0.0",
     "@angular/compiler-cli": "^2.4.0",
     "@types/hammerjs": "2.0.34",
     "@types/jasmine": "2.5.38",
@@ -67,7 +67,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
-    "tslint": "~5.0.0",
+    "tslint": "~4.5.1",
     "typescript": "~2.0.0"
   },
   "config": {
