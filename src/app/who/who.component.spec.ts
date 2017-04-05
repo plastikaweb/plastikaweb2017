@@ -1,8 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { WhoComponent } from './who.component';
 import { TranslateModule } from 'ng2-translate';
 import { CovalentCoreModule } from '@covalent/core';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { APP_BASE_HREF } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { WhoComponent } from './who.component';
 
 describe('Who Component', () => {
   let component: WhoComponent;
@@ -12,11 +15,14 @@ describe('Who Component', () => {
     TestBed.configureTestingModule({
       imports: [
         CovalentCoreModule.forRoot(),
-        TranslateModule.forRoot()
+        NgxChartsModule,
+        TranslateModule.forRoot(),
+        BrowserAnimationsModule
       ],
+      providers: [ { provide: APP_BASE_HREF, useValue: '/' } ],
       declarations: [ WhoComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

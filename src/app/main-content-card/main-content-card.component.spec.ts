@@ -3,13 +3,14 @@ import { CovalentCoreModule } from '@covalent/core';
 import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';
+import { TranslateModule } from 'ng2-translate';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { MainContentCardComponent } from './main-content-card.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { WorksComponent } from '../works/works.component';
 import { ContactComponent } from '../contact/contact.component';
 import { WhoComponent } from '../who/who.component';
-import { TranslateModule } from 'ng2-translate';
 
 describe('Main Content Card Component', () => {
   let component: MainContentCardComponent;
@@ -20,6 +21,7 @@ describe('Main Content Card Component', () => {
       imports: [
         CovalentCoreModule.forRoot(),
         TranslateModule.forRoot(),
+        NgxChartsModule,
         RouterModule,
         AppRoutingModule
       ],

@@ -9,6 +9,12 @@
   <md-divider></md-divider>
   <md-card-content>
     <p [innerHTML]="'WHO.description' | translate"></p>
+    <ngx-charts-pie-grid
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="single"
+      (select)="onSelect($event)">
+    </ngx-charts-pie-grid>
   </md-card-content>
 
   <md-divider></md-divider>

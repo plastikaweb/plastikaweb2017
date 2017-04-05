@@ -1,10 +1,12 @@
 import { async, ComponentFixture, TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
 import { CovalentCoreModule, TdMediaService } from '@covalent/core';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from 'ng2-translate';
 import { APP_BASE_HREF } from '@angular/common';
 import { BreadcrumbService, Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
 import 'rxjs/add/operator/map';
+
 import { SidenavComponent } from './sidenav.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { WorksComponent } from '../works/works.component';
@@ -29,6 +31,7 @@ describe('Sidenav Component', () => {
         RouterModule,
         AppRoutingModule,
         CovalentCoreModule.forRoot(),
+        NgxChartsModule,
         TranslateModule.forRoot(),
         Ng2BreadcrumbModule.forRoot()
       ],

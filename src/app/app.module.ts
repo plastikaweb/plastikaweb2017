@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { CovalentCoreModule } from '@covalent/core';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TranslateModule, TranslateStaticLoader, TranslateLoader } from 'ng2-translate';
 import { Http } from '@angular/http';
 import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
@@ -30,6 +32,7 @@ export function createTranslateLoader(http: Http) {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     CovalentCoreModule.forRoot(),
     Ng2BreadcrumbModule.forRoot(),
@@ -38,6 +41,7 @@ export function createTranslateLoader(http: Http) {
       useFactory: (createTranslateLoader),
       deps: [ Http ]
     }),
+    NgxChartsModule,
     HeaderModule
   ],
   providers: [],
