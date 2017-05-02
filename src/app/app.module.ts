@@ -18,7 +18,7 @@ import { HeaderModule } from './header/header.module';
 import { MainContentCardComponent } from './main-content-card/main-content-card.component';
 
 export function createTranslateLoader(http: Http) {
-  return new TranslateStaticLoader(http, './src/i18n', '.json');
+  return new TranslateStaticLoader(http, './assets/i18n', '.json');
 }
 
 @NgModule({
@@ -34,7 +34,7 @@ export function createTranslateLoader(http: Http) {
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    CovalentCoreModule.forRoot(),
+    CovalentCoreModule,
     Ng2BreadcrumbModule.forRoot(),
     TranslateModule.forRoot({
       provide: TranslateLoader,
