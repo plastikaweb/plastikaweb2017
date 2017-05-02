@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule } from 'ng2-translate';
 import { CovalentCoreModule } from '@covalent/core';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -15,7 +14,6 @@ describe('Who Component', () => {
     TestBed.configureTestingModule({
       imports: [
         CovalentCoreModule.forRoot(),
-        NgxChartsModule,
         TranslateModule.forRoot(),
         BrowserAnimationsModule
       ],
