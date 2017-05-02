@@ -6,15 +6,17 @@
     <md-card-subtitle>{{ 'WHO.position' | translate }}</md-card-subtitle>
   </md-card-header>
 
-  <md-divider></md-divider>
   <md-card-content>
     <p [innerHTML]="'WHO.description' | translate"></p>
-    <ngx-charts-pie-grid
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="single"
-      (select)="onSelect($event)">
-    </ngx-charts-pie-grid>
+    <td-data-table
+      #dataTable
+      [data]="filteredData"
+      [columns]="columns"
+      [sortable]="true"
+      [sortBy]="sortBy"
+      [sortOrder]="sortOrder"
+      (sortChange)="sort($event)">
+    </td-data-table>
   </md-card-content>
 
   <md-divider></md-divider>
