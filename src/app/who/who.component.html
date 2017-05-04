@@ -1,36 +1,49 @@
- <md-card-header>
-    <img md-card-avatar class="size-72" src="assets/images/carlos.jpg">
-    <md-card-title>
-      <h3>Carlos Matheu Armengol</h3>
-    </md-card-title>
-    <md-card-subtitle>{{ 'WHO.position' | translate }}</md-card-subtitle>
-  </md-card-header>
+<md-card-header>
+  <img md-card-avatar class="size-72" src="assets/images/carlos.jpg">
+  <md-card-title>
+    <h3>Carlos Matheu Armengol</h3>
+  </md-card-title>
+  <md-card-subtitle>{{ 'WHO.position' | translate }}</md-card-subtitle>
+</md-card-header>
 
-  <md-card-content>
-    <p [innerHTML]="'WHO.description' | translate"></p>
-    <td-data-table
-      #dataTable
-      [data]="filteredData"
-      [columns]="columns"
-      [sortable]="true"
-      [sortBy]="sortBy"
-      [sortOrder]="sortOrder"
-      (sortChange)="sort($event)">
-    </td-data-table>
-  </md-card-content>
+<md-card-content>
+  <p [innerHTML]="'WHO.description' | translate"></p>
+  <td-expansion-panel *ngFor="let item of data"
+                      (toggle)
+                      (expanded)="expandedEvent()"
+                      (collapsed)="collapsedEvent()">
+    <ng-template td-expansion-panel-header>
+      <div layout="row" flex="100"
+           layout-align="start center"
+           [style.background-color]="item.color">
+        <md-icon flex="15" flex-gt-md="5"
+                 svgIcon="{{item.skill}}"></md-icon>
+        <h3 flex="25" flex-gt-md="15">{{item.skill}}</h3>
 
-  <md-divider></md-divider>
-  <div layout="row" layout-align="space-around center" class="pad">
-    <button md-button class="tc-grey-600">
-      <md-icon class="pull-bottom">reply</md-icon>
-      <div class="md-caption">Reply</div>
-    </button>
-    <button md-button class="tc-grey-600">
-      <md-icon class="pull-bottom">reply_all</md-icon>
-      <div class="md-caption">Reply All</div>
-    </button>
-    <button md-button class="tc-grey-600">
-      <md-icon class="pull-bottom">forward</md-icon>
-      <div class="md-caption">Forward</div>
-    </button>
-  </div>
+      </div>
+    </ng-template>
+    <td-expansion-summary layout="row" flex="100">
+      <md-progress-bar
+                       [value]="item.proficiency"
+                       color="warn" mode="determinate">
+      </md-progress-bar>
+    </td-expansion-summary>
+    {{item | json}}
+  </td-expansion-panel>
+</md-card-content>
+
+<md-divider></md-divider>
+<div layout="row" layout-align="space-around center" class="pad">
+  <button md-button class="tc-grey-600">
+    <md-icon class="pull-bottom">reply</md-icon>
+    <div class="md-caption">Reply</div>
+  </button>
+  <button md-button class="tc-grey-600">
+    <md-icon class="pull-bottom">reply_all</md-icon>
+    <div class="md-caption">Reply All</div>
+  </button>
+  <button md-button class="tc-grey-600">
+    <md-icon class="pull-bottom">forward</md-icon>
+    <div class="md-caption">Forward</div>
+  </button>
+</div>

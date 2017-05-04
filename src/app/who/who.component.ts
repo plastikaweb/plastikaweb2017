@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  TdDataTableService,
-  TdDataTableSortingOrder,
-  ITdDataTableColumn,
-  ITdDataTableSortChangeEvent
-} from '@covalent/core';
+import { MdIconRegistry } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-who',
@@ -13,37 +9,36 @@ import {
 })
 export class WhoComponent implements OnInit {
   data: any[] = [
-    { skill: 'angular', years: '1', proficiency: 70 },
-    { skill: 'javascript', years: '7', proficiency: 85 },
-    { skill: 'CSS3', years: '5', proficiency: 80 },
-    { skill: 'Sass', years: '3', proficiency: 70 },
-    { skill: 'HTML5', years: '7', proficiency: 70 }
-  ];
-  columns: ITdDataTableColumn[] = [
-    { name: 'skill', label: 'skill', tooltip: 'skill / technology' },
-    { name: 'years', label: 'years', numeric: true },
-    { name: 'proficiency', label: 'proficiency', numeric: true },
+    { skill: 'angular', years: '2', proficiency: 75, icon: 'angular.svg', color: 'rgba(255, 109, 113, 0.4)' },
+    { skill: 'javascript', years: '7', proficiency: 85, icon: 'javascript.svg', color: 'rgba(255, 227, 0, 0.4)' },
+    { skill: 'typescript', years: '1', proficiency: 75, icon: 'typescript.svg', color: 'rgba(132, 206, 255, 0.5)' },
+    { skill: 'CSS3', years: '5', proficiency: 75, icon: 'css3.svg', color: 'rgba(107, 134, 152, 0.5)' },
+    { skill: 'Sass', years: '3', proficiency: 70, icon: 'sass.svg', color: 'rgba(241, 184, 215, 0.5)' },
+    { skill: 'HTML5', years: '7', proficiency: 80, icon: 'html5.svg', color: 'rgba(253, 117, 59, 0.4)' }
   ];
 
-  filteredData: any[] = this.data;
-  sortBy = 'skill';
-  sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
+  constructor(private iconRegistry: MdIconRegistry,
+              private sanitizer: DomSanitizer) {
 
-  constructor(private dataTableService: TdDataTableService) {}
-
-  ngOnInit(): void {
-    this.filter();
   }
 
-  sort(sortEvent: ITdDataTableSortChangeEvent): void {
-    this.sortBy = sortEvent.name;
-    this.sortOrder = sortEvent.order;
-    this.filter();
+  ngOnInit() {
+    this.data.forEach((skill) => {
+      this.iconRegistry.addSvgIcon(
+        skill.skill,
+        this.sanitizer.bypassSecurityTrustResourceUrl(`assets/icons/${skill.icon}`));
+    });
   }
 
-  filter(): void {
-    let newData: any[] = this.data;
-    newData = this.dataTableService.sortData(newData, this.sortBy, this.sortOrder);
-    this.filteredData = newData;
+  getIconSrc(iconName) {
+    return `assets/icons/${iconName}`;
+  }
+
+  expandedEvent(item): void {
+    console.log(item);
+  }
+
+  collapsedEvent(item): void {
+    console.log(item);
   }
 }
