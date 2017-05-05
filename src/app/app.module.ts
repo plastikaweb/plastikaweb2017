@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { Http } from '@angular/http';
 import { CovalentCoreModule } from '@covalent/core';
 import { TranslateModule, TranslateStaticLoader, TranslateLoader } from 'ng2-translate';
-import { Http } from '@angular/http';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
 import './rxjs-extensions';
 
@@ -35,6 +36,7 @@ export function createTranslateLoader(http: Http) {
     AppRoutingModule,
     CovalentCoreModule,
     Ng2BreadcrumbModule.forRoot(),
+    NgxChartsModule,
     TranslateModule.forRoot({
       provide: TranslateLoader,
       useFactory: (createTranslateLoader),

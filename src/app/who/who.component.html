@@ -27,8 +27,36 @@
                        mode="determinate">
       </md-progress-bar>
     </td-expansion-summary>
-
-    {{item | json}}
+    <div layout-gt-sm="row">
+      <md-card flex-gt-sm="33" layout-align="center center">
+        <div class="chart-height push-top push-right-sm">
+          <ngx-charts-linear-gauge
+            [view]="view"
+            [scheme]="colorScheme"
+            [value]="item.proficiency"
+            [valueFormatting]="formatProficiency"
+            [min]="0"
+            [max]="100"
+            [units]="'proficiency'">
+          </ngx-charts-linear-gauge>
+          <md-divider></md-divider>
+          <ngx-charts-linear-gauge
+            [view]="view"
+            [scheme]="colorScheme"
+            [value]="item.years"
+            [min]="0"
+            [max]="10"
+            [units]="'years'">
+          </ngx-charts-linear-gauge>
+        </div>
+      </md-card>
+      <md-card flex-gt-sm="33">
+        repos
+      </md-card>
+      <md-card flex-gt-sm="33">
+        projects
+      </md-card>
+    </div>
   </td-expansion-panel>
 </md-card-content>
 

@@ -34,3 +34,11 @@
 /deep/ .orange {
   @include skills($orange...);
 }
+
+ngx-charts-linear-gauge {
+  display: inline-block;
+}
+.chart-height {
+  text-align: center;
+  height: 155px;
+}
