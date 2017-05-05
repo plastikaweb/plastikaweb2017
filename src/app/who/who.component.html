@@ -9,25 +9,25 @@
 <md-card-content>
   <p [innerHTML]="'WHO.description' | translate"></p>
   <td-expansion-panel *ngFor="let item of data"
-                      (toggle)
+                      [class]="item.class"
                       (expanded)="expandedEvent()"
                       (collapsed)="collapsedEvent()">
     <ng-template td-expansion-panel-header>
+
       <div layout="row" flex="100"
-           layout-align="start center"
-           [style.background-color]="item.color">
-        <md-icon flex="15" flex-gt-md="5"
+           layout-align="start center">
+        <md-icon flex="10" flex-gt-xs="5"
                  svgIcon="{{item.skill}}"></md-icon>
         <h3 flex="25" flex-gt-md="15">{{item.skill}}</h3>
-
       </div>
     </ng-template>
+
     <td-expansion-summary layout="row" flex="100">
-      <md-progress-bar
-                       [value]="item.proficiency"
-                       color="warn" mode="determinate">
+      <md-progress-bar [value]="item.proficiency"
+                       mode="determinate">
       </md-progress-bar>
     </td-expansion-summary>
+
     {{item | json}}
   </td-expansion-panel>
 </md-card-content>
