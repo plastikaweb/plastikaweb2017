@@ -30,6 +30,10 @@
 /deep/ .pink {
   @include skills($pink...);
 }
+// rwd
+/deep/ .purple {
+  @include skills($purple...);
+}
 // html5
 /deep/ .orange {
   @include skills($orange...);
@@ -40,5 +44,5 @@ ngx-charts-linear-gauge {
 }
 .chart-height {
   text-align: center;
-  height: 155px;
+  height: 205px;
 }

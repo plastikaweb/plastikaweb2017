@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
 import { CovalentCoreModule, TdMediaService } from '@covalent/core';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from 'ng2-translate';
 import { APP_BASE_HREF } from '@angular/common';
@@ -29,7 +30,8 @@ describe('Sidenav Component', () => {
       imports: [
         RouterModule,
         AppRoutingModule,
-        CovalentCoreModule.forRoot(),
+        CovalentCoreModule,
+        NgxChartsModule,
         TranslateModule.forRoot(),
         Ng2BreadcrumbModule.forRoot()
       ],

@@ -3,7 +3,17 @@
     "title": "Plastikaweb",
     "sub": "who, what, why?",
     "position": "Freelance FrontEnd Developer",
-    "description": "I live in Barcelona, ​​and for more than 10 years I have been dedicated to web development, in recent years focused on frontend and lately, in love with angular and typescript.<br>I try to make my work socially responsible and bring the most advanced technologies to people."
+    "description": "I live in Barcelona, ​​and for more than 10 years I have been dedicated to web development, lately focused in angular and typescript.<br>I try to make my work socially responsible and bring the most advanced technologies to people.",
+    "proficiency": "proficiency",
+    "years": "years",
+    "skills": {
+      "angular": "<h3>Angular, version 2 and above, implemented with Typescript</h3><p>Experience with: </p><ul><li>Angular Material2 and Teradata Covalent</li><li>ngrx/store // RxJS</li><li>firebase // angularfire2</li><li>NGX-Translate</li><li>NGX-Charts</li><li>Unit testing</li><li>Animation System</li></ul>",
+      "javascript": "<h3>ECMAScript 5.1, ES6 and Typescript</h3><p>Experience with: </p><ul><li>native javascript</li><li>jquery</li><li>DOM manipulation</li><li>async javascript</li><li>functional programming</li></ul>",
+      "CSS3": "<h3>Standard CSS3</h3><p>Experience with selectors, transformations, transitions, flexible box or flexbox design.",
+      "Responsive Web Development": "<h3>Twitter Bootstrap</h3><p>Experience with media queries, mobile first approach and components configuration.</p>",
+      "Sass": "<h3>Syntactically Awesome Style Sheets</h3><p>Using variables, nesting, mixings...</p><p>Compass.</p>",
+      "HTML5": "<h3>HyperText Markup Language</h3><p>Semantic web standards.</p><p>Experience with related APIs (video, audio, drag and drop, canvas, svg).</p>"
+    }
   },
   "WORKS": {
     "title": "Projects",

@@ -18,7 +18,7 @@
            layout-align="start center">
         <md-icon flex="10" flex-gt-xs="5"
                  svgIcon="{{item.skill}}"></md-icon>
-        <h3 flex="25" flex-gt-md="15">{{item.skill}}</h3>
+        <h3 flex="90" flex-gt-md="40">{{item.skill}}</h3>
       </div>
     </ng-template>
 
@@ -28,7 +28,7 @@
       </md-progress-bar>
     </td-expansion-summary>
     <div layout-gt-sm="row">
-      <md-card flex-gt-sm="33" layout-align="center center">
+      <md-card flex-gt-sm="30" layout-align="center center">
         <div class="chart-height push-top push-right-sm">
           <ngx-charts-linear-gauge
             [view]="view"
@@ -37,7 +37,7 @@
             [valueFormatting]="formatProficiency"
             [min]="0"
             [max]="100"
-            [units]="'proficiency'">
+            [units]="proficiency">
           </ngx-charts-linear-gauge>
           <md-divider></md-divider>
           <ngx-charts-linear-gauge
@@ -46,15 +46,18 @@
             [value]="item.years"
             [min]="0"
             [max]="10"
-            [units]="'years'">
+            [units]="years">
           </ngx-charts-linear-gauge>
         </div>
       </md-card>
-      <md-card flex-gt-sm="33">
-        repos
+      <md-card flex-gt-sm="40">
+        <md-card-content [innerHTML]="'WHO.skills.' + item.skill | translate"></md-card-content>
       </md-card>
-      <md-card flex-gt-sm="33">
-        projects
+      <md-card flex-gt-sm="30">
+        <md-card-title>Projects</md-card-title>
+        <md-list>
+          <md-list-item>soon...</md-list-item>
+        </md-list>
       </md-card>
     </div>
   </td-expansion-panel>

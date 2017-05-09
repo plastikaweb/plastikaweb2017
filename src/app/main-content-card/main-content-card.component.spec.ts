@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';
 import { TranslateModule } from 'ng2-translate';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { MainContentCardComponent } from './main-content-card.component';
 import { AppRoutingModule } from '../app-routing.module';
@@ -18,9 +19,10 @@ describe('Main Content Card Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CovalentCoreModule.forRoot(),
+        CovalentCoreModule,
         TranslateModule.forRoot(),
         RouterModule,
+        NgxChartsModule,
         AppRoutingModule
       ],
       providers: [

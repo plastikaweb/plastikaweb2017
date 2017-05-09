@@ -1,58 +1,26 @@
-export const single = [
+export const skills: any = [
   {
-    'name': 'Germany',
-    'value': 8940000
+    skill: 'angular', years: 2, proficiency: 75,
+    icon: 'angular.svg', class: 'red'
   },
   {
-    'name': 'USA',
-    'value': 5000000
+    skill: 'javascript', years: 10, proficiency: 85,
+    icon: 'javascript.svg', class: 'yellow'
   },
   {
-    'name': 'France',
-    'value': 7200000
-  }
-];
-
-export const multi = [
-  {
-    'name': 'Germany',
-    'series': [
-      {
-        'name': '2010',
-        'value': 7300000
-      },
-      {
-        'name': '2011',
-        'value': 8940000
-      }
-    ]
+    skill: 'CSS3', years: 7, proficiency: 80,
+    icon: 'css3.svg', class: 'grey'
   },
-
   {
-    'name': 'USA',
-    'series': [
-      {
-        'name': '2010',
-        'value': 7870000
-      },
-      {
-        'name': '2011',
-        'value': 8270000
-      }
-    ]
+    skill: 'Responsive Web Development', years: 5, proficiency: 75,
+    icon: 'bootstrap.svg', class: 'purple'
   },
-
   {
-    'name': 'France',
-    'series': [
-      {
-        'name': '2010',
-        'value': 5000002
-      },
-      {
-        'name': '2011',
-        'value': 5800000
-      }
-    ]
+    skill: 'Sass', years: 4, proficiency: 70,
+    icon: 'sass.svg', class: 'pink'
+  },
+  {
+    skill: 'HTML5', years: 7, proficiency: 80,
+    icon: 'html5.svg', class: 'orange'
   }
 ];

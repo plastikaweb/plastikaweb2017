@@ -3,7 +3,17 @@
     "title": "Plastikaweb",
     "sub": "¿quién, qué, porqué?",
     "position": "Programador Freelance de FrontEnd",
-        "description": "Vivo en Barcelona, y desde hace más de 10 años me dedico al desarrollo web, en los últimos años centrado en frontend y últimamente, enamorado de angular y typescript.<br>Intento que mi trabajo sea socialmente responsable y acerque las tecnologías más avanzadas a la gente."
+    "description": "Vivo en Barcelona, y desde hace más de 10 años me dedico al desarrollo web, últimamente centrado en angular y typescript.<br>Intento que mi trabajo sea socialmente responsable y acerque las tecnologías más avanzadas a la gente.",
+    "proficiency": "competencia",
+    "years": "años",
+    "skills": {
+      "angular": "<h3>Angular, versión 2 y superiores, implementado con Typescript</h3><p>Experiencia con: </p><ul><li>Angular Material2 y Teradata Covalent</li><li>ngrx/store // RxJS</li><li>firebase // angularfire2</li><li>NGX-Translate</li><li>NGX-Charts</li><li>Testeo unitario</li><li>Sistema de animación</li></ul>",
+      "javascript": "<h3>ECMAScript 5.1, ES6 y Typescript</h3><p>Experiencia con: </p><ul><li>javascript nativo</li><li>jquery</li><li>manipulación DOM</li><li>async javascript</li><li>programación funcional</li></ul>",
+      "CSS3": "<h3>CSS3 estándar</h3><p>Experiencia con selectores, transformaciones, transiciones, diseño caja flexible o flexbox.",
+      "Responsive Web Development": "<h3>Twitter Bootstrap</h3><p>Experiencia con media queries, mobile first approach y configuración de componentes.</p>",
+      "Sass": "<h3>Syntactically Awesome Style Sheets</h3><p>Uso de variables, nesting, mixings...</p><p>Aplicación de Compass.</p>",
+      "HTML5": "<h3>HyperText Markup Language</h3><p>Estándar web semántica.</p><p>Experiencia con APIs relacionadas (video, audio, drag and drop, canvas, svg).</p>"
+    }
   },
   "WORKS": {
     "title": "Proyectos",
