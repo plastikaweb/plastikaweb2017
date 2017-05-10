@@ -9,9 +9,7 @@
 <md-card-content>
   <p [innerHTML]="'WHO.description' | translate"></p>
   <td-expansion-panel *ngFor="let item of data"
-                      [class]="item.class"
-                      (expanded)="expandedEvent()"
-                      (collapsed)="collapsedEvent()">
+                      [class]="item.class">
     <ng-template td-expansion-panel-header>
 
       <div layout="row" flex="100"
@@ -65,16 +63,9 @@
 
 <md-divider></md-divider>
 <div layout="row" layout-align="space-around center" class="pad">
-  <button md-button class="tc-grey-600">
-    <md-icon class="pull-bottom">reply</md-icon>
-    <div class="md-caption">Reply</div>
-  </button>
-  <button md-button class="tc-grey-600">
-    <md-icon class="pull-bottom">reply_all</md-icon>
-    <div class="md-caption">Reply All</div>
-  </button>
-  <button md-button class="tc-grey-600">
-    <md-icon class="pull-bottom">forward</md-icon>
-    <div class="md-caption">Forward</div>
-  </button>
+  <a md-button class="tc-grey-600" target="_blank"
+     href="/assets/cv/{{ 'WHO.cv' | translate }}">
+    <md-icon class="pull-bottom">file_download</md-icon>
+    <div class="md-caption">CV</div>
+  </a>
 </div>

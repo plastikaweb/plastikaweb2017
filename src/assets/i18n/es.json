@@ -2,8 +2,9 @@
   "WHO": {
     "title": "Plastikaweb",
     "sub": "¿quién, qué, porqué?",
-    "position": "Programador Freelance de FrontEnd",
-    "description": "Vivo en Barcelona, y desde hace más de 10 años me dedico al desarrollo web, últimamente centrado en angular y typescript.<br>Intento que mi trabajo sea socialmente responsable y acerque las tecnologías más avanzadas a la gente.",
+    "cv": "carlos-matheu-cv-es-05-2017.pdf",
+    "position": "Programador Frontend Freelance de Barcelona.",
+    "description": "Desde hace más de 10 años me dedico al desarrollo web, últimamente centrado en angular y typescript.<br>Intento que mi trabajo sea socialmente responsable y acerque las tecnologías más avanzadas a la gente.",
     "proficiency": "competencia",
     "years": "años",
     "skills": {

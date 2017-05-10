@@ -12,8 +12,8 @@ import { LangChangeEvent, TranslateService } from 'ng2-translate';
 export class WhoComponent implements OnInit {
   view: any[] = [ 200, 100 ];
   data: any[] = skills;
-  years = 'years';
-  proficiency = 'proficiency';
+  years = '';
+  proficiency = '';
   colorScheme = {
     domain: [ '#BF360C' ]
   };
@@ -45,13 +45,5 @@ export class WhoComponent implements OnInit {
 
   formatProficiency(proficiency) {
     return `${proficiency}%`;
-  }
-
-  expandedEvent(item): void {
-    console.log(item);
-  }
-
-  collapsedEvent(item): void {
-    console.log(item);
   }
 }
