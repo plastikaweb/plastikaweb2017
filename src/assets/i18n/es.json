@@ -25,6 +25,10 @@
   },
   "CONTACT": {
     "title": "Contacto",
-    "sub": "¡salúdanos!"
+    "sub": "¡salúdame!",
+    "intro": "No dudes en ponerte en contacto para cualquier <strong>tarea</strong> o <strong>colaboración</strong> para servicios de desarrollo.",
+    "quote1": "En estos momentos estoy especialmente interesado en proyectos basados en <strong>angular (versiones >=2) y typescript</strong>.",
+    "quote2": "Del mismo modo todos aquellos proyectos con un alto <strong>contenido social y cooperativo</strong> tienen prioridad.",
+    "warning": "<strong>Prefiero el contacto por email</strong>.<br>Normalmente no contesto llamadas telefónicas mientras trabajo, necesito estar centrado en el desarrollo que se merecen mis clientes.<br>Tengo muy mala memoria, y cualquier conversación telefónica sobre trabajo debe ir complementada con un resumen via email. Así que, ¿por qué no usar directamente el email?<br>Gracias por vuestra comprensión."
   }
 }

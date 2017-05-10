@@ -26,6 +26,10 @@
   },
   "CONTACT": {
     "title": "Contacte",
-    "sub": "digues hola!"
+    "sub": "digues hola!",
+    "intro": "No dubtis en posar-te en contacte per a qualsevol <strong>tasca</strong> o <strong>col·laboració</strong> per serveis de desenvolupament.",
+    "quote1": "En aquests moments estic especialment interessat en projectes basats en <strong>angular (versions >=2) i typescript</strong>.",
+    "quote2": "De la mateixa manera tots aquells projectes amb un alt <strong>contingut social i cooperatiu</strong> tenen prioritat.",
+    "warning": "<strong>Prefereixo el contacte per email</strong>.<br>Normalment no contesto trucades telefòniques mentre treballo, necessito estar centrat en el desenvolupament que es mereixen els meus clients.<br>Tinc molt mala memòria, i qualsevol conversa telefònica sobre treball ha d'anar complementada amb un resum mitjançant email. Així que, per què no usar directament l'email?<br>Gràcies per la vostra comprensió."
   }
 }
