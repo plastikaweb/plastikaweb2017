@@ -1,4 +1,7 @@
 {
+  "HEADER": {
+    "changeLang": "change lang"
+  },
   "WHO": {
     "title": "Plastikaweb",
     "sub": "who, what, why?",

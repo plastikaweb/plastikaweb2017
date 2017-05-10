@@ -1,6 +1,7 @@
-<button md-icon-button [mdMenuTriggerFor]="menu">
+<button mdTooltip="{{ changeLangMessage }}" md-icon-button [mdMenuTriggerFor]="menu">
   <md-icon>language</md-icon>
 </button>
+
 <md-menu #menu="mdMenu">
   <td-menu>
     <md-nav-list dense>

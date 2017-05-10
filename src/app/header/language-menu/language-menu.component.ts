@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { TranslateService } from 'ng2-translate';
+import { LangChangeEvent, TranslateService } from 'ng2-translate';
 
 import { DEFAULT_LANG, LANGUAGES } from '../../../config/lang.config';
 
@@ -13,6 +13,7 @@ export class LanguageMenuComponent implements OnInit {
   defaultLang = DEFAULT_LANG;
   languages = LANGUAGES;
   currentLang;
+  changeLangMessage = 'change lang';
 
   constructor(private translate: TranslateService) {}
 
@@ -22,6 +23,15 @@ export class LanguageMenuComponent implements OnInit {
   }
 
   ngOnInit() {
+    // on change language update tooltip message
+    this.translate.onLangChange
+      .map((e: LangChangeEvent) => e.lang)
+      .switchMap((lang: string) => this.translate.getTranslation(lang))
+      .subscribe(translation => {
+        this.changeLangMessage = translation.HEADER.changeLang;
+      });
+
+    // get app languages and set current language
     this.translate.addLangs(this.languages);
     this.translate.setDefaultLang(this.defaultLang);
     const browserLang = this.translate.getBrowserLang();
