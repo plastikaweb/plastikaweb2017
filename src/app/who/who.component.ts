@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { skills } from '../../data/data';
+import { skills } from '../../data/skills';
 import { LangChangeEvent, TranslateService } from 'ng2-translate';
 
 @Component({
