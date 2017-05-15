@@ -13,6 +13,7 @@ import { WorksComponent } from '../works/works.component';
 import { WhoComponent } from '../who/who.component';
 import { ContactComponent } from '../contact/contact.component';
 import { MainContentCardComponent } from '../main-content-card/main-content-card.component';
+import { ArrayExtractPipe } from '../pipes/array-extract.pipe';
 
 describe('Sidenav Component', () => {
   let component: SidenavComponent;
@@ -40,7 +41,8 @@ describe('Sidenav Component', () => {
         WorksComponent,
         WhoComponent,
         ContactComponent,
-        MainContentCardComponent
+        MainContentCardComponent,
+        ArrayExtractPipe
       ]
     })
       .compileComponents();

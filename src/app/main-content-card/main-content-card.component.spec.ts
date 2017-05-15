@@ -11,6 +11,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { WorksComponent } from '../works/works.component';
 import { ContactComponent } from '../contact/contact.component';
 import { WhoComponent } from '../who/who.component';
+import { ArrayExtractPipe } from '../pipes/array-extract.pipe';
 
 describe('Main Content Card Component', () => {
   let component: MainContentCardComponent;
@@ -33,9 +34,11 @@ describe('Main Content Card Component', () => {
         MainContentCardComponent,
         WorksComponent,
         WhoComponent,
-        ContactComponent ]
+        ContactComponent,
+        ArrayExtractPipe
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
