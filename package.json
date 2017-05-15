@@ -37,7 +37,7 @@
     "@angular/router": "4.0.1",
     "@covalent/core": "1.0.0-beta.3-2",
     "@swimlane/ngx-charts": "^5.1.2",
-    "angularfire2": "2.0.0-beta.8",
+    "angularfire2": "4.0.0-rc.0",
     "core-js": "^2.4.1",
     "d3": "^4.8.0",
     "firebase": "3.9.0",
@@ -49,13 +49,13 @@
     "zone.js": "^0.8.5"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.1",
+    "@angular/cli": "1.0.3",
     "@angular/compiler-cli": "^2.4.0",
     "@types/hammerjs": "2.0.34",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codecov.io": "0.1.6",
-    "codelyzer": "3.0.0-beta.0",
+    "codelyzer": "3.0.1",
     "commitizen": "2.9.5",
     "cz-conventional-changelog": "1.2.0",
     "husky": "0.13.2",
@@ -72,7 +72,7 @@
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.1",
-    "typescript": "2.2.2"
+    "typescript": "2.3.2"
   },
   "config": {
     "commitizen": {
