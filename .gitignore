@@ -47,3 +47,11 @@ Thumbs.db
 
 # Javascript files
 /src/**/*.js
+
+# Config data
+/src/config/*
+!/src/config/*.sample
+
+# DB data
+/db/data/*
+!/db/data/*.sample

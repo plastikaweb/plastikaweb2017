@@ -5,9 +5,11 @@ import { Http } from '@angular/http';
 import { CovalentCoreModule } from '@covalent/core';
 import { TranslateModule, TranslateStaticLoader, TranslateLoader } from 'ng2-translate';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { AngularFireModule } from 'angularfire2';
 import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
 import './rxjs-extensions';
 
+import { firebaseConfig } from '../config/firebase.config';
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { WhoComponent } from './who/who.component';
@@ -44,6 +46,7 @@ export function createTranslateLoader(http: Http) {
       useFactory: (createTranslateLoader),
       deps: [ Http ]
     }),
+    AngularFireModule.initializeApp(firebaseConfig),
     HeaderModule
   ],
   providers: [],

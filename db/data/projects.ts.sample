@@ -1,0 +1,270 @@
+// fill with the correct data
+
+export const data: any = {
+  tags: [
+    {
+      'name': 'angular'
+    },
+    {
+      'name': 'firebase'
+    },
+    {
+      'name': 'opensource'
+    },
+    {
+      'name': 'bootstrap'
+    },
+    {
+      'name': 'laravel'
+    },
+    {
+      'name': 'javascript'
+    },
+    {
+      'name': 'html5'
+    },
+    {
+      'name': 'facebook'
+    },
+    {
+      'name': 'jquery'
+    },
+    {
+      'name': 'php'
+    },
+    {
+      'name': 'flash'
+    }
+  ],
+  projects: [
+    {
+      'active': 0,
+      'name': 'Plastikaweb',
+      'subtitle': {
+        es: 'Mi página personal',
+        ca: 'La meva pàgina personal',
+        en: 'My personal site'
+      },
+      'order': 10,
+      'url': 'www.plastikaweb.com',
+      'repo': 'https://github.com/plastikaweb/plastikaweb2017',
+      'year': 2017,
+      'client': '',
+      'partner': '',
+      'opensource': false,
+      'description': '',
+      'tools': `Angular (4.0.1), NGX-translate, NGX-charts, Angular Material 2,
+              Teradata Covalent, Flex Layout, Firebase, Angularfire2, Angular/cli,
+              typescript, jasmine, karma, codecov, commitizen, travis, github`,
+      'tags': 'angular,firebase',
+      'slug': 'plastikaweb',
+      'pics': ''
+    },
+    {
+      'active': 1,
+      'name': 'Veinapp',
+      'subtitle': {
+        es: 'Buscador de AAVV de Cataluña',
+        ca: 'Cercador d\'AV de Catalunya',
+        en: 'Search for Neighborhood Associations of Catalonia'
+      },
+      'order': 9,
+      'url': '',
+      'repo': 'https://github.com/adab1ts/veinapp',
+      'year': 2017,
+      'client': 'CONFACV',
+      'partner': 'adabits',
+      'opensource': true,
+      'description': '',
+      'tools': `Angular (2.4.7), ngrx/store, Angular Material 2, Teradata Covalent,
+          Flex Layout, Firebase, Angularfire2, geofire, Angular/cli, typescript,
+          leaflet, jasmine, karma, github`,
+      'tags': 'angular,firebase,opensource',
+      'slug': 'veinapp',
+      'pics': ''
+
+    },
+    {
+      'active': 1,
+      'name': 'ADC*E',
+      'subtitle': {
+        en: '1st European Creativity Festival',
+        ca: 'Primer "European Creativity Festival"',
+        es: 'Primer "European Creativity Festival"'
+      },
+      'order': 7,
+      'url': '',
+      'repo': '',
+      'year': 2014,
+      'client': 'Art Directors Club of Europe',
+      'partner': 'Grapa West Samoa S.L.',
+      'opensource': false,
+      'description': '',
+      'tools': 'JQuery, MySQL, PhpStorm, Twitter Bootstrap, Laravel JavaScript, PHP, AJAX, HTML5',
+      'tags': 'bootstrap,laravel,javascript,html5',
+      'slug': 'adce',
+      'pics': ''
+    },
+    {
+      'active': 1,
+      'name': '¡Te lo mereces!',
+      'subtitle': {
+        ca: 'Aplicatiu de facebook promocional',
+        es: 'Aplicación de facebook promocional',
+        en: 'Facebook promo app'
+      },
+      'order': 8,
+      'url': '',
+      'repo': '',
+      'year': 2014,
+      'client': 'Nespresso',
+      'partner': 'Grapa West Samoa S.L.',
+      'opensource': false,
+      'description': '',
+      'tools': 'JQuery, MySQL, PhpStorm, Twitter Bootstrap, Laravel JavaScript, PHP, AJAX, HTML5, Facebook API',
+      'tags': 'bootstrap,facebook,jquery,html5,laravel',
+      'slug': 'nespresso',
+      'pics': ''
+    },
+    {
+      'active': 1,
+      'name': '7 magnifics',
+      'subtitle': {
+        ca: 'Microsite',
+        es: 'Microsite',
+        en: 'Microsite'
+      },
+      'order': 6,
+      'url': 'http://7magnifics.com/',
+      'repo': '',
+      'year': 2014,
+      'client': 'Torres',
+      'partner': 'Grapa West Samoa S.L.',
+      'opensource': false,
+      'description': '',
+      'tools': 'JQuery, MySQL, PhpStorm, Twitter Bootstrap, Laravel JavaScript, PHP, CSS3, HTML5',
+      'tags': 'bootstrap,jquery,html5,laravel',
+      'slug': '7-magnifics',
+      'pics': ''
+    },
+    {
+      'active': 1,
+      'name': 'Bienestaralsol',
+      'subtitle': {
+        ca: 'Microsite',
+        es: 'Microsite',
+        en: 'Microsite'
+      },
+      'order': 5,
+      'url': '',
+      'repo': '',
+      'year': 2014,
+      'client': 'Mussvital',
+      'partner': 'Grapa West Samoa S.L.',
+      'opensource': false,
+      'description': '',
+      'tools': 'JQuery, MySQL, Twitter Bootstrap, Laravel, JavaScript, PHP, CSS3, HTML5, AJAX, PhpStorm',
+      'tags': 'bootstrap,laravel,html5,javascript',
+      'slug': 'bienestaralsol',
+      'pics': ''
+    },
+    {
+      'active': 1,
+      'name': 'Enertrade',
+      'subtitle': {
+        ca: 'lloc empresarial',
+        es: 'web empresarial',
+        en: 'business site'
+      },
+      'order': 5,
+      'url': 'https://www.enertrade.es/',
+      'repo': '',
+      'year': 2013,
+      'client': 'Enertrade',
+      'partner': 'Grapa West Samoa S.L.',
+      'opensource': false,
+      'description': '',
+      'tools': 'JQuery, MySQL, Twitter Bootstrap, JavaScript, PHP, CSS3, HTML5, AJAX, PhpStorm',
+      'tags': 'bootstrap,php,jquery,html5',
+      'slug': 'enertrade',
+      'pics': ''
+    },
+    {
+      'active': 1,
+      'name': 'La Jamoneta',
+      'subtitle': {
+        ca: 'Aplicatiu de facebook promocional',
+        es: 'Aplicación de facebook promocional',
+        en: 'Facebook promo app'
+      },
+      'order': 4,
+      'url': '',
+      'repo': '',
+      'year': 2013,
+      'client': 'Sánchez Romero Carvajal',
+      'partner': 'Grapa West Samoa S.L.',
+      'opensource': false,
+      'description': '',
+      'tools': 'JQuery, MySQL, Twitter Bootstrap, JavaScript, PHP, CSS3, HTML5, Facebook API',
+      'tags': 'bootstrap,facebook,javascript,html5,php',
+      'slug': 'jamoneta',
+      'pics': ''
+    },
+
+    {
+      'active': 1,
+      'name': 'Anaya Apps',
+      'subtitle': {
+        es: 'Ejercicios educativos',
+        ca: 'Exercicis educatius',
+        es: 'Educational apps'
+      },
+      'order': 3,
+      'url': '',
+      'repo': '',
+      'year': 2012,
+      'client': 'Anaya Educación',
+      'partner': '',
+      'opensource': false,
+      'description': '',
+      'tools': 'JQuery, Aptana Studio, Steinberg Wavelab, JavaScript, XML, AJAX, HTML5, CSS3, JSON',
+      'tags': 'javascript,html5',
+      'slug': 'anaya-apps',
+      'pics': ''
+    },
+    {
+      'active': 1,
+      'name': 'Anke Luckmann',
+      'subtitle': 'Personal site',
+      'order': 2,
+      'url': 'http://www.ankeluckmann.com',
+      'repo': '',
+      'year': 2010,
+      'client': 'Anke Luckmann',
+      'partner': 'Gominola Creative Media',
+      'opensource': false,
+      'description': '',
+      'tools': 'ActionScript 3.0, PHP, AJAX, HTML5, CSS3, javascript, prototype',
+      'tags': 'flash,php',
+      'slug': 'anke-luckmann',
+      'pics': ''
+    },
+    {
+      'active': 1,
+      'name': 'Ige Bcn',
+      'subtitle': 'business site',
+      'order': 1,
+      'url': 'http://www.igebcn.cat ',
+      'repo': '',
+      'year': 2007,
+      'client': 'Ige Bcn SL, Gestió d\'Instalacions Esportives',
+      'partner': 'Biloqui',
+      'opensource': false,
+      'description': '',
+      'tools': 'ActionScript 2.0, PHP, XML',
+      'tags': 'flash',
+      'slug': 'ige-bcn',
+      'pics': ''
+    }
+  ]
+};

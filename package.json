@@ -18,7 +18,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "precommit": "run-s lint test:single e2e",
-    "report-coverage": "cat ./coverage/lcov.info | codecov"
+    "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "db-populate": "ts-node ./db/populate-db.ts"
   },
   "private": true,
   "dependencies": {
