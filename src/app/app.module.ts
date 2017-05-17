@@ -6,6 +6,7 @@ import { CovalentCoreModule } from '@covalent/core';
 import { TranslateModule, TranslateStaticLoader, TranslateLoader } from 'ng2-translate';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
 import './rxjs-extensions';
 
@@ -47,6 +48,7 @@ export function createTranslateLoader(http: Http) {
       deps: [ Http ]
     }),
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
     HeaderModule
   ],
   providers: [],

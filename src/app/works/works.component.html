@@ -11,19 +11,19 @@
        layout-align="space-between center">
     <md-card flex="100" flex-gt-sm="45"
              flex-gt-lg="30" flex-xl="23"
-             *ngFor="let item of data">
+             *ngFor="let project of projects">
       <md-card-header>
         <img md-card-avatar
-             *ngFor="let tag of item.tags.split(',') | arrayExtract:2"
+             *ngFor="let tag of project.tags.split(',') | arrayExtract:2"
              [src]="getMainTechImage(tag)"
              alt="{{tag}}">
-        <md-card-title>{{ item.name }}</md-card-title>
-        <md-card-subtitle>{{ item.subtitle }}</md-card-subtitle>
+        <md-card-title>{{ project.name }}</md-card-title>
+        <md-card-subtitle>{{ getRemoteTranslation(project.subtitle) }}</md-card-subtitle>
       </md-card-header>
-      <img md-card-image alt="{{item.name}}"
-           [src]="getMainImage(item.slug)">
+      <img md-card-image alt="{{project.name}}"
+           [src]="getMainImage(project.slug)">
       <md-card-content>
-        <h4>{{item.year}}</h4>
+        <h4>{{project.year}}</h4>
       </md-card-content>
     </md-card>
   </div>
