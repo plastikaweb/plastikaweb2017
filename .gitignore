@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/build
 
 # dependencies
 /node_modules
@@ -55,3 +56,8 @@ Thumbs.db
 # DB data
 /db/data/*
 !/db/data/*.sample
+
+# Firebase Project Files
+/functions/
+/firebase.json
+/Y

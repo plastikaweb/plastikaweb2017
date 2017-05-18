@@ -4,29 +4,47 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![codecov](https://codecov.io/gh/plastikaweb/plastikaweb2017/branch/master/graph/badge.svg)](https://codecov.io/gh/plastikaweb/plastikaweb2017)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.2.
+## Personal Site example using Angular (v 4.0.1).
+Just it! You are able to clone, modify, test and use it.
 
-## Development server
+### Main packages and applications.
+- This application relies on [Firebase Database](https://firebase.google.com/) as data store mainly. 
+- It implements I18N with browser language detection and translation locally via JSON files and the [NGX-Translation](https://github.com/ngx-translate/core) package.
+- It uses also [Teradata Covalent](https://teradata.github.io/covalent) and [Angular Material 2](https://github.com/angular/material2) for UX. 
+- Uses [flexbox](https://www.w3.org/TR/css-flexbox-1) as layout CSS3 mode.
+- Locally implements [AngularFire2](https://github.com/angular/angularfire2) to synchronize with Firebase.
+- [Angular/cli](https://cli.angular.io/) utility to generate, serve, test, build and lint the app.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Other features.
+- It uses [NGX-Charts](https://swimlane.gitbooks.io/ngx-charts/content/) with [D3 library](https://d3js.org/).
+- A breadcrumb trail thanks to [ng2-breadcrumb](https://github.com/gmostert/ng2-breadcrumb)
 
-## Code scaffolding
+## Get the app
+```sh
+# Install Angular CLI globally
+npm install -g @angular/cli@latest
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+# Clone your fork
+git clone git@github.com:plastikaweb/plastikaweb2017.git
 
-## Build
+# Go to the project directory:
+cd plastikaweb2017 {or any custom name}
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+# Install project dependencies:
+npm install
 
-## Running unit tests
+# go to src/config directory, and rename `firebase.config.ts.sample` to `firebase.config.ts`. Fill with your firebase database data.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# go to src/config directory, and rename `lang.config.ts.sample` to `lang.config.ts`. Fill with your app languages.
 
-## Running end-to-end tests
+# Serve the app
+ng serve
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+# Navigate to http://localhost:4200/
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+License
+----
+
+[MIT](https://github.com/plastikaweb/plastikaweb2017/blob/master/LICENSE.md)
