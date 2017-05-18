@@ -21,7 +21,7 @@ export class WorksComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    this.db.list('/projects', {
+    this.projectsSubscription = this.db.list('/projects', {
       query: { orderByChild: 'active', equalTo: true }
     })
       .subscribe((data: IProject[]) => {
