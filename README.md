@@ -3,6 +3,7 @@
 [![Travis](https://img.shields.io/travis/plastikaweb/plastikaweb2017.svg)](https://travis-ci.org/plastikaweb/plastikaweb2017)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![codecov](https://codecov.io/gh/plastikaweb/plastikaweb2017/branch/master/graph/badge.svg)](https://codecov.io/gh/plastikaweb/plastikaweb2017)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
 
 ## Personal Site example using Angular (v 4.0.1).
 Just it! You are able to clone, modify, test and use it.
