@@ -14,12 +14,10 @@ import { firebaseConfig } from '../config/firebase.config';
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { WhoComponent } from './who/who.component';
-import { WorksComponent } from './works/works.component';
 import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HeaderModule } from './header/header.module';
+import { HeaderModule } from './header-module/header.module';
 import { MainContentCardComponent } from './main-content-card/main-content-card.component';
-import { ArrayExtractPipe } from './pipes/array-extract.pipe';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateStaticLoader(http, './assets/i18n', '.json');
@@ -30,10 +28,8 @@ export function createTranslateLoader(http: Http) {
     AppComponent,
     SidenavComponent,
     WhoComponent,
-    WorksComponent,
     ContactComponent,
-    MainContentCardComponent,
-    ArrayExtractPipe
+    MainContentCardComponent
   ],
   imports: [
     BrowserModule,

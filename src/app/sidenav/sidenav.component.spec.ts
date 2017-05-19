@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 
 import { SidenavComponent } from './sidenav.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { WorksComponent } from '../works/works.component';
+import { WorksComponent } from '../works-module/works.component';
 import { WhoComponent } from '../who/who.component';
 import { ContactComponent } from '../contact/contact.component';
 import { MainContentCardComponent } from '../main-content-card/main-content-card.component';

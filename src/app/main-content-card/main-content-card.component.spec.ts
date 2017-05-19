@@ -8,7 +8,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { MainContentCardComponent } from './main-content-card.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { WorksComponent } from '../works/works.component';
+import { WorksComponent } from '../works-module/works.component';
 import { ContactComponent } from '../contact/contact.component';
 import { WhoComponent } from '../who/who.component';
 import { ArrayExtractPipe } from '../pipes/array-extract.pipe';

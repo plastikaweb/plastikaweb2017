@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { TranslateService } from 'ng2-translate';
 import { Subscription } from 'rxjs/Subscription';
@@ -8,7 +8,8 @@ import { IProject, ITranslation } from '../models/project.model';
 @Component({
   selector: 'app-works',
   templateUrl: './works.component.html',
-  styleUrls: [ './works.component.scss' ]
+  styleUrls: [ './works.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WorksComponent implements OnInit, OnDestroy {
   projects: IProject[] = [];
