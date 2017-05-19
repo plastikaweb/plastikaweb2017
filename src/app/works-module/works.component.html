@@ -17,7 +17,7 @@
              *ngFor="let tag of project.tags.split(',') | arrayExtract:2"
              [src]="getMainTechImage(tag)"
              alt="{{tag}}">
-        <md-card-title>{{ project.name }}</md-card-title>
+        <md-card-title><a [routerLink]="['/works', project.slug]"> {{ project.name }} </a></md-card-title>
         <md-card-subtitle>{{ getRemoteTranslation(project.subtitle) }}</md-card-subtitle>
       </md-card-header>
       <img md-card-image alt="{{project.name}}"

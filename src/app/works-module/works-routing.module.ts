@@ -6,7 +6,7 @@ import { WorksComponent } from './works.component';
 
 const worksRoutes: Routes = [
   { path: '', component: WorksComponent },
-  { path: 'detail/:key', component: WorkComponent }
+  { path: ':slug', component: WorkComponent }
 ];
 
 @NgModule({

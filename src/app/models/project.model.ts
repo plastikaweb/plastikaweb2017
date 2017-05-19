@@ -1,4 +1,5 @@
 export interface IProject {
+  $key: string;
   active: boolean;
   name: string;
   subtitle: ITranslation;
