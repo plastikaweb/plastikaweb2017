@@ -1,7 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CovalentCoreModule } from '@covalent/core';
-import { TranslateModule } from 'ng2-translate';
+import { TranslateModule } from '@ngx-translate/core';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { WorksComponent } from './works.component';
 import { ArrayExtractPipe } from '../pipes/array-extract.pipe';
@@ -15,6 +17,7 @@ describe('Works Component', () => {
     TestBed.configureTestingModule({
       imports: [
         CovalentCoreModule,
+        RouterModule.forRoot([]),
         TranslateModule.forRoot()
       ],
       declarations: [
@@ -22,6 +25,7 @@ describe('Works Component', () => {
         ArrayExtractPipe
       ],
       providers: [
+        { provide: APP_BASE_HREF, useValue: '/' },
         { provide: AngularFireDatabase, useValue: afDbMock }
       ]
     })

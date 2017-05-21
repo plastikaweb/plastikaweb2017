@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CovalentCoreModule } from '@covalent/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { WorkComponent } from './work.component';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { afDbMock } from '../works.mock';
 
 describe('WorkComponent', () => {
   let component: WorkComponent;
@@ -8,7 +13,12 @@ describe('WorkComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WorkComponent ]
+      imports: [ CovalentCoreModule, TranslateModule.forRoot() ],
+      declarations: [ WorkComponent ],
+      providers: [
+        ActivatedRoute,
+        { provide: AngularFireDatabase, useValue: afDbMock[0] }
+      ]
     })
     .compileComponents();
   }));
@@ -19,7 +29,7 @@ describe('WorkComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  fit('should be created', () => {
     expect(component).toBeTruthy();
   });
 });

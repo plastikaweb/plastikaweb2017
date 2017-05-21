@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
 import { TdMediaService } from '@covalent/core';
 import { BreadcrumbService } from 'ng2-breadcrumb/ng2-breadcrumb';
-import { TranslateService, LangChangeEvent } from 'ng2-translate';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sidenav',

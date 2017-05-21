@@ -3,7 +3,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { Http } from '@angular/http';
 import { CovalentCoreModule } from '@covalent/core';
-import { TranslateModule, TranslateStaticLoader, TranslateLoader } from 'ng2-translate';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -19,8 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderModule } from './header-module/header.module';
 import { MainContentCardComponent } from './main-content-card/main-content-card.component';
 
-export function createTranslateLoader(http: Http) {
-  return new TranslateStaticLoader(http, './assets/i18n', '.json');
+export function HttpLoaderFactory(http: Http) {
+  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -39,9 +40,11 @@ export function createTranslateLoader(http: Http) {
     Ng2BreadcrumbModule.forRoot(),
     NgxChartsModule,
     TranslateModule.forRoot({
-      provide: TranslateLoader,
-      useFactory: (createTranslateLoader),
-      deps: [ Http ]
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [Http]
+      }
     }),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,

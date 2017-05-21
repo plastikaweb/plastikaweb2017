@@ -5,7 +5,7 @@ import { CovalentCoreModule } from '@covalent/core';
 
 @NgModule({
   imports: [
-    CovalentCoreModule.forRoot()
+    CovalentCoreModule
   ],
   exports: [
     HeaderComponent

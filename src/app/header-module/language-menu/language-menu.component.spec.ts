@@ -1,11 +1,12 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { CovalentCoreModule } from '@covalent/core';
-import { TranslateModule, TranslateService, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { LanguageMenuComponent } from './language-menu.component';
 import { Http } from '@angular/http';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-function createTranslateLoader(http: Http) {
-  return new TranslateStaticLoader(http, './assets/i18n', '.json');
+function HttpLoaderFactory(http: Http) {
+  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
 }
 
 class MockedTranslateService extends TranslateService {
@@ -26,9 +27,11 @@ describe('Language Menu Component', () => {
       imports: [
         CovalentCoreModule,
         TranslateModule.forRoot({
-          provide: TranslateLoader,
-          useFactory: (createTranslateLoader),
-          deps: [ Http ]
+          loader: {
+            provide: TranslateLoader,
+            useFactory: (HttpLoaderFactory),
+            deps: [ Http ]
+          }
         })
       ],
       declarations: [ LanguageMenuComponent ]

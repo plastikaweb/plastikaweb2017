@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { TranslateService } from 'ng2-translate';
 import { Subscription } from 'rxjs/Subscription';
+import { TranslateService } from '@ngx-translate/core';
 
 import { IProject, ITranslation } from '../models/project.model';
 

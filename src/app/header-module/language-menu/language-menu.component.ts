@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { LangChangeEvent, TranslateService } from 'ng2-translate';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 import { DEFAULT_LANG, LANGUAGES } from '../../../config/lang.config';
 

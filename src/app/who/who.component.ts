@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+
 import { skills } from '../../data/skills';
-import { LangChangeEvent, TranslateService } from 'ng2-translate';
 
 @Component({
   selector: 'app-who',

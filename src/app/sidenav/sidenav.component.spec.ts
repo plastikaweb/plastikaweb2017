@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed, inject, fakeAsync, tick } from '@angu
 import { CovalentCoreModule, TdMediaService } from '@covalent/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { RouterModule } from '@angular/router';
-import { TranslateModule, TranslateService } from 'ng2-translate';
 import { APP_BASE_HREF } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { BreadcrumbService, Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
 import 'rxjs/add/operator/map';
 

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { TranslateModule } from 'ng2-translate';
+import { TranslateModule } from '@ngx-translate/core';
 import { CovalentCoreModule } from '@covalent/core';
 
 import { WorksRoutingModule } from './works-routing.module';

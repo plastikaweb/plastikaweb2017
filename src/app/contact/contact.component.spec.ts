@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CovalentCoreModule } from '@covalent/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { ContactComponent } from './contact.component';
-import { CovalentCoreModule } from '@covalent/core';
-import { TranslateModule } from 'ng2-translate';
 
 describe('Contact Component', () => {
   let component: ContactComponent;
