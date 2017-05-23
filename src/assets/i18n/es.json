@@ -2,6 +2,9 @@
   "HEADER": {
     "changeLang": "cambiar de idioma"
   },
+  "ANY": {
+    "loading": "cargando..."
+  },
   "WHO": {
     "title": "Plastikaweb",
     "sub": "¿quién, qué, porqué?",
@@ -21,7 +24,11 @@
   },
   "WORKS": {
     "title": "Proyectos",
-    "sub": "algunos trabajos realizados"
+    "sub": "algunos trabajos realizados",
+    "year": "año",
+    "partner": "colaborador(es)",
+    "client": "cliente final",
+    "techs": "herramientas y tecnologías"
   },
   "CONTACT": {
     "title": "Contacto",

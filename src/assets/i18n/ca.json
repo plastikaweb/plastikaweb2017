@@ -2,6 +2,9 @@
   "HEADER": {
     "changeLang": "canvia idioma"
   },
+  "ANY": {
+    "loading": "carregant..."
+  },
   "WHO": {
     "title": "Plastikaweb",
     "sub": "qui, què, per què?",
@@ -21,7 +24,11 @@
   },
   "WORKS": {
     "title": "Treballs",
-    "sub": "alguns exemples"
+    "sub": "alguns exemples",
+    "year": "any",
+    "partner": "col·laborador(s)",
+    "client": "client final",
+    "techs": "eines i tecnologies"
   },
   "CONTACT": {
     "title": "Contacte",
