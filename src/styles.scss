@@ -1,10 +1,10 @@
 @import 'theme';
 
-// <app-activity-indicator> //
-//app-activity-indicator {
-//  height: 5px;
-//  z-index: 1;
-//}
+// general styling
+a {
+  color: mat-color($primary, 800);
+}
+
 // Any Menu item selected
 .mat-list-item.active .mat-list-item-content {
   background-color: mat-color($accent, 200);
@@ -12,12 +12,50 @@
     color: mat-color($primary, 800);
   }
 }
+
+// header
+app-header > md-icon {
+  margin-right: 5px;
+}
+
 // avatar icon for Plastikaweb section
 .mat-card [md-card-avatar].size-72 {
   height: 72px;
   width: 72px;
 }
 
-app-header > md-icon {
-  margin-right: 5px;
+// tags for projects avatar sizing
+.tag.mat-card-avatar {
+  &.size-16 {
+    height: 16px;
+    width: 16px;
+  }
+  &.size-24 {
+    height: 24px;
+    width: 24px;
+  }
+  &.size-32 {
+    height: 32px;
+    width: 32px;
+  }
+  &.size-50 {
+    height: 50px;
+    width: 50px;
+  }
 }
+
+// Breadcrumb styling
+ul.breadcrumb {
+  padding: 0;
+  margin: 0;
+  li.breadcrumb-item {
+    display: initial;
+    &:not(:last-child)::after {
+      content: "\2044"
+    }
+    > a {
+      cursor: pointer;
+    }
+  }
+}
+
