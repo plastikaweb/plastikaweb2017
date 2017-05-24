@@ -36,14 +36,14 @@ module.exports = function (config) {
         global: {
           statements: 70,
           branches: 70,
-          lines: 50,
-          functions: 70
+          lines: 70,
+          functions: 60
         },
         each: {
-          statements: 60,
+          statements: 40,
           branches: 60,
-          lines: 40,
-          functions: 40
+          lines: 35,
+          functions: 10
         },
       }
     },

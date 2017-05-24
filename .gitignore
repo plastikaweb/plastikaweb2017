@@ -61,3 +61,6 @@ Thumbs.db
 /functions/
 /firebase.json
 /Y
+
+# Internal temporary files
+/temp/*

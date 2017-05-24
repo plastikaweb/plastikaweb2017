@@ -12,7 +12,7 @@ import { IProject, ITranslation } from '../models/project.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WorksComponent implements OnInit, OnDestroy {
-  projects: IProject[] = [];
+  projects: IProject[];
   projectsSubscription: Subscription;
 
   constructor(private db: AngularFireDatabase,
@@ -21,7 +21,6 @@ export class WorksComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
     this.projectsSubscription = this.db.list('/projects', {
       query: { orderByChild: 'active', equalTo: true }
     })
@@ -41,6 +40,10 @@ export class WorksComponent implements OnInit, OnDestroy {
 
   getMainTechImage(name) {
     return `assets/icons/${name}.svg`;
+  }
+
+  getAvatar(name) {
+    return `assets/projects/${name}/${name}-avatar.png`;
   }
 
   getRemoteTranslation(item: ITranslation) {

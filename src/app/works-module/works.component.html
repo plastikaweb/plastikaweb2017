@@ -1,30 +1,37 @@
-<md-card-header>
-  <!--<img md-card-avatar class="size-72" src="assets/images/email.svg">-->
-  <md-card-title>
-    <h3 [innerHTML]="'WORKS.sub' | translate"></h3>
-  </md-card-title>
-</md-card-header>
-<md-divider></md-divider>
-<md-card-content>
-  <div layout="row"
-       layout-wrap
-       layout-align="space-between center">
-    <md-card flex="100" flex-gt-sm="45"
-             flex-gt-lg="30" flex-xl="23"
-             *ngFor="let project of projects">
-      <md-card-header>
-        <img md-card-avatar
-             *ngFor="let tag of project.tags.split(',') | arrayExtract:2"
-             [src]="getMainTechImage(tag)"
-             alt="{{tag}}">
-        <md-card-title><a [routerLink]="['/works', project.slug]"> {{ project.name }} </a></md-card-title>
-        <md-card-subtitle>{{ getRemoteTranslation(project.subtitle) }}</md-card-subtitle>
-      </md-card-header>
-      <img md-card-image alt="{{project.name}}"
-           [src]="getMainImage(project.slug)">
-      <md-card-content>
-        <h4>{{project.year}}</h4>
-      </md-card-content>
-    </md-card>
-  </div>
-</md-card-content>
+<div *ngIf="!projects; else projectsView">
+  {{ 'ANY.loading' | translate }}
+</div>
+<ng-template #projectsView>
+  <md-card-header>
+    <!--<img md-card-avatar class="size-72" src="assets/images/email.svg">-->
+    <md-card-title>
+      <h3 [innerHTML]="'WORKS.sub' | translate"></h3>
+    </md-card-title>
+  </md-card-header>
+  <md-divider></md-divider>
+  <md-card-content>
+    <div layout="row"
+         layout-wrap
+         layout-align="space-between center">
+      <md-card flex="100" flex-gt-sm="45"
+               flex-gt-lg="30" flex-xl="23"
+               *ngFor="let project of projects">
+        <md-card-header>
+          <img md-card-avatar class="size-50" [src]="getAvatar(project.slug)">
+          <md-card-title><a [routerLink]="['/works', project.slug]"> {{ project.name }} </a></md-card-title>
+          <md-card-subtitle>{{ getRemoteTranslation(project.subtitle) }}</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image alt="{{project.name}}"
+             [src]="getMainImage(project.slug)">
+        <md-card-content>
+        </md-card-content>
+        <md-card-footer>
+          <img md-card-avatar class="tag size-24"
+               *ngFor="let tag of project.tags.split(',') | arrayExtract:5"
+               [src]="getMainTechImage(tag)"
+               alt="{{tag}}" title="{{tag}}">
+        </md-card-footer>
+      </md-card>
+    </div>
+  </md-card-content>
+</ng-template>

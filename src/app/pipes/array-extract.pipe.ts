@@ -9,9 +9,6 @@ export class ArrayExtractPipe implements PipeTransform {
     if (!Array.isArray(value)) {
       throw new Error('Requires an Array as input');
     }
-    if (!end) {
-      throw new Error('Requires an end index');
-    }
     return end ? value.slice(init, end) : value;
   }
 

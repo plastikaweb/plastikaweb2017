@@ -1,11 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CovalentCoreModule } from '@covalent/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { ActivatedRoute } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { WorkComponent } from './work.component';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { afDbMock } from '../works.mock';
+import { ArrayExtractPipe } from '../../pipes/array-extract.pipe';
 
 describe('WorkComponent', () => {
   let component: WorkComponent;
@@ -13,14 +15,21 @@ describe('WorkComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ CovalentCoreModule, TranslateModule.forRoot() ],
-      declarations: [ WorkComponent ],
+      imports: [
+        CovalentCoreModule,
+        TranslateModule.forRoot(),
+        RouterModule.forRoot([])
+      ],
+      declarations: [
+        WorkComponent,
+        ArrayExtractPipe
+      ],
       providers: [
-        ActivatedRoute,
-        { provide: AngularFireDatabase, useValue: afDbMock[0] }
+        { provide: APP_BASE_HREF, useValue: '/' },
+        { provide: AngularFireDatabase, useValue: afDbMock }
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -29,7 +38,7 @@ describe('WorkComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should be created', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
 });

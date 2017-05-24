@@ -65,13 +65,10 @@ describe('Sidenav Component', () => {
 
   }));
 // prevent from http json files (must be mocked)
-  xit('should update the breadcrum section language appropiately',
+  it('should update the breadcrum section language appropiately',
     fakeAsync(inject([ BreadcrumbService ], (breadcrumb) => {
       component.ngOnInit();
       fixture.detectChanges();
-      tick();
-      translateService.use('en');
-      fixture.detectChanges();
-      expect(breadcrumb.getFriendlyNameForRoute('/who')).toEqual('Plastikaweb');
+      expect(breadcrumb.getFriendlyNameForRoute('/who')).toEqual('who');
     })));
 });
