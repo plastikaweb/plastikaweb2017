@@ -13,12 +13,11 @@ import './rxjs-extensions';
 
 import { firebaseConfig } from '../config/firebase.config';
 import { AppComponent } from './app.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
 import { WhoComponent } from './who/who.component';
 import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderModule } from './header-module/header.module';
-import { MainContentCardComponent } from './main-content-card/main-content-card.component';
+import { MainContentModule } from './main-content-module/main-content.module';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -27,10 +26,8 @@ export function HttpLoaderFactory(http: Http) {
 @NgModule({
   declarations: [
     AppComponent,
-    SidenavComponent,
     WhoComponent,
-    ContactComponent,
-    MainContentCardComponent
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +45,8 @@ export function HttpLoaderFactory(http: Http) {
     }),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    HeaderModule
+    HeaderModule,
+    MainContentModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

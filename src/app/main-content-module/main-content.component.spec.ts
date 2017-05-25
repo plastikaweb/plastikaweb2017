@@ -7,17 +7,17 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { BreadcrumbService, Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
 import 'rxjs/add/operator/map';
 
-import { SidenavComponent } from './sidenav.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { WorksComponent } from '../works-module/works.component';
 import { WhoComponent } from '../who/who.component';
 import { ContactComponent } from '../contact/contact.component';
 import { MainContentCardComponent } from '../main-content-card/main-content-card.component';
 import { ArrayExtractPipe } from '../pipes/array-extract.pipe';
+import { MainContentComponent } from './main-content.component';
 
-describe('Sidenav Component', () => {
-  let component: SidenavComponent;
-  let fixture: ComponentFixture<SidenavComponent>;
+describe('Main Content Component', () => {
+  let component: MainContentComponent;
+  let fixture: ComponentFixture<MainContentComponent>;
   let translateService: TranslateService;
 
   beforeEach(async(() => {
@@ -37,7 +37,7 @@ describe('Sidenav Component', () => {
         Ng2BreadcrumbModule.forRoot()
       ],
       declarations: [
-        SidenavComponent,
+        MainContentComponent,
         WorksComponent,
         WhoComponent,
         ContactComponent,
@@ -49,7 +49,7 @@ describe('Sidenav Component', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SidenavComponent);
+    fixture = TestBed.createComponent(MainContentComponent);
     component = fixture.componentInstance;
     translateService = TestBed.get(TranslateService);
     translateService.addLangs([ 'ca', 'en' ]);

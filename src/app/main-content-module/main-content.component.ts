@@ -4,12 +4,11 @@ import { BreadcrumbService } from 'ng2-breadcrumb/ng2-breadcrumb';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-sidenav',
-  templateUrl: './sidenav.component.html',
-  styleUrls: [ './sidenav.component.scss' ],
+  selector: 'app-main-content',
+  templateUrl: './main-content.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SidenavComponent implements OnInit, AfterViewInit {
+export class MainContentComponent implements OnInit, AfterViewInit {
 
   constructor(public media: TdMediaService,
               private translate: TranslateService,
