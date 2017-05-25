@@ -4,33 +4,17 @@
                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
 
+  <!--Sidebar menu-->
   <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && menuList.close()">
-    <a md-list-item [routerLink]="['/who']"
-       [routerLinkActiveOptions]="{exact:true}"
-       routerLinkActive="active">
-      <md-icon md-list-avatar>face</md-icon>
-      <h3 md-line> {{ 'WHO.title' | translate }} </h3>
-      <p md-line> {{ 'WHO.sub' | translate }} </p>
-    </a>
-    <a md-list-item [routerLink]="['/works']"
-       routerLinkActive="active">
-      <md-icon md-list-avatar>developer_board</md-icon>
-      <h3 md-line> {{ 'WORKS.title' | translate }} </h3>
-      <p md-line> {{ 'WORKS.sub' | translate }} </p>
-    </a>
-    <a md-list-item [routerLink]="['/contact']"
-       [routerLinkActiveOptions]="{exact:true}"
-       routerLinkActive="active">
-      <md-icon md-list-avatar>message</md-icon>
-      <h3 md-line> {{ 'CONTACT.title' | translate }} </h3>
-      <p md-line> {{ 'CONTACT.sub' | translate }} </p>
-    </a>
+    <app-sidenav></app-sidenav>
   </md-nav-list>
 
+  <!--Breadcrumb-->
   <div td-toolbar-content layout="row" layout-align="start center" flex>
     <breadcrumb [useBootstrap]="false"></breadcrumb>
   </div>
 
+  <!--Main section content-->
   <app-main-content-card></app-main-content-card>
 
 </td-layout-manage-list>

@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/bundles/app.module';
 import { MainContentCardComponent } from './main-content-card/main-content-card.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { MainContentCardComponent } from './main-content-card/main-content-card.
   ],
   declarations: [
     MainContentComponent,
-    MainContentCardComponent
+    MainContentCardComponent,
+    SidenavComponent
   ]
 })
 export class MainContentModule { }
