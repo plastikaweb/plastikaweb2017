@@ -1,4 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { CovalentCoreModule } from '@covalent/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { SidenavComponent } from './sidenav.component';
 
@@ -8,7 +12,15 @@ describe('SidenavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidenavComponent ]
+      declarations: [ SidenavComponent ],
+      providers: [
+        { provide: APP_BASE_HREF, useValue: '/' }
+      ],
+      imports: [
+        CovalentCoreModule,
+        TranslateModule.forRoot(),
+        RouterModule.forRoot([])
+      ]
     })
     .compileComponents();
   }));

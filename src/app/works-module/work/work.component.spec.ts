@@ -3,9 +3,10 @@ import { CovalentCoreModule } from '@covalent/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 
 import { WorkComponent } from './work.component';
-import { AngularFireDatabase } from 'angularfire2/database';
 import { afDbMock } from '../works.mock';
 import { ArrayExtractPipe } from '../../pipes/array-extract.pipe';
 
@@ -25,6 +26,7 @@ describe('WorkComponent', () => {
         ArrayExtractPipe
       ],
       providers: [
+        BreadcrumbService,
         { provide: APP_BASE_HREF, useValue: '/' },
         { provide: AngularFireDatabase, useValue: afDbMock }
       ]

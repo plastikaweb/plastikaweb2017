@@ -40,11 +40,11 @@ module.exports = function (config) {
           functions: 60
         },
         each: {
-          statements: 40,
+          statements: 60,
           branches: 60,
-          lines: 35,
-          functions: 10
-        },
+          lines: 60,
+          functions: 50
+        }
       }
     },
     angularCli: {

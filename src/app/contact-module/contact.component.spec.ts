@@ -25,7 +25,7 @@ describe('Contact Component', () => {
     fixture.detectChanges();
   });
 
-  xit('should create contact component', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
 });

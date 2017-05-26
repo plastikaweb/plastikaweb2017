@@ -31,7 +31,7 @@ describe('Who Component', () => {
     fixture.detectChanges();
   });
 
-  xit('should create who component', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
 });

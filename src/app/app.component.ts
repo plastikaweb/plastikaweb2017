@@ -23,13 +23,13 @@ export class AppComponent implements OnInit {
     this.translate.addLangs(this.languages);
     this.translate.setDefaultLang(this.defaultLang);
     const browserLang = this.translate.getBrowserLang();
-    const lang = this.languages.indexOf(browserLang) !== -1 ?
+    const language = this.languages.indexOf(browserLang) !== -1 ?
       browserLang : this.defaultLang;
-    this.onChangeLang(lang);
+    this.onChangeLang(language);
 
     this.translate.onLangChange
       .map((e: LangChangeEvent) => e.lang)
-      .switchMap((lang: string) => this.translate.getTranslation(lang))
+      .switchMap(lang => this.translate.getTranslation(lang))
       .subscribe(translation => {
         this.breadcrumbService.addFriendlyNameForRoute('/who', translation.WHO.title);
         this.breadcrumbService.addFriendlyNameForRoute('/works', translation.WORKS.title);

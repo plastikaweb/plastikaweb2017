@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
+import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 
 import { WorksComponent } from './works.component';
 import { ArrayExtractPipe } from '../pipes/array-extract.pipe';
@@ -26,7 +27,8 @@ describe('Works Component', () => {
       ],
       providers: [
         { provide: APP_BASE_HREF, useValue: '/' },
-        { provide: AngularFireDatabase, useValue: afDbMock }
+        { provide: AngularFireDatabase, useValue: afDbMock },
+        BreadcrumbService
       ]
     })
       .compileComponents();
@@ -38,7 +40,7 @@ describe('Works Component', () => {
     fixture.detectChanges();
   });
 
-  xit('should create works component', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
 
