@@ -8,7 +8,6 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
 import './rxjs-extensions';
 
 import { firebaseConfig } from '../config/firebase.config';
@@ -34,7 +33,6 @@ export function HttpLoaderFactory(http: Http) {
     BrowserAnimationsModule,
     AppRoutingModule,
     CovalentCoreModule,
-    Ng2BreadcrumbModule.forRoot(),
     NgxChartsModule,
     TranslateModule.forRoot({
       loader: {
