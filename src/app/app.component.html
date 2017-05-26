@@ -1,5 +1,8 @@
 <td-layout-nav>
-  <app-header td-toolbar-content layout="row"
+  <app-header [languages]="languages"
+              [currentLang]="currentLang"
+              (emitLangChange)="onChangeLang($event)"
+              td-toolbar-content layout="row"
               layout-align="start center"
               flex></app-header>
 

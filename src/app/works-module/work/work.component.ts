@@ -5,12 +5,13 @@ import { Subscription } from 'rxjs/Subscription';
 import { TranslateService } from '@ngx-translate/core';
 
 import { IProject, ITranslation } from '../../models/project.model';
+import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 
 @Component({
   selector: 'app-work',
   templateUrl: './work.component.html',
   styleUrls: [ './work.component.scss' ],
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WorkComponent implements OnInit {
 
@@ -22,6 +23,7 @@ export class WorkComponent implements OnInit {
   constructor(private db: AngularFireDatabase,
               private chRef: ChangeDetectorRef,
               private translate: TranslateService,
+              private breadcrumbService: BreadcrumbService,
               private activatedRoute: ActivatedRoute) {
   }
 
@@ -36,6 +38,11 @@ export class WorkComponent implements OnInit {
     })
       .subscribe((data: IProject[]) => {
         this.project = data[ 0 ];
+        // check breadcrumb name for project
+        const slug = this.project.slug;
+        if (this.breadcrumbService.getFriendlyNameForRoute(slug) === slug) {
+          this.breadcrumbService.addFriendlyNameForRoute(`/works/${slug}`, this.project.name);
+        }
         this.chRef.detectChanges();
       });
   }

@@ -5,12 +5,15 @@
                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
 
   <!--Sidebar menu-->
-  <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && menuList.close()">
+  <md-nav-list td-sidenav-content
+               (click)="!media.query('gt-sm') && menuList.close()">
     <app-sidenav></app-sidenav>
   </md-nav-list>
 
   <!--Breadcrumb-->
-  <div td-toolbar-content layout="row" layout-align="start center" flex>
+  <div td-toolbar-content flex
+       layout="row"
+       layout-align="start center">
     <breadcrumb [useBootstrap]="false"></breadcrumb>
   </div>
 

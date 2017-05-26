@@ -9,8 +9,8 @@ import 'rxjs/add/operator/map';
 
 import { AppRoutingModule } from '../app-routing.module';
 import { WorksComponent } from '../works-module/works.component';
-import { WhoComponent } from '../who/who.component';
-import { ContactComponent } from '../contact/contact.component';
+import { WhoComponent } from '../who-module/who.component';
+import { ContactComponent } from '../contact-module/contact.component';
 import { MainContentCardComponent } from '../main-content-card/main-content-card.component';
 import { ArrayExtractPipe } from '../pipes/array-extract.pipe';
 import { MainContentComponent } from './main-content.component';

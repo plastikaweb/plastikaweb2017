@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { TranslateService } from '@ngx-translate/core';
 
 import { IProject, ITranslation } from '../models/project.model';
+import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 
 @Component({
   selector: 'app-works',
@@ -17,6 +18,7 @@ export class WorksComponent implements OnInit, OnDestroy {
 
   constructor(private db: AngularFireDatabase,
               private chRef: ChangeDetectorRef,
+              private breadcrumbService: BreadcrumbService,
               private translate: TranslateService) {
   }
 
@@ -26,6 +28,11 @@ export class WorksComponent implements OnInit, OnDestroy {
     })
       .subscribe((data: IProject[]) => {
         this.projects = data;
+        // set all friendly projects name for breadcrumb
+        this.projects.forEach(project => {
+          this.breadcrumbService
+            .addFriendlyNameForRoute(`/works/${project.slug}`, project.name);
+        });
         this.chRef.detectChanges();
       });
   }

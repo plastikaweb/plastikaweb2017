@@ -5,8 +5,8 @@
    href="https://github.com/plastikaweb" target="_blank">
   <md-icon svgIcon="github"></md-icon>
 </a>
-<app-language-menu (emitCurrentLang)="onChangeLang($event)"
-                   [languages]="languages"
+<app-language-menu [languages]="languages"
                    [currentLang]="currentLang"
-                   [changeLangMessage]="changeLangMessage">
+                   [changeLangMessage]="changeLangMessage"
+                   (emitCurrentLang)="onChangeLang($event)">
 </app-language-menu>

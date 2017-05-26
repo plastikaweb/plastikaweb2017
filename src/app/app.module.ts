@@ -5,18 +5,16 @@ import { Http } from '@angular/http';
 import { CovalentCoreModule } from '@covalent/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 import './rxjs-extensions';
 
-import { firebaseConfig } from '../config/firebase.config';
 import { AppComponent } from './app.component';
-import { WhoComponent } from './who/who.component';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './contact-module/contact.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderModule } from './header-module/header.module';
 import { MainContentModule } from './main-content-module/main-content.module';
+import { WorksModule } from './works-module/works.module';
+import { WhoModule } from './who-module/who.module';
+import { ContactModule } from './contact-module/contact.module';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -24,16 +22,13 @@ export function HttpLoaderFactory(http: Http) {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    WhoComponent,
-    ContactComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     CovalentCoreModule,
-    NgxChartsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -41,10 +36,11 @@ export function HttpLoaderFactory(http: Http) {
         deps: [Http]
       }
     }),
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
     HeaderModule,
-    MainContentModule
+    MainContentModule,
+    WhoModule,
+    WorksModule,
+    ContactModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
