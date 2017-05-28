@@ -5,7 +5,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 } )
 export class ArrayExtractPipe implements PipeTransform {
 
-  transform(value: any[], end: number, init: number = 0): any[] {
+  transform(value: any[], end: number = 0, init: number = 0): any[] | Error {
     if (!Array.isArray(value)) {
       throw new Error('Requires an Array as input');
     }

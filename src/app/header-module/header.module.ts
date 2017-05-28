@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CovalentCoreModule } from '@covalent/core';
+import { RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './header.component';
 import { LanguageMenuComponent } from './language-menu/language-menu.component';
 
 @NgModule({
   imports: [
-    CovalentCoreModule
+    CovalentCoreModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent

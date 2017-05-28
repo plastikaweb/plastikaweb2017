@@ -1,42 +1,31 @@
-import { Component, ChangeDetectionStrategy, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, EventEmitter, Output } from '@angular/core';
 import { MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+
+import { Iconography } from '../../data/iconography';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input() languages = [];
   @Input() currentLang;
+  @Input() changeLangMessage;
   @Output() emitLangChange: EventEmitter<string> = new EventEmitter();
-  changeLangMessage = 'change lang';
+  plastikawebIcon = Iconography.plastikaweb;
+  githubIcon = Iconography.github;
 
   constructor(private iconRegistry: MdIconRegistry,
-              private sanitizer: DomSanitizer,
-              private translate: TranslateService) {
+              private sanitizer: DomSanitizer) {
 
     iconRegistry.addSvgIcon(
-      'plastika-web',
-      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/w.svg'));
-
+      this.plastikawebIcon.label,
+      sanitizer.bypassSecurityTrustResourceUrl(this.plastikawebIcon.image));
     iconRegistry.addSvgIcon(
-      'github',
-      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/github.svg'));
-
-  }
-
-  ngOnInit() {
-    // on change language update tooltip message
-    this.translate.onLangChange
-      .map((e: LangChangeEvent) => e.lang)
-      .switchMap((lang: string) => this.translate.getTranslation(lang))
-      .subscribe(translation => {
-        this.changeLangMessage = translation.HEADER.changeLang;
-      });
-
+      this.githubIcon.label,
+      sanitizer.bypassSecurityTrustResourceUrl(this.githubIcon.image));
   }
 
   onChangeLang(lang) {

@@ -1,6 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
-
 @Component({
   selector: 'app-language-menu',
   templateUrl: './language-menu.component.html',
@@ -8,8 +7,8 @@ import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from 
 })
 export class LanguageMenuComponent {
   @Input() languages = [];
-  @Input() currentLang = 'ca';
-  @Input() changeLangMessage = 'change';
+  @Input() currentLang;
+  @Input() changeLangMessage;
   @Output() emitCurrentLang: EventEmitter<string> = new EventEmitter();
 
   changeLang(lang) {

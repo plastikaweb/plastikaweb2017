@@ -1,9 +1,12 @@
-<md-icon svgIcon="plastika-web"></md-icon>
+<a md-icon-button mdTooltip="{{plastikawebIcon.label}}"
+   [routerLink]="['/']">
+  <md-icon [svgIcon]="plastikawebIcon.label"></md-icon>
+</a>
 <span>Plastikaweb</span>
 <span flex></span>
-<a md-icon-button mdTooltip="Github"
-   href="https://github.com/plastikaweb" target="_blank">
-  <md-icon svgIcon="github"></md-icon>
+<a md-icon-button mdTooltip="{{githubIcon.label}}"
+   [href]="githubIcon.link" target="_blank">
+  <md-icon svgIcon="{{githubIcon.label}}"></md-icon>
 </a>
 <app-language-menu [languages]="languages"
                    [currentLang]="currentLang"

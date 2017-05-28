@@ -15,7 +15,7 @@ export class MainContentComponent implements AfterViewInit {
   ngAfterViewInit() {
     // broadcast to all listener observables when loading the page
     this.cdr.detectChanges();
-    // TODO - this fix does not occurs in production
+    // TODO - this fix does not occur in production
     // see https://github.com/Teradata/covalent/issues/425
     setTimeout(function (media) {
       media.broadcast();

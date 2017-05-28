@@ -23,9 +23,16 @@ describe('Language Menu Component', () => {
   });
 
   it('should be created', async(() => {
-    fixture.detectChanges();
     expect(component).toBeTruthy();
   }));
+
+  it('should raise change of language when changeLang is called', () => {
+    component.currentLang = 'en';
+    component.emitCurrentLang.subscribe(lang => component.currentLang = lang);
+    component.changeLang('es');
+
+    expect(component.currentLang).toBe('es');
+  });
 
   // it('should has the app language to browser language on loading if browser language is on list',
   //   async(() => {
