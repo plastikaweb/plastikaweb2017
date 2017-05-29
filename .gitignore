@@ -50,8 +50,7 @@ Thumbs.db
 /src/**/*.js
 
 # Config data
-/src/config/*
-!/src/config/*.sample
+/src/config/firebase.config.ts
 
 # DB data
 /db/data/*

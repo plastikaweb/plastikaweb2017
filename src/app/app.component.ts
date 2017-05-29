@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
-import { DEFAULT_LANG, LANGUAGES } from '../config/lang.config';
+
+import { langConfig } from '../config/lang.config';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-
-  languages = LANGUAGES;
-  defaultLang = DEFAULT_LANG;
+  languages = langConfig.languages;
+  defaultLang = langConfig.defaultLang;
   currentLang;
   changeLangMessage;
 
