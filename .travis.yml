@@ -26,6 +26,7 @@ before_script:
   - export DISPLAY=:99.0
   - npm install -g firebase-tools
   - npm install -g @angular/cli
+  - chmod +x ./ci/setup.sh
 script:
   - ./ci/setup.sh
   - ng lint
