@@ -18,6 +18,8 @@
   </div>
 
   <!--Main section content-->
-  <app-main-content-card></app-main-content-card>
+  <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+    <router-outlet></router-outlet>
+  </md-card>
 
 </td-layout-manage-list>
