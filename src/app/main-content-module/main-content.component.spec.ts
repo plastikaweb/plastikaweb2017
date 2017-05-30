@@ -8,7 +8,6 @@ import 'rxjs/add/operator/map';
 
 import { AppRoutingModule } from '../app-routing.module';
 import { MainContentComponent } from './main-content.component';
-import { MainContentCardComponent } from './main-content-card/main-content-card.component';
 import { WhoModule } from '../who-module/who.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { WorksModule } from '../works-module/works.module';
@@ -38,7 +37,6 @@ describe('Main Content Component', () => {
       ],
       declarations: [
         MainContentComponent,
-        MainContentCardComponent,
         SidenavComponent
       ]
     })
