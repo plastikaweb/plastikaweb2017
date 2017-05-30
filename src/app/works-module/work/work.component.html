@@ -3,9 +3,9 @@
 </div>
 <ng-template #projectView>
   <md-card-header>
-    <img md-card-avatar class="size-72" [offset]="offset"
-         [defaultImage]="image"
-         [lazyLoad]="getAvatar(project.slug)">
+    <img md-card-avatar class="size-72"
+         alt="project.name"
+         [src]="getAvatar(project.slug)">
     <md-card-title>
       <h3>{{project.name}}</h3>
     </md-card-title>
@@ -22,10 +22,10 @@
   </md-card-header>
   <img md-card-image alt="{{project.name}}"
        [offset]="offset"
-       [defaultImage]="image"
+       [defaultImage]="loadingImage"
        [lazyLoad]="getMainImage(project.slug)"
        [srcset]="getMainImageSet(project.slug)"
-        sizes="100vw">
+        sizes="(min-width: 960px) 960px, 100vw">
   <md-card-content>
     <img md-card-avatar class="tag size-32"
          *ngFor="let tag of project.tags.split(',') | arrayExtract:6"

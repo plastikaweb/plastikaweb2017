@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
@@ -13,13 +13,13 @@ import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbS
   styleUrls: [ './work.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WorkComponent implements OnInit {
+export class WorkComponent implements OnInit, OnDestroy {
 
   project: IProject;
   slug;
   activatedRouteSubscription: Subscription;
   projectSubscription: Subscription;
-  image = 'assets/images/background.jpg';
+  loadingImage = 'assets/images/background.jpg';
   offset = 100;
 
   constructor(private db: AngularFireDatabase,
@@ -49,12 +49,17 @@ export class WorkComponent implements OnInit {
       });
   }
 
+  ngOnDestroy() {
+    this.activatedRouteSubscription.unsubscribe();
+    this.projectSubscription.unsubscribe();
+  }
+
   getAvatar(name): string {
     return `assets/projects/${name}/${name}-avatar.png`;
   }
 
   getMainImage(name): string {
-    return `assets/projects/${name}/${name}-1.png 1200w,`;
+    return `assets/projects/${name}/${name}-1.png`;
   }
 
   getMainImageSet(name): string {

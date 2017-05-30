@@ -33,7 +33,6 @@ export class WorksComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.myScrollContainer = this.renderer
       .parentNode(this.elmRef.nativeElement.parentNode);
-    console.log(this.myScrollContainer);
 
     this.projectsSubscription = this.db.list('/projects', {
       query: { orderByChild: 'active', equalTo: true }

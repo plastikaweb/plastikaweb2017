@@ -64,7 +64,7 @@ breadcrumb {
 // lazy load images
 [md-card-image]{
   &.ng-lazyloaded {
-    animation: fadein .5s;
+    animation: fadein 0.3s;
   }
 }
 
