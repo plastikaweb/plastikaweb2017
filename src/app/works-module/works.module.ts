@@ -9,12 +9,14 @@ import { WorksComponent } from './works.component';
 import { WorkComponent } from './work/work.component';
 import { ArrayExtractPipe } from '../pipes/array-extract.pipe';
 import { firebaseConfig } from '../../config/firebase.config';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   imports: [
     CovalentCoreModule,
     TranslateModule,
     RouterModule,
+    LazyLoadImageModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ],

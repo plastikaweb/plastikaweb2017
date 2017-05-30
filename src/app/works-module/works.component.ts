@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit,
+  Renderer2
+} from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Subscription } from 'rxjs/Subscription';
 import { TranslateService } from '@ngx-translate/core';
@@ -15,14 +18,23 @@ import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbS
 export class WorksComponent implements OnInit, OnDestroy {
   projects: IProject[];
   projectsSubscription: Subscription;
+  loadingImage = 'assets/images/background.jpg';
+  offset = 100;
+  myScrollContainer;
 
   constructor(private db: AngularFireDatabase,
+              private elmRef: ElementRef,
+              private renderer: Renderer2,
               private chRef: ChangeDetectorRef,
               private breadcrumbService: BreadcrumbService,
               private translate: TranslateService) {
   }
 
   ngOnInit() {
+    this.myScrollContainer = this.renderer
+      .parentNode(this.elmRef.nativeElement.parentNode);
+    console.log(this.myScrollContainer);
+
     this.projectsSubscription = this.db.list('/projects', {
       query: { orderByChild: 'active', equalTo: true }
     })

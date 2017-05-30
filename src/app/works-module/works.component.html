@@ -17,13 +17,20 @@
                flex-gt-lg="30" flex-xl="23"
                *ngFor="let project of projects">
         <md-card-header>
-          <img md-card-avatar class="size-50" [src]="getAvatar(project.slug)">
+          <img md-card-avatar class="size-50"
+               [scrollTarget]="myScrollContainer"
+               [offset]="offset"
+               [defaultImage]="loadingImage"
+               [lazyLoad]="getAvatar(project.slug)">
           <md-card-title><a [routerLink]="['/works', project.slug]"> {{ project.name }} </a></md-card-title>
           <md-card-subtitle>{{ getRemoteTranslation(project.subtitle) }}</md-card-subtitle>
         </md-card-header>
-        <img md-card-image alt="{{project.name}}"
-             [src]="getMainImage(project.slug)">
         <md-card-content>
+          <img md-card-image alt="{{project.name}}"
+               [lazyLoad]="getMainImage(project.slug)"
+               [scrollTarget]="myScrollContainer"
+               [offset]="offset"
+               [defaultImage]="loadingImage">
         </md-card-content>
         <md-card-footer>
           <img md-card-avatar class="tag size-24"

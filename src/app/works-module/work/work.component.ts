@@ -19,6 +19,8 @@ export class WorkComponent implements OnInit {
   slug;
   activatedRouteSubscription: Subscription;
   projectSubscription: Subscription;
+  image = 'assets/images/background.jpg';
+  offset = 100;
 
   constructor(private db: AngularFireDatabase,
               private chRef: ChangeDetectorRef,
@@ -49,6 +51,10 @@ export class WorkComponent implements OnInit {
 
   getAvatar(name): string {
     return `assets/projects/${name}/${name}-avatar.png`;
+  }
+
+  getMainImage(name): string {
+    return `assets/projects/${name}/${name}-1.png 1200w,`;
   }
 
   getMainImageSet(name): string {

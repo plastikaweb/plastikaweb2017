@@ -1,14 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { Http } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 import { CovalentCoreModule } from '@covalent/core';
+import { Http } from '@angular/http';
+import { NgModule } from '@angular/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import './rxjs-extensions';
 
 import { AppComponent } from './app.component';
-import { ContactComponent } from './contact-module/contact.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderModule } from './header-module/header.module';
 import { MainContentModule } from './main-content-module/main-content.module';
@@ -25,9 +24,9 @@ export function HttpLoaderFactory(http: Http) {
     AppComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     CovalentCoreModule,
     TranslateModule.forRoot({
       loader: {
@@ -36,11 +35,11 @@ export function HttpLoaderFactory(http: Http) {
         deps: [Http]
       }
     }),
+    ContactModule,
     HeaderModule,
     MainContentModule,
     WhoModule,
-    WorksModule,
-    ContactModule
+    WorksModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

@@ -9,6 +9,7 @@ import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbS
 import { WorksComponent } from './works.component';
 import { ArrayExtractPipe } from '../pipes/array-extract.pipe';
 import { afDbMock } from './works.mock';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 describe('Works Component', () => {
   let component: WorksComponent;
@@ -19,7 +20,8 @@ describe('Works Component', () => {
       imports: [
         CovalentCoreModule,
         RouterModule.forRoot([]),
-        TranslateModule.forRoot()
+        TranslateModule.forRoot(),
+        LazyLoadImageModule
       ],
       declarations: [
         WorksComponent,
