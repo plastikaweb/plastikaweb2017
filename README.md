@@ -36,7 +36,7 @@ npm install
 
 # go to src/config directory, and rename `firebase.config.ts.sample` to `firebase.config.ts`. Fill with your firebase database data.
 
-# go to src/config directory, and rename `lang.config.ts.sample` to `lang.config.ts`. Fill with your app languages.
+# go to src/config directory, and edit `lang.config.ts`. Fill with your app languages and the default app language.
 
 # Serve the app
 ng serve
