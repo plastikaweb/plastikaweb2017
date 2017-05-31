@@ -1,21 +1,26 @@
 import {
-  ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit,
+  ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, OnDestroy, OnInit,
   Renderer2
 } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 import { Subscription } from 'rxjs/Subscription';
 import { TranslateService } from '@ngx-translate/core';
 
 import { IProject, ITranslation } from '../models/project.model';
-import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
+import { fadeAnimation } from '../animations/fade.animation';
 
 @Component({
   selector: 'app-works',
   templateUrl: './works.component.html',
   styleUrls: [ './works.component.scss' ],
+  animations: [ fadeAnimation ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WorksComponent implements OnInit, OnDestroy {
+  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display')   display = 'block';
+
   projects: IProject[];
   projectsSubscription: Subscription;
   loadingImage = 'assets/images/background.jpg';

@@ -1,16 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angular/core';
 import { MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 import { skills } from '../../data/skills';
+import { fadeAnimation } from '../animations/fade.animation';
 
 @Component({
   selector: 'app-who',
   templateUrl: './who.component.html',
-  styleUrls: [ './who.component.scss' ]
+  styleUrls: [ './who.component.scss' ],
+  animations: [ fadeAnimation ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WhoComponent implements OnInit {
+  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display')   display = 'block';
+
   view: any[] = [ 200, 100 ];
   data: any[] = skills;
   years = '';

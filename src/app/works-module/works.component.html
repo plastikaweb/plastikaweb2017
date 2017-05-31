@@ -1,14 +1,17 @@
+<md-card-header>
+  <md-card-title>
+    <h3 [innerHTML]="'WORKS.sub' | translate"></h3>
+  </md-card-title>
+</md-card-header>
+<md-divider></md-divider>
+
 <div *ngIf="!projects; else projectsView">
+  <md-card-content>
   {{ 'ANY.loading' | translate }}
+  </md-card-content>
 </div>
+
 <ng-template #projectsView>
-  <md-card-header>
-    <!--<img md-card-avatar class="size-72" src="assets/images/email.svg">-->
-    <md-card-title>
-      <h3 [innerHTML]="'WORKS.sub' | translate"></h3>
-    </md-card-title>
-  </md-card-header>
-  <md-divider></md-divider>
   <md-card-content>
     <div layout="row"
          layout-wrap

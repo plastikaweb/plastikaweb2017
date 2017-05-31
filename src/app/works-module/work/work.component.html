@@ -1,6 +1,14 @@
 <div *ngIf="!project; else projectView">
-  {{ 'ANY.loading' | translate }}
+  <md-card-header>
+      <md-card-title>
+        <h3>{{ slug }}</h3>
+    </md-card-title>
+  </md-card-header>
+  <md-card-content>
+    {{ 'ANY.loading' | translate }}
+  </md-card-content>
 </div>
+
 <ng-template #projectView>
   <md-card-header>
     <img md-card-avatar class="size-72"
