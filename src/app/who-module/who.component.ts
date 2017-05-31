@@ -15,7 +15,7 @@ import { fadeAnimation } from '../animations/fade.animation';
 })
 export class WhoComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation = true;
-  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.display') display = 'block';
 
   view: any[] = [ 200, 100 ];
   data: any[] = skills;
@@ -31,13 +31,13 @@ export class WhoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.translate.getTranslation(this.translate.currentLang)
+      .subscribe(translation => this.translateChartsUnits(translation));
+
     this.translate.onLangChange
       .map((e: LangChangeEvent) => e.lang)
       .switchMap((lang: string) => this.translate.getTranslation(lang))
-      .subscribe(translation => {
-        this.proficiency = translation.WHO.proficiency;
-        this.years = translation.WHO.years;
-      });
+      .subscribe(translation => this.translateChartsUnits(translation));
 
     this.data.forEach((skill) => {
       this.iconRegistry.addSvgIcon(
@@ -46,11 +46,16 @@ export class WhoComponent implements OnInit {
     });
   }
 
-  getIconSrc(iconName) {
+  private getIconSrc(iconName) {
     return `assets/icons/${iconName}`;
   }
 
-  formatProficiency(proficiency) {
+  private formatProficiency(proficiency) {
     return `${proficiency}%`;
+  }
+
+  private translateChartsUnits(translation) {
+    this.proficiency = translation.WHO.proficiency;
+    this.years = translation.WHO.years;
   }
 }
