@@ -25,6 +25,7 @@ export class WorkComponent implements OnInit, OnDestroy {
   projectSubscription: Subscription;
   loadingImage = 'assets/images/background.jpg';
   offset = 100;
+  activityColor = 'primary';
 
   constructor(private db: AngularFireDatabase,
               private chRef: ChangeDetectorRef,

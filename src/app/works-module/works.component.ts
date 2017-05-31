@@ -26,6 +26,7 @@ export class WorksComponent implements OnInit, OnDestroy {
   loadingImage = 'assets/images/background.jpg';
   offset = 100;
   myScrollContainer;
+  activityColor = 'primary';
 
   constructor(private db: AngularFireDatabase,
               private elmRef: ElementRef,

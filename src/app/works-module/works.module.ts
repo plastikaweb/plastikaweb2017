@@ -10,6 +10,7 @@ import { WorkComponent } from './work/work.component';
 import { ArrayExtractPipe } from '../pipes/array-extract.pipe';
 import { firebaseConfig } from '../../config/firebase.config';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     RouterModule,
     LazyLoadImageModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    SharedModule
   ],
   declarations: [
     WorksComponent,

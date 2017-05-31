@@ -10,6 +10,8 @@ import { WorkComponent } from './work.component';
 import { afDbMock } from '../works.mock';
 import { ArrayExtractPipe } from '../../pipes/array-extract.pipe';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from '../../shared/shared.module';
 
 describe('WorkComponent', () => {
   let component: WorkComponent;
@@ -18,10 +20,12 @@ describe('WorkComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        BrowserAnimationsModule,
         CovalentCoreModule,
         TranslateModule.forRoot(),
         RouterModule.forRoot([]),
-        LazyLoadImageModule
+        LazyLoadImageModule,
+        SharedModule
       ],
       declarations: [
         WorkComponent,

@@ -1,28 +1,26 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ActivityIndicatorComponent } from './activity-indicator.component';
 import { CovalentCoreModule } from '@covalent/core';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { ContactComponent } from './contact.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-describe('Contact Component', () => {
-  let component: ContactComponent;
-  let fixture: ComponentFixture<ContactComponent>;
+describe('ActivityIndicatorComponent', () => {
+  let component: ActivityIndicatorComponent;
+  let fixture: ComponentFixture<ActivityIndicatorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        BrowserAnimationsModule,
         CovalentCoreModule,
         TranslateModule.forRoot()
       ],
-      declarations: [ ContactComponent ]
+      declarations: [ ActivityIndicatorComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContactComponent);
+    fixture = TestBed.createComponent(ActivityIndicatorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

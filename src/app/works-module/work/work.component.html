@@ -5,7 +5,9 @@
     </md-card-title>
   </md-card-header>
   <md-card-content>
-    {{ 'ANY.loading' | translate }}
+    <app-activity-indicator
+      [color]="activityColor">
+    </app-activity-indicator>
   </md-card-content>
 </div>
 
