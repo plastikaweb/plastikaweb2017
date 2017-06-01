@@ -46,15 +46,11 @@ export class WhoComponent implements OnInit {
     });
   }
 
-  private getIconSrc(iconName) {
-    return `assets/icons/${iconName}`;
-  }
-
-  private formatProficiency(proficiency) {
+  formatProficiency(proficiency) {
     return `${proficiency}%`;
   }
 
-  private translateChartsUnits(translation) {
+  translateChartsUnits(translation) {
     this.proficiency = translation.WHO.proficiency;
     this.years = translation.WHO.years;
   }

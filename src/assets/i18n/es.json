@@ -25,6 +25,7 @@
   "WORKS": {
     "title": "Proyectos",
     "sub": "algunos trabajos realizados",
+    "intro": "Ordenados de los más recientes a los más antiguos",
     "year": "año",
     "partner": "colaborador(es)",
     "client": "cliente final",

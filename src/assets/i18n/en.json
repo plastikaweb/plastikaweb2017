@@ -25,6 +25,7 @@
   "WORKS": {
     "title": "Projects",
     "sub": "some projects",
+    "intro": "Sorted from the most recent to the oldest",
     "year": "year",
     "partner": "partner(s)",
     "client": "client",

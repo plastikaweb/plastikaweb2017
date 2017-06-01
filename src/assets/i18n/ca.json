@@ -24,7 +24,8 @@
   },
   "WORKS": {
     "title": "Treballs",
-    "sub": "alguns exemples",
+    "sub": "alguns projectes realitats",
+    "intro": "Ordenats dels més recents als més antics",
     "year": "any",
     "partner": "col·laborador(s)",
     "client": "client final",
