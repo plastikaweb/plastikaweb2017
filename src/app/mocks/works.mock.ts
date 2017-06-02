@@ -1,7 +1,8 @@
-import { IProject } from '../models/project.model';
 import { Observable } from 'rxjs/Observable';
 
-const tagList: IProject[] = [ {
+import { IWork } from '../models/work.model';
+
+const tagList: IWork[] = [ {
   $key: '1',
   active: true,
   name: 'the project',

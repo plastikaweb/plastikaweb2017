@@ -3,6 +3,8 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 
 import { langConfig } from '../config/lang.config';
+import { WorksService } from './shared/shared.module';
+import { IWork } from './models/work.model';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +17,7 @@ export class AppComponent implements OnInit {
   changeLangMessage;
 
   constructor(private translate: TranslateService,
+              private worksService: WorksService,
               private breadcrumbService: BreadcrumbService) {
   }
 
@@ -36,6 +39,16 @@ export class AppComponent implements OnInit {
         this.breadcrumbService.addFriendlyNameForRoute('/works', translation.WORKS.title);
         this.breadcrumbService.addFriendlyNameForRoute('/contact', translation.CONTACT.title);
       });
+
+    // set all friendly projects name for breadcrumb
+    this.worksService.findAllActiveWorks()
+    .subscribe((data: IWork[]) => {
+      data.forEach(work => {
+        this.breadcrumbService
+          .addFriendlyNameForRoute(`/works/${work.slug}`, work.name);
+      });
+    });
+
   }
 
   onChangeLang(lang) {

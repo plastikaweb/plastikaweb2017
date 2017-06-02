@@ -1,17 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { APP_BASE_HREF } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { CovalentCoreModule } from '@covalent/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { RouterModule } from '@angular/router';
-import { APP_BASE_HREF } from '@angular/common';
-import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 
-import { WorksComponent } from './works.component';
+import { afDbMock } from '../mocks/works.mock';
 import { ArrayExtractPipe } from '../pipes/array-extract.pipe';
-import { afDbMock } from './works.mock';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from '../shared/shared.module';
+import { WorksService } from '../shared/works-service/works.service';
+import { WorksComponent } from './works.component';
 
 describe('Works Component', () => {
   let component: WorksComponent;
@@ -33,8 +33,8 @@ describe('Works Component', () => {
       ],
       providers: [
         { provide: APP_BASE_HREF, useValue: '/' },
-        { provide: AngularFireDatabase, useValue: afDbMock },
-        BreadcrumbService
+        WorksService,
+        { provide: AngularFireDatabase, useValue: afDbMock }
       ]
     })
       .compileComponents();

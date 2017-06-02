@@ -1,12 +1,13 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { ChangeDetectionStrategy, Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 import { Subscription } from 'rxjs/Subscription';
 import { TranslateService } from '@ngx-translate/core';
 
-import { IProject, ITranslation } from '../../models/project.model';
 import { fadeAnimation } from '../../animations/fade.animation';
+import { IWork, ITranslation } from '../../models/work.model';
+import { WorksService } from '../../shared/works-service/works.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-work',
@@ -17,46 +18,37 @@ import { fadeAnimation } from '../../animations/fade.animation';
 })
 export class WorkComponent implements OnInit, OnDestroy {
   @HostBinding('@routeAnimation') routeAnimation = true;
-  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.display') display = 'block';
 
-  project: IProject;
+  work$: Observable<IWork>;
+  workNameSubscription: Subscription;
   slug;
-  activatedRouteSubscription: Subscription;
-  projectSubscription: Subscription;
   loadingImage = 'assets/images/background.jpg';
   offset = 100;
   activityColor = 'warn';
 
-  constructor(private db: AngularFireDatabase,
-              private chRef: ChangeDetectorRef,
+  constructor(private worksService: WorksService,
               private translate: TranslateService,
               private breadcrumbService: BreadcrumbService,
               private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.activatedRouteSubscription = this.activatedRoute
-      .params
-      .map(param => param[ 'slug' ])
-      .subscribe((slug) => this.slug = slug);
-
-    this.projectSubscription = this.db.list('/projects', {
-      query: { orderByChild: 'slug', equalTo: this.slug }
-    })
-      .subscribe((data: IProject[]) => {
-        this.project = data[ 0 ];
-        // check breadcrumb name for project
-        const slug = this.project.slug;
-        if (this.breadcrumbService.getFriendlyNameForRoute(slug) === slug) {
-          this.breadcrumbService.addFriendlyNameForRoute(`/works/${slug}`, this.project.name);
-        }
-        this.chRef.detectChanges();
+    this.activatedRoute.params
+      .subscribe(param => {
+        this.slug = param[ 'slug' ];
+        this.work$ = this.worksService.findWorkBySlug(this.slug);
+        // TODO - think about how to make a single call to service
+        this.workNameSubscription = this.worksService
+          .findWorkNameBySlug(this.slug)
+          .subscribe(name => this.breadcrumbService
+            .addFriendlyNameForRoute(`/works/${this.slug}`, name)
+          );
       });
   }
 
   ngOnDestroy() {
-    this.activatedRouteSubscription.unsubscribe();
-    this.projectSubscription.unsubscribe();
+    this.workNameSubscription.unsubscribe();
   }
 
   getAvatar(name): string {

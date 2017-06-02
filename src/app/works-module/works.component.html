@@ -7,31 +7,23 @@
 </md-card-header>
 <md-divider></md-divider>
 
-<div *ngIf="!projects; else projectsView">
-  <md-card-content>
-    <app-activity-indicator
-      [color]="activityColor">
-    </app-activity-indicator>
-  </md-card-content>
-</div>
-
-<ng-template #projectsView>
+<div *ngIf="works$ | async as works; else loadingProjects">
   <md-card-content>
     <div layout="row"
          layout-wrap
          layout-align="space-between center">
       <md-card flex="100" flex-gt-sm="45"
                flex-gt-lg="30" flex-xl="23"
-               *ngFor="let project of projects">
+               *ngFor="let work of works">
         <md-card-header>
           <img md-card-avatar class="size-50"
-               alt="project.name"
-               [src]="getAvatar(project.slug)">
-          <md-card-title><a [routerLink]="['/works', project.slug]"> {{ project.name }} </a></md-card-title>
-          <md-card-subtitle>{{ getRemoteTranslation(project.subtitle) }}</md-card-subtitle>
+               alt="work.name"
+               [src]="getAvatar(work.slug)">
+          <md-card-title><a [routerLink]="['/works', work.slug]"> {{ work.name }} </a></md-card-title>
+          <md-card-subtitle>{{ getRemoteTranslation(work.subtitle) }}</md-card-subtitle>
         </md-card-header>
-        <img md-card-image alt="{{project.name}}"
-             [lazyLoad]="getMainImage(project.slug)"
+        <img md-card-image alt="{{work.name}}"
+             [lazyLoad]="getMainImage(work.slug)"
              [scrollTarget]="myScrollContainer"
              [offset]="offset"
              [defaultImage]="loadingImage">
@@ -39,11 +31,19 @@
         </md-card-content>
         <md-card-footer>
           <img md-card-avatar class="tag size-24"
-               *ngFor="let tag of project.tags.split(',') | arrayExtract:5"
+               *ngFor="let tag of work.tags.split(',') | arrayExtract:5"
                [src]="getMainTechImage(tag)"
                alt="{{tag}}" title="{{tag}}">
         </md-card-footer>
       </md-card>
     </div>
+  </md-card-content>
+</div>
+
+<ng-template #loadingProjects>
+  <md-card-content>
+    <app-activity-indicator
+      [color]="activityColor">
+    </app-activity-indicator>
   </md-card-content>
 </ng-template>

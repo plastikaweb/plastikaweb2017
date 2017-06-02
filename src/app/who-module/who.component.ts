@@ -35,8 +35,7 @@ export class WhoComponent implements OnInit {
       .subscribe(translation => this.translateChartsUnits(translation));
 
     this.translate.onLangChange
-      .map((e: LangChangeEvent) => e.lang)
-      .switchMap((lang: string) => this.translate.getTranslation(lang))
+      .switchMap((e: LangChangeEvent) => this.translate.getTranslation(e.lang))
       .subscribe(translation => this.translateChartsUnits(translation));
 
     this.data.forEach((skill) => {

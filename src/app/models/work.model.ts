@@ -1,4 +1,4 @@
-export interface IProject {
+export interface IWork {
   $key: string;
   active: boolean;
   name: string;
