@@ -1,17 +1,17 @@
-<a md-list-item [routerLink]="['/who']"
+<a md-list-item [routerLink]="['/who' | localize]"
    [routerLinkActiveOptions]="{exact:true}"
    routerLinkActive="active">
   <md-icon md-list-avatar>face</md-icon>
   <h3 md-line> {{ 'WHO.title' | translate }} </h3>
   <p md-line> {{ 'WHO.sub' | translate }} </p>
 </a>
-<a md-list-item [routerLink]="['/works']"
+<a md-list-item [routerLink]="['/works' | localize]"
    routerLinkActive="active">
   <md-icon md-list-avatar>developer_board</md-icon>
   <h3 md-line> {{ 'WORKS.title' | translate }} </h3>
   <p md-line> {{ 'WORKS.sub' | translate }} </p>
 </a>
-<a md-list-item [routerLink]="['/contact']"
+<a md-list-item [routerLink]="['/contact' | localize]"
    [routerLinkActiveOptions]="{exact:true}"
    routerLinkActive="active">
   <md-icon md-list-avatar>message</md-icon>

@@ -1,6 +1,7 @@
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
 import { CovalentCoreModule } from '@covalent/core';
+import { LocalizeRouterModule } from 'localize-router';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -23,6 +24,7 @@ describe('AppComponent', () => {
       ],
       imports: [
         CovalentCoreModule,
+        LocalizeRouterModule.forRoot([]),
         TranslateModule.forRoot(),
         RouterModule.forRoot([]),
         ContactModule,
@@ -38,7 +40,6 @@ describe('AppComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should be created', () => {

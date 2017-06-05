@@ -19,7 +19,7 @@
           <img md-card-avatar class="size-50"
                alt="work.name"
                [src]="getAvatar(work.slug)">
-          <md-card-title><a [routerLink]="['/works', work.slug]"> {{ work.name }} </a></md-card-title>
+          <md-card-title><a [routerLink]="['/works' | localize, work.slug]"> {{ work.name }} </a></md-card-title>
           <md-card-subtitle>{{ getRemoteTranslation(work.subtitle) }}</md-card-subtitle>
         </md-card-header>
         <img md-card-image alt="{{work.name}}"

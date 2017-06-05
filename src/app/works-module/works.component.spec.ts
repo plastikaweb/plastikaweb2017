@@ -12,6 +12,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from '../shared/shared.module';
 import { WorksService } from '../shared/works-service/works.service';
 import { WorksComponent } from './works.component';
+import { LocalizeRouterModule } from 'localize-router';
 
 describe('Works Component', () => {
   let component: WorksComponent;
@@ -22,6 +23,7 @@ describe('Works Component', () => {
       imports: [
         BrowserAnimationsModule,
         CovalentCoreModule,
+        LocalizeRouterModule.forRoot([]),
         RouterModule.forRoot([]),
         TranslateModule.forRoot(),
         LazyLoadImageModule,

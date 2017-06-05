@@ -38,5 +38,8 @@
     "quote1": "At the moment I am especially interested in projects based on <strong>angular (version >= 2) and typescript</strong>.",
     "quote2": "Likewise, all projects with a high <strong>social and cooperative</strong> content have priority.",
     "warning": "<strong>I prefer contact by email</strong>.<br>I usually do not answer phone calls while I work, because I need to be focused on the development my clients deserve.<br>I have very bad memory, and any telephone conversation about work should be complemented with a summary via email. So, why not directly use email?<br>Hope you understand."
-  }
+  },
+  "who": "who",
+  "works": "works",
+  "contact": "contact"
 }

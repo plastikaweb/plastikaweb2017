@@ -7,12 +7,14 @@ import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/bundles/app.module';
 
 import { MainContentComponent } from './main-content.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { LocalizeRouterModule } from 'localize-router';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     TranslateModule,
+    LocalizeRouterModule,
     CovalentCoreModule,
     Ng2BreadcrumbModule.forRoot()
   ],

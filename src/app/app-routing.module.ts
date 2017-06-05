@@ -6,7 +6,7 @@ import { ContactComponent } from './contact-module/contact.component';
 import { WorksComponent } from './works-module/works.component';
 import { WorkComponent } from './works-module/work/work.component';
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
   { path: 'who', component: WhoComponent },
   { path: 'works', component: WorksComponent },
   { path: 'works/:slug', component: WorkComponent },

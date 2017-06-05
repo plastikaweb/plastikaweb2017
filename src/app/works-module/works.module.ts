@@ -11,11 +11,13 @@ import { ArrayExtractPipe } from '../pipes/array-extract.pipe';
 import { firebaseConfig } from '../../config/firebase.config';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from '../shared/shared.module';
+import { LocalizeRouterModule } from 'localize-router';
 
 @NgModule({
   imports: [
     CovalentCoreModule,
     TranslateModule,
+    LocalizeRouterModule,
     RouterModule,
     LazyLoadImageModule,
     AngularFireModule.initializeApp(firebaseConfig),

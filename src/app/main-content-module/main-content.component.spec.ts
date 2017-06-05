@@ -3,6 +3,7 @@ import { CovalentCoreModule, TdMediaService } from '@covalent/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { APP_BASE_HREF } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LocalizeRouterModule } from 'localize-router';
 import { BreadcrumbService, Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
 import 'rxjs/add/operator/map';
 
@@ -29,6 +30,7 @@ describe('Main Content Component', () => {
         AppRoutingModule,
         CovalentCoreModule,
         NgxChartsModule,
+        LocalizeRouterModule.forRoot([]),
         TranslateModule.forRoot(),
         Ng2BreadcrumbModule.forRoot(),
         WhoModule,
