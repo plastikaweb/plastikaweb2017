@@ -1,10 +1,11 @@
 import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
-import { CovalentCoreModule, TdMediaService } from '@covalent/core';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { APP_BASE_HREF } from '@angular/common';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
+import { CovalentCoreModule, TdMediaService } from '@covalent/core';
 import { LocalizeRouterModule } from 'localize-router';
-import { BreadcrumbService, Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import 'rxjs/add/operator/map';
 
 import { AppRoutingModule } from '../app-routing.module';
@@ -13,6 +14,7 @@ import { WhoModule } from '../who-module/who.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { WorksModule } from '../works-module/works.module';
 import { ContactModule } from '../contact-module/contact.module';
+import { BreadcrumbControlComponent } from './breadcrumb-control/breadcrumb-control.component';
 
 describe('Main Content Component', () => {
   let component: MainContentComponent;
@@ -22,9 +24,9 @@ describe('Main Content Component', () => {
     TestBed.configureTestingModule({
       providers: [
         TdMediaService,
-        BreadcrumbService,
         TranslateService,
-        { provide: APP_BASE_HREF, useValue: '/' }
+        { provide: APP_BASE_HREF, useValue: '/' },
+        BreadcrumbService
       ],
       imports: [
         AppRoutingModule,
@@ -39,7 +41,8 @@ describe('Main Content Component', () => {
       ],
       declarations: [
         MainContentComponent,
-        SidenavComponent
+        SidenavComponent,
+        BreadcrumbControlComponent
       ]
     })
       .compileComponents();

@@ -40,9 +40,9 @@ module.exports = function (config) {
           functions: 60
         },
         each: {
-          statements: 60,
-          branches: 60,
-          lines: 60,
+          statements: 50,
+          branches: 50,
+          lines: 50,
           functions: 40
         }
       }

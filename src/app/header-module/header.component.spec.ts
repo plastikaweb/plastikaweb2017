@@ -6,6 +6,7 @@ import { APP_BASE_HREF } from '@angular/common';
 
 import { HeaderComponent } from './header.component';
 import { LanguageMenuComponent } from './language-menu/language-menu.component';
+import { LocalizeParser, LocalizeRouterModule } from 'localize-router';
 
 describe('Header Component', () => {
   let component: HeaderComponent;
@@ -16,9 +17,12 @@ describe('Header Component', () => {
       imports: [
         CovalentCoreModule,
         TranslateModule.forRoot(),
-        RouterModule.forRoot([])
+        RouterModule.forRoot([]),
+        LocalizeRouterModule.forRoot([])
       ],
-      providers: [ { provide: APP_BASE_HREF, useValue: '/' } ],
+      providers: [
+        { provide: APP_BASE_HREF, useValue: '/' }
+      ],
       declarations: [
         HeaderComponent,
         LanguageMenuComponent

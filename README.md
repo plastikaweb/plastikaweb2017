@@ -11,6 +11,7 @@ Just it! You are able to clone, modify, test and use it.
 ### Main packages and applications.
 - This application relies on [Firebase Database](https://firebase.google.com/) as data store mainly. 
 - It implements I18N with browser language detection and translation locally via JSON files and the [NGX-Translation](https://github.com/ngx-translate/core) package.
+- It uses an implementation of routes localization: [localize-router](https://github.com/Greentube/localize-router).
 - It uses also [Teradata Covalent](https://teradata.github.io/covalent) and [Angular Material 2](https://github.com/angular/material2) for UX. 
 - Uses [flexbox](https://www.w3.org/TR/css-flexbox-1) as layout CSS3 mode.
 - Locally implements [AngularFire2](https://github.com/angular/angularfire2) to synchronize with Firebase.
