@@ -1,9 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentCoreModule } from '@covalent/core';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { afDbMock } from '../mocks/works.mock';
 import { ContactComponent } from './contact.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from '../shared/shared.module';
 
 describe('Contact Component', () => {
   let component: ContactComponent;
@@ -14,9 +17,13 @@ describe('Contact Component', () => {
       imports: [
         BrowserAnimationsModule,
         CovalentCoreModule,
-        TranslateModule.forRoot()
+        TranslateModule.forRoot(),
+        SharedModule
       ],
-      declarations: [ ContactComponent ]
+      declarations: [ ContactComponent ],
+      providers: [
+        { provide: AngularFireDatabase, useValue: afDbMock }
+      ]
     })
     .compileComponents();
   }));

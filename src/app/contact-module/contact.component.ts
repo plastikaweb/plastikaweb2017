@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angular/core';
-import { MdIconRegistry } from '@angular/material';
-import { DomSanitizer } from '@angular/platform-browser';
 
 import { fadeAnimation } from '../animations/fade.animation';
+import { ContactService } from '../shared/shared.module';
+import { Observable } from 'rxjs/Observable';
+import { ISocial } from '../models/contact.model';
 
 @Component({
   selector: 'app-contact',
@@ -12,21 +13,18 @@ import { fadeAnimation } from '../animations/fade.animation';
 })
 export class ContactComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation = true;
-  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.display') display = 'block';
 
-  constructor(private iconRegistry: MdIconRegistry,
-              private sanitizer: DomSanitizer) {
+  email$: Observable<string>;
+  tlfn$: Observable<string>;
+  socialMedia$: Observable<ISocial[]>;
+
+  constructor(private contactService: ContactService) {
   }
 
   ngOnInit() {
-    this.iconRegistry.addSvgIcon(
-      'linkedin',
-      this.sanitizer.bypassSecurityTrustResourceUrl(`assets/icons/linkedin.svg`));
-    this.iconRegistry.addSvgIcon(
-      'facebook',
-      this.sanitizer.bypassSecurityTrustResourceUrl(`assets/icons/facebook.svg`));
-    this.iconRegistry.addSvgIcon(
-      'twitter',
-      this.sanitizer.bypassSecurityTrustResourceUrl(`assets/icons/twitter.svg`));
+    this.email$ = this.contactService.findContactData('email');
+    this.tlfn$ = this.contactService.findContactData('tlfn');
+    this.socialMedia$ = this.contactService.findSocialData();
   }
 }

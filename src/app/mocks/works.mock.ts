@@ -33,5 +33,6 @@ const tagList: IWork[] = [ {
 } ];
 
 export const afDbMock = {
-  list: () => Observable.of(tagList)
+  list: () => Observable.of(tagList),
+  object: () => Observable.of(tagList[0])
 };
