@@ -8,6 +8,7 @@ import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/bundles/app.module';
 import { MainContentComponent } from './main-content.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { LocalizeRouterModule } from 'localize-router';
+import { BreadcrumbControlComponent } from './breadcrumb-control/breadcrumb-control.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { LocalizeRouterModule } from 'localize-router';
   ],
   declarations: [
     MainContentComponent,
-    SidenavComponent
+    SidenavComponent,
+    BreadcrumbControlComponent
   ]
 })
 export class MainContentModule { }

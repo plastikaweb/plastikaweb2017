@@ -10,6 +10,6 @@
 </a>
 <app-language-menu [languages]="languages"
                    [currentLang]="currentLang"
-                   [changeLangMessage]="changeLangMessage"
+                   [changeLangMessage]="changeLangMessage$ | async"
                    (emitCurrentLang)="onChangeLang($event)">
 </app-language-menu>

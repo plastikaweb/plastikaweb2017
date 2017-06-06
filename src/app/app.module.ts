@@ -4,7 +4,7 @@ import { CovalentCoreModule } from '@covalent/core';
 import { Http } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import './rxjs-extensions';
 
 import { AppComponent } from './app.component';
@@ -14,7 +14,7 @@ import { MainContentModule } from './main-content-module/main-content.module';
 import { WorksModule } from './works-module/works.module';
 import { WhoModule } from './who-module/who.module';
 import { ContactModule } from './contact-module/contact.module';
-import { localizeLoaderFactory, LocalizeParser, LocalizeRouterModule } from 'localize-router';
+import { LocalizeRouterModule } from 'localize-router';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
