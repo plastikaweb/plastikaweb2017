@@ -1,6 +1,6 @@
 @import 'theme';
 
-// general styling
+// general anchor styling
 a {
   color: mat-color($primary, 500);
 }
@@ -75,4 +75,9 @@ breadcrumb {
   to {
     opacity: 1;
   }
+}
+
+// get rid of nowrap white-space on contact component lists
+app-contact .mat-list[dense] .mat-list-item .mat-line {
+  white-space: inherit;
 }
