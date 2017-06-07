@@ -5,6 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ActivityIndicatorComponent } from './activity-indicator/activity-indicator.component';
 import { WorksService } from './works-service/works.service';
 import { ContactService } from './contact-service/contact.service';
+import { SkillsService } from './skills-service/skills.service';
 
 @NgModule({
   imports: [
@@ -12,10 +13,10 @@ import { ContactService } from './contact-service/contact.service';
     TranslateModule
   ],
   declarations: [ ActivityIndicatorComponent ],
-  providers: [ WorksService, ContactService ],
+  providers: [ WorksService, ContactService, SkillsService ],
   exports: [ ActivityIndicatorComponent ]
 })
 export class SharedModule {
 }
 
-export { WorksService, ContactService }
+export { WorksService, ContactService, SkillsService }

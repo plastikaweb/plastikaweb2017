@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CovalentCoreModule } from '@covalent/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
-import { WhoComponent } from './who.component';
+import { SharedModule } from '../shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { WhoComponent } from './who.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [
     CovalentCoreModule,
     TranslateModule,
-    NgxChartsModule
+    NgxChartsModule,
+    SharedModule
   ]
 })
 export class WhoModule {

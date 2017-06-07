@@ -8,57 +8,69 @@
 <md-divider></md-divider>
 <md-card-content>
   <p [innerHTML]="'WHO.description' | translate"></p>
-  <td-expansion-panel *ngFor="let item of data"
-                      [class]="item.class">
-    <ng-template td-expansion-panel-header>
-
-      <div layout="row" flex="100"
-           layout-align="start center">
-        <md-icon flex="10" flex-gt-xs="5"
-                 svgIcon="{{item.skill}}"></md-icon>
-        <h3 flex="90" flex-gt-md="40">{{item.skill}}</h3>
-      </div>
-    </ng-template>
-
-    <td-expansion-summary layout="row" flex="100">
-      <md-progress-bar [value]="item.proficiency"
-                       mode="determinate">
-      </md-progress-bar>
-    </td-expansion-summary>
-    <div layout-gt-sm="row">
-      <md-card flex-gt-sm="30" layout-align="center center">
-        <div class="chart-height push-top push-right-sm">
-          <ngx-charts-linear-gauge
-            [view]="view"
-            [scheme]="colorScheme"
-            [value]="item.proficiency"
-            [valueFormatting]="formatProficiency"
-            [min]="0"
-            [max]="100"
-            [units]="proficiency">
-          </ngx-charts-linear-gauge>
-          <md-divider></md-divider>
-          <ngx-charts-linear-gauge
-            [view]="view"
-            [scheme]="colorScheme"
-            [value]="item.years"
-            [min]="0"
-            [max]="10"
-            [units]="years">
-          </ngx-charts-linear-gauge>
+  <div *ngIf="skills$ | async as skills; else loadingSkills">
+    <td-expansion-panel
+      *ngFor="let skill of skills"
+      [class]="skill.class">
+      <ng-template td-expansion-panel-header>
+        <div layout="row" flex="100"
+             layout-align="start center">
+          <img md-icon flex="10" flex-gt-xs="5"
+               class="size-24"
+               src="/assets/icons/{{skill.icon}}">
+          <h3 flex="90" flex-gt-md="40">{{skill.name}}</h3>
         </div>
-      </md-card>
-      <md-card flex-gt-sm="40">
-        <md-card-content [innerHTML]="'WHO.skills.' + item.skill | translate"></md-card-content>
-      </md-card>
-      <md-card flex-gt-sm="30">
-        <md-card-title>Projects</md-card-title>
-        <md-list>
-          <md-list-item>soon...</md-list-item>
-        </md-list>
-      </md-card>
-    </div>
-  </td-expansion-panel>
+      </ng-template>
+
+      <td-expansion-summary layout="row" flex="100">
+        <md-progress-bar [value]="skill.proficiency"
+                         mode="determinate">
+        </md-progress-bar>
+      </td-expansion-summary>
+      <div layout-gt-sm="row">
+        <md-card flex-gt-sm="30" layout-align="center center">
+          <div class="chart-height push-top push-right-sm">
+            <ngx-charts-linear-gauge
+              [view]="view"
+              [scheme]="{domain: [skill.class]}"
+              [value]="skill.proficiency"
+              [valueFormatting]="formatProficiency"
+              [min]="0"
+              [max]="100"
+              [units]="proficiency">
+            </ngx-charts-linear-gauge>
+            <md-divider></md-divider>
+            <ngx-charts-linear-gauge
+              [view]="view"
+              [scheme]="{domain: [skill.class]}"
+              [value]="skill.years"
+              [min]="0"
+              [max]="10"
+              [units]="years">
+            </ngx-charts-linear-gauge>
+          </div>
+        </md-card>
+        <md-card flex-gt-sm="40">
+          <md-card-content [innerHTML]="'WHO.skills.' + skill.slug | translate"></md-card-content>
+        </md-card>
+        <md-card flex-gt-sm="30">
+          <md-card-title>Projects</md-card-title>
+          <md-list>
+            <md-list-item>soon...</md-list-item>
+          </md-list>
+        </md-card>
+      </div>
+    </td-expansion-panel>
+  </div>
+
+  <ng-template #loadingSkills>
+    <md-card-content>
+      <app-activity-indicator
+        [color]="activityColor">
+      </app-activity-indicator>
+    </md-card-content>
+  </ng-template>
+
 </md-card-content>
 
 <md-divider></md-divider>

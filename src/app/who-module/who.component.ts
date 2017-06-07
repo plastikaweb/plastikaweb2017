@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angular/core';
-import { MdIconRegistry } from '@angular/material';
-import { DomSanitizer } from '@angular/platform-browser';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs/Observable';
 
-import { skills } from '../../data/skills';
 import { fadeAnimation } from '../animations/fade.animation';
+import { ISkill } from '../models/skill.model';
+import { SkillsService } from '../shared/skills-service/skills.service';
 
 @Component({
   selector: 'app-who',
@@ -18,16 +18,16 @@ export class WhoComponent implements OnInit {
   @HostBinding('style.display') display = 'block';
 
   view: any[] = [ 200, 100 ];
-  data: any[] = skills;
+  skills$: Observable<ISkill[]>;
   years = '';
   proficiency = '';
   colorScheme = {
     domain: [ '#BF360C' ]
   };
+  activityColor = 'warn';
 
-  constructor(private iconRegistry: MdIconRegistry,
-              private sanitizer: DomSanitizer,
-              private translate: TranslateService) {
+  constructor(private translate: TranslateService,
+              private skillsService: SkillsService) {
   }
 
   ngOnInit() {
@@ -38,11 +38,7 @@ export class WhoComponent implements OnInit {
       .switchMap((e: LangChangeEvent) => this.translate.getTranslation(e.lang))
       .subscribe(translation => this.translateChartsUnits(translation));
 
-    this.data.forEach((skill) => {
-      this.iconRegistry.addSvgIcon(
-        skill.skill,
-        this.sanitizer.bypassSecurityTrustResourceUrl(`assets/icons/${skill.icon}`));
-    });
+    this.skills$ = this.skillsService.findAllActiveSkills();
   }
 
   formatProficiency(proficiency) {
@@ -53,4 +49,5 @@ export class WhoComponent implements OnInit {
     this.proficiency = translation.WHO.proficiency;
     this.years = translation.WHO.years;
   }
+
 }
