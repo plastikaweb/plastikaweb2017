@@ -58,7 +58,6 @@ Thumbs.db
 
 # Firebase Project Files
 /functions/
-/firebase.json
 /Y
 
 # Internal temporary files

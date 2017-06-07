@@ -26,15 +26,9 @@ export class AppComponent implements OnInit {
     const language = routeLang ? routeLang : (this.translate.getLangs().indexOf(browserLang) !== -1 ?
       browserLang : this.translate.defaultLang);
     this.localize.changeLanguage(language);
-    // force change lang detection
-    // setTimeout( (lang) => {
-    //   this.onChangeLang(lang);
-    // }, 2000, language);
-
   }
 
   onChangeLang(lang) {
-    console.log(lang);
     this.localize.changeLanguage(lang);
   }
 
