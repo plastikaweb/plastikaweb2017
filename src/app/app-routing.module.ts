@@ -10,7 +10,6 @@ export const appRoutes: Routes = [
   { path: 'who', component: WhoComponent },
   { path: 'works', component: WorksComponent },
   { path: 'works/:slug', component: WorkComponent },
-  // { path: 'works', loadChildren: 'app/works-module/works.module#WorksModule' },
   { path: 'contact', component: ContactComponent },
   { path: '', redirectTo: '/who', pathMatch: 'full' },
   { path: '**', redirectTo: '/who', pathMatch: 'full' }

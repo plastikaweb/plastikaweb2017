@@ -13,8 +13,7 @@ import { WorksService } from '../shared/shared.module';
   selector: 'app-works',
   templateUrl: './works.component.html',
   styleUrls: [ './works.component.scss' ],
-  animations: [ fadeAnimation ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  animations: [ fadeAnimation ]
 })
 export class WorksComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation = true;

@@ -21,22 +21,21 @@ export class AppComponent implements OnInit {
     this.translate.defaultLang = langConfig.defaultLang;
     const browserLang = this.translate.getBrowserLang();
     const routeLang = this.localizeParser.getLocationLang();
-    // initial language based on =>
-    // 1: route lang segment / 2: browser lang / 3: default app lang
+    // // initial language based on =>
+    // // 1: route lang segment / 2: browser lang / 3: default app lang
     const language = routeLang ? routeLang : (this.translate.getLangs().indexOf(browserLang) !== -1 ?
       browserLang : this.translate.defaultLang);
-
+    this.localize.changeLanguage(language);
     // force change lang detection
-    setTimeout( (lang) => {
-      this.onChangeLang(lang);
-    }, 0, language);
-
+    // setTimeout( (lang) => {
+    //   this.onChangeLang(lang);
+    // }, 2000, language);
 
   }
 
   onChangeLang(lang) {
+    console.log(lang);
     this.localize.changeLanguage(lang);
-    this.translate.use(lang);
   }
 
 }

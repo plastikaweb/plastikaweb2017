@@ -1,4 +1,4 @@
 export const langConfig = {
   defaultLang: 'en',
-  languages: [ 'en', 'es', 'ca' ]
+  languages: [ 'en', 'ca', 'es' ]
 };
