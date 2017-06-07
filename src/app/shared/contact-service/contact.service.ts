@@ -16,8 +16,10 @@ export class ContactService {
       .first();
   }
 
-  findSocialData(): Observable<ISocial[]> {
-    return this.db.list('/contact/social')
+  findSocialData(section = 'contact'): Observable<ISocial[]> {
+    return this.db.list('/contact/social', {
+      query: { orderByChild: 'section', equalTo: section }
+    })
       .first();
   }
 

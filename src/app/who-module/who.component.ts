@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { fadeAnimation } from '../animations/fade.animation';
 import { ISkill } from '../models/skill.model';
 import { SkillsService } from '../shared/skills-service/skills.service';
+import { ITranslation } from '../models/work.model';
 
 @Component({
   selector: 'app-who',
@@ -21,9 +22,6 @@ export class WhoComponent implements OnInit {
   skills$: Observable<ISkill[]>;
   years = '';
   proficiency = '';
-  colorScheme = {
-    domain: [ '#BF360C' ]
-  };
   activityColor = 'warn';
 
   constructor(private translate: TranslateService,
@@ -48,6 +46,10 @@ export class WhoComponent implements OnInit {
   translateChartsUnits(translation) {
     this.proficiency = translation.WHO.proficiency;
     this.years = translation.WHO.years;
+  }
+
+  getRemoteTranslation(item: ITranslation): string {
+    return item[ this.translate.currentLang ];
   }
 
 }

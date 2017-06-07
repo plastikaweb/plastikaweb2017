@@ -4,50 +4,44 @@ import { data } from './data/projects';
 
 initializeApp(firebaseConfig);
 
-const projectsRef = database().ref('projects');
+const worksRef = database().ref('works');
 const tagsRef = database().ref('tags');
+const contactRef = database().ref('contact');
+const skillsRef = database().ref('skills');
+
+console.log('adding contact');
+contactRef.set(data.contact);
 
 data.tags.forEach(tag => {
-
   console.log('adding tag', tag.name);
-
   tagsRef.push({
     name: tag.name
   });
 });
-data.projects.forEach(project => {
 
-  console.log('adding projects', project.name);
+data.skills.forEach(skill => {
+  console.log('adding skill', skill.name);
+  skillsRef.push(skill);
+});
 
-  // tags per projects
-  const association = database().ref('tagsPerProject');
+data.works.forEach(work => {
 
-    let proj = projectsRef.push({
-      description: project.description,
-      subtitle: project.subtitle,
-      name: project.name,
-      url: project.url,
-      repo: project.repo,
-      year: project.year,
-      client: project.client,
-      partner: project.partner,
-      active: project.active,
-      opensource: project.opensource,
-      tools: project.tools,
-      tags: project.tags,
-      slug: project.slug,
-      order: project.order
-    }).key;
+  console.log('adding works', work.name);
 
-    project.tags.split(',').forEach((tag: any) => {
+  // tags per work
+  const association = database().ref('tagsPerWork');
+
+    let proj = worksRef.push(work).key;
+
+    work.tags.split(',').forEach((tag: any) => {
       tagsRef.on('value', function (snap) {
         let allTags = snap.val();
         for (var key in allTags) {
           let tagName = allTags[ key ].name;
           if (tag === tagName) {
-            const tagsPerProject = association.child(proj);
-            const tagProjectAssociation = tagsPerProject.child(key);
-            tagProjectAssociation.set(true);
+            const tagsPerWork = association.child(proj);
+            const tagWorkAssociation = tagsPerWork.child(key);
+            tagWorkAssociation.set(true);
           }
         }
       });

@@ -1,13 +1,16 @@
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { CovalentCoreModule } from '@covalent/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { APP_BASE_HREF } from '@angular/common';
-import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'rxjs/add/operator/switchMap';
 
-import { WhoComponent } from './who.component';
+import { afDbMock } from '../mocks/works.mock';
+import { SharedModule } from '../shared/shared.module';
 import { transMock } from '../mocks/translate.mock';
+import { WhoComponent } from './who.component';
 
 describe('Who Component', () => {
   let component: WhoComponent;
@@ -18,13 +21,16 @@ describe('Who Component', () => {
         imports: [
           CovalentCoreModule,
           BrowserAnimationsModule,
-          NgxChartsModule
+          NgxChartsModule,
+          TranslateModule.forRoot(),
+          SharedModule
         ],
         providers: [
           { provide: APP_BASE_HREF, useValue: '/' },
-          { provide: TranslateService, useValue: transMock }
+          { provide: TranslateService, useValue: transMock },
+          { provide: AngularFireDatabase, useValue: afDbMock }
         ],
-        declarations: [ WhoComponent, TranslatePipe ]
+        declarations: [ WhoComponent ]
       })
         .compileComponents();
     })

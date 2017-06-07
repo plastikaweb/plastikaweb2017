@@ -7,12 +7,14 @@ import { afDbMock } from '../../mocks/works.mock';
 describe('ContactService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ContactService,
-        { provide: AngularFireDatabase, useValue: afDbMock }]
+      providers: [
+        ContactService,
+        { provide: AngularFireDatabase, useValue: afDbMock }
+      ]
     });
   });
 
-  it('should be created', inject([ContactService], (service: ContactService) => {
+  it('should be created', inject([ ContactService ], (service: ContactService) => {
     expect(service).toBeTruthy();
   }));
 });

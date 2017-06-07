@@ -51,7 +51,10 @@
           </div>
         </md-card>
         <md-card flex-gt-sm="40">
-          <md-card-content [innerHTML]="'WHO.skills.' + skill.slug | translate"></md-card-content>
+          <md-card-content>
+            <h3>{{ getRemoteTranslation(skill.legend) }}</h3>
+            <div [innerHTML]="getRemoteTranslation(skill.description)"></div>
+          </md-card-content>
         </md-card>
         <md-card flex-gt-sm="30">
           <md-card-title>Projects</md-card-title>

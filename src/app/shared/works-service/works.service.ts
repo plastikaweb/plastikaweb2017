@@ -11,13 +11,13 @@ export class WorksService {
   }
 
   findAllActiveWorks(): Observable<IWork[]> {
-    return this.db.list('/projects', {
+    return this.db.list('/works', {
       query: { orderByChild: 'active', equalTo: true }
     });
   }
 
   findWorkBySlug(workSlug: string): Observable<IWork> {
-    return this.db.list('/projects', {
+    return this.db.list('/works', {
       query: { orderByChild: 'slug', equalTo: workSlug }
     })
       .map(data => data[ 0 ])

@@ -1,6 +1,42 @@
 // fill with the correct data
 
 export const data: any = {
+  contact: {
+    'email': 'info@plastikaweb.com',
+    'social': {
+      'facebook': {
+        'icon': 'facebook.svg',
+        'name': 'facebook',
+        'url': 'https://www.facebook.com/plastikaweb',
+        'section': 'contact'
+      },
+      'linkedin': {
+        'icon': 'linkedin.svg',
+        'name': 'linkedin',
+        'url': 'https://www.linkedin.com/in/plastikaweb',
+        'section': 'contact'
+      },
+      'twitter': {
+        'icon': 'twitter.svg',
+        'name': 'twitter',
+        'url': 'https://twitter.com/plastikaweb',
+        'section': 'contact'
+      },
+      'github': {
+        'icon': 'github.svg',
+        'name': 'github',
+        'url': 'https://github.com/plastikaweb',
+        'section': 'header'
+      },
+      'plastikaweb': {
+        'icon': 'w.svg',
+        'name': 'plastikaweb',
+        'url': 'https://www.plastikaweb.com',
+        'section': 'header'
+      }
+    },
+    'tlfn': '(+34) 659 694 493'
+  },
   tags: [
     {
       'name': 'angular'
@@ -36,7 +72,7 @@ export const data: any = {
       'name': 'flash'
     }
   ],
-  projects: [
+  works: [
     {
       'active': 0,
       'name': 'Plastikaweb',
@@ -52,7 +88,11 @@ export const data: any = {
       'client': '',
       'partner': '',
       'opensource': false,
-      'description': '',
+      'description': {
+        es: 'Mi página personal',
+        ca: 'La meva pàgina personal',
+        en: 'My personal site'
+      },
       'tools': `Angular (4.0.1), NGX-translate, NGX-charts, Angular Material 2,
               Teradata Covalent, Flex Layout, Firebase, Angularfire2, Angular/cli,
               typescript, jasmine, karma, codecov, commitizen, travis, github`,
@@ -61,210 +101,341 @@ export const data: any = {
       'pics': ''
     },
     {
-      'active': 1,
+      'active': true,
+      'description': {
+        'ca': '<p>Projecte <strong>opensource</strong> i col&middot;laboratiu realitzat amb la gent maca de <a title="Adab1ts " href="https://www.adabits.org/" target="_blank"> Adab1ts</a>.</p> <p>Cercador d\'associacions de ve&iuml;ns, utilitzant&nbsp;<strong>angular</strong> amb <strong><a title="ngrx/store" href="https://github.com/ngrx/store" target="_blank">ngrx/store</a></strong>&nbsp;i <strong><a title="Teradata covalent" href="https://teradata.github.io/covalent/" target="_blank">Teradata covalent</a>&nbsp;/ <a title="Angular Material" href="https://material.angular.io/" target="_blank">Angular Material</a></strong>&nbsp;com frameworks UI utilitzant <strong>flexbox</strong> i media queries pel disseny responsive.</p> <p>De la mateixa manera i seguint la filosofia opensource, es va triar&nbsp;<a title="leaflet" href="http://leafletjs.com/" target="_blank">l<strong>eaflet</strong></a>&nbsp;com a llibreria pel mapa amb el motor de geocodificaci&oacute; de <strong><a title="mapzen" href="https://mapzen.com/documentation/mapzen-js/api-reference/#geocoder-control" target="_blank">mapzen</a></strong>&nbsp;i <strong><a title="geofire-js" href="https://github.com/firebase/geofire-js" target="_blank">geofire-js</a></strong>&nbsp;per realitzar el geosearching radial a partir d\'un punt del mapa.</p> <p>El projecte est&agrave; obert a col&middot;laboracions i en desenvolupament i millora continuus.</p>',
+        'en': '<p>Opensource and collaborative project developed with the nice people of&nbsp;<a title="Adab1ts " href="https://www.adabits.org/" target="_blank">Adab1ts</a>.</p> <p>Neighborhood associations finder, using <strong>angular</strong> with&nbsp;<strong><a title="ngrx/store" href="https://github.com/ngrx/store" target="_blank">ngrx/store</a></strong>&nbsp;and&nbsp;<strong><a title="Teradata covalent" href="https://teradata.github.io/covalent/" target="_blank">Teradata covalent</a>&nbsp;/&nbsp;<a title="Angular Material" href="https://material.angular.io/" target="_blank">Angular Material</a></strong>&nbsp;as UI frameworks using <strong>flexbox</strong> and media queries for responsive design.</p> <p>In the same way and following the opensource philosophy,&nbsp;<a title="leaflet" href="http://leafletjs.com/" target="_blank">l<strong>eaflet</strong></a>&nbsp;was used as a map library with the&nbsp;<strong><a title="mapzen" href="https://mapzen.com/documentation/mapzen-js/api-reference/#geocoder-control" target="_blank">mapzen</a></strong>&nbsp;geocoding engine and&nbsp;<strong><a title="geofire-js" href="https://github.com/firebase/geofire-js" target="_blank">geofire-js</a></strong>&nbsp;to perform radial geosearching from a map point.</p> <p>The project is open to collaborations and in development and continuous improvement.</p>',
+        'es': '<p>Proyecto <strong>opensource</strong> y colaborativo realizado con la gente maja de&nbsp;<a title="Adab1ts " href="https://www.adabits.org/" target="_blank">Adab1ts</a>.</p> <p>Buscador de asociaciones de vecinos, usando <strong>angular</strong> con&nbsp;<strong><a title="ngrx/store" href="https://github.com/ngrx/store" target="_blank">ngrx/store</a></strong>&nbsp;y&nbsp;<strong><a title="Teradata covalent" href="https://teradata.github.io/covalent/" target="_blank">Teradata covalent</a>&nbsp;/&nbsp;<a title="Angular Material" href="https://material.angular.io/" target="_blank">Angular Material</a></strong>&nbsp;como frameworks UI usando <strong>flexbox</strong> y media queries para el dise&ntilde;o responsive.</p> <p>Del mismo modo y siguiendo la filosof&iacute;a opensource, se eligi&oacute;&nbsp;<a title="leaflet" href="http://leafletjs.com/" target="_blank">l<strong>eaflet</strong></a> como librer&iacute;a para el mapa con el motor de geocodificaci&oacute;n de&nbsp;<strong><a title="mapzen" href="https://mapzen.com/documentation/mapzen-js/api-reference/#geocoder-control" target="_blank">mapzen</a></strong>&nbsp;y&nbsp;<strong><a title="geofire-js" href="https://github.com/firebase/geofire-js" target="_blank">geofire-js</a></strong>&nbsp;para realizar el geosearching radial a partir de un punto del mapa.</p> <p>El proyecto est&aacute; abierto a colaboraciones y en desarrollo y mejora continuo.</p>'
+      },
       'name': 'Veinapp',
-      'subtitle': {
-        es: 'Buscador de AAVV de Cataluña',
-        ca: 'Cercador d\'AV de Catalunya',
-        en: 'Search for Neighborhood Associations of Catalonia'
-      },
-      'order': 9,
-      'url': '',
-      'repo': 'https://github.com/adab1ts/veinapp',
-      'year': 2017,
-      'client': 'CONFACV',
-      'partner': 'adabits',
       'opensource': true,
-      'description': '',
-      'tools': `Angular (2.4.7), ngrx/store, Angular Material 2, Teradata Covalent,
-          Flex Layout, Firebase, Angularfire2, geofire, Angular/cli, typescript,
-          leaflet, jasmine, karma, github`,
-      'tags': 'angular,firebase,opensource',
+      'order': 9,
+      'partner': 'adabits',
+      'repo': 'https://github.com/adab1ts/veinapp',
       'slug': 'veinapp',
-      'pics': ''
-
+      'subtitle': {
+        'ca': 'Cercador d\'AV de Catalunya',
+        'en': 'Search for Neighborhood Associations of Catalonia',
+        'es': 'Buscador de AAVV de Cataluña'
+      },
+      'tags': 'angular,firebase,opensource',
+      'tools': 'Angular (2.4.7), ngrx/store, Angular Material 2, Teradata Covalent, Flex Layout, Firebase, Angularfire2, geofire, Angular/cli, typescript, leaflet, jasmine, karma, github',
+      'url': '',
+      'year': 2017
     },
     {
-      'active': 1,
-      'name': 'ADC*E',
-      'subtitle': {
-        en: '1st European Creativity Festival',
-        ca: 'Primer "European Creativity Festival"',
-        es: 'Primer "European Creativity Festival"'
-      },
-      'order': 7,
-      'url': '',
-      'repo': '',
-      'year': 2014,
+      'active': true,
       'client': 'Art Directors Club of Europe',
-      'partner': 'Grapa West Samoa S.L.',
+      'description': {
+        'ca': '<p>Programaci&oacute; en <a title="laravel" href="https://laravel.com/" target="_blank"><strong>Laravel 4.0</strong></a> del backend i frontend.</p> <p>Maquetaci&oacute; amb <a title="HTML5" href="https://developer.mozilla.org/ca/docs/Web/Guide/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>, <a title="CSS3" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>, <a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>.</p> <p>Comportaments amb <a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>,<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>, <a title="javascript" href="https://developer.mozilla.org/ca/docs/Web/JavaScript" target="_blank"><strong>javascript</strong></a>.</p> <p>Estimular, inspirar i motivar s&oacute;n els objectius del <strong>Festival Europeu de la Creativitat</strong>. Un esdeveniment anual organitzat per l\'<strong>ADC*E</strong> per celebrar i recon&egrave;ixer l\'art de la creativitat, el disseny gr&agrave;fic i les noves solucions creatives. Tres dies de confer&egrave;ncies, tallers, premis i espais de networking amb les millors companyies creatives i innovadores europees que compartiran la seva visi&oacute; i experi&egrave;ncia.</p>',
+        'en': '<p><a title="laravel" href="https://laravel.com/" target="_blank"><strong>Laravel 4.0</strong></a>&nbsp;programming of the backend and frontend.</p> <p>Layout with&nbsp;<a title="HTML5" href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>.</p> <p>Behaviors with&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>,&nbsp;<a title="javascript" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><strong>javascript</strong></a>.</p> <p>Stimulate, inspire and motivate the goals behind the <strong>European Creativity Festival</strong>. An annual event organized by the&nbsp;<strong><a title="ADC*E" href="http://www.adceurope.org/" target="_blank">ADC*E</a></strong>&nbsp;to celebrate and recognize the art of creativity, graphic design and new creative solutions. Three days worth of conferences, workshops, awards, and networking spaces with the best European creative and innovative companies who will share their vision and experience.</p>',
+        'es': '<p>Programaci&oacute;n en&nbsp;<a title="laravel" href="https://laravel.com/" target="_blank"><strong>Laravel 4.0</strong></a>&nbsp;del backend y frontend.</p> <p>Maquetaci&oacute;n con&nbsp;<a title="HTML5" href="https://developer.mozilla.org/es/docs/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/es/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>.</p> <p>Comportamientos con&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>,&nbsp;<a title="javascript" href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank"><strong>javascript</strong></a>.</p> <p>Estimular, inspirar y motivar son los objetivos del <strong>Festival Europeo de la Creatividad</strong>. Un evento anual organizado por el&nbsp;<strong><a title="ADC*E" href="http://www.adceurope.org/" target="_blank">ADC*E</a></strong>&nbsp;para celebrar y reconocer el arte de la creatividad, el dise&ntilde;o gr&aacute;fico y las nuevas soluciones creativas. Tres d&iacute;as de conferencias, talleres, premios y espacios de networking con las mejores compa&ntilde;&iacute;as creativas e innovadoras europeas que compartir&aacute;n su visi&oacute;n y experiencia.</p>'
+      },
+      'name': 'ADC*E',
       'opensource': false,
-      'description': '',
-      'tools': 'JQuery, MySQL, PhpStorm, Twitter Bootstrap, Laravel JavaScript, PHP, AJAX, HTML5',
-      'tags': 'bootstrap,laravel,javascript,html5',
+      'order': 7,
+      'partner': 'Grapa West Samoa S.L.',
+      'repo': '',
       'slug': 'adce',
-      'pics': ''
-    },
-    {
-      'active': 1,
-      'name': '¡Te lo mereces!',
       'subtitle': {
-        ca: 'Aplicatiu de facebook promocional',
-        es: 'Aplicación de facebook promocional',
-        en: 'Facebook promo app'
+        'ca': 'Primer "European Creativity Festival"',
+        'en': '1st European Creativity Festival',
+        'es': 'Primer "European Creativity Festival"'
       },
-      'order': 8,
+      'tags': 'bootstrap,laravel,jquery,html5',
+      'tools': 'JQuery, MySQL, PhpStorm, Twitter Bootstrap, Laravel JavaScript, PHP, AJAX, HTML5',
       'url': '',
-      'repo': '',
-      'year': 2014,
-      'client': 'Nespresso',
-      'partner': 'Grapa West Samoa S.L.',
-      'opensource': false,
-      'description': '',
-      'tools': 'JQuery, MySQL, PhpStorm, Twitter Bootstrap, Laravel JavaScript, PHP, AJAX, HTML5, Facebook API',
-      'tags': 'bootstrap,facebook,jquery,html5,laravel',
-      'slug': 'nespresso',
-      'pics': ''
+      'year': 2014
     },
     {
-      'active': 1,
-      'name': '7 magnifics',
-      'subtitle': {
-        ca: 'Microsite',
-        es: 'Microsite',
-        en: 'Microsite'
-      },
-      'order': 6,
-      'url': 'http://7magnifics.com/',
-      'repo': '',
-      'year': 2014,
+      'active': true,
       'client': 'Torres',
-      'partner': 'Grapa West Samoa S.L.',
+      'description': {
+        'ca': '<p>Web&nbsp;responsive&nbsp;per a promoci&oacute; de<strong> 7 magn&iacute;fics</strong>, una selecci&oacute; de vins&nbsp;de&nbsp;<strong><a title="Torres" href="http://www.torres.es/" target="_blank">Torres</a></strong>&nbsp;fent &uacute;s d\'un backend amb&nbsp;<a title="laravel" href="https://laravel.com/" target="_blank"><strong>Laravel 4.0</strong></a>&nbsp;i un frontEnd amb&nbsp;<strong><a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>&nbsp;</strong>i amb un extrany men&uacute; de botons romboides.</p> <p>Desenvolupat&nbsp;mitjan&ccedil;ant l\'ag&egrave;ncia&nbsp;<a title="Grapa West Samoa" href="http://www.grapa.ws" target="_blank">Grapa West Samoa</a>.</p>',
+        'en': '<p>Responsive website for promoting&nbsp;<strong>7 magn&iacute;fics</strong>, a selection of&nbsp;<strong><a title="Torres" href="http://www.torres.es/" target="_blank">Torres</a>\'</strong>s wines&nbsp;using a backend with&nbsp;<a title="laravel" href="https://laravel.com/" target="_blank"><strong>Laravel 4.0</strong></a>&nbsp;and a frontend with&nbsp;<strong><a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap </a></strong>and with a weird menu made of rhomboid&nbsp;buttons.</p> <p>Developed via&nbsp;<a title="Grapa West Samoa" href="http://www.grapa.ws" target="_blank">Grapa West Samoa</a>&nbsp;agency.</p>',
+        'es': '<p>Web responsive para promoci&oacute;n de <strong>7 magn&iacute;fics</strong>, una selecci&oacute;n de vinos de&nbsp;<strong><a title="Torres" href="http://www.torres.es/" target="_blank">Torres</a></strong>&nbsp;usando un backend con&nbsp;<a title="laravel" href="https://laravel.com/" target="_blank"><strong>Laravel 4.0</strong></a>&nbsp;y un frontEnd con&nbsp;<strong><a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>&nbsp;</strong>y con un extra&ntilde;o men&uacute; de&nbsp;botones romboides.</p> <p>Realizado para la agencia <a title="Grapa West Samoa" href="http://www.grapa.ws" target="_blank">Grapa West Samoa</a>.</p>'
+      },
+      'name': '7 magnifics',
       'opensource': false,
-      'description': '',
-      'tools': 'JQuery, MySQL, PhpStorm, Twitter Bootstrap, Laravel JavaScript, PHP, CSS3, HTML5',
-      'tags': 'bootstrap,jquery,html5,laravel',
+      'order': 6,
+      'partner': 'Grapa West Samoa S.L.',
+      'repo': '',
       'slug': '7-magnifics',
-      'pics': ''
+      'subtitle': {
+        'ca': 'Microsite',
+        'en': 'Microsite',
+        'es': 'Microsite'
+      },
+      'tags': 'bootstrap,jquery,css3,laravel,html5',
+      'tools': 'JQuery, MySQL, Twitter Bootstrap, Laravel, CSS3, HTML5',
+      'url': 'http://7magnifics.com/',
+      'year': 2014
     },
     {
-      'active': 1,
-      'name': 'Bienestaralsol',
-      'subtitle': {
-        ca: 'Microsite',
-        es: 'Microsite',
-        en: 'Microsite'
-      },
-      'order': 5,
-      'url': '',
-      'repo': '',
-      'year': 2014,
+      'active': true,
       'client': 'Mussvital',
-      'partner': 'Grapa West Samoa S.L.',
-      'opensource': false,
-      'description': '',
-      'tools': 'JQuery, MySQL, Twitter Bootstrap, Laravel, JavaScript, PHP, CSS3, HTML5, AJAX, PhpStorm',
-      'tags': 'bootstrap,laravel,html5,javascript',
-      'slug': 'bienestaralsol',
-      'pics': ''
-    },
-    {
-      'active': 1,
-      'name': 'Enertrade',
-      'subtitle': {
-        ca: 'lloc empresarial',
-        es: 'web empresarial',
-        en: 'business site'
+      'description': {
+        'ca': '<p>Lloc web per la gama de productes&nbsp;"Bienestar al Sol" de&nbsp;<strong>Mussvital</strong>&nbsp;per la protecci&oacute; contra el sol.</p> <p>Programaci&oacute; amb&nbsp;<a title="laravel" href="https://laravel.com/" target="_blank"><strong>Laravel 4.0</strong></a>&nbsp;del backend i&nbsp;frontend.</p> <p>Maquetaci&oacute; amb&nbsp;<a title="HTML5" href="https://developer.mozilla.org/ca/docs/Web/Guide/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>.</p> <p>Comportaments&nbsp;amb&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>,&nbsp;<a title="javascript" href="https://developer.mozilla.org/ca/docs/Web/JavaScript" target="_blank"><strong>javascript</strong></a>.</p>',
+        'en': '<p>Website about&nbsp;<strong>Mussvital</strong>\'s&nbsp;sun welfare product range.</p> <p>Programming&nbsp;with&nbsp;<a title="laravel" href="https://laravel.com/" target="_blank"><strong>Laravel 4.0</strong></a>&nbsp;of backend and&nbsp;frontend.</p> <p>Layout with&nbsp;<a title="HTML5" href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>.</p> <p>Behaviors with&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>,&nbsp;<a title="javascript" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><strong>javascript</strong></a>.</p>',
+        'es': '<p>Sitio web sobre la gama de productos "Bienestar al Sol" de&nbsp;<strong>Mussvital</strong> para la protecci&oacute;n contra el Sol.</p> <p>Programaci&oacute;n en&nbsp;<a title="laravel" href="https://laravel.com/" target="_blank"><strong>Laravel 4.0</strong></a>&nbsp;del backend y frontend.</p> <p>Maquetaci&oacute;n con&nbsp;<a title="HTML5" href="https://developer.mozilla.org/es/docs/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/es/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>.</p> <p>Comportamientos con&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>,&nbsp;<a title="javascript" href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank"><strong>javascript</strong></a>.</p>'
       },
+      'name': 'Bienestaralsol',
+      'opensource': false,
       'order': 5,
-      'url': 'https://www.enertrade.es/',
+      'partner': 'Grapa West Samoa S.L.',
       'repo': '',
-      'year': 2013,
+      'slug': 'bienestaralsol',
+      'subtitle': {
+        'ca': 'Microsite promocional',
+        'en': 'Promo microsite',
+        'es': 'Microsite promocional'
+      },
+      'tags': 'bootstrap,laravel,html5,javascript',
+      'tools': 'JQuery, MySQL, Twitter Bootstrap, Laravel, JavaScript, PHP, CSS3, HTML5, AJAX, PhpStorm',
+      'url': '',
+      'year': 2014
+    },
+    {
+      'active': true,
       'client': 'Enertrade',
-      'partner': 'Grapa West Samoa S.L.',
+      'description': {
+        'ca': '<p>Lloc web de&nbsp;<strong>Enertrade</strong>, consultora energ&egrave;tica, amb una part p&uacute;blica i una altra privada per a clients on es poden consultar diferents patrons energ&egrave;tics fent &uacute;s de la llibreria&nbsp;<a title="highcharts" href="https://www.highcharts.com/" target="_blank"><strong>highcharts</strong></a>&nbsp;per mostrar diagrames i dades de consum de les diferents empreses a nivell estatal.</p> <p>Programaci&oacute; amb&nbsp;<strong>OOP PHP/MySQL</strong>&nbsp;del backend.</p> <p>Maquetaci&oacute; amb&nbsp;<a title="HTML5" href="https://developer.mozilla.org/ca/docs/Web/Guide/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>.</p> <p>Comportaments&nbsp;amb&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>,&nbsp;<a title="javascript" href="https://developer.mozilla.org/ca/docs/Web/JavaScript" target="_blank"><strong>javascript</strong></a>.</p>',
+        'en': '<p><strong>Enertrade</strong> website, energy consultant, with a public and a private part for customers where different energy standards can be consulted making use of the&nbsp;<a title="highcharts" href="https://www.highcharts.com/" target="_blank"><strong>highcharts</strong></a>&nbsp;library to show diagrams and consumption data of different companies at the state level.</p> <p>Programming with <strong>OOP PHP/MySQL</strong>.</p> <p>Layout with&nbsp;<a title="HTML5" href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>.</p> <p>Behaviors with&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>,&nbsp;<a title="javascript" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><strong>javascript</strong></a>.</p>',
+        'es': '<p>Sitio web de <strong>Enertrade</strong>, consultora energ&eacute;tica, con una parte p&uacute;blica y otra privada para clientes donde se pueden consultar diferentes patrones energ&eacute;ticos haciendo uso de la librer&iacute;a <a title="highcharts" href="https://www.highcharts.com/" target="_blank"><strong>highcharts</strong></a> para mostrar diagramas y datos de consumo de las diferentes empresas a nivel estatal.</p> <p>Programaci&oacute;n con&nbsp;<strong>OOP PHP/MySQL</strong>&nbsp;del backend.</p> <p>Maquetaci&oacute;n con&nbsp;<a title="HTML5" href="https://developer.mozilla.org/ca/docs/Web/Guide/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>.</p> <p>Comportamientos con&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>,&nbsp;<a title="javascript" href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank"><strong>javascript</strong></a>.</p>'
+      },
+      'name': 'Enertrade',
       'opensource': false,
-      'description': '',
-      'tools': 'JQuery, MySQL, Twitter Bootstrap, JavaScript, PHP, CSS3, HTML5, AJAX, PhpStorm',
-      'tags': 'bootstrap,php,jquery,html5',
+      'order': 5,
+      'partner': 'Grapa West Samoa S.L.',
+      'repo': '',
       'slug': 'enertrade',
-      'pics': ''
+      'subtitle': {
+        'ca': 'lloc empresarial',
+        'en': 'business site',
+        'es': 'web empresarial'
+      },
+      'tags': 'bootstrap,php,jquery,html5',
+      'tools': 'JQuery, MySQL, Twitter Bootstrap, JavaScript, PHP, CSS3, HTML5, AJAX',
+      'url': 'https://www.enertrade.es/',
+      'year': 2013
     },
     {
-      'active': 1,
-      'name': 'La Jamoneta',
-      'subtitle': {
-        ca: 'Aplicatiu de facebook promocional',
-        es: 'Aplicación de facebook promocional',
-        en: 'Facebook promo app'
-      },
-      'order': 4,
-      'url': '',
-      'repo': '',
-      'year': 2013,
+      'active': false,
       'client': 'Sánchez Romero Carvajal',
-      'partner': 'Grapa West Samoa S.L.',
-      'opensource': false,
-      'description': '',
-      'tools': 'JQuery, MySQL, Twitter Bootstrap, JavaScript, PHP, CSS3, HTML5, Facebook API',
-      'tags': 'bootstrap,facebook,javascript,html5,php',
-      'slug': 'jamoneta',
-      'pics': ''
-    },
-
-    {
-      'active': 1,
-      'name': 'Anaya Apps',
-      'subtitle': {
-        es: 'Ejercicios educativos',
-        ca: 'Exercicis educatius',
-        es: 'Educational apps'
+      'description': {
+        'ca': '<p>Facebook&nbsp;App&nbsp;per a la campanya de <strong>S&aacute;nchez Romero Carvajal,</strong> <strong>"La&nbsp;Jamoneta"</strong>.</p> <p>Programaci&oacute; amb&nbsp;<strong>PHP&nbsp;<strong>(framework Musca)</strong>.</strong></p> <p>Maquetaci&oacute; amb&nbsp;<a title="HTML5" href="https://developer.mozilla.org/ca/docs/Web/Guide/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>.</p> <p>Comportaments&nbsp;amb&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>,&nbsp;<a title="javascript" href="https://developer.mozilla.org/ca/docs/Web/JavaScript" target="_blank"><strong>javascript</strong></a>.</p>',
+        'en': '<p>Facebook App for the <strong>S&aacute;nchez Romero Carvajal</strong> campaign, <strong>"La Jamoneta"</strong>.</p> <p>Programming with&nbsp;<strong>PHP&nbsp;(Musca framework)</strong>.</p> <p>Layout with&nbsp;<a title="HTML5" href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>.</p> <p>Behaviors with&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>,&nbsp;<a title="javascript" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><strong>javascript</strong></a>.</p>',
+        'es': '<p>Facebook App para la campa&ntilde;a de <strong>S&aacute;nchez Romero Carvajal</strong>, "<strong>La Jamoneta</strong>".</p> <p>Programaci&oacute;n en <strong>PHP</strong> (framwork Musca)&nbsp;del backend y frontend</p> <p>Maquetaci&oacute;n con&nbsp;<a title="HTML5" href="https://developer.mozilla.org/es/docs/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/es/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>.</p> <p>Comportamientos con&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>,&nbsp;<a title="Twitter Bootstrap" href="http://getbootstrap.com/" target="_blank"><strong>Twitter Bootstrap</strong></a>,&nbsp;<a title="javascript" href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank"><strong>javascript</strong></a>.</p> </div> <p>Utilizaci&oacute;n de la <strong>API de Facebook</strong> (PHP y javascript).</p>'
       },
-      'order': 3,
+      'name': 'La Jamoneta',
+      'opensource': false,
+      'order': 4,
+      'partner': 'Grapa West Samoa S.L.',
+      'repo': '',
+      'slug': 'jamoneta',
+      'subtitle': {
+        'ca': 'Aplicatiu de facebook promocional',
+        'en': 'Facebook promo app',
+        'es': 'Aplicación de facebook promocional'
+      },
+      'tags': 'bootstrap,facebook,javascript,html5,php',
+      'tools': 'JQuery, MySQL, Twitter Bootstrap, JavaScript, PHP, CSS3, HTML5, Facebook API',
       'url': '',
-      'repo': '',
-      'year': 2012,
+      'year': 2013
+    },
+    {
+      'active': true,
       'client': 'Anaya Educación',
+      'description': {
+        'ca': '<p><strong>Anaya&nbsp;Educaci&oacute;</strong> va ser creada en 1984 amb l\'objectiu d\'editar una &agrave;mplia gamma de manuals inform&agrave;tics d\'alta qualitat dirigits a tot tipus d\'usuaris de qualsevol nivell, des dels m&eacute;s experts fins als m&eacute;s novells.</p> <p>Programaci&oacute; amb&nbsp;<a title="HTML5" href="https://developer.mozilla.org/ca/docs/Web/Guide/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>, sobre m&uacute;ltiples plataformes i navegadors,&nbsp;amb &uacute;s de drag&amp;drop nadiu, a&uacute;dio, v&iacute;deo, canvas, svg i&nbsp;crossbrowsing.</p>',
+        'en': '<p><strong>Anaya Education</strong> was created in 1984 with the aim of editing a wide range of high quality computer manuals aimed at all types of users of any level, from the most expert to the most novice.</p> <p>Programming in&nbsp;<a title="HTML5" href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>, on multiple platforms and browsers, using native drag &amp; drop,&nbsp;audio, video, canvas, svg and crossbrowsing.</p>',
+        'es': '<p><strong>Anaya Educaci&oacute;n</strong> fue creada en 1984 con el objetivo de editar una amplia gama de manuales inform&aacute;ticos de alta calidad dirigidos a todo tipo de usuarios de cualquier nivel, desde los m&aacute;s expertos hasta los m&aacute;s noveles.</p> <p>Programaci&oacute;n en&nbsp;<a title="HTML5" href="https://developer.mozilla.org/es/docs/HTML/HTML5" target="_blank"><strong>HTML5</strong></a>,&nbsp;<a title="CSS3" href="https://developer.mozilla.org/es/docs/Web/CSS/CSS3" target="_blank"><strong>CSS3</strong></a>,&nbsp;<a title="jquery" href="https://jquery.com/" target="_blank"><strong>jquery</strong></a>, sobre m&uacute;ltiples plataformas y navegadores, con uso de drag&amp;drop nativo, audio, video, canvas, svg y crossbrowsing.</p>'
+      },
+      'name': 'Anaya Apps',
+      'opensource': false,
+      'order': 3,
       'partner': '',
-      'opensource': false,
-      'description': '',
-      'tools': 'JQuery, Aptana Studio, Steinberg Wavelab, JavaScript, XML, AJAX, HTML5, CSS3, JSON',
-      'tags': 'javascript,html5',
+      'repo': '',
       'slug': 'anaya-apps',
-      'pics': ''
+      'subtitle': {
+        'ca': 'Exercicis educatius',
+        'en': 'Educational exercises',
+        'es': 'Ejercicios educativos'
+      },
+      'tags': 'jquery,css3,javascript,html5',
+      'tools': 'JQuery, JavaScript, XML, AJAX, HTML5, CSS3, JSON',
+      'url': '',
+      'year': 2012
     },
     {
-      'active': 1,
-      'name': 'Anke Luckmann',
-      'subtitle': 'Personal site',
-      'order': 2,
-      'url': 'http://www.ankeluckmann.com',
-      'repo': '',
-      'year': 2010,
+      'active': true,
       'client': 'Anke Luckmann',
-      'partner': 'Gominola Creative Media',
+      'description': {
+        'ca': '<p>El lloc &eacute;s una finestra al m&oacute;n on s\'aprofita la impressionant qualitat del treball fotogr&agrave;fic de&nbsp;Anke.&nbsp;<br /><br />Les dades s&oacute;n carregades des de&nbsp;<strong>MySQL</strong>&nbsp;i gestionats pel client mitjan&ccedil;ant un gestor "Pl&iacute;takas"&nbsp;a manera de&nbsp;backend&nbsp;realitzat amb&nbsp;<strong>PHP</strong>&nbsp;i&nbsp;<strong><a title="prototype.js" href="http://prototypejs.org/" target="_blank">prototype.js</a></strong>&nbsp;des d\'on pot carregar els seus treballs, crear t&iacute;tols, arxius de desc&agrave;rrega i&nbsp;tags&nbsp;per a la cerca des del&nbsp;frontend&nbsp;per part dels visitants.<br />S\'aconsegueix un alt rendiment i un&nbsp;redimensionado&nbsp;de les fotografies adaptades a la finestra del navegador gr&agrave;cies a l\'&uacute;s de la programaci&oacute; <strong>Flash</strong>&nbsp;amb<strong><a title="Actionscript 3" href="http://www.adobe.com/devnet/actionscript/learning.html" target="_blank">Actionscript 3</a></strong>.</p>',
+        'en': '<p>The site is a window to the world where it takes advantage of the impressive quality of the photographic work of Anke.</p> <p>The data is uploaded from <strong>MySQL</strong> and managed by the client through a <strong>"Pl&iacute;takas"</strong> manager as a backend made with <strong>PHP</strong> and&nbsp;<strong><a title="prototype.js" href="http://prototypejs.org/" target="_blank">prototype.js</a></strong>&nbsp;from where you can load your works, create titles, download files and tags for searching from the frontend by Part of the visitors.<br />High performance and resizing of photos adapted to the browser window is achieved thanks to the use of <strong>Flash</strong> programming with<strong><a title="Actionscript 3" href="http://www.adobe.com/devnet/actionscript/learning.html" target="_blank">Actionscript 3</a></strong>.</p>',
+        'es': '<p>El sitio es una ventana al mundo donde se aprovecha la impresionante calidad del trabajo fotogr&aacute;fico de Anke.&nbsp;</p><p>Los datos son cargados desde <strong>MySQL</strong> y gestionados por el cliente mediante un gestor <strong>"Pl&iacute;takas"</strong> a modo de backend realizado con <strong>PHP y <a title="prototype.js" href="http://prototypejs.org/" target="_blank">prototype.js</a></strong>&nbsp;desde donde puede cargar sus trabajos, crear t&iacute;tulos, archivos de descarga y tags para la b&uacute;squeda desde el frontend por parte de los visitantes.<br />Se consigue un alto rendimiento y un redimensionado de las fotograf&iacute;as adaptadas a la ventana del navegador gracias al uso de la programaci&oacute;n <strong>Flash</strong> con <strong><a title="Actionscript 3" href="http://www.adobe.com/devnet/actionscript/learning.html" target="_blank">Actionscript 3</a></strong>.</p>'
+      },
+      'name': 'Anke Luckmann',
       'opensource': false,
-      'description': '',
-      'tools': 'ActionScript 3.0, PHP, AJAX, HTML5, CSS3, javascript, prototype',
-      'tags': 'flash,php',
+      'order': 2,
+      'partner': 'Gominola Creative Media',
+      'repo': '',
       'slug': 'anke-luckmann',
-      'pics': ''
+      'subtitle': {
+        'ca': 'Lloc personal',
+        'en': 'Personal site',
+        'es': 'Web personal'
+      },
+      'tags': 'flash,php,javascript',
+      'tools': 'ActionScript 3.0, PHP, AJAX, HTML5, CSS3, javascript, prototype',
+      'url': 'http://www.ankeluckmann.com',
+      'year': 2010
     },
     {
-      'active': 1,
-      'name': 'Ige Bcn',
-      'subtitle': 'business site',
-      'order': 1,
-      'url': 'http://www.igebcn.cat ',
-      'repo': '',
-      'year': 2007,
+      'active': true,
       'client': 'Ige Bcn SL, Gestió d\'Instalacions Esportives',
-      'partner': 'Biloqui',
+      'description': {
+        'ca': '<p>Els reflexos programats atorguen una est&egrave;tica moderna i sofisticada. La concisi&oacute; d\'elements, l\'adaptaci&oacute; d\'aquests a l\'&agrave;rea visible del navegador i el comportament del men&uacute; li proporcionen una sensaci&oacute; d\'espai i simplicitat.<br /><br />Programaci&oacute; amb <strong>Flash</strong>&nbsp;i&nbsp;<strong>Actionscript&nbsp;2.0</strong> usant <strong>XML</strong> per a la c&agrave;rrega de continguts.</p>',
+        'en': '<p>The programmed reflexes give a modern and sophisticated aesthetic. The conciseness of elements, the adaptation of these to the visible area of the browser and the behavior of the menu provide a sense of space and simplicity.</p> <p>Programming with <strong>Flash</strong> and<strong> Actionscript 2.0</strong> using <strong>XML</strong> for content loading.</p>',
+        'es': '<p>Los reflejos programados otorgan una est&eacute;tica moderna y sofisticada. La concisi&oacute;n de elementos, la adaptaci&oacute;n de estos al &aacute;rea visible del navegador y el comportamiento del men&uacute; le proporcionan una sensaci&oacute;n de espacio y simplicidad.</p> <p>Programaci&oacute;n con <strong>Flash</strong> y <strong>Actionscript 2.0</strong> usando <strong>XML</strong> para la carga de contenidos.</p>'
+      },
+      'name': 'Ige Bcn',
       'opensource': false,
-      'description': '',
-      'tools': 'ActionScript 2.0, PHP, XML',
-      'tags': 'flash',
+      'order': 1,
+      'partner': 'Biloqui',
+      'repo': '',
       'slug': 'ige-bcn',
-      'pics': ''
+      'subtitle': {
+        'ca': 'lloc empresarial',
+        'en': 'business site',
+        'es': 'web empresarial'
+      },
+      'tags': 'flash',
+      'tools': 'ActionScript 2.0, XML',
+      'url': 'http://www.igebcn.cat ',
+      'year': 2007
+    }
+  ],
+  skills: [
+    {
+      'active': true,
+      'class': 'red',
+      'icon': 'angular.svg',
+      'name': 'angular',
+      'order': 1,
+      'proficiency': 75,
+      'slug': 'angular',
+      'legend': {
+        es: 'Angular, versión 2 y superiores, implementado con Typescript',
+        ca: 'Angular, versió 2 i superiors, implementat amb Typescript',
+        en: 'Angular, version 2 and above, implemented with Typescript'
+      },
+      'description': {
+        es: '<p>Experiencia con:</p><ul><li>Angular Material2 y Teradata Covalent</li><li>ngrx/store // RxJS</li><li>firebase // angularfire2</li><li>NGX-Translate</li><li>NGX-Charts</li><li>Testeo unitario</li><li>Sistema de animación</li></ul>',
+        ca: '<p>Experiència amb: </p><ul><li>Angular Material2 i Teradata Covalent</li><li>ngrx/store // RxJS</li><li>firebase // angularfire2</li><li>NGX-Translate</li><li>NGX-Charts</li><li>Testeig unitari</li><li>Sistema d\'animació</li></ul>',
+        en: '<p>Experience with: </p><ul><li>Angular Material2 and Teradata Covalent</li><li>ngrx/store // RxJS</li><li>firebase // angularfire2</li><li>NGX-Translate</li><li>NGX-Charts</li><li>Unit testing</li><li>Animation System</li></ul>'
+      },
+      'years': 2
+    },
+    {
+      'active': true,
+      'class': 'yellow',
+      'icon': 'javascript.svg',
+      'name': 'javascript',
+      'order': 2,
+      'proficiency': 85,
+      'slug': 'javascript',
+      'legend': {
+        es: 'ECMAScript 5.1, ES6 y Typescript',
+        ca: 'ECMAScript 5.1, ES6 i Typescript',
+        en: 'ECMAScript 5.1, ES6 and Typescript'
+      },
+      'description': {
+        es: '<p>Experiencia con:</p><ul><li>javascript nativo</li><li>jquery</li><li>manipulación DOM</li><li>async javascript</li><li>programación funcional</li></ul>',
+        ca: '<p>Experiència amb: </p><ul><li>javascript nadiu</li><li>jquery</li><li>manipulació DOM</li><li>async javascript</li><li>programació funcional</li></ul>',
+        en: '<p>Experience with: </p><ul><li>native javascript</li><li>jquery</li><li>DOM manipulation</li><li>async javascript</li><li>functional programming</li></ul>'
+      },
+      'years': 10
+    },
+    {
+      'active': true,
+      'class': 'grey',
+      'icon': 'css3.svg',
+      'name': 'CSS3',
+      'order': 3,
+      'proficiency': 80,
+      'slug': 'css3',
+      'legend': {
+        es: 'CSS3 estándard',
+        ca: 'CSS3 estàndard',
+        en: 'Standard CSS3'
+      },
+      'description': {
+        es: '<p>Experiencia con selectores, transformaciones, transiciones, diseño caja flexible o flexbox.</p>',
+        ca: '<p>Experiència amb selectors, transformacions, transicions, disseny caixa flexible o flexbox.</p>',
+        en: '<p>Experience with selectors, transformations, transitions, flexible box or flexbox design.</p>'
+      },
+      'years': 7
+    },
+    {
+      'active': true,
+      'class': 'purple',
+      'icon': 'bootstrap.svg',
+      'name': 'Responsive Web Development',
+      'order': 4,
+      'proficiency': 75,
+      'slug': 'bootstrap',
+      'legend': {
+        es: 'Twitter Bootstrap',
+        ca: 'Twitter Bootstrap',
+        en: 'Twitter Bootstrap'
+      },
+      'description': {
+        es: '<p>Experiencia con media queries, mobile first approach y configuración de componentes.</p>',
+        ca: '<p>Experiència amb media queries, mobile first approach i configuració de components.</p>',
+        en: '<p>Experience with media queries, mobile first approach and components configuration.</p>'
+      },
+      'years': 5
+    },
+    {
+      'active': true,
+      'class': 'pink',
+      'icon': 'sass.svg',
+      'name': 'Sass',
+      'order': 5,
+      'proficiency': 70,
+      'slug': 'sass',
+      'legend': {
+        es: 'Syntactically Awesome Style Sheets',
+        ca: 'Syntactically Awesome Style Sheets',
+        en: 'Syntactically Awesome Style Sheets'
+      },
+      'description': {
+        es: '<p>Uso de variables, nesting, mixings...</p><p>Aplicación de Compass.</p>',
+        ca: '<p>Ús de variables, nesting, mixings...</p><p>Aplicació de Compass.</p>',
+        en: '<p>Using variables, nesting, mixings...</p><p>Compass.</p>'
+      },
+      'years': 4
+    },
+    {
+      'active': true,
+      'class': 'orange',
+      'icon': 'html5.svg',
+      'name': 'HTML5',
+      'order': 6,
+      'proficiency': 80,
+      'slug': 'html5',
+      'legend': {
+        es: 'HyperText Markup Language',
+        ca: 'HyperText Markup Language',
+        en: 'HyperText Markup Language'
+      },
+      'description': {
+        es: '<p>Experiencia con APIs relacionadas (video, audio, drag and drop, canvas, svg).</p>',
+        ca: '<p>Experiència amb APIs relacionades (video, àudio, drag and drop, canvas, svg).</p>',
+        en: '<p>Semantic web standards.</p><p>Experience with related APIs (video, audio, drag and drop, canvas, svg).</p>'
+      },
+      'years': 7
     }
   ]
 };
