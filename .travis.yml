@@ -18,9 +18,9 @@ before_install:
   - sudo apt-get install -y libappindicator1 fonts-liberation
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo dpkg -i google-chrome*.deb
+before_script:
   - npm install -g firebase-tools
   - npm install -g @angular/cli
-before_script:
   - npm prune
   - export CHROME_BIN=/usr/bin/google-chrome
   - export DISPLAY=:99.0
@@ -31,8 +31,8 @@ script:
   - ng test --single-run --code-coverage
   - ng e2e
 after_success:
+  - firebase deploy --token $FIREBASE_TOKEN
   - npm run report-coverage
-  - firebase deploy --token "$FIREBASE_TOKEN"
 branches:
   only:
     - master
