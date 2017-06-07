@@ -31,8 +31,8 @@ script:
   - ng test --single-run --code-coverage
   - ng e2e
 after_success:
-  - firebase deploy --token $FIREBASE_TOKEN
   - npm run report-coverage
+  - firebase deploy --token $FIREBASE_TOKEN
 branches:
   only:
     - master
