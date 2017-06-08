@@ -82,3 +82,15 @@ breadcrumb {
 app-contact .mat-list[dense] .mat-list-item .mat-line {
   white-space: inherit;
 }
+
+// fix to return easing to skill expansion panel items in who section
+@mixin skillsEase($position, $direction) {
+  app-skill {
+    &:not(:#{$position}) .td-expansion-panel.td-expanded {
+      margin-#{$direction}: 16px;
+    }
+  }
+}
+
+@include skillsEase(first-of-type, top);
+@include skillsEase(last-of-type, bottom);
