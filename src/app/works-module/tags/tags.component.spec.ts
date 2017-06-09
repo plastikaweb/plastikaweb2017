@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { AngularFireDatabase } from 'angularfire2/database';
 
+import { afDbMock } from '../../mocks/works.mock';
 import { TagsComponent } from './tags.component';
+import { TagsService } from '../../shared/tags-service/tags.service';
 
 describe('TagsComponent', () => {
   let component: TagsComponent;
@@ -8,9 +11,13 @@ describe('TagsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TagsComponent ]
+      declarations: [ TagsComponent ],
+      providers: [
+        TagsService,
+        { provide: AngularFireDatabase, useValue: afDbMock }
+        ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

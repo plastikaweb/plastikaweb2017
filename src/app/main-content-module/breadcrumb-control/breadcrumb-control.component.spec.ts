@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { afDbMock } from '../../mocks/works.mock';
 import { BreadcrumbControlComponent } from './breadcrumb-control.component';
-import { WorksService } from '../../shared/works-service/works.service';
+import { TagsService, WorksService } from '../../shared/shared.module';
 
 describe('BreadcrumbControlComponent', () => {
   let component: BreadcrumbControlComponent;
@@ -19,6 +19,7 @@ describe('BreadcrumbControlComponent', () => {
       providers: [
         { provide: APP_BASE_HREF, useValue: '/' },
         WorksService,
+        TagsService,
         { provide: AngularFireDatabase, useValue: afDbMock }
       ],
       imports: [

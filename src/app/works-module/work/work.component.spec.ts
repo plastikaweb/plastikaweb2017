@@ -8,10 +8,10 @@ import { CovalentCoreModule } from '@covalent/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { afDbMock } from '../../mocks/works.mock';
-import { ArrayExtractPipe } from '../../pipes/array-extract.pipe';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from '../../shared/shared.module';
 import { WorkComponent } from './work.component';
+import { TagsComponent } from '../tags/tags.component';
 
 describe('WorkComponent', () => {
   let component: WorkComponent;
@@ -29,7 +29,7 @@ describe('WorkComponent', () => {
       ],
       declarations: [
         WorkComponent,
-        ArrayExtractPipe
+        TagsComponent
       ],
       providers: [
         BreadcrumbService,

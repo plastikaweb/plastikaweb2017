@@ -7,12 +7,12 @@ import { CovalentCoreModule } from '@covalent/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { afDbMock } from '../mocks/works.mock';
-import { ArrayExtractPipe } from '../pipes/array-extract.pipe';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from '../shared/shared.module';
 import { WorksService } from '../shared/works-service/works.service';
 import { WorksComponent } from './works.component';
 import { LocalizeRouterModule } from 'localize-router';
+import { TagsComponent } from './tags/tags.component';
 
 describe('Works Component', () => {
   let component: WorksComponent;
@@ -31,7 +31,7 @@ describe('Works Component', () => {
       ],
       declarations: [
         WorksComponent,
-        ArrayExtractPipe
+        TagsComponent
       ],
       providers: [
         { provide: APP_BASE_HREF, useValue: '/' },

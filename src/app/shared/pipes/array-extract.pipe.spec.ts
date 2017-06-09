@@ -30,13 +30,8 @@ describe('Array Extract Pipe', () => {
       .toEqual([ 'a', 'b', 'c', 'd' ]);
   });
 
-  it('should return an empty array if no data is provided as argument', () => {
-    expect(() => pipe.transform(undefined))
-      .toEqual([]);
-  });
-
   it('should return an error if no array is provided as argument', () => {
-    expect(() => pipe.transform(undefined))
+    expect(() => pipe.transform(null))
       .toThrow(new Error('Requires an Array as input'));
   });
 
