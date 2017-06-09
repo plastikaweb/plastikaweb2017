@@ -6,6 +6,7 @@ import { ActivityIndicatorComponent } from './activity-indicator/activity-indica
 import { WorksService } from './works-service/works.service';
 import { ContactService } from './contact-service/contact.service';
 import { SkillsService } from './skills-service/skills.service';
+import { TagsService } from './tags-service/tags.service';
 
 @NgModule({
   imports: [
@@ -13,10 +14,10 @@ import { SkillsService } from './skills-service/skills.service';
     TranslateModule
   ],
   declarations: [ ActivityIndicatorComponent ],
-  providers: [ WorksService, ContactService, SkillsService ],
+  providers: [ WorksService, ContactService, SkillsService, TagsService ],
   exports: [ ActivityIndicatorComponent ]
 })
 export class SharedModule {
 }
 
-export { WorksService, ContactService, SkillsService }
+export { WorksService, ContactService, SkillsService, TagsService }

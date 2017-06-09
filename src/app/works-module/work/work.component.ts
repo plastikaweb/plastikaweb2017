@@ -5,9 +5,11 @@ import { Subscription } from 'rxjs/Subscription';
 import { TranslateService } from '@ngx-translate/core';
 
 import { fadeAnimation } from '../../animations/fade.animation';
-import { IWork, ITranslation } from '../../models/work.model';
+import { ITranslation, IWork } from '../../models/work.model';
 import { WorksService } from '../../shared/works-service/works.service';
 import { Observable } from 'rxjs/Observable';
+import { ITag } from '../../models/tag.model';
+import { TagsService } from '../../shared/tags-service/tags.service';
 
 @Component({
   selector: 'app-work',
@@ -21,6 +23,7 @@ export class WorkComponent implements OnInit, OnDestroy {
   @HostBinding('style.display') display = 'block';
 
   work$: Observable<IWork>;
+  tags$: Observable<ITag[]>;
   workNameSubscription: Subscription;
   slug;
   loadingImage = 'assets/images/background.jpg';
@@ -28,6 +31,7 @@ export class WorkComponent implements OnInit, OnDestroy {
   activityColor = 'warn';
 
   constructor(private worksService: WorksService,
+              private tagsService: TagsService,
               private translate: TranslateService,
               private breadcrumbService: BreadcrumbService,
               private activatedRoute: ActivatedRoute) {
@@ -38,6 +42,10 @@ export class WorkComponent implements OnInit, OnDestroy {
       .subscribe(param => {
         this.slug = param[ 'slug' ];
         this.work$ = this.worksService.findWorkBySlug(this.slug);
+        this.tags$ = this.work$
+          .switchMap((work: IWork) =>
+            this.tagsService.findTagsByWork(work.$key));
+
         // TODO - think about how to make a single call to service
         this.workNameSubscription = this.worksService
           .findWorkNameBySlug(this.slug)
@@ -65,10 +73,6 @@ export class WorkComponent implements OnInit, OnDestroy {
     assets/projects/${name}/${name}-1.png 600w,
     assets/projects/${name}/${name}400x600.png 400w
     `;
-  }
-
-  getMainTechImage(name) {
-    return `assets/icons/${name}.svg`;
   }
 
   getRemoteTranslation(item: ITranslation): string {

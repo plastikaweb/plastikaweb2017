@@ -24,10 +24,7 @@
        [srcset]="getMainImageSet(work.slug)"
        sizes="(min-width: 960px) 960px, 100vw">
   <md-card-content>
-    <img md-card-avatar class="tag size-32"
-         *ngFor="let tag of work.tags.split(',') | arrayExtract:6"
-         [src]="getMainTechImage(tag)"
-         alt="{{tag}}" title="{{tag}}">
+    <app-tags [workKey]="work.$key"></app-tags>
     <md-divider></md-divider>
     <div [innerHTML]="getRemoteTranslation(work.description)"></div>
     <md-list dense>

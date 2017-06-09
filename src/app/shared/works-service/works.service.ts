@@ -13,7 +13,8 @@ export class WorksService {
   findAllActiveWorks(): Observable<IWork[]> {
     return this.db.list('/works', {
       query: { orderByChild: 'active', equalTo: true }
-    });
+    })
+      .do(console.log);
   }
 
   findWorkBySlug(workSlug: string): Observable<IWork> {

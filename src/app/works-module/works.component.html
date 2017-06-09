@@ -30,10 +30,7 @@
         <md-card-content>
         </md-card-content>
         <md-card-footer>
-          <img md-card-avatar class="tag size-24"
-               *ngFor="let tag of work.tags.split(',') | arrayExtract:5"
-               [src]="getMainTechImage(tag)"
-               alt="{{tag}}" title="{{tag}}">
+          <app-tags [workKey]="work.$key"></app-tags>
         </md-card-footer>
       </md-card>
     </div>

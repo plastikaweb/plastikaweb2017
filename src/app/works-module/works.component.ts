@@ -1,11 +1,8 @@
-import {
-  ChangeDetectionStrategy, Component, ElementRef, HostBinding, OnInit,
-  Renderer2
-} from '@angular/core';
+import { Component, ElementRef, HostBinding, OnInit, Renderer2 } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { TranslateService } from '@ngx-translate/core';
 
-import { IWork, ITranslation } from '../models/work.model';
+import { ITranslation, IWork } from '../models/work.model';
 import { fadeAnimation } from '../animations/fade.animation';
 import { WorksService } from '../shared/shared.module';
 
@@ -40,10 +37,6 @@ export class WorksComponent implements OnInit {
 
   getMainImage(name) {
     return `assets/projects/${name}/${name}-1.png`;
-  }
-
-  getMainTechImage(name) {
-    return `assets/icons/${name}.svg`;
   }
 
   getAvatar(name) {
