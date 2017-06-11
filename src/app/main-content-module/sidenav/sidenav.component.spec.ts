@@ -1,9 +1,9 @@
+import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterModule } from '@angular/router';
 import { CovalentCoreModule } from '@covalent/core';
 import { LocalizeRouterModule } from 'localize-router';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { APP_BASE_HREF } from '@angular/common';
 
 import { SidenavComponent } from './sidenav.component';
 

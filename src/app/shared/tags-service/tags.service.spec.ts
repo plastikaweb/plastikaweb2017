@@ -1,5 +1,5 @@
-import { inject, TestBed } from '@angular/core/testing';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { inject, TestBed } from '@angular/core/testing';
 import 'rxjs/add/observable/combineLatest';
 
 import { afDbMock } from '../../mocks/works.mock';

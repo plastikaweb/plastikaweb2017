@@ -1,9 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentCoreModule } from '@covalent/core';
+import { LocalizeRouterModule } from 'localize-router';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { RouterModule } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -21,7 +23,9 @@ describe('Who Component', () => {
         imports: [
           CovalentCoreModule,
           BrowserAnimationsModule,
+          LocalizeRouterModule.forRoot([]),
           NgxChartsModule,
+          RouterModule.forRoot([]),
           TranslateModule.forRoot(),
           SharedModule
         ],

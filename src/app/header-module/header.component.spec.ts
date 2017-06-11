@@ -1,12 +1,14 @@
+import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CovalentCoreModule } from '@covalent/core';
+import { LocalizeRouterModule } from 'localize-router';
 import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
-import { APP_BASE_HREF } from '@angular/common';
+import 'rxjs/add/operator/switchMap';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { HeaderComponent } from './header.component';
 import { LanguageMenuComponent } from './language-menu/language-menu.component';
-import { LocalizeParser, LocalizeRouterModule } from 'localize-router';
+import { transMock } from '../mocks/translate.mock';
 
 describe('Header Component', () => {
   let component: HeaderComponent;
@@ -21,7 +23,8 @@ describe('Header Component', () => {
         LocalizeRouterModule.forRoot([])
       ],
       providers: [
-        { provide: APP_BASE_HREF, useValue: '/' }
+        { provide: APP_BASE_HREF, useValue: '/' },
+        { provide: TranslateService, useValue: transMock },
       ],
       declarations: [
         HeaderComponent,
@@ -34,6 +37,7 @@ describe('Header Component', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should be created', async(() => {

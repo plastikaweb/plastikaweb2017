@@ -1,5 +1,5 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentCoreModule } from '@covalent/core';
 import { TranslateModule } from '@ngx-translate/core';

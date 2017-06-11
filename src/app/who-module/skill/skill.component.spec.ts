@@ -1,11 +1,17 @@
+import { AngularFireDatabase } from 'angularfire2/database';
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
 import { CovalentCoreModule } from '@covalent/core';
+import { LocalizeRouterModule } from 'localize-router';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { TranslateService } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
+import { afDbMock } from '../../mocks/works.mock';
 import { SkillComponent } from './skill.component';
+import { TagsService } from '../../shared/tags-service/tags.service';
 import { transMock } from '../../mocks/translate.mock';
+import { WorksService } from '../../shared/works-service/works.service';
 
 describe('SkillComponent', () => {
   let component: SkillComponent;
@@ -14,10 +20,19 @@ describe('SkillComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SkillComponent ],
-      imports: [ CovalentCoreModule, NgxChartsModule ],
+      imports: [
+        CovalentCoreModule,
+        LocalizeRouterModule.forRoot([]),
+        NgxChartsModule,
+        RouterModule.forRoot([]),
+        TranslateModule.forRoot()
+      ],
       providers: [
+        WorksService,
+        TagsService,
         { provide: APP_BASE_HREF, useValue: '/' },
-        { provide: TranslateService, useValue: transMock }
+        { provide: TranslateService, useValue: transMock },
+        { provide: AngularFireDatabase, useValue: afDbMock }
       ]
     })
       .compileComponents();

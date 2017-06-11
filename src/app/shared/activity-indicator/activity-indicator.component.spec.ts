@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ActivityIndicatorComponent } from './activity-indicator.component';
 import { CovalentCoreModule } from '@covalent/core';
 import { TranslateModule } from '@ngx-translate/core';
+
+import { ActivityIndicatorComponent } from './activity-indicator.component';
 
 describe('ActivityIndicatorComponent', () => {
   let component: ActivityIndicatorComponent;

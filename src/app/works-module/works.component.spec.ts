@@ -1,18 +1,18 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { APP_BASE_HREF } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { APP_BASE_HREF } from '@angular/common';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentCoreModule } from '@covalent/core';
+import { LocalizeRouterModule } from 'localize-router';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { afDbMock } from '../mocks/works.mock';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from '../shared/shared.module';
-import { WorksService } from '../shared/works-service/works.service';
-import { WorksComponent } from './works.component';
-import { LocalizeRouterModule } from 'localize-router';
 import { TagsComponent } from './tags/tags.component';
+import { WorksComponent } from './works.component';
+import { WorksService } from '../shared/works-service/works.service';
 
 describe('Works Component', () => {
   let component: WorksComponent;

@@ -1,5 +1,5 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { afDbMock } from '../../mocks/works.mock';
 import { TagsComponent } from './tags.component';

@@ -1,5 +1,5 @@
-import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
+import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 import { CovalentCoreModule, TdMediaService } from '@covalent/core';
 import { LocalizeRouterModule } from 'localize-router';
@@ -9,12 +9,12 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import 'rxjs/add/operator/map';
 
 import { AppRoutingModule } from '../app-routing.module';
-import { MainContentComponent } from './main-content.component';
-import { WhoModule } from '../who-module/who.module';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { WorksModule } from '../works-module/works.module';
-import { ContactModule } from '../contact-module/contact.module';
 import { BreadcrumbControlComponent } from './breadcrumb-control/breadcrumb-control.component';
+import { ContactModule } from '../contact-module/contact.module';
+import { MainContentComponent } from './main-content.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { WhoModule } from '../who-module/who.module';
+import { WorksModule } from '../works-module/works.module';
 
 describe('Main Content Component', () => {
   let component: MainContentComponent;
