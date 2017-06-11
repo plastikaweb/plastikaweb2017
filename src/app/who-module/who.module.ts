@@ -6,6 +6,8 @@ import { SharedModule } from '../shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { WhoComponent } from './who.component';
 import { SkillComponent } from './skill/skill.component';
+import { RouterModule } from '@angular/router';
+import { LocalizeRouterModule } from 'localize-router';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { SkillComponent } from './skill/skill.component';
   ],
   imports: [
     CovalentCoreModule,
+    LocalizeRouterModule,
+    RouterModule,
     TranslateModule,
     NgxChartsModule,
     SharedModule

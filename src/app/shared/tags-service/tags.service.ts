@@ -11,13 +11,20 @@ export class TagsService {
   }
 
   findTagsByWork(workKey: string): Observable<ITag[]> {
-    console.log(workKey);
     return this.db.list(`/tagsPerWork/${workKey}`)
       .map(tags => tags.map(
-        tag => this.db.object(`/tags/${tag.$key}`)
+        tag => this.db.object(`/tags/${tag.$value}`)
       ))
-      .mergeMap(tags => Observable.combineLatest(tags))
-      .do(console.log);
+      .mergeMap(tags => Observable.combineLatest(tags));
+  }
+
+  findTagFromName(tagName: string): Observable<any> {
+    return this.db.list(`/tags`, {
+      query: {
+        orderByChild: 'name', equalTo: tagName
+      }
+    })
+      .map(tags => tags[ 0 ]);
   }
 
 }

@@ -43,11 +43,22 @@
         <div [innerHTML]="getRemoteTranslation(skill.description)"></div>
       </md-card-content>
     </md-card>
+
     <md-card flex-gt-sm="30">
-      <md-card-title>Projects</md-card-title>
-      <md-list>
-        <md-list-item>soon...</md-list-item>
-      </md-list>
+      <md-card-content><h3>{{ 'WORKS.title' | translate }}</h3>
+
+        <md-nav-list *ngIf="$worksRelated | async as works;">
+          <a *ngFor="let work of works"
+             md-list-item [routerLink]="['/works' | localize, work.slug]">
+            <img md-list-avatar class="tag size-24"
+                 alt="work.name"
+                 [src]="getAvatar(work.slug)">
+            <!--<md-icon md-list-avatar>face</md-icon>-->
+            <h3 md-line> {{ work.name }} </h3>
+          </a>
+        </md-nav-list>
+
+      </md-card-content>
     </md-card>
   </div>
 </td-expansion-panel>
