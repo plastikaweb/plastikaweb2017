@@ -29,9 +29,12 @@ data.works.forEach(work => {
   console.log('adding works', work.name);
 
   // tags per work
-  const association = database().ref('tagsPerWork');
-
-    let proj = worksRef.push(work).key;
+  const association1 = database().ref('tagsPerWork');
+  const association2 = database().ref('worksPerTag');
+  let {name, active, description, order, partner, client, opensource, repo, slug, subtitle, tools, url, year, tags} = work;
+    let proj = worksRef.push(
+      {name, active, description, order, partner, client, opensource, repo, slug, subtitle, tools, url, year}
+      ).key;
 
     work.tags.split(',').forEach((tag: any) => {
       tagsRef.on('value', function (snap) {
@@ -39,9 +42,12 @@ data.works.forEach(work => {
         for (var key in allTags) {
           let tagName = allTags[ key ].name;
           if (tag === tagName) {
-            const tagsPerWork = association.child(proj);
-            const tagWorkAssociation = tagsPerWork.child(key);
-            tagWorkAssociation.set(true);
+            // tags per work
+            const tagsPerWork = association1.child(proj);
+            tagsPerWork.push(key);
+            // works per tag
+            const worksPerTag = association2.child(key);
+            worksPerTag.push(proj);
           }
         }
       });
