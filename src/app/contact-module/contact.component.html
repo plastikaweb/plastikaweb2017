@@ -11,14 +11,11 @@
        layout="row">
     <div flex="100" flex-gt-md="55" flex-gt-lg="70">
       <h3>{{ 'CONTACT.interested' | translate }}</h3>
-      <md-list dense>
-        <md-list-item>
+      <md-list dense *ngIf="interests$ | async as interests">
+
+        <md-list-item *ngFor="let interest of interests">
           <md-icon md-list-avatar>done</md-icon>
-          <p md-line [innerHTML]="'CONTACT.quote1' | translate"></p>
-        </md-list-item>
-        <md-list-item>
-          <md-icon md-list-avatar>done</md-icon>
-          <p md-line [innerHTML]="'CONTACT.quote2' | translate"></p>
+          <p md-line [innerHTML]="getRemoteTranslation(interest)"></p>
         </md-list-item>
       </md-list>
     </div>

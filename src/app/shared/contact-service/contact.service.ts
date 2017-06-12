@@ -23,4 +23,9 @@ export class ContactService {
       .first();
   }
 
+  findInterests(): Observable<string[]> {
+    return this.db.list('/contact/interests')
+      .first();
+  }
+
 }
