@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component } from '@angular/core';
 import { TdMediaService } from '@covalent/core';
 
 @Component({
@@ -8,16 +8,14 @@ import { TdMediaService } from '@covalent/core';
 })
 export class MainContentComponent implements AfterViewInit {
 
-  constructor(public media: TdMediaService,
-              private cdr: ChangeDetectorRef) {
+  constructor(public media: TdMediaService) {
   }
 
   ngAfterViewInit() {
     // broadcast to all listener observables when loading the page
-    this.cdr.detectChanges();
     // TODO - this fix does not occur in production
     // see https://github.com/Teradata/covalent/issues/425
-    setTimeout(function (media) {
+    setTimeout((media) => {
       media.broadcast();
     }, 0, this.media);
   }

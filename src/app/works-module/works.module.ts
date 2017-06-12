@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { CovalentCoreModule } from '@covalent/core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { LocalizeRouterModule } from 'localize-router';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -15,14 +15,14 @@ import { WorksComponent } from './works.component';
 
 @NgModule({
   imports: [
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     CovalentCoreModule,
-    TranslateModule,
+    LazyLoadImageModule,
     LocalizeRouterModule,
     RouterModule,
-    LazyLoadImageModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
-    SharedModule
+    SharedModule,
+    TranslateModule
   ],
   declarations: [
     TagsComponent,

@@ -1,31 +1,31 @@
-import { NgModule } from '@angular/core';
-import { CovalentCoreModule } from '@covalent/core';
 import { CommonModule } from '@angular/common';
+import { CovalentCoreModule } from '@covalent/core';
+import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/bundles/app.module';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/bundles/app.module';
 
+import { BreadcrumbControlComponent } from './breadcrumb-control/breadcrumb-control.component';
+import { LocalizeRouterModule } from 'localize-router';
 import { MainContentComponent } from './main-content.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { LocalizeRouterModule } from 'localize-router';
-import { BreadcrumbControlComponent } from './breadcrumb-control/breadcrumb-control.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
-    TranslateModule,
-    LocalizeRouterModule,
     CovalentCoreModule,
-    Ng2BreadcrumbModule.forRoot()
+    LocalizeRouterModule,
+    Ng2BreadcrumbModule.forRoot(),
+    RouterModule,
+    TranslateModule
   ],
   exports: [
     MainContentComponent
   ],
   declarations: [
+    BreadcrumbControlComponent,
     MainContentComponent,
-    SidenavComponent,
-    BreadcrumbControlComponent
+    SidenavComponent
   ]
 })
 export class MainContentModule { }

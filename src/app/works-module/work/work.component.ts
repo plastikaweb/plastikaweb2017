@@ -56,6 +56,9 @@ export class WorkComponent implements OnInit, OnDestroy {
             .addFriendlyNameForRoute(`/works/${this.slug}`, name)
           );
       });
+    // TODO it prevents that translate pipes and directives work on first load
+    // TODO find fix
+    this.translate.reloadLang(this.translate.currentLang);
   }
 
   ngOnDestroy() {

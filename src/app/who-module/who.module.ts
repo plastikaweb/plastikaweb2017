@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CovalentCoreModule } from '@covalent/core';
+import { NgModule } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { SharedModule } from '../shared/shared.module';
@@ -11,16 +11,16 @@ import { LocalizeRouterModule } from 'localize-router';
 
 @NgModule({
   declarations: [
-    WhoComponent,
-    SkillComponent
+    SkillComponent,
+    WhoComponent
   ],
   imports: [
     CovalentCoreModule,
     LocalizeRouterModule,
-    RouterModule,
-    TranslateModule,
     NgxChartsModule,
-    SharedModule
+    RouterModule,
+    SharedModule,
+    TranslateModule
   ]
 })
 export class WhoModule {

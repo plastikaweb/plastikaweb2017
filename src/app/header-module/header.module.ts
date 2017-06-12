@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CovalentCoreModule } from '@covalent/core';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './header.component';

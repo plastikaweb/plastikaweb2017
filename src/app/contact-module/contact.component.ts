@@ -31,6 +31,9 @@ export class ContactComponent implements OnInit {
     this.tlfn$ = this.contactService.findContactData('tlfn');
     this.socialMedia$ = this.contactService.findSocialData();
     this.interests$ = this.contactService.findInterests();
+    // TODO it prevents that translate pipes and directives work on first load
+    // TODO find fix
+    this.translate.reloadLang(this.translate.currentLang);
   }
 
   getRemoteTranslation(item: ITranslation): string {

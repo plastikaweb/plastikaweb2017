@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostBinding, OnInit, Renderer2 } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, OnInit, Renderer2 } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -11,7 +11,8 @@ import { ImagesService } from '../shared/images-service/images.service';
   selector: 'app-works',
   templateUrl: './works.component.html',
   styleUrls: [ './works.component.scss' ],
-  animations: [ fadeAnimation ]
+  animations: [ fadeAnimation ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WorksComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation = true;
@@ -36,6 +37,9 @@ export class WorksComponent implements OnInit {
       .parentNode(this.elmRef.nativeElement.parentNode);
 
     this.works$ = this.worksService.findAllActiveWorks();
+    // TODO it prevents that translate pipes and directives work on first load
+    // TODO find fix
+    this.translate.reloadLang(this.translate.currentLang);
   }
 
   getRemoteTranslation(item: ITranslation) {

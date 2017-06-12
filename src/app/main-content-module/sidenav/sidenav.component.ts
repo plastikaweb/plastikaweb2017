@@ -1,8 +1,9 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
-  templateUrl: './sidenav.component.html'
+  templateUrl: './sidenav.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidenavComponent implements OnInit {
 
