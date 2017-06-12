@@ -8,6 +8,7 @@ import { WorksService } from './works-service/works.service';
 import { ContactService } from './contact-service/contact.service';
 import { SkillsService } from './skills-service/skills.service';
 import { TagsService } from './tags-service/tags.service';
+import { ImagesService } from './images-service/images.service';
 
 @NgModule({
   imports: [
@@ -22,11 +23,16 @@ import { TagsService } from './tags-service/tags.service';
     WorksService,
     ContactService,
     SkillsService,
-    TagsService
+    TagsService,
+    ImagesService
   ],
   exports: [ ActivityIndicatorComponent ]
 })
 export class SharedModule {
 }
 
-export { WorksService, ContactService, SkillsService, TagsService }
+export {
+  WorksService, ContactService,
+  SkillsService, TagsService,
+  ImagesService
+}

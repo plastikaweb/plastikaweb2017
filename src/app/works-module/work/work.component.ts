@@ -1,15 +1,16 @@
 import { ChangeDetectionStrategy, Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
+import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { TranslateService } from '@ngx-translate/core';
 
 import { fadeAnimation } from '../../animations/fade.animation';
-import { ITranslation, IWork } from '../../models/work.model';
-import { WorksService } from '../../shared/works-service/works.service';
-import { Observable } from 'rxjs/Observable';
 import { ITag } from '../../models/tag.model';
+import { ITranslation, IWork } from '../../models/work.model';
+import { ImagesService } from '../../shared/images-service/images.service';
 import { TagsService } from '../../shared/tags-service/tags.service';
+import { WorksService } from '../../shared/works-service/works.service';
 
 @Component({
   selector: 'app-work',
@@ -26,15 +27,17 @@ export class WorkComponent implements OnInit, OnDestroy {
   tags$: Observable<ITag[]>;
   workNameSubscription: Subscription;
   slug;
-  loadingImage = 'assets/images/background.jpg';
   offset = 100;
   activityColor = 'warn';
+  imagesService;
 
   constructor(private worksService: WorksService,
               private tagsService: TagsService,
+              private _imagesService: ImagesService,
               private translate: TranslateService,
               private breadcrumbService: BreadcrumbService,
               private activatedRoute: ActivatedRoute) {
+    this.imagesService = _imagesService;
   }
 
   ngOnInit() {
@@ -57,22 +60,6 @@ export class WorkComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.workNameSubscription.unsubscribe();
-  }
-
-  getAvatar(name): string {
-    return `assets/projects/${name}/${name}-avatar.png`;
-  }
-
-  getMainImage(name): string {
-    return `assets/projects/${name}/${name}-1.png`;
-  }
-
-  getMainImageSet(name): string {
-    return `
-    assets/projects/${name}/${name}1200x600.png 1200w,
-    assets/projects/${name}/${name}-1.png 600w,
-    assets/projects/${name}/${name}400x600.png 400w
-    `;
   }
 
   getRemoteTranslation(item: ITranslation): string {

@@ -1,14 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs/Observable';
 
+import { ImagesService } from '../../shared/shared.module';
 import { ISkill } from '../../models/skill.model';
 import { ITranslation, IWork } from '../../models/work.model';
-import { Observable } from 'rxjs/Observable';
 import { WorksService } from '../../shared/shared.module';
 
 @Component({
   selector: 'app-skill',
-  templateUrl: './skill.component.html'
+  templateUrl: './skill.component.html',
+  styleUrls: [ './skill.component.scss' ]
 })
 export class SkillComponent implements OnInit {
 
@@ -17,9 +19,12 @@ export class SkillComponent implements OnInit {
   years = '';
   proficiency = '';
   $worksRelated: Observable<IWork[]>;
+  imagesService;
 
   constructor(private translate: TranslateService,
-              private worksService: WorksService) {
+              private worksService: WorksService,
+              private _imagesService: ImagesService) {
+    this.imagesService = _imagesService;
   }
 
   ngOnInit() {
@@ -44,10 +49,6 @@ export class SkillComponent implements OnInit {
 
   getRemoteTranslation(item: ITranslation): string {
     return item[ this.translate.currentLang ];
-  }
-
-  getAvatar(name) {
-    return `assets/projects/${name}/${name}-avatar.png`;
   }
 
 }

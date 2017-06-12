@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ITranslation, IWork } from '../models/work.model';
 import { fadeAnimation } from '../animations/fade.animation';
 import { WorksService } from '../shared/shared.module';
+import { ImagesService } from '../shared/images-service/images.service';
 
 @Component({
   selector: 'app-works',
@@ -17,15 +18,17 @@ export class WorksComponent implements OnInit {
   @HostBinding('style.display')   display = 'block';
 
   works$: Observable<IWork[]>;
-  loadingImage = 'assets/images/background.jpg';
   offset = 100;
   myScrollContainer;
   activityColor = 'warn';
+  imagesService;
 
   constructor(private worksService: WorksService,
               private elmRef: ElementRef,
+              private _imagesService: ImagesService,
               private renderer: Renderer2,
               private translate: TranslateService) {
+    this.imagesService = _imagesService;
   }
 
   ngOnInit() {
@@ -33,14 +36,6 @@ export class WorksComponent implements OnInit {
       .parentNode(this.elmRef.nativeElement.parentNode);
 
     this.works$ = this.worksService.findAllActiveWorks();
-  }
-
-  getMainImage(name) {
-    return `assets/projects/${name}/${name}-1.png`;
-  }
-
-  getAvatar(name) {
-    return `assets/projects/${name}/${name}-avatar.png`;
   }
 
   getRemoteTranslation(item: ITranslation) {

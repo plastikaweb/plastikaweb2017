@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { afDbMock } from '../../mocks/works.mock';
+import { ImagesService } from '../../shared/images-service/images.service';
 import { SkillComponent } from './skill.component';
 import { TagsService } from '../../shared/tags-service/tags.service';
 import { transMock } from '../../mocks/translate.mock';
@@ -30,6 +31,7 @@ describe('SkillComponent', () => {
       providers: [
         WorksService,
         TagsService,
+        ImagesService,
         { provide: APP_BASE_HREF, useValue: '/' },
         { provide: TranslateService, useValue: transMock },
         { provide: AngularFireDatabase, useValue: afDbMock }

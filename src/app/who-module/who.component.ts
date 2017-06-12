@@ -8,7 +8,6 @@ import { SkillsService } from '../shared/skills-service/skills.service';
 @Component({
   selector: 'app-who',
   templateUrl: './who.component.html',
-  styleUrls: [ './who.component.scss' ],
   animations: [ fadeAnimation ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { afDbMock } from '../../mocks/works.mock';
+import { ImagesService } from '../../shared/images-service/images.service';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from '../../shared/shared.module';
 import { TagsComponent } from '../tags/tags.component';
@@ -33,6 +34,7 @@ describe('WorkComponent', () => {
       ],
       providers: [
         BreadcrumbService,
+        ImagesService,
         { provide: APP_BASE_HREF, useValue: '/' },
         { provide: AngularFireDatabase, useValue: afDbMock }
       ]

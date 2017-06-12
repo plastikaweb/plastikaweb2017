@@ -1,5 +1,5 @@
 @import '~@angular/material/theming';
-@import '../../colors';
+@import '../../../colors';
 
 // style progress bar used for skills fill color and buffer colors
 @mixin skills($fill, $buffer) {
@@ -10,30 +10,37 @@
     background-color: $buffer;
   }
 }
+
 // angular
 /deep/ .red {
   @include skills($red...);
 }
+
 // javascript
 /deep/ .yellow {
   @include skills($yellow...);
 }
+
 // typescript
 /deep/ .blue {
   @include skills($blue...);
 }
+
 // css3
 /deep/ .grey {
   @include skills($grey...);
 }
+
 // sass
 /deep/ .pink {
   @include skills($pink...);
 }
+
 // rwd
 /deep/ .purple {
   @include skills($purple...);
 }
+
 // html5
 /deep/ .orange {
   @include skills($orange...);
@@ -43,7 +50,16 @@
 ngx-charts-linear-gauge {
   display: inline-block;
 }
+
 .chart-height {
   text-align: center;
   height: 205px;
+}
+
+md-card.mat-card {
+  margin: 0;
+  md-card-content {
+    display: table;
+    margin: 0 auto;
+  }
 }
