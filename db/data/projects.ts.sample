@@ -35,7 +35,21 @@ export const data: any = {
         'section': 'header'
       }
     },
-    'tlfn': '(+34) 000 000 000'
+    'tlfn': '(+34) 000 000 000',
+    intro: {
+      en: 'intro',
+      es: 'intro'
+     },
+     interests: [
+        {
+          en: 'text',
+          es: 'text'
+        },
+        {
+           en: 'text',
+           es: 'text'
+         }
+     ]
   },
   tags: [
     {
@@ -72,8 +86,7 @@ export const data: any = {
       },
       'tools': `Angular (4.0.1), Firebase, typescript, jasmine, github`,
       'tags': 'angular,firebase',
-      'slug': 'work-1',
-      'pics': ''
+      'slug': 'work-1'
     },
     {
       'active': true,
