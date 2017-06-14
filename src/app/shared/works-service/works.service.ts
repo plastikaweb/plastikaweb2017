@@ -37,7 +37,7 @@ export class WorksService {
         .map(
           works => works.map(work => this.db.object(`/works/${work.$value}`))
         )
-        .mergeMap(works => Observable.combineLatest(works))
+        .switchMap(works => Observable.combineLatest(works))
       )
       .map(
         (works: IWork[]) => works.filter((work: IWork) => work.active)

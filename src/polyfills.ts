@@ -67,3 +67,8 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  */
 import 'intl';
 import 'intl/locale-data/jsonp/en';
+
+// Safari, in Private Browsing Mode, looks like it supports localStorage but all calls to setItem
+// throw QuotaExceededError. We're going to detect this and just silently drop any calls to setItem
+// to avoid the entire page breaking, without having to do a check at each usage of Storage.
+import 'polyfills/localstorage';

@@ -15,10 +15,10 @@ export class TagsService {
       .map(tags => tags.map(
         tag => this.db.object(`/tags/${tag.$value}`)
       ))
-      .mergeMap(tags => Observable.combineLatest(tags));
+      .switchMap(tags => Observable.combineLatest(tags));
   }
 
-  findTagFromName(tagName: string): Observable<any> {
+  findTagFromName(tagName: string): Observable<ITag> {
     return this.db.list(`/tags`, {
       query: {
         orderByChild: 'name', equalTo: tagName

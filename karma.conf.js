@@ -1,5 +1,6 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/0.13/config/configuration-file.html
+const path = require('path');
 
 module.exports = function (config) {
   config.set({
@@ -31,7 +32,15 @@ module.exports = function (config) {
     },
     istanbulThresholdReporter: {
       src: 'coverage/coverage-final.json',
+      basePath: path.resolve(__dirname, 'src'),
       reporters: ['text'],
+      excludes: [
+        'app/models/*.ts',
+        'app/mocks/*.ts',
+        'config/*.ts',
+        'data/*.ts',
+        'polyfills/*.ts'
+      ],
       thresholds: {
         global: {
           statements: 70,
