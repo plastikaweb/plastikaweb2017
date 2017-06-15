@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { CovalentCoreModule } from '@covalent/core';
+import { CovalentLayoutModule, TdMediaService } from '@covalent/core';
 import { Http } from '@angular/http';
 import { LocalizeRouterModule } from 'localize-router';
 import { NgModule } from '@angular/core';
@@ -28,7 +28,7 @@ export function HttpLoaderFactory(http: Http) {
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    CovalentCoreModule,
+    CovalentLayoutModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -43,7 +43,7 @@ export function HttpLoaderFactory(http: Http) {
     WhoModule,
     WorksModule
   ],
-  providers: [],
+  providers: [ TdMediaService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

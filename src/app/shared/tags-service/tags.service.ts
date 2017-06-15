@@ -10,6 +10,10 @@ export class TagsService {
   constructor(private db: AngularFireDatabase) {
   }
 
+  getTags(): Observable<ITag[]> {
+    return this.db.list('tags');
+  }
+
   findTagsByWork(workKey: string): Observable<ITag[]> {
     return this.db.list(`/tagsPerWork/${workKey}`)
       .map(tags => tags.map(

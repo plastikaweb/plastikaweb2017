@@ -98,7 +98,7 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/flex-layout@2.0.0-beta.8", "@angular/flex-layout@^2.0.0-beta.7":
+"@angular/flex-layout@2.0.0-beta.8":
   version "2.0.0-beta.8"
   resolved "https://registry.yarnpkg.com/@angular/flex-layout/-/flex-layout-2.0.0-beta.8.tgz#b9cf57865a93ca158fe56d850952423f248d103b"
 
@@ -114,9 +114,11 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/material@2.0.0-beta.3":
-  version "2.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-2.0.0-beta.3.tgz#ec31dee61d7300ece28fee476852db236ded1e13"
+"@angular/material@2.0.0-beta.6":
+  version "2.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-2.0.0-beta.6.tgz#83bfdf00f540a8c7db900a1e7b8ed2cff49df821"
+  dependencies:
+    tslib "^1.7.1"
 
 "@angular/platform-browser-dynamic@4.2.2", "@angular/platform-browser-dynamic@^4.0.1":
   version "4.2.2"
@@ -150,12 +152,9 @@
   dependencies:
     tsickle "^0.21.0"
 
-"@covalent/core@1.0.0-beta.3-2":
-  version "1.0.0-beta.3-2"
-  resolved "https://registry.yarnpkg.com/@covalent/core/-/core-1.0.0-beta.3-2.tgz#f332d1485939458f0199c193e98bd0ea619beb9f"
-  dependencies:
-    "@angular/flex-layout" "^2.0.0-beta.7"
-    "@angular/material" "2.0.0-beta.3"
+"@covalent/core@1.0.0-beta.5-1":
+  version "1.0.0-beta.5-1"
+  resolved "https://registry.yarnpkg.com/@covalent/core/-/core-1.0.0-beta.5-1.tgz#503d816bcb36bf164a388870ad74ccd240b12846"
 
 "@ngtools/json-schema@1.1.0":
   version "1.1.0"
@@ -178,7 +177,7 @@
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@ngx-translate/http-loader/-/http-loader-0.1.0.tgz#6029325561d7868fe325a419de2770e98ff1502e"
 
-"@swimlane/ngx-charts@^5.1.2":
+"@swimlane/ngx-charts@^5.3.1":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@swimlane/ngx-charts/-/ngx-charts-5.3.1.tgz#942d95e8f11a3156b3f263783287d53eb648284c"
 
@@ -1577,7 +1576,7 @@ d3-zoom@1.2.0:
     d3-selection "1"
     d3-transition "1"
 
-d3@^4.8.0:
+d3@^4.9.1:
   version "4.9.1"
   resolved "https://registry.yarnpkg.com/d3/-/d3-4.9.1.tgz#f860be9252261a3c14eea64b1d2590d14f4db838"
   dependencies:
@@ -3575,6 +3574,10 @@ loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0:
 localize-router@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/localize-router/-/localize-router-0.7.0.tgz#d764d09a0b12a5954a7ebdf4a2c872872233a29b"
+
+localstorage-polyfill@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/localstorage-polyfill/-/localstorage-polyfill-1.0.1.tgz#4b3083d4bc51d23b4158537e66816137413fd31a"
 
 lodash.assign@^4.2.0:
   version "4.2.0"

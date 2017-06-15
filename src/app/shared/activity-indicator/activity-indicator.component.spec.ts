@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { CovalentCoreModule } from '@covalent/core';
+import { MdProgressSpinnerModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { ActivityIndicatorComponent } from './activity-indicator.component';
@@ -11,7 +11,7 @@ describe('ActivityIndicatorComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CovalentCoreModule,
+        MdProgressSpinnerModule,
         TranslateModule.forRoot()
       ],
       declarations: [ ActivityIndicatorComponent ]

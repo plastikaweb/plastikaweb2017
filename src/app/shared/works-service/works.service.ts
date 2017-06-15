@@ -22,8 +22,7 @@ export class WorksService {
     return this.db.list('/works', {
       query: { orderByChild: 'slug', equalTo: workSlug }
     })
-      .map(data => data[ 0 ])
-      .first();
+      .map(data => data[ 0 ]);
   }
 
   findWorkNameBySlug(workSlug: string): Observable<string> {

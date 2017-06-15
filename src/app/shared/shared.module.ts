@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CovalentCoreModule } from '@covalent/core';
+import { MdButtonModule, MdCardModule, MdIconModule, MdListModule, MdProgressSpinnerModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { ActivityIndicatorComponent } from './activity-indicator/activity-indicator.component';
@@ -10,10 +10,17 @@ import { SkillsService } from './skills-service/skills.service';
 import { TagsService } from './tags-service/tags.service';
 import { ImagesService } from './images-service/images.service';
 
+const MATERIAL_MODULES: any[] = [
+  MdButtonModule,
+  MdCardModule,
+  MdIconModule,
+  MdListModule
+];
 @NgModule({
   imports: [
-    CovalentCoreModule,
-    TranslateModule
+    MdProgressSpinnerModule,
+    TranslateModule,
+    MATERIAL_MODULES
   ],
   declarations: [
     ActivityIndicatorComponent,
@@ -26,7 +33,10 @@ import { ImagesService } from './images-service/images.service';
     TagsService,
     ImagesService
   ],
-  exports: [ ActivityIndicatorComponent ]
+  exports: [
+    ActivityIndicatorComponent,
+    MATERIAL_MODULES
+  ]
 })
 export class SharedModule {
 }

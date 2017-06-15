@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { CovalentCoreModule } from '@covalent/core';
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -10,7 +9,6 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [ContactComponent],
   imports: [
     CommonModule,
-    CovalentCoreModule,
     SharedModule,
     TranslateModule
   ]

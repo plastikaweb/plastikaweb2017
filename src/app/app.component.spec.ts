@@ -1,6 +1,6 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { CovalentCoreModule } from '@covalent/core';
+import { CovalentLayoutModule } from '@covalent/core';
 import { LocalizeRouterModule, LocalizeRouterService } from 'localize-router';
 import { RouterModule } from '@angular/router';
 import 'rxjs/add/observable/of';
@@ -27,7 +27,7 @@ describe('AppComponent', () => {
         { provide: APP_BASE_HREF, useValue: '/' }
       ],
       imports: [
-        CovalentCoreModule,
+        CovalentLayoutModule,
         LocalizeRouterModule.forRoot([]),
         TranslateModule.forRoot(),
         RouterModule.forRoot([]),

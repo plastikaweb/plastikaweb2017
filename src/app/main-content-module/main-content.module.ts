@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { CovalentCoreModule } from '@covalent/core';
+import { CovalentLayoutModule, CovalentMediaModule } from '@covalent/core';
+import { MdCardModule, MdIconModule, MdListModule } from '@angular/material';
 import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/bundles/app.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -13,8 +14,12 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 @NgModule({
   imports: [
     CommonModule,
-    CovalentCoreModule,
+    CovalentLayoutModule,
+    CovalentMediaModule,
     LocalizeRouterModule,
+    MdCardModule,
+    MdIconModule,
+    MdListModule,
     Ng2BreadcrumbModule.forRoot(),
     RouterModule,
     TranslateModule

@@ -1,9 +1,7 @@
 @import '~@angular/material/theming';
 @import '~@covalent/core/theming/all-theme';
 // @import '~@covalent/markdown/markdown-theme';
-// @import '~@covalent/charts/charts-theme';
 // @import '~@covalent/highlight/highlight-theme';
-// Plus imports for other components in your app.
 
 // Include the base styles for Angular Material core. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -26,5 +24,4 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
 @include covalent-theme($theme);
 // @include covalent-markdown-theme($theme);
-// @include covalent-charts-theme($theme);
 // @include covalent-highlight-theme();

@@ -2,12 +2,14 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CovalentCoreModule } from '@covalent/core';
+import { CovalentChipsModule } from '@covalent/core';
+import { FormsModule } from '@angular/forms';
 import { LocalizeRouterModule } from 'localize-router';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { afDbMock } from '../mocks/works.mock';
+import { FilterWorksComponent } from './filter-works/filter-works.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from '../shared/shared.module';
 import { TagsComponent } from './tags/tags.component';
@@ -22,16 +24,18 @@ describe('Works Component', () => {
     TestBed.configureTestingModule({
       imports: [
         BrowserAnimationsModule,
-        CovalentCoreModule,
+        CovalentChipsModule,
+        FormsModule,
+        LazyLoadImageModule,
         LocalizeRouterModule.forRoot([]),
         RouterModule.forRoot([]),
         TranslateModule.forRoot(),
-        LazyLoadImageModule,
         SharedModule
       ],
       declarations: [
-        WorksComponent,
-        TagsComponent
+        FilterWorksComponent,
+        TagsComponent,
+        WorksComponent
       ],
       providers: [
         { provide: APP_BASE_HREF, useValue: '/' },

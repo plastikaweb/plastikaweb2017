@@ -2,7 +2,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CovalentCoreModule } from '@covalent/core';
+import { CovalentExpansionPanelModule } from '@covalent/core';
 import { LocalizeRouterModule } from 'localize-router';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { RouterModule } from '@angular/router';
@@ -13,6 +13,7 @@ import { afDbMock } from '../mocks/works.mock';
 import { SharedModule } from '../shared/shared.module';
 import { SkillComponent } from './skill/skill.component';
 import { WhoComponent } from './who.component';
+import { MdProgressBarModule } from '@angular/material';
 
 describe('Who Component', () => {
   let component: WhoComponent;
@@ -21,9 +22,10 @@ describe('Who Component', () => {
   beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
-          CovalentCoreModule,
           BrowserAnimationsModule,
+          CovalentExpansionPanelModule,
           LocalizeRouterModule.forRoot([]),
+          MdProgressBarModule,
           NgxChartsModule,
           RouterModule.forRoot([]),
           TranslateModule.forRoot(),

@@ -1,8 +1,9 @@
 import { AngularFireDatabase } from 'angularfire2/database';
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
-import { CovalentCoreModule } from '@covalent/core';
+import { CovalentExpansionPanelModule } from '@covalent/core';
 import { LocalizeRouterModule } from 'localize-router';
+import { MdProgressBarModule } from '@angular/material';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -22,8 +23,9 @@ describe('SkillComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ SkillComponent ],
       imports: [
-        CovalentCoreModule,
+        CovalentExpansionPanelModule,
         LocalizeRouterModule.forRoot([]),
+        MdProgressBarModule,
         NgxChartsModule,
         RouterModule.forRoot([]),
         TranslateModule.forRoot()

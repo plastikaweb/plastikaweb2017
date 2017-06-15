@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { CovalentCoreModule } from '@covalent/core';
+import { MdMenuModule, MdTooltipModule } from '@angular/material';
 
 import { LanguageMenuComponent } from './language-menu.component';
+import { CovalentMenuModule } from '@covalent/core';
 
 describe('Language Menu Component', () => {
   let component: LanguageMenuComponent;
@@ -10,7 +11,9 @@ describe('Language Menu Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CovalentCoreModule
+        CovalentMenuModule,
+        MdMenuModule,
+        MdTooltipModule
       ],
       declarations: [ LanguageMenuComponent ]
     })

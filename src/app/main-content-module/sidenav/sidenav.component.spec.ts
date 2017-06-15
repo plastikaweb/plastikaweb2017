@@ -1,11 +1,11 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { CovalentCoreModule } from '@covalent/core';
 import { LocalizeRouterModule } from 'localize-router';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { SidenavComponent } from './sidenav.component';
+import { MdIconModule } from '@angular/material';
 
 describe('SidenavComponent', () => {
   let component: SidenavComponent;
@@ -18,7 +18,7 @@ describe('SidenavComponent', () => {
         { provide: APP_BASE_HREF, useValue: '/' }
       ],
       imports: [
-        CovalentCoreModule,
+        MdIconModule,
         LocalizeRouterModule.forRoot([]),
         TranslateModule.forRoot(),
         RouterModule.forRoot([])

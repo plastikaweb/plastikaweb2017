@@ -9,6 +9,7 @@
 
 <div *ngIf="works$ | async as works; else loadingProjects">
   <md-card-content>
+    <app-filter-works></app-filter-works>
     <div layout="row"
          layout-wrap
          layout-align="space-between center">

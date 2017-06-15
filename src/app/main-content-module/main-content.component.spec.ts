@@ -1,7 +1,7 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
-import { CovalentCoreModule, TdMediaService } from '@covalent/core';
+import { CovalentLayoutModule, CovalentMediaModule, TdMediaService } from '@covalent/core';
 import { LocalizeRouterModule } from 'localize-router';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
@@ -15,6 +15,7 @@ import { MainContentComponent } from './main-content.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { WhoModule } from '../who-module/who.module';
 import { WorksModule } from '../works-module/works.module';
+import { MdCardModule, MdIconModule, MdListModule } from '@angular/material';
 
 describe('Main Content Component', () => {
   let component: MainContentComponent;
@@ -30,7 +31,11 @@ describe('Main Content Component', () => {
       ],
       imports: [
         AppRoutingModule,
-        CovalentCoreModule,
+        CovalentLayoutModule,
+        CovalentMediaModule,
+        MdCardModule,
+        MdIconModule,
+        MdListModule,
         NgxChartsModule,
         LocalizeRouterModule.forRoot([]),
         TranslateModule.forRoot(),

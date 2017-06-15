@@ -1,12 +1,15 @@
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
-import { CovalentCoreModule } from '@covalent/core';
+import { CommonModule } from '@angular/common';
+import { CovalentChipsModule } from '@covalent/core';
+import { FormsModule } from '@angular/forms';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { LocalizeRouterModule } from 'localize-router';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { FilterWorksComponent } from './filter-works/filter-works.component';
 import { firebaseConfig } from '../../config/firebase.config';
 import { SharedModule } from '../shared/shared.module';
 import { TagsComponent } from './tags/tags.component';
@@ -17,7 +20,9 @@ import { WorksComponent } from './works.component';
   imports: [
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    CovalentCoreModule,
+    CommonModule,
+    CovalentChipsModule,
+    FormsModule,
     LazyLoadImageModule,
     LocalizeRouterModule,
     RouterModule,
@@ -27,7 +32,8 @@ import { WorksComponent } from './works.component';
   declarations: [
     TagsComponent,
     WorkComponent,
-    WorksComponent
+    WorksComponent,
+    FilterWorksComponent
   ]
 })
 export class WorksModule {
