@@ -21,7 +21,8 @@
     "year": "año",
     "partner": "colaborador(es)",
     "client": "cliente final",
-    "techs": "herramientas y tecnologías"
+    "techs": "herramientas y tecnologías",
+    "filterBy": "filtra por tecnología"
   },
   "CONTACT": {
     "title": "Contacto",

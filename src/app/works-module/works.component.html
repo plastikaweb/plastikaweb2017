@@ -17,7 +17,7 @@
          layout-align="space-between center">
       <md-card flex="100" flex-gt-sm="45"
                flex-gt-lg="30" flex-xl="23"
-               *ngFor="let work of works | plastikawebFilter:tagsFilter">
+               *ngFor="let work of works | pwFilter:tagsFilter">
         <md-card-header>
           <img md-card-avatar class="size-50"
                alt="work.name"

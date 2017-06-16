@@ -21,7 +21,8 @@
     "year": "any",
     "partner": "col·laborador(s)",
     "client": "client final",
-    "techs": "eines i tecnologies"
+    "techs": "eines i tecnologies",
+    "filterBy": "filtra per tecnologia"
   },
   "CONTACT": {
     "title": "Contacte",

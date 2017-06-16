@@ -48,7 +48,7 @@ export class WorksComponent implements OnInit {
   }
 
   doFilter(tags: string[]) {
-    this.tagsFilter = tags;
+    this.tagsFilter = [...tags];
   }
 
   getRemoteTranslation(item: ITranslation) {

@@ -4,13 +4,14 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentChipsModule } from '@covalent/core';
 import { FormsModule } from '@angular/forms';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { LocalizeRouterModule } from 'localize-router';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { afDbMock } from '../mocks/works.mock';
+import { FilterPipe } from './filter-pipe/filter.pipe';
 import { FilterWorksComponent } from './filter-works/filter-works.component';
-import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from '../shared/shared.module';
 import { TagsComponent } from './tags/tags.component';
 import { WorksComponent } from './works.component';
@@ -33,6 +34,7 @@ describe('Works Component', () => {
         SharedModule
       ],
       declarations: [
+        FilterPipe,
         FilterWorksComponent,
         TagsComponent,
         WorksComponent
