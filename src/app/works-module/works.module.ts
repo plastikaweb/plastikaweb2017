@@ -15,6 +15,7 @@ import { SharedModule } from '../shared/shared.module';
 import { TagsComponent } from './tags/tags.component';
 import { WorkComponent } from './work/work.component';
 import { WorksComponent } from './works.component';
+import { FilterPipe } from './filter-pipe/filter.pipe';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { WorksComponent } from './works.component';
     TagsComponent,
     WorkComponent,
     WorksComponent,
-    FilterWorksComponent
+    FilterWorksComponent,
+    FilterPipe
   ]
 })
 export class WorksModule {

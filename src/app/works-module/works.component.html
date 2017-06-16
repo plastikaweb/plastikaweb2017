@@ -9,13 +9,15 @@
 
 <div *ngIf="works$ | async as works; else loadingProjects">
   <md-card-content>
-    <app-filter-works></app-filter-works>
+    <app-filter-works (filterBy)="doFilter($event)"
+                      *ngIf="allTags$ | async as tags;" [tags]="tags">
+    </app-filter-works>
     <div layout="row"
          layout-wrap
          layout-align="space-between center">
       <md-card flex="100" flex-gt-sm="45"
                flex-gt-lg="30" flex-xl="23"
-               *ngFor="let work of works">
+               *ngFor="let work of works | plastikawebFilter:tagsFilter">
         <md-card-header>
           <img md-card-avatar class="size-50"
                alt="work.name"
@@ -31,7 +33,7 @@
         <md-card-content>
         </md-card-content>
         <md-card-footer>
-          <app-tags [workKey]="work.$key"></app-tags>
+          <app-tags [tags]="work.tags"></app-tags>
         </md-card-footer>
       </md-card>
     </div>

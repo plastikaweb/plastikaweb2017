@@ -6,10 +6,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { TranslateService } from '@ngx-translate/core';
 
 import { fadeAnimation } from '../../animations/fade.animation';
-import { ITag } from '../../models/tag.model';
 import { ITranslation, IWork } from '../../models/work.model';
 import { ImagesService } from '../../shared/images-service/images.service';
-import { TagsService } from '../../shared/tags-service/tags.service';
 import { WorksService } from '../../shared/works-service/works.service';
 
 @Component({
@@ -24,7 +22,6 @@ export class WorkComponent implements OnInit, OnDestroy {
   @HostBinding('style.display') display = 'block';
 
   work$: Observable<IWork>;
-  tags$: Observable<ITag[]>;
   workNameSubscription: Subscription;
   slug;
   offset = 100;
@@ -32,7 +29,6 @@ export class WorkComponent implements OnInit, OnDestroy {
   imagesService;
 
   constructor(private worksService: WorksService,
-              private tagsService: TagsService,
               private _imagesService: ImagesService,
               private translate: TranslateService,
               private breadcrumbService: BreadcrumbService,
@@ -45,9 +41,6 @@ export class WorkComponent implements OnInit, OnDestroy {
       .subscribe(param => {
         this.slug = param[ 'slug' ];
         this.work$ = this.worksService.findWorkBySlug(this.slug);
-        this.tags$ = this.work$
-          .switchMap((work: IWork) =>
-            this.tagsService.findTagsByWork(work.$key));
 
         // TODO - think about how to make a single call to service
         this.workNameSubscription = this.worksService

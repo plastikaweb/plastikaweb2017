@@ -1,3 +1,5 @@
+import { ITag } from './tag.model';
+
 export interface IWork {
   $key: string;
   active: boolean;
@@ -12,7 +14,7 @@ export interface IWork {
   opensource?: boolean;
   description: ITranslation;
   tools?: string;
-  tags?: string;
+  tags?: ITag[];
   slug: string;
 }
 

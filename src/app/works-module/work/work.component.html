@@ -24,7 +24,7 @@
        [srcset]="imagesService.getImageSet('works', work.slug)"
        sizes="(min-width: 960px) 960px, 100vw">
   <md-card-content>
-    <app-tags [workKey]="work.$key"></app-tags>
+    <app-tags [tags]="work.tags"></app-tags>
     <md-divider></md-divider>
     <div [innerHTML]="getRemoteTranslation(work.description)"></div>
     <md-list dense>

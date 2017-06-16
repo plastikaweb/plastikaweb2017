@@ -1,23 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 import { ITag } from '../../models/tag.model';
-import { TagsService } from '../../shared/tags-service/tags.service';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-tags',
   templateUrl: './tags.component.html',
   styleUrls: ['./tags.component.scss']
 })
-export class TagsComponent implements OnInit {
+export class TagsComponent {
 
-  @Input() private workKey;
-  tags$: Observable<ITag[]>;
-
-  constructor(private tagsService: TagsService) { }
-
-  ngOnInit() {
-    this.tags$ = this.tagsService.findTagsByWork(this.workKey);
-  }
+  @Input() private tags: ITag[] = [];
 
   getMainTechImage(name) {
     return `assets/icons/${name}.svg`;

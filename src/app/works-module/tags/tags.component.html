@@ -1,6 +1,4 @@
-<div *ngIf="tags$ | async as tags">
-  <img md-card-avatar class="tag size-24"
-       *ngFor="let tag of tags"
-       [src]="getMainTechImage(tag.name)"
-       alt="{{tag.name}}" title="{{tag.name}}">
-</div>
+<img md-card-avatar class="tag size-24"
+     *ngFor="let tag of tags"
+     [src]="getMainTechImage(tag.name)"
+     alt="{{tag.name}}" title="{{tag.name}}">

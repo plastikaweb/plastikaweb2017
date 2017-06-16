@@ -14,7 +14,7 @@ const tagList: IWork[] = [ {
   year: 2007,
   description: {},
   tools: 'ActionScript 2.0, PHP, XML',
-  tags: 'flash',
+  tags: [ { name: 'flash' } ],
   slug: 'the-project'
 }, {
   $key: '2',
@@ -28,7 +28,10 @@ const tagList: IWork[] = [ {
   year: 2009,
   description: {},
   tools: 'Angular, firebase',
-  tags: 'angular,firebase',
+  tags: [
+    { name: 'angular' },
+    { name: 'firebase' }
+  ],
   slug: 'the-project-2'
 } ];
 
