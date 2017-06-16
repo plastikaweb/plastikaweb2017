@@ -5,6 +5,7 @@
           [(ngModel)]="stringsModel"
           [placeholder]="'WORKS.filterBy' | translate"
           (inputChange)="filterStrings($event)"
+          (click)="onClick($event)"
           requireMatch>
   <ng-template td-chip let-chip="chip">
     <div class="tc-grey-100 bgc-dark-blue-grey-500" td-chip-avatar>

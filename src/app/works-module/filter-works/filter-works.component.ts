@@ -9,6 +9,7 @@ export class FilterWorksComponent implements OnInit {
 
   @Input() tags: string[] = [];
   @Output() filterBy: EventEmitter<string[]> = new EventEmitter();
+  @Output() selectedChip: EventEmitter<string> = new EventEmitter();
   chipAddition = true;
   chipRemoval = true;
   chipColor = 'warn';
@@ -31,6 +32,10 @@ export class FilterWorksComponent implements OnInit {
     );
 
     this.filterBy.emit(this.stringsModel);
+  }
+
+  onClick(e) {
+    this.selectedChip.emit(e.srcElement.innerText.slice(2));
   }
 
 }

@@ -26,6 +26,7 @@ export class WorksComponent implements OnInit {
   activityColor = 'warn';
   imagesService;
   tagsFilter: string[] = [];
+  selectedFilter: string[] = [];
 
   constructor(private worksService: WorksService,
               private tagsService: TagsService,
@@ -49,6 +50,10 @@ export class WorksComponent implements OnInit {
 
   doFilter(tags: string[]) {
     this.tagsFilter = [...tags];
+  }
+
+  doSelect(tag: string) {
+    this.selectedFilter = [tag];
   }
 
   getRemoteTranslation(item: ITranslation) {
