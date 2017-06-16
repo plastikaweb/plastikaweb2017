@@ -19,7 +19,8 @@
     "e2e": "ng e2e",
     "precommit": "run-s lint test:single e2e",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
-    "db-populate": "ts-node ./db/populate-db.ts"
+    "db-populate": "ts-node ./db/populate-db.ts",
+    "postinstall": "npm rebuild node-sass"
   },
   "private": true,
   "dependencies": {
@@ -72,6 +73,7 @@
     "karma-istanbul-threshold": "1.2.2",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "node-sass": "3.8.0",
     "npm-run-all": "^4.0.2",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
