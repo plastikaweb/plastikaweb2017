@@ -1,4 +1,5 @@
-<img md-card-avatar class="tag size-24"
-     *ngFor="let tag of tags"
-     [src]="getMainTechImage(tag.name)"
-     alt="{{tag.name}}" title="{{tag.name}}">
+<a md-icon-button *ngFor="let tag of tags" (click)="selectTag(tag.name)">
+  <img class="tag size-24"
+       [src]="getMainTechImage(tag.name)"
+       alt="{{tag.name}}" title="{{tag.name}}">
+</a>

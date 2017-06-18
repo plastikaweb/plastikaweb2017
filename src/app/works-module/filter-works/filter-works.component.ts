@@ -8,8 +8,24 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
 export class FilterWorksComponent implements OnInit {
 
   @Input() tags: string[] = [];
+
+  /**
+   * received tag externally; if exists in model delete
+   * otherwise add to the model
+   * @param tag
+   */
+  @Input() set receiveTag(tag) {
+    if(tag) {
+      if (this.stringsModel.indexOf(tag) < 0) {
+        this.stringsModel = [...this.stringsModel, tag];
+      } else {
+        this.stringsModel = this.stringsModel.filter(item => item !== tag);
+      }
+      this.filterStrings(tag);
+    }
+  };
   @Output() filterBy: EventEmitter<string[]> = new EventEmitter();
-  @Output() selectedChip: EventEmitter<string> = new EventEmitter();
+
   chipAddition = true;
   chipRemoval = true;
   chipColor = 'warn';
@@ -32,10 +48,6 @@ export class FilterWorksComponent implements OnInit {
     );
 
     this.filterBy.emit(this.stringsModel);
-  }
-
-  onClick(e) {
-    this.selectedChip.emit(e.srcElement.innerText.slice(2));
   }
 
 }

@@ -10,7 +10,7 @@
 <div *ngIf="works$ | async as works; else loadingProjects">
   <md-card-content>
     <app-filter-works (filterBy)="doFilter($event)"
-                      (selectedChip)="doSelect($event)"
+                      [receiveTag]="sendTagSelection"
                       *ngIf="allTags$ | async as tags;" [tags]="tags">
     </app-filter-works>
     <div layout="row"
@@ -34,7 +34,7 @@
         <md-card-content>
         </md-card-content>
         <md-card-footer>
-          <app-tags [tags]="work.tags"></app-tags>
+          <app-tags [tags]="work.tags" (emitTagSelection)="tagSelection($event)"></app-tags>
         </md-card-footer>
       </md-card>
     </div>
