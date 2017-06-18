@@ -10,6 +10,7 @@ import { ITag } from '../../models/tag.model';
 export class TagsComponent {
 
   @Input() tags: ITag[] = [];
+  @Input() selectedTags: string[] = [];
   @Output() emitTagSelection: EventEmitter<string> = new EventEmitter();
 
   getMainTechImage(name) {
@@ -18,6 +19,10 @@ export class TagsComponent {
 
   selectTag(name) {
     this.emitTagSelection.emit(name);
+  }
+
+  checkIfSelected(tagName) {
+    return this.selectedTags.find(tag => tag === tagName);
   }
 
 }

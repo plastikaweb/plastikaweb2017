@@ -14,38 +14,34 @@ a {
    }
 }
 
-// header
-app-header > md-icon {
-  margin-right: 5px;
-}
-
-// avatar icon for Plastikaweb section
+// avatar icon
 .mat-card [md-card-avatar].size-72 {
   height: 72px;
   width: 72px;
 }
 
-// tags for projects avatar sizing
-.tag.mat-card-avatar {
-  &.size-16 {
-    height: 16px;
-    width: 16px;
-  }
-  &.size-24 {
-    height: 24px;
-    width: 24px;
-  }
-  &.size-32 {
-    height: 32px;
-    width: 32px;
-  }
-  &.size-50 {
-    height: 50px;
-    width: 50px;
+// lazy load images
+[md-card-image] {
+  &.ng-lazyloaded {
+    animation: fadein 0.3s;
   }
 }
 
-// Breadcrumb styling
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// HEADER component //
+app-header > md-icon {
+  margin-right: 5px;
+}
+
+// MAIN-CONTENT //
 breadcrumb {
   ul {
     padding: 0;
@@ -62,27 +58,55 @@ breadcrumb {
   }
 }
 
-// lazy load images
-[md-card-image]{
-  &.ng-lazyloaded {
-    animation: fadein 0.3s;
+// SHARED
+.activity-indicator {
+  text-align: center;
+  md-progress-spinner {
+    margin: 1em auto;
   }
 }
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+// WORKS //
+app-works {
+  .mat-card [md-card-avatar] {
+    margin: 16px 0 0 5px;
   }
 }
 
+app-tags {
+  [md-icon-button] {
+    margin: 2px 0 4px 4px;
+    &.selected {
+      background-color: mat-color($primary, 100);
+    }
+    .tag.mat-card-avatar {
+      &.size-16 {
+        height: 16px;
+        width: 16px;
+      }
+      &.size-24 {
+        height: 24px;
+        width: 24px;
+      }
+      &.size-32 {
+        height: 32px;
+        width: 32px;
+      }
+      &.size-50 {
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+}
+
+// CONTACT //
 // get rid of nowrap white-space on contact component lists
 app-contact .mat-list[dense] .mat-list-item .mat-line {
   white-space: inherit;
 }
 
+// WHO //
 // fix to return easing to skill expansion panel items in who section
 @mixin skillsEase($position, $direction) {
   app-skill {
@@ -91,6 +115,5 @@ app-contact .mat-list[dense] .mat-list-item .mat-line {
     }
   }
 }
-
 @include skillsEase(first-of-type, top);
 @include skillsEase(last-of-type, bottom);

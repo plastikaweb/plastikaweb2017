@@ -7,8 +7,7 @@ import { WorksService } from '../../shared/works-service/works.service';
 
 @Component({
   selector: 'app-breadcrumb-control',
-  templateUrl: './breadcrumb-control.component.html',
-  styleUrls: [ './breadcrumb-control.component.scss' ]
+  templateUrl: './breadcrumb-control.component.html'
 })
 export class BreadcrumbControlComponent implements OnInit {
 

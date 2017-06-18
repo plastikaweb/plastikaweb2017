@@ -34,4 +34,15 @@ describe('FilterWorksComponent', () => {
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should add to stringsModel on change receiveTag with no existent item', () => {
+    component.receiveTag = 'firebase';
+    expect(component.stringsModel).toContain('firebase');
+  });
+
+  it('should remove to stringsModel on change receiveTag with already existent item', () => {
+    component.receiveTag = 'firebase';
+    component.receiveTag = 'firebase';
+    expect(component.stringsModel).not.toContain('firebase');
+  });
 });

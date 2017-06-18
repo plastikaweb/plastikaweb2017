@@ -1,4 +1,6 @@
-<a md-icon-button *ngFor="let tag of tags" (click)="selectTag(tag.name)">
+<a md-icon-button *ngFor="let tag of tags"
+   [ngClass]="{selected: checkIfSelected(tag.name)}"
+   (click)="selectTag(tag.name)">
   <img class="tag size-24"
        [src]="getMainTechImage(tag.name)"
        alt="{{tag.name}}" title="{{tag.name}}">

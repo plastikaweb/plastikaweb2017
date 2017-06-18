@@ -11,7 +11,6 @@ import { TagsService } from '../shared/tags-service/tags.service';
 @Component({
   selector: 'app-works',
   templateUrl: './works.component.html',
-  styleUrls: [ './works.component.scss' ],
   animations: [ fadeAnimation ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

@@ -15,7 +15,7 @@ export class FilterWorksComponent implements OnInit {
    * @param tag
    */
   @Input() set receiveTag(tag) {
-    if(tag) {
+    if (tag) {
       if (this.stringsModel.indexOf(tag) < 0) {
         this.stringsModel = [...this.stringsModel, tag];
       } else {
