@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
+import { LocalizeRouterService } from 'localize-router';
 import { TranslateService } from '@ngx-translate/core';
 
 import { langConfig } from '../config/lang.config';
-import { LocalizeRouterService } from 'localize-router';
-import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',

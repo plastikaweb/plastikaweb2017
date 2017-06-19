@@ -35,5 +35,8 @@
   },
   "who": "quien",
   "works": "trabajos",
-  "contact": "contacto"
+  "contact": "contacto",
+  "quien": "who",
+  "trabajos": "works",
+  "contacto": "contact"
 }

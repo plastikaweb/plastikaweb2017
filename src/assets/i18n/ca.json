@@ -35,5 +35,8 @@
   },
   "who": "qui",
   "works": "treballs",
-  "contact": "contacte"
+  "contact": "contacte",
+  "qui": "who",
+  "contacte": "contact",
+  "treballs": "works"
 }

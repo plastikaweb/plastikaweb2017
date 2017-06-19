@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testi
 import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 import { CovalentLayoutModule, CovalentMediaModule, TdMediaService } from '@covalent/core';
 import { LocalizeRouterModule } from 'localize-router';
+import { MdCardModule, MdIconModule, MdListModule } from '@angular/material';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -15,7 +16,6 @@ import { MainContentComponent } from './main-content.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { WhoModule } from '../who-module/who.module';
 import { WorksModule } from '../works-module/works.module';
-import { MdCardModule, MdIconModule, MdListModule } from '@angular/material';
 
 describe('Main Content Component', () => {
   let component: MainContentComponent;
@@ -24,25 +24,25 @@ describe('Main Content Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       providers: [
-        TdMediaService,
-        TranslateService,
         { provide: APP_BASE_HREF, useValue: '/' },
-        BreadcrumbService
+        BreadcrumbService,
+        TdMediaService,
+        TranslateService
       ],
       imports: [
         AppRoutingModule,
+        ContactModule,
         CovalentLayoutModule,
         CovalentMediaModule,
+        LocalizeRouterModule.forRoot([]),
         MdCardModule,
         MdIconModule,
         MdListModule,
         NgxChartsModule,
-        LocalizeRouterModule.forRoot([]),
-        TranslateModule.forRoot(),
         Ng2BreadcrumbModule.forRoot(),
+        TranslateModule.forRoot(),
         WhoModule,
-        WorksModule,
-        ContactModule
+        WorksModule
       ],
       declarations: [
         MainContentComponent,
