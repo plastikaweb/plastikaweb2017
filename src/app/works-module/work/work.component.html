@@ -10,8 +10,14 @@
     <span flex></span>
     <div class="pad-top pad-right">
       <a *ngIf="work.url" md-icon-button mdTooltip="web"
+         angulartics2On="click"
+         angularticsEvent="{{work.url}}Click"
+         angularticsCategory="externalLinks"
          href="{{work.url}}" target="_blank"><md-icon>public</md-icon></a>
       <a *ngIf="work.repo" md-icon-button mdTooltip="Github"
+         angulartics2On="click"
+         angularticsEvent="{{work.repo}}Click"
+         angularticsCategory="externalLinks"
          href="{{work.repo}}" target="_blank" rel="noopener">
         <md-icon svgIcon="github"></md-icon>
       </a>

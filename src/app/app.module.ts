@@ -1,3 +1,4 @@
+import { Angulartics2GoogleAnalytics, Angulartics2Module } from 'angulartics2';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { CovalentLayoutModule, TdMediaService } from '@covalent/core';
@@ -25,6 +26,7 @@ export function HttpLoaderFactory(http: Http) {
     AppComponent
   ],
   imports: [
+    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,

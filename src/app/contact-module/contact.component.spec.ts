@@ -1,6 +1,9 @@
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Angulartics2Module } from 'angulartics2';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Location } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { afDbMock } from '../mocks/works.mock';
@@ -14,12 +17,15 @@ describe('Contact Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        Angulartics2Module.forRoot([]),
         BrowserAnimationsModule,
-        TranslateModule.forRoot(),
-        SharedModule
+        RouterModule.forRoot([]),
+        SharedModule,
+        TranslateModule.forRoot()
       ],
       declarations: [ ContactComponent ],
       providers: [
+        { provide: Location, useValue: null },
         { provide: AngularFireDatabase, useValue: afDbMock }
       ]
     })

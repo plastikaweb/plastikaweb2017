@@ -26,7 +26,10 @@
 <md-divider></md-divider>
 <div layout="row" layout-align="space-around center" class="pad">
   <a md-button class="tc-grey-600" target="_blank" rel="noopener"
-     href="/assets/cv/{{ 'WHO.cv' | translate }}">
+     href="/assets/cv/{{ 'WHO.cv' | translate }}"
+     angulartics2On="click"
+     angularticsEvent="DownloadCV"
+     angularticsCategory="{{ 'WHO.cv' | translate  }}">
     <md-icon class="pull-bottom">file_download</md-icon>
     <div class="md-caption">CV</div>
   </a>

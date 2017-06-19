@@ -1,4 +1,7 @@
-<td-expansion-panel [class]="skill.class">
+<td-expansion-panel [class]="skill.class"
+                    angulartics2On="click"
+                    angularticsEvent="{{skill.slug}}Click"
+                    angularticsCategory="skillClicks">
   <ng-template td-expansion-panel-header>
     <div layout="row" flex="100"
          layout-align="start center">

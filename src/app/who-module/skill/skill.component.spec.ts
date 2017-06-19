@@ -1,4 +1,5 @@
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Angulartics2Module } from 'angulartics2';
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
 import { CovalentExpansionPanelModule } from '@covalent/core';
@@ -23,6 +24,7 @@ describe('SkillComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ SkillComponent ],
       imports: [
+        Angulartics2Module.forRoot([]),
         CovalentExpansionPanelModule,
         LocalizeRouterModule.forRoot([]),
         MdProgressBarModule,

@@ -1,4 +1,5 @@
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Angulartics2Module } from 'angulartics2';
 import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
@@ -20,6 +21,7 @@ describe('WorkComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        Angulartics2Module.forRoot([]),
         BrowserAnimationsModule,
         TranslateModule.forRoot(),
         RouterModule.forRoot([]),

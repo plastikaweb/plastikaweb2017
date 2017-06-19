@@ -41,6 +41,7 @@
     "@ngx-translate/http-loader": "0.1.0",
     "@swimlane/ngx-charts": "^5.3.1",
     "angularfire2": "4.0.0-rc.1",
+    "angulartics2": "^2.2.2",
     "core-js": "^2.4.1",
     "d3": "^4.9.1",
     "firebase": "^4.0.0",

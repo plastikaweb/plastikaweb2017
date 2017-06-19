@@ -1,3 +1,4 @@
+import { Angulartics2Module } from 'angulartics2';
 import { CommonModule } from '@angular/common';
 import { CovalentMenuModule } from '@covalent/core';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ import { LanguageMenuComponent } from './language-menu/language-menu.component';
 
 @NgModule({
   imports: [
+    Angulartics2Module.forChild(),
     CommonModule,
     CovalentMenuModule,
     MdButtonModule,

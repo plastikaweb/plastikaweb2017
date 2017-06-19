@@ -25,7 +25,11 @@
         <md-list-item>
           <md-icon md-list-icon>contact_mail</md-icon>
           <p md-line>
-            <a href="mailto:{{email$ | async}}">{{email$ | async}}</a>
+            <a href="mailto:{{email$ | async}}"
+               angulartics2On="click"
+               angularticsEvent="emailClick"
+               angularticsCategory="externalLinks"
+            >{{email$ | async}}</a>
           </p>
         </md-list-item>
         <md-list-item>
@@ -42,7 +46,10 @@
      *ngIf="socialMedia$ | async as socialMedia">
   <a *ngFor="let social of socialMedia"
      md-button class="tc-grey-600" target="_blank"
-     href="{{social.url}}">
+     href="{{social.url}}"
+     angulartics2On="click"
+     angularticsEvent="{{social.name}}Click"
+     angularticsCategory="externalLinks">
     <img class="size-24 pull-bottom" src="/assets/icons/{{social.icon}}">
     <div class="md-caption">{{social.name}}</div>
   </a>

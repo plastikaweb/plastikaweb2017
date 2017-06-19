@@ -1,4 +1,5 @@
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Angulartics2Module } from 'angulartics2';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +23,7 @@ describe('Who Component', () => {
   beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
+          Angulartics2Module.forRoot([]),
           BrowserAnimationsModule,
           CovalentExpansionPanelModule,
           LocalizeRouterModule.forRoot([]),

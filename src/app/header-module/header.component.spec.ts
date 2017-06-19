@@ -1,3 +1,4 @@
+import { Angulartics2Module } from 'angulartics2';
 import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CovalentMenuModule } from '@covalent/core';
@@ -18,6 +19,7 @@ describe('Header Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        Angulartics2Module.forRoot([]),
         CovalentMenuModule,
         MdButtonModule,
         MdIconModule,

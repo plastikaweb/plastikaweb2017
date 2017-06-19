@@ -1,4 +1,5 @@
-import { CovalentExpansionPanelModule, CovalentLayoutModule } from '@covalent/core';
+import { Angulartics2Module } from 'angulartics2';
+import { CovalentExpansionPanelModule } from '@covalent/core';
 import { LocalizeRouterModule } from 'localize-router';
 import { MdProgressBarModule } from '@angular/material';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,7 @@ import { SkillComponent } from './skill/skill.component';
     WhoComponent
   ],
   imports: [
+    Angulartics2Module.forChild(),
     CovalentExpansionPanelModule,
     LocalizeRouterModule,
     MdProgressBarModule,
