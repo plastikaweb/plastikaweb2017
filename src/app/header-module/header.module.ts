@@ -10,7 +10,7 @@ import { LanguageMenuComponent } from './language-menu/language-menu.component';
 
 @NgModule({
   imports: [
-    Angulartics2Module.forChild(),
+    Angulartics2Module,
     CommonModule,
     CovalentMenuModule,
     MdButtonModule,

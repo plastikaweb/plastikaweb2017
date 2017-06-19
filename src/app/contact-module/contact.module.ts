@@ -1,4 +1,3 @@
-import { Angulartics2Module } from 'angulartics2';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
@@ -9,7 +8,6 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [ContactComponent],
   imports: [
-    Angulartics2Module.forChild(),
     CommonModule,
     SharedModule,
     TranslateModule

@@ -4,6 +4,7 @@ import { LocalizeRouterService } from 'localize-router';
 import { TranslateService } from '@ngx-translate/core';
 
 import { langConfig } from '../config/lang.config';
+import { Angulartics2GoogleAnalytics } from 'angulartics2';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { langConfig } from '../config/lang.config';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private translate: TranslateService,
+  constructor(angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
+              private translate: TranslateService,
               private localize: LocalizeRouterService,
               @Inject(DOCUMENT) private document) {
   }

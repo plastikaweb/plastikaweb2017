@@ -1,3 +1,4 @@
+import { Angulartics2Module } from 'angulartics2';
 import { NgModule } from '@angular/core';
 import { MdButtonModule, MdCardModule, MdIconModule, MdListModule, MdProgressSpinnerModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
@@ -18,6 +19,7 @@ const MATERIAL_MODULES: any[] = [
 ];
 @NgModule({
   imports: [
+    Angulartics2Module,
     MdProgressSpinnerModule,
     TranslateModule,
     MATERIAL_MODULES
@@ -35,6 +37,7 @@ const MATERIAL_MODULES: any[] = [
   ],
   exports: [
     ActivityIndicatorComponent,
+    Angulartics2Module,
     MATERIAL_MODULES
   ]
 })

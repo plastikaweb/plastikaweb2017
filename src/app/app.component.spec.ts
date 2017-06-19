@@ -1,4 +1,4 @@
-import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics, Angulartics2Module } from 'angulartics2';
 import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CovalentLayoutModule } from '@covalent/core';
@@ -23,6 +23,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ AppComponent ],
       providers: [
+        Angulartics2GoogleAnalytics,
         LocalizeRouterService,
         { provide: TranslateService, useValue: transMock },
         { provide: APP_BASE_HREF, useValue: '/' }

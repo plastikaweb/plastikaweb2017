@@ -1,6 +1,5 @@
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
-import { Angulartics2Module } from 'angulartics2';
 import { CommonModule } from '@angular/common';
 import { CovalentChipsModule } from '@covalent/core';
 import { FormsModule } from '@angular/forms';
@@ -22,7 +21,6 @@ import { WorksComponent } from './works.component';
   imports: [
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    Angulartics2Module.forChild(),
     CommonModule,
     CovalentChipsModule,
     FormsModule,
