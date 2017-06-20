@@ -1,6 +1,7 @@
 import { Angulartics2GoogleAnalytics, Angulartics2Module } from 'angulartics2';
 import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CookieService } from 'ng2-cookies';
 import { CovalentLayoutModule } from '@covalent/core';
 import { LocalizeRouterModule, LocalizeRouterService } from 'localize-router';
 import { RouterModule } from '@angular/router';
@@ -24,6 +25,7 @@ describe('AppComponent', () => {
       declarations: [ AppComponent ],
       providers: [
         Angulartics2GoogleAnalytics,
+        CookieService,
         LocalizeRouterService,
         { provide: TranslateService, useValue: transMock },
         { provide: APP_BASE_HREF, useValue: '/' }

@@ -50,6 +50,7 @@
     "localize-router": "^0.7.0",
     "ng-lazyload-image": "^3.1.1",
     "ng2-breadcrumb": "0.5.14",
+    "ng2-cookies": "^1.0.12",
     "rxjs": "^5.4.0",
     "zone.js": "^0.8.12"
   },

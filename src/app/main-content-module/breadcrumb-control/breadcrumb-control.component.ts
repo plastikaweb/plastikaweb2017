@@ -43,6 +43,8 @@ export class BreadcrumbControlComponent implements OnInit {
             .addFriendlyNameForRoute(`/${tempLang}/${translation.works}`, translation.WORKS.title);
           this.breadcrumbService
             .addFriendlyNameForRoute(`/${tempLang}/${translation.contact}`, translation.CONTACT.title);
+          this.breadcrumbService
+            .addFriendlyNameForRoute(`/${tempLang}/${translation.cookies}`, translation.COOKIES.title);
         });
     });
 

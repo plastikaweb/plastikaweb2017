@@ -6,6 +6,9 @@ import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 
 import { WorksService } from '../shared/works-service/works.service';
+import { MdSnackBar } from '@angular/material';
+import { CookiesSnackbarComponent } from '../cookies-snackbar-module/cookies-snackbar.component';
+import { CookieService } from 'ng2-cookies';
 
 @Component({
   selector: 'app-main-content',
@@ -14,9 +17,13 @@ import { WorksService } from '../shared/works-service/works.service';
 })
 export class MainContentComponent implements OnInit, AfterViewInit {
 
+  snackBarRef: any;
+
   constructor(public media: TdMediaService,
+              private cookieService: CookieService,
               private router: Router,
               private activatedRoute: ActivatedRoute,
+              public snackBar: MdSnackBar,
               private translate: TranslateService,
               private titleService: Title,
               private worksService: WorksService) {
@@ -48,6 +55,15 @@ export class MainContentComponent implements OnInit, AfterViewInit {
       .subscribe(
         title => this.titleService.setTitle('Plastikaweb - ' + title)
       );
+
+    // cookies warning
+    setTimeout(() => {
+      if (!this.cookieService.check('pw-cookies')) {
+        this.snackBarRef = this.snackBar
+          .openFromComponent(CookiesSnackbarComponent);
+        this.snackBarRef.instance.snackBarCookieRef = this.snackBarRef;
+      }
+    }, 0);
   }
 
   ngAfterViewInit() {

@@ -1,0 +1,15 @@
+<div layout="row" layout-wrap layout-align="center center">
+  <div flex="80" flex-gt-xs="85">
+    <p class="tc-grey-50 md-caption">
+      {{ 'COOKIES.warning' | translate }}
+      <a class="tc-grey-400" [routerLink]="'/cookies' | localize">
+        {{ 'COOKIES.more' | translate }}
+      </a>
+    </p>
+  </div>
+  <div class="pad-left">
+    <a md-mini-fab (click)="closeCookies()">
+      <md-icon class="tc-dark-grey-800">close</md-icon>
+    </a>
+  </div>
+</div>

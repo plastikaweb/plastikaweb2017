@@ -1,6 +1,7 @@
 import { Angulartics2GoogleAnalytics, Angulartics2Module } from 'angulartics2';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { CookieService } from 'ng2-cookies';
 import { CovalentLayoutModule, TdMediaService } from '@covalent/core';
 import { Http } from '@angular/http';
 import { LocalizeRouterModule } from 'localize-router';
@@ -12,9 +13,11 @@ import './rxjs-extensions';
 import { AppComponent } from './app.component';
 import { appRoutes, AppRoutingModule } from './app-routing.module';
 import { ContactModule } from './contact-module/contact.module';
+import { CookiesSnackbarComponent } from './cookies-snackbar-module/cookies-snackbar.component';
 import { HeaderModule } from './header-module/header.module';
 import { MainContentModule } from './main-content-module/main-content.module';
 import { WorksModule } from './works-module/works.module';
+import { SharedModule } from './shared/shared.module';
 import { WhoModule } from './who-module/who.module';
 
 export function HttpLoaderFactory(http: Http) {
@@ -31,6 +34,7 @@ export function HttpLoaderFactory(http: Http) {
     BrowserModule,
     BrowserAnimationsModule,
     CovalentLayoutModule,
+    SharedModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -45,7 +49,7 @@ export function HttpLoaderFactory(http: Http) {
     WhoModule,
     WorksModule
   ],
-  providers: [ TdMediaService ],
+  providers: [ TdMediaService, CookieService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

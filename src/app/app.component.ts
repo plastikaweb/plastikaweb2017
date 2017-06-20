@@ -1,10 +1,10 @@
+import { Angulartics2GoogleAnalytics } from 'angulartics2';
 import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { LocalizeRouterService } from 'localize-router';
 import { TranslateService } from '@ngx-translate/core';
 
 import { langConfig } from '../config/lang.config';
-import { Angulartics2GoogleAnalytics } from 'angulartics2';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2';
 })
 export class AppComponent implements OnInit {
 
-  constructor(angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
+  constructor(public angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
               private translate: TranslateService,
               private localize: LocalizeRouterService,
               @Inject(DOCUMENT) private document) {
