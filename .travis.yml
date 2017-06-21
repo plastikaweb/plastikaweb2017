@@ -6,8 +6,9 @@ cache:
     - node_modules
 notifications:
   email: false
-dist: trusty
 sudo: required
+dist: trusty
+group: edge
 before_install:
   - export CHROME_BIN=/usr/bin/google-chrome
   - export DISPLAY=:99.0
