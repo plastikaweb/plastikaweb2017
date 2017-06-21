@@ -1,3 +1,4 @@
+@import "mixins";
 @import 'theme';
 
 // general anchor styling
@@ -68,9 +69,47 @@ breadcrumb {
 
 // WORKS //
 app-works {
-  .mat-card [md-card-avatar] {
-    margin: 16px 0 0 5px;
+  .work-info {
+    display: block;
+    text-decoration: none;
+    .mat-card [md-card-avatar] {
+      margin: 16px 0 0 5px;
+    }
+    .work-img-container {
+      overflow: hidden;
+      > img[md-card-image] {
+        @include filter(grayscale, 90%);
+        @include transition(0.4s ease-in);
+      }
+    }
+    &:hover {
+      img[md-card-image] {
+        @include filter(grayscale, 0);
+        @include workImageTransform($rotate: 1.15, $scale: 1.2);
+        @include transition(0.2s ease-out);
+      }
+    }
   }
+}
+
+.mat-card app-work {
+  .mat-card-image {
+    border-top: 1px solid mat-color($primary, 100);
+    border-bottom: 1px solid mat-color($primary, 100);
+  }
+  @media (min-width: 1200px) {
+    .mat-card-image {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+  @media (min-width: 1500px) {
+    .mat-card-image {
+      border: 1px solid mat-color($primary, 100);
+    }
+  }
+
 }
 
 app-tags {

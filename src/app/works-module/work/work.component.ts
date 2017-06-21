@@ -13,7 +13,6 @@ import { WorksService } from '../../shared/works-service/works.service';
 @Component({
   selector: 'app-work',
   templateUrl: './work.component.html',
-  styleUrls: [ './work.component.scss' ],
   animations: [ fadeAnimation ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

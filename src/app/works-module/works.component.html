@@ -19,18 +19,22 @@
       <md-card flex="100" flex-gt-sm="45"
                flex-gt-lg="30" flex-xl="23"
                *ngFor="let work of works | pwFilter:tagsFilter">
-        <md-card-header>
-          <img md-card-avatar class="size-50"
-               alt="work.name"
-               [src]="imagesService.getImage('works', work.slug, '-avatar.png')">
-          <md-card-title><a [routerLink]="['/works' | localize, work.slug]"> {{ work.name }} </a></md-card-title>
-          <md-card-subtitle>{{ getRemoteTranslation(work.subtitle) }}</md-card-subtitle>
-        </md-card-header>
-        <img md-card-image alt="{{work.name}}"
-             [lazyLoad]="imagesService.getImage('works', work.slug, '-1.png')"
-             [scrollTarget]="myScrollContainer"
-             [offset]="offset"
-             [defaultImage]="imagesService.getDefaultImage()">
+        <a class="work-info" [routerLink]="['/works' | localize, work.slug]">
+          <md-card-header>
+            <img md-card-avatar class="size-50"
+                 alt="work.name"
+                 [src]="imagesService.getImage('works', work.slug, '-avatar.png')">
+            <md-card-title class="md-title">{{ work.name }}</md-card-title>
+            <md-card-subtitle>{{ getRemoteTranslation(work.subtitle) }}</md-card-subtitle>
+          </md-card-header>
+          <div class="work-img-container">
+            <img md-card-image alt="{{work.name}}"
+                 [lazyLoad]="imagesService.getImage('works', work.slug, '-1.png')"
+                 [scrollTarget]="myScrollContainer"
+                 [offset]="offset"
+                 [defaultImage]="imagesService.getDefaultImage()">
+          </div>
+        </a>
         <md-card-content>
         </md-card-content>
         <md-card-footer>
