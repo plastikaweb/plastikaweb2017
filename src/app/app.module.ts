@@ -13,12 +13,12 @@ import './rxjs-extensions';
 import { AppComponent } from './app.component';
 import { appRoutes, AppRoutingModule } from './app-routing.module';
 import { ContactModule } from './contact-module/contact.module';
-import { CookiesSnackbarComponent } from './cookies-snackbar-module/cookies-snackbar.component';
 import { HeaderModule } from './header-module/header.module';
 import { MainContentModule } from './main-content-module/main-content.module';
 import { WorksModule } from './works-module/works.module';
 import { SharedModule } from './shared/shared.module';
 import { WhoModule } from './who-module/who.module';
+import { NotFoundModule } from './not-found-module/not-found.module';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -34,6 +34,7 @@ export function HttpLoaderFactory(http: Http) {
     BrowserModule,
     BrowserAnimationsModule,
     CovalentLayoutModule,
+    NotFoundModule,
     SharedModule,
     TranslateModule.forRoot({
       loader: {

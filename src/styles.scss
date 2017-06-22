@@ -156,3 +156,13 @@ app-contact .mat-list[dense] .mat-list-item .mat-line {
 }
 @include skillsEase(first-of-type, top);
 @include skillsEase(last-of-type, bottom);
+
+app-not-found {
+  .mat-card-header-text {
+    width: 100%;
+  }
+  .text-super-super {
+    font-size: 150px;
+  }
+}
+

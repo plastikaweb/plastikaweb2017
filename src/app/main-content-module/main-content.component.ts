@@ -18,6 +18,7 @@ import { CookieService } from 'ng2-cookies';
 export class MainContentComponent implements OnInit, AfterViewInit {
 
   snackBarRef: any;
+  isNotFound$: Observable<boolean>;
 
   constructor(public media: TdMediaService,
               private cookieService: CookieService,
@@ -38,19 +39,28 @@ export class MainContentComponent implements OnInit, AfterViewInit {
         while (route.firstChild) {
           route = route.firstChild;
         }
-        return route.url;
+
+        this.isNotFound$ = Observable.of(route.component[ 'name' ] === 'NotFoundComponent');
+        return this.isNotFound$.withLatestFrom(route.url, (a, b) => (
+          { notFound: a, url: b }
+        ));
       })
-      .switchMap(data => this.translate
-        .getTranslation(this.translate.currentLang)
-        .switchMap(translation => {
-          if (data[ 1 ]) {
-            return this.worksService.findWorkNameBySlug(data[ 1 ].path);
-          } else if (data[ 0 ]) {
-            const mainSegment = translation[ data[ 0 ].path ].toUpperCase();
-            return Observable.of(translation[ mainSegment ] [ 'sub' ]);
+      .switchMap(data => {
+          if (data.notFound) {
+            return Observable.of('This page does not exist');
           }
-          return Observable.of('Freelance Frontend Developer from Barcelona');
-        })
+          const url = data.url;
+          return this.translate
+            .getTranslation(this.translate.currentLang)
+            .switchMap(translation => {
+              if (url[ 1 ]) { // TODO - think a more robust solution
+                return this.worksService.findWorkNameBySlug(url[ 1 ].path);
+              } else if (url[ 0 ] && translation[ url[ 0 ].path ]) {
+                const mainSegment = translation[ url[ 0 ].path ].toUpperCase();
+                return Observable.of(translation[ mainSegment ] [ 'sub' ]);
+              }
+            })
+        }
       )
       .subscribe(
         title => this.titleService.setTitle('Plastikaweb - ' + title)

@@ -283,6 +283,10 @@ angularfire2@4.0.0-rc.1:
   version "4.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/angularfire2/-/angularfire2-4.0.0-rc.1.tgz#d73014ac5431c0458ee953214f79953a06528c3f"
 
+angulartics2@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/angulartics2/-/angulartics2-2.2.2.tgz#a4fe1a007b87299b3818811c1f3490756792fd8f"
+
 ansi-escapes@^1.1.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
@@ -3890,6 +3894,10 @@ ng2-breadcrumb@0.5.14:
     systemjs "0.19.27"
     zone.js "^0.8.5"
 
+ng2-cookies@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/ng2-cookies/-/ng2-cookies-1.0.12.tgz#3f3e613e0137b0649b705c678074b4bd08149ccc"
+
 no-case@^2.2.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.1.tgz#7aeba1c73a52184265554b7dc03baf720df80081"
@@ -5000,7 +5008,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@2, request@2.79.0, request@^2.72.0, request@^2.78.0, request@^2.79.0:
+request@2, request@2.79.0, request@^2.61.0, request@^2.72.0, request@^2.78.0, request@^2.79.0:
   version "2.79.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.79.0.tgz#4dfe5bf6be8b8cdc37fcf93e04b65577722710de"
   dependencies:
@@ -5046,7 +5054,7 @@ request@2.42.0:
     stringstream "~0.0.4"
     tough-cookie ">=0.12.0"
 
-request@^2.61.0, request@^2.81.0:
+request@^2.81.0:
   version "2.81.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
   dependencies:

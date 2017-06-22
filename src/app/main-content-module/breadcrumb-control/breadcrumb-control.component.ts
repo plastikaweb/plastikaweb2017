@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -11,6 +11,8 @@ import { WorksService } from '../../shared/works-service/works.service';
 })
 export class BreadcrumbControlComponent implements OnInit {
 
+  @Input() hideBreadcrumb = false;
+
   constructor(private breadcrumbService: BreadcrumbService,
               private translate: TranslateService,
               private worksService: WorksService) {
@@ -18,8 +20,7 @@ export class BreadcrumbControlComponent implements OnInit {
 
   ngOnInit() {
     // hide locale routing segment on breadcrumb
-    this.breadcrumbService
-      .hideRouteRegex('^/([A-Za-z]{2})$');
+    this.breadcrumbService.hideRouteRegex('^/([A-Za-z]{2})$');
 
     // set all friendly projects name for breadcrumb
     this.worksService.findAllActiveWorks()

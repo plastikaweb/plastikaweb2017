@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { WhoComponent } from './who-module/who.component';
-import { ContactComponent } from './contact-module/contact.component';
-import { WorksComponent } from './works-module/works.component';
-import { WorkComponent } from './works-module/work/work.component';
 import { CookiesComponent } from './cookies-module/cookies.component';
+import { ContactComponent } from './contact-module/contact.component';
+import { NotFoundComponent } from './not-found-module/not-found.component';
+import { WhoComponent } from './who-module/who.component';
+import { WorkComponent } from './works-module/work/work.component';
+import { WorksComponent } from './works-module/works.component';
 
 export const appRoutes: Routes = [
   { path: 'who', component: WhoComponent },
@@ -14,7 +15,7 @@ export const appRoutes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'cookies', component: CookiesComponent },
   { path: '', redirectTo: '/who', pathMatch: 'full' },
-  { path: '**', redirectTo: '/who', pathMatch: 'full' }
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

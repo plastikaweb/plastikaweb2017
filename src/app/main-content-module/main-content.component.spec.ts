@@ -8,6 +8,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/withLatestFrom';
 
 import { AppRoutingModule } from '../app-routing.module';
 import { BreadcrumbControlComponent } from './breadcrumb-control/breadcrumb-control.component';
@@ -16,6 +19,7 @@ import { CookiesModule } from '../cookies-module/cookies.module';
 import { CookieService } from 'ng2-cookies';
 import { CookiesSnackBarModule } from '../cookies-snackbar-module/cookies-snackbar.module';
 import { MainContentComponent } from './main-content.component';
+import { NotFoundComponent } from '../not-found-module/not-found.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { WhoModule } from '../who-module/who.module';
 import { WorksModule } from '../works-module/works.module';
@@ -55,7 +59,8 @@ describe('Main Content Component', () => {
       declarations: [
         MainContentComponent,
         SidenavComponent,
-        BreadcrumbControlComponent
+        BreadcrumbControlComponent,
+        NotFoundComponent
       ]
     })
       .compileComponents();
