@@ -14,7 +14,8 @@ export class CookiesSnackbarComponent {
   constructor(private cookieService: CookieService) {}
 
   closeCookies() {
-    this.cookieService.set('pw-cookies', 'true');
+    // set cookie for 2 years
+    this.cookieService.set('pw-cookies', 'true', 730);
     this.snackBarCookieRef.dismiss();
   }
 }

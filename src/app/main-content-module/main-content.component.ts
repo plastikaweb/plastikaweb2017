@@ -9,6 +9,7 @@ import { WorksService } from '../shared/works-service/works.service';
 import { MdSnackBar } from '@angular/material';
 import { CookiesSnackbarComponent } from '../cookies-snackbar-module/cookies-snackbar.component';
 import { CookieService } from 'ng2-cookies';
+import { NotFoundComponent } from '../not-found-module/not-found.component';
 
 @Component({
   selector: 'app-main-content',
@@ -39,15 +40,15 @@ export class MainContentComponent implements OnInit, AfterViewInit {
         while (route.firstChild) {
           route = route.firstChild;
         }
-
-        this.isNotFound$ = Observable.of(route.component[ 'name' ] === 'NotFoundComponent');
+        // checks 404 error
+        this.isNotFound$ = Observable.of(NotFoundComponent === route.component);
         return this.isNotFound$.withLatestFrom(route.url, (a, b) => (
           { notFound: a, url: b }
         ));
       })
       .switchMap(data => {
           if (data.notFound) {
-            return Observable.of('This page does not exist');
+            return Observable.of('The page does not exist');
           }
           const url = data.url;
           return this.translate
