@@ -15,10 +15,11 @@ import { appRoutes, AppRoutingModule } from './app-routing.module';
 import { ContactModule } from './contact-module/contact.module';
 import { HeaderModule } from './header-module/header.module';
 import { MainContentModule } from './main-content-module/main-content.module';
-import { WorksModule } from './works-module/works.module';
+import { NotFoundModule } from './not-found-module/not-found.module';
+import { ResolversModule } from './resolvers/resolvers.module';
 import { SharedModule } from './shared/shared.module';
 import { WhoModule } from './who-module/who.module';
-import { NotFoundModule } from './not-found-module/not-found.module';
+import { WorksModule } from './works-module/works.module';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -35,12 +36,13 @@ export function HttpLoaderFactory(http: Http) {
     BrowserAnimationsModule,
     CovalentLayoutModule,
     NotFoundModule,
+    ResolversModule,
     SharedModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [Http]
+        deps: [ Http ]
       }
     }),
     LocalizeRouterModule.forRoot(appRoutes),
@@ -50,7 +52,10 @@ export function HttpLoaderFactory(http: Http) {
     WhoModule,
     WorksModule
   ],
-  providers: [ TdMediaService, CookieService ],
+  providers: [
+    TdMediaService,
+    CookieService
+    ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

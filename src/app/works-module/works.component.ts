@@ -1,12 +1,11 @@
+import { ActivatedRoute } from '@angular/router';
 import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, OnInit, Renderer2 } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { TranslateService } from '@ngx-translate/core';
 
-import { ITranslation, IWork } from '../models/work.model';
 import { fadeAnimation } from '../animations/fade.animation';
-import { WorksService } from '../shared/shared.module';
 import { ImagesService } from '../shared/images-service/images.service';
-import { TagsService } from '../shared/tags-service/tags.service';
+import { ITranslation, IWork } from '../models/work.model';
 
 @Component({
   selector: 'app-works',
@@ -16,7 +15,7 @@ import { TagsService } from '../shared/tags-service/tags.service';
 })
 export class WorksComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation = true;
-  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.display') display = 'block';
 
   works$: Observable<IWork[]>;
   allTags$: Observable<string[]>;
@@ -27,8 +26,7 @@ export class WorksComponent implements OnInit {
   tagsFilter: string[] = [];
   sendTagSelection;
 
-  constructor(private worksService: WorksService,
-              private tagsService: TagsService,
+  constructor(private route: ActivatedRoute,
               private elmRef: ElementRef,
               private _imagesService: ImagesService,
               private renderer: Renderer2,
@@ -40,21 +38,21 @@ export class WorksComponent implements OnInit {
     this.myScrollContainer = this.renderer
       .parentNode(this.elmRef.nativeElement.parentNode);
 
-    this.works$ = this.worksService.addTagListToWorks();
-    this.allTags$ = this.tagsService.getTagsNames();
-    // TODO it prevents that translate pipes and directives work on first load
+    this.works$ = this.route.data.map(data => data.works[ 0 ]);
+    this.allTags$ = this.route.data.map(data => data.works[ 1 ]);
     // TODO find fix
     this.translate.reloadLang(this.translate.currentLang);
   }
 
   doFilter(tags: string[]) {
-    this.tagsFilter = [...tags];
+    this.tagsFilter = [ ...tags ];
     this.sendTagSelection = '';
   }
 
   getRemoteTranslation(item: ITranslation) {
     return item[ this.translate.currentLang ];
   }
+
   tagSelection(e) {
     this.sendTagSelection = e;
   }

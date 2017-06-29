@@ -36,6 +36,10 @@ import { WorksComponent } from './works.component';
     WorksComponent,
     FilterWorksComponent,
     FilterPipe
+  ],
+  exports: [
+    WorkComponent,
+    WorksComponent
   ]
 })
 export class WorksModule {

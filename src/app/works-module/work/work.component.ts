@@ -1,14 +1,12 @@
-import { ChangeDetectionStrategy, Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
-import { TranslateService } from '@ngx-translate/core';
+import {ActivatedRoute} from "@angular/router";
+import {BreadcrumbService} from 'ng2-breadcrumb/bundles/components/breadcrumbService';
+import {ChangeDetectionStrategy, Component, HostBinding, OnInit} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+import {TranslateService} from '@ngx-translate/core';
 
-import { fadeAnimation } from '../../animations/fade.animation';
-import { ITranslation, IWork } from '../../models/work.model';
-import { ImagesService } from '../../shared/images-service/images.service';
-import { WorksService } from '../../shared/works-service/works.service';
+import {fadeAnimation} from '../../animations/fade.animation';
+import {ImagesService} from '../../shared/images-service/images.service';
+import {ITranslation, IWork} from '../../models/work.model';
 
 @Component({
   selector: 'app-work',
@@ -16,49 +14,36 @@ import { WorksService } from '../../shared/works-service/works.service';
   animations: [ fadeAnimation ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WorkComponent implements OnInit, OnDestroy {
+export class WorkComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation = true;
-  @HostBinding('style.display') display = 'block';
-
+  @HostBinding('style.display')   display = 'block';
   work$: Observable<IWork>;
-  workNameSubscription: Subscription;
   slug;
   offset = 100;
   activityColor = 'warn';
   imagesService;
 
-  constructor(private worksService: WorksService,
-              private _imagesService: ImagesService,
-              private translate: TranslateService,
+  constructor(private _imagesService: ImagesService,
+              private route: ActivatedRoute,
               private breadcrumbService: BreadcrumbService,
-              private activatedRoute: ActivatedRoute) {
+              private translate: TranslateService) {
     this.imagesService = _imagesService;
   }
 
   ngOnInit() {
-    this.activatedRoute.params
-      .subscribe(param => {
-        this.slug = param[ 'slug' ];
-        this.work$ = this.worksService.findWorkBySlug(this.slug);
-
-        // TODO - think about how to make a single call to service
-        this.workNameSubscription = this.worksService
-          .findWorkNameBySlug(this.slug)
-          .subscribe(name => this.breadcrumbService
-            .addFriendlyNameForRoute(`/works/${this.slug}`, name)
-          );
-      });
-    // TODO it prevents that translate pipes and directives work on first load
+    this.work$ = this.route.data.map(data => data.work[0]);
+    // TODO check if the named route for work is already added
+    // or it is the first time (the loading has gone directly to work detail)
+    this.route.data.map(data => data.work[1])
+      .subscribe(name => this.breadcrumbService
+        .addFriendlyNameForRoute(`/works/${this.slug}`, name)
+      );
     // TODO find fix
     this.translate.reloadLang(this.translate.currentLang);
   }
 
-  ngOnDestroy() {
-    this.workNameSubscription.unsubscribe();
-  }
-
   getRemoteTranslation(item: ITranslation): string {
-    return item[ this.translate.currentLang ];
+    return item[this.translate.currentLang];
   }
 
 }

@@ -7,11 +7,13 @@ import { ISkill } from 'app/models/skill.model';
 @Injectable()
 export class SkillsService {
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase) {
+  }
 
   findAllActiveSkills(): Observable<ISkill[]> {
     return this.db.list('/skills', {
       query: { orderByChild: 'active', equalTo: true }
-    });
+    })
+      .first();
   }
 }

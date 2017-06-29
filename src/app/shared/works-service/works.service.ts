@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
 import { IWork } from '../../models/work.model';
@@ -19,7 +19,7 @@ export class WorksService {
   findAllActiveWorks(): Observable<IWork[]> {
     return this.db.list('/works', {
       query: { orderByChild: 'active', equalTo: true }
-    });
+    }).take(1);
   }
 
   /**
@@ -33,7 +33,12 @@ export class WorksService {
         work => this.findTagsByWork(work)
         )
       )
-      .switchMap(works => Observable.combineLatest(works));
+      .switchMap(works => Observable.combineLatest(works))
+      .first();
+  }
+
+  test(): FirebaseListObservable<any> {
+    return this.db.list('/works');
   }
 
   /**
@@ -48,7 +53,8 @@ export class WorksService {
       .map(works => works[ 0 ])
       // add tags list
       .switchMap(work => this.findTagsByWork(work)
-      );
+      )
+      .first();
   }
 
   /**
