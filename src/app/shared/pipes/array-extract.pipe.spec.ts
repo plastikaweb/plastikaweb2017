@@ -15,6 +15,10 @@ describe('Array Extract Pipe', () => {
     arr = [ 'a', 'b', 'c', 'd' ];
   }));
 
+  it('create an instance', () => {
+    expect(pipe).toBeTruthy();
+  });
+
   it('should return a new array with the 2 first elements by providing end index equal to 2', () => {
     expect(pipe.transform(arr, 2))
       .toEqual([ 'a', 'b' ]);

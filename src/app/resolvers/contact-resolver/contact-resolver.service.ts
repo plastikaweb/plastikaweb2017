@@ -2,7 +2,7 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { ContactService } from '../shared/contact-service/contact.service';
+import { ContactService } from '../../shared/contact-service/contact.service';
 
 @Injectable()
 export class ContactResolver implements Resolve<any> {

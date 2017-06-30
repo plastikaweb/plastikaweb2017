@@ -1,6 +1,9 @@
 import { Angulartics2Module } from 'angulartics2';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MdButtonModule, MdCardModule, MdIconModule, MdListModule, MdProgressSpinnerModule } from '@angular/material';
+import {
+MdButtonModule, MdCardModule, MdIconModule, MdListModule, MdProgressBarModule
+} from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { ActivityIndicatorComponent } from './activity-indicator/activity-indicator.component';
@@ -20,7 +23,8 @@ const MATERIAL_MODULES: any[] = [
 @NgModule({
   imports: [
     Angulartics2Module,
-    MdProgressSpinnerModule,
+    CommonModule,
+    MdProgressBarModule,
     TranslateModule,
     MATERIAL_MODULES
   ],

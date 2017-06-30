@@ -12,6 +12,8 @@ import { langConfig } from '../config/lang.config';
 })
 export class AppComponent implements OnInit {
 
+  activityColor = 'warn';
+
   constructor(public angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
               private translate: TranslateService,
               private localize: LocalizeRouterService,

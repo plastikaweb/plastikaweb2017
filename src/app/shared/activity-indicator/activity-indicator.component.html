@@ -1,6 +1,4 @@
-<div class="activity-indicator">
-  <h4>{{ 'ANY.loading' | translate }}</h4>
-  <md-progress-spinner [color]="color"
-                       mode="indeterminate">
-  </md-progress-spinner>
+<div class="activity-indicator" *ngIf="loading$ | async">
+  <md-progress-bar [color]="color" mode="indeterminate">
+  </md-progress-bar>
 </div>

@@ -2,9 +2,9 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { IWork } from '../models/work.model';
-import { TagsService } from '../shared/tags-service/tags.service';
-import { WorksService } from '../shared/works-service/works.service';
+import { IWork } from '../../models/work.model';
+import { TagsService } from '../../shared/tags-service/tags.service';
+import { WorksService } from '../../shared/works-service/works.service';
 
 @Injectable()
 export class WorksResolver implements Resolve<[ IWork[], string[] ]> {

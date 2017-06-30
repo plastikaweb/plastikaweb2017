@@ -1,4 +1,4 @@
-<div *ngIf="work$ | async as work; else projectLoading">
+<div *ngIf="work$ | async as work;">
   <md-card-header>
     <img md-card-avatar class="size-72"
          alt="work.name"
@@ -64,16 +64,3 @@
     </md-list>
   </md-card-content>
 </div>
-
-<ng-template #projectLoading>
-  <md-card-header>
-    <md-card-title>
-      <h3>{{ slug }}</h3>
-    </md-card-title>
-  </md-card-header>
-  <md-card-content>
-    <app-activity-indicator
-      [color]="activityColor">
-    </app-activity-indicator>
-  </md-card-content>
-</ng-template>

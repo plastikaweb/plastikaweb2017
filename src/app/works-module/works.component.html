@@ -7,11 +7,12 @@
 </md-card-header>
 <md-divider></md-divider>
 
-<div *ngIf="works$ | async as works; else loadingProjects">
+<div *ngIf="works$ | async as works;">
   <md-card-content>
     <app-filter-works (filterBy)="doFilter($event)"
                       [receiveTag]="sendTagSelection"
-                      *ngIf="allTags$ | async as tags;" [tags]="tags">
+                      *ngIf="allTags$ | async as tags;"
+                      [tags]="tags">
     </app-filter-works>
     <div layout="row"
          layout-wrap
@@ -44,11 +45,3 @@
     </div>
   </md-card-content>
 </div>
-
-<ng-template #loadingProjects>
-  <md-card-content>
-    <app-activity-indicator
-      [color]="activityColor">
-    </app-activity-indicator>
-  </md-card-content>
-</ng-template>

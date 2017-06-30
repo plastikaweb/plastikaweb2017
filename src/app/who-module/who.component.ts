@@ -16,7 +16,6 @@ export class WhoComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
   skills$: Observable<ISkill[]>;
-  activityColor = 'warn';
 
   constructor(private route: ActivatedRoute,
               private translate: TranslateService) {

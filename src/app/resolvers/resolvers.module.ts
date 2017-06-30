@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 
-import { ContactResolver } from './contact-resolver.service';
-import { WhoResolver } from './who-resolver.service';
-import { WorkResolver } from './work-resolver.service';
-import { WorksResolver } from './works-resolver.service';
+import { ContactResolver } from './contact-resolver/contact-resolver.service';
+import { WhoResolver } from './who-resolver/who-resolver.service';
+import { WorkResolver } from './work-resolver/work-resolver.service';
+import { WorksResolver } from './works-resolver/works-resolver.service';
 
 @NgModule({
   providers: [

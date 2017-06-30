@@ -1,12 +1,12 @@
-import {ActivatedRoute} from "@angular/router";
-import {BreadcrumbService} from 'ng2-breadcrumb/bundles/components/breadcrumbService';
-import {ChangeDetectionStrategy, Component, HostBinding, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {TranslateService} from '@ngx-translate/core';
+import { ActivatedRoute } from '@angular/router';
+import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
+import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { TranslateService } from '@ngx-translate/core';
 
-import {fadeAnimation} from '../../animations/fade.animation';
-import {ImagesService} from '../../shared/images-service/images.service';
-import {ITranslation, IWork} from '../../models/work.model';
+import { fadeAnimation } from '../../animations/fade.animation';
+import { ImagesService } from '../../shared/images-service/images.service';
+import { ITranslation, IWork } from '../../models/work.model';
 
 @Component({
   selector: 'app-work',
@@ -16,11 +16,10 @@ import {ITranslation, IWork} from '../../models/work.model';
 })
 export class WorkComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation = true;
-  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.display') display = 'block';
   work$: Observable<IWork>;
   slug;
   offset = 100;
-  activityColor = 'warn';
   imagesService;
 
   constructor(private _imagesService: ImagesService,
@@ -31,10 +30,10 @@ export class WorkComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.work$ = this.route.data.map(data => data.work[0]);
+    this.work$ = this.route.data.map(data => data.work[ 0 ]);
     // TODO check if the named route for work is already added
     // or it is the first time (the loading has gone directly to work detail)
-    this.route.data.map(data => data.work[1])
+    this.route.data.map(data => data.work[ 1 ])
       .subscribe(name => this.breadcrumbService
         .addFriendlyNameForRoute(`/works/${this.slug}`, name)
       );
@@ -43,7 +42,7 @@ export class WorkComponent implements OnInit {
   }
 
   getRemoteTranslation(item: ITranslation): string {
-    return item[this.translate.currentLang];
+    return item[ this.translate.currentLang ];
   }
 
 }

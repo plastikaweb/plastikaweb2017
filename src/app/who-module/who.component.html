@@ -8,19 +8,10 @@
 <md-divider></md-divider>
 <md-card-content>
   <p [innerHTML]="'WHO.description' | translate"></p>
-  <div *ngIf="skills$ | async as skills; else loadingSkills">
+  <div *ngIf="skills$ | async as skills;">
     <app-skill *ngFor="let skill of skills"
     [class]="skill.class" [skill]="skill"></app-skill>
   </div>
-
-  <ng-template #loadingSkills>
-    <md-card-content>
-      <app-activity-indicator
-        [color]="activityColor">
-      </app-activity-indicator>
-    </md-card-content>
-  </ng-template>
-
 </md-card-content>
 
 <md-divider></md-divider>

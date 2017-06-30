@@ -2,7 +2,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { IWork } from '../models/work.model';
 
-const tagList: IWork[] = [ {
+export const workList: IWork[] = [ {
   $key: '1',
   active: true,
   name: 'the project',
@@ -14,7 +14,6 @@ const tagList: IWork[] = [ {
   year: 2007,
   description: {},
   tools: 'ActionScript 2.0, PHP, XML',
-  tags: [ { name: 'flash' } ],
   slug: 'the-project'
 }, {
   $key: '2',
@@ -28,14 +27,10 @@ const tagList: IWork[] = [ {
   year: 2009,
   description: {},
   tools: 'Angular, firebase',
-  tags: [
-    { name: 'angular' },
-    { name: 'firebase' }
-  ],
   slug: 'the-project-2'
 } ];
 
 export const afDbMock = {
-  list: () => Observable.of(tagList),
-  object: () => Observable.of(tagList[0])
+  list: () => Observable.of(workList),
+  object: () => Observable.of(workList[ 0 ])
 };

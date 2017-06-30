@@ -26,7 +26,7 @@ import { WorksComponent } from './works.component';
     FormsModule,
     LazyLoadImageModule,
     LocalizeRouterModule,
-    RouterModule,
+    RouterModule.forRoot([]),
     SharedModule,
     TranslateModule
   ],

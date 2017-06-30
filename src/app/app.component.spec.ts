@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { ContactModule } from 'app/contact-module/contact.module';
 import { HeaderModule } from './header-module/header.module';
 import { MainContentModule } from './main-content-module/main-content.module';
+import { SharedModule } from './shared/shared.module';
 import { transMock } from './mocks/translate.mock';
 import { WhoModule } from './who-module/who.module';
 import { WorksModule } from './works-module/works.module';
@@ -39,6 +40,7 @@ describe('AppComponent', () => {
         ContactModule,
         HeaderModule,
         MainContentModule,
+        SharedModule,
         WhoModule,
         WorksModule
       ]

@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdCardModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -11,6 +12,7 @@ describe('CookiesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        BrowserAnimationsModule,
         TranslateModule.forRoot(),
         MdCardModule
       ],

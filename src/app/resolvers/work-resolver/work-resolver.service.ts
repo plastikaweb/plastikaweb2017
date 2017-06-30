@@ -2,8 +2,8 @@ import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/rou
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 
-import {IWork} from '../models/work.model';
-import {WorksService} from '../shared/works-service/works.service';
+import {IWork} from '../../models/work.model';
+import {WorksService} from '../../shared/works-service/works.service';
 
 @Injectable()
 export class WorkResolver implements Resolve<[IWork, string]> {

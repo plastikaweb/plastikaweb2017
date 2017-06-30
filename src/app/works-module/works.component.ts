@@ -21,7 +21,6 @@ export class WorksComponent implements OnInit {
   allTags$: Observable<string[]>;
   offset = 100;
   myScrollContainer;
-  activityColor = 'warn';
   imagesService;
   tagsFilter: string[] = [];
   sendTagSelection;
@@ -53,7 +52,7 @@ export class WorksComponent implements OnInit {
     return item[ this.translate.currentLang ];
   }
 
-  tagSelection(e) {
+  tagSelection(e: string) {
     this.sendTagSelection = e;
   }
 

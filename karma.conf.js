@@ -43,15 +43,15 @@ module.exports = function (config) {
       ],
       thresholds: {
         global: {
-          statements: 70,
+          statements: 75,
           branches: 70,
           lines: 70,
-          functions: 60
+          functions: 70
         },
         each: {
-          statements: 50,
-          branches: 50,
-          lines: 50,
+          statements: 40,
+          branches: 40,
+          lines: 40,
           functions: 40
         }
       }
