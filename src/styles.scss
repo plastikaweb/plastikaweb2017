@@ -11,8 +11,8 @@ a {
 .mat-list-item.router-link-active .mat-list-item-content {
   background-color: mat-color($accent, 200);
   md-icon[md-list-avatar], .mat-list-text > h3 {
-     color: mat-color($primary, 900);
-   }
+    color: mat-color($primary, 900);
+  }
 }
 
 // avatar icon
@@ -112,31 +112,53 @@ app-works {
 
 }
 
-app-tags {
+app-tags, app-filter-works {
   [md-icon-button] {
     margin: 2px 0 4px 4px;
     &.selected {
       background-color: mat-color($primary, 100);
     }
-    .tag.mat-card-avatar {
-      &.size-16 {
-        height: 16px;
-        width: 16px;
+  }
+  .tag {
+    &.size-16 {
+      height: 16px;
+      width: 16px;
+    }
+    &.size-20 {
+      height: 20px;
+      width: 20px;
+    }
+    &.size-24 {
+      height: 24px;
+      width: 24px;
+    }
+    &.size-32 {
+      height: 32px;
+      width: 32px;
+    }
+    &.size-50 {
+      height: 50px;
+      width: 50px;
+    }
+  }
+  // filter
+  md-basic-chip {
+    [td-chip-avatar] {
+      background-color: mat-color($primary, 200);
+      > .size-20 {
+        @include filter(grayscale, 80%);
       }
-      &.size-24 {
-        height: 24px;
-        width: 24px;
-      }
-      &.size-32 {
-        height: 32px;
-        width: 32px;
-      }
-      &.size-50 {
-        height: 50px;
-        width: 50px;
+    }
+    &:focus {
+      [td-chip-avatar] {
+        background-color: mat-color($warn, 200);
+        > .size-20 {
+          @include filter(grayscale, 0);
+        }
       }
     }
   }
+
 }
 
 // CONTACT //
@@ -154,6 +176,7 @@ app-contact .mat-list[dense] .mat-list-item .mat-line {
     }
   }
 }
+
 @include skillsEase(first-of-type, top);
 @include skillsEase(last-of-type, bottom);
 

@@ -50,4 +50,7 @@ export class FilterWorksComponent implements OnInit {
     this.filterBy.emit(this.stringsModel);
   }
 
+  getMainTechImage(name) {
+    return `assets/icons/${name}.svg`;
+  }
 }

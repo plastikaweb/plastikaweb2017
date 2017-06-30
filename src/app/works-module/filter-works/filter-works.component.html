@@ -7,7 +7,9 @@
           (inputChange)="filterStrings($event)"
           requireMatch>
   <ng-template td-chip let-chip="chip">
-    <div class="tc-grey-100 bgc-dark-blue-grey-500" td-chip-avatar>
-      {{chip.substring(0, 1).toUpperCase()}}</div>{{chip}}
+    <div td-chip-avatar>
+      <img class="tag size-20"
+           [src]="getMainTechImage(chip)"
+           alt="{{chip}}"></div>{{chip}}
   </ng-template>
 </td-chips>
