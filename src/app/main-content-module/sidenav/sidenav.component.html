@@ -18,3 +18,9 @@
   <h3 md-line> {{ 'CONTACT.title' | translate }} </h3>
   <p md-line> {{ 'CONTACT.sub' | translate }} </p>
 </a>
+<md-divider></md-divider>
+<a md-list-item [routerLink]="'/cookies' | localize"
+   [routerLinkActive]="['router-link-active']">
+  <md-icon md-list-avatar class="md-12">info</md-icon>
+  <p class="md-caption"> {{ 'COOKIES.title' | translate }} </p>
+</a>

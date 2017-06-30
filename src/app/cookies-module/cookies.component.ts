@@ -6,7 +6,6 @@ import { fadeAnimation } from '../animations/fade.animation';
   selector: 'app-cookies',
   templateUrl: './cookies.component.html',
   animations: [ fadeAnimation ],
-  styleUrls: ['./cookies.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CookiesComponent  {
