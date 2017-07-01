@@ -3,11 +3,15 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ImagesService {
 
-  getImage(subdirectory, name, sufix): string {
+  static getMainTechImage(name) {
+    return `assets/icons/${name}.svg`;
+  }
+
+  static getImage(subdirectory, name, sufix): string {
     return `assets/${subdirectory}/${name}/${name}${sufix}`;
   }
 
-  getImageSet(subdirectory, name): string {
+  static getImageSet(subdirectory, name): string {
     return `
     assets/${subdirectory}/${name}/${name}1200x600.png 1200w,
     assets/${subdirectory}/${name}/${name}-1.png 600w,
@@ -15,7 +19,8 @@ export class ImagesService {
     `;
   }
 
-  getDefaultImage(): string {
+  static getDefaultImage(): string {
     return 'assets/images/background.jpg';
   }
+
 }

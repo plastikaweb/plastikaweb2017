@@ -35,8 +35,7 @@ describe('Array Extract Pipe', () => {
   });
 
   it('should return an error if no array is provided as argument', () => {
-    expect(() => pipe.transform(null))
-      .toThrow(new Error('Requires an Array as input'));
+    expect(() => pipe.transform(undefined)).toThrow();
   });
 
 });

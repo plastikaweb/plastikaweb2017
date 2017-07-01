@@ -6,9 +6,9 @@ import { Location } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { afDbMock } from '../mocks/works.mock';
 import { ContactComponent } from './contact.component';
 import { SharedModule } from '../shared/shared.module';
+import { worksMock } from '../mocks/works.mock';
 
 describe('Contact Component', () => {
   let component: ContactComponent;
@@ -26,7 +26,7 @@ describe('Contact Component', () => {
       declarations: [ ContactComponent ],
       providers: [
         { provide: Location, useValue: null },
-        { provide: AngularFireDatabase, useValue: afDbMock }
+        { provide: AngularFireDatabase, useValue: worksMock }
       ]
     })
     .compileComponents();

@@ -6,6 +6,8 @@ import { tagsMock, tagsList } from '../../mocks/tags.mock';
 import { TagsService } from './tags.service';
 
 describe('TagsService', () => {
+  let service;
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
@@ -15,21 +17,25 @@ describe('TagsService', () => {
     });
   });
 
-  it('should be created', inject([ TagsService ], (service: TagsService) => {
-    expect(service).toBeTruthy();
+  beforeEach(inject([ TagsService ], s => {
+    service = s;
   }));
 
-  it('should return tags data from firebase', inject([ TagsService ], (service: TagsService) => {
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+  it('should return tags data from firebase', () => {
     const tagsObservable = service.getTagsNames();
     tagsObservable.subscribe(data => {
       expect(data.length).toEqual(tagsList.length);
     });
-  }));
+  });
 
-  it('should return a tag object given a tagName', inject([ TagsService ], (service: TagsService) => {
+  it('should return a tag object given a tagName', () => {
     const tagsObservable = service.findTagFromName('angular');
     tagsObservable.subscribe(data => {
-      expect(data.name).toEqual(tagsList[0].name);
+      expect(data.name).toEqual(tagsList[ 0 ].name);
     });
-  }));
+  });
 });

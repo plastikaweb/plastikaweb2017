@@ -14,7 +14,6 @@
       <div flex="100" flex-gt-md="55" flex-gt-lg="70">
         <h3>{{ 'CONTACT.interested' | translate }}</h3>
         <md-list dense *ngIf="contactData.interests as interests">
-
           <md-list-item *ngFor="let interest of interests">
             <md-icon md-list-avatar>done</md-icon>
             <p md-line [innerHTML]="getRemoteTranslation(interest)"></p>

@@ -1,9 +1,6 @@
-import { AngularFireDatabase } from 'angularfire2/database';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { afDbMock } from '../../mocks/works.mock';
 import { TagsComponent } from './tags.component';
-import { TagsService } from '../../shared/tags-service/tags.service';
 
 describe('TagsComponent', () => {
   let component: TagsComponent;
@@ -11,11 +8,7 @@ describe('TagsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TagsComponent ],
-      providers: [
-        TagsService,
-        { provide: AngularFireDatabase, useValue: afDbMock }
-        ]
+      declarations: [ TagsComponent ]
     })
       .compileComponents();
   }));
@@ -23,10 +16,28 @@ describe('TagsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TagsComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    component.selectedTags = [ 'angular', 'php' ];
   });
 
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should raise emitTagSelection event when selectTag is fired', () => {
+    let tag = null;
+    component.emitTagSelection.subscribe(t => tag = t);
+    component.selectTag('angular');
+    expect(tag).toBe('angular');
+  });
+
+  it('should return true if the selected tag is in the list of tags', () => {
+    const result = component.checkIfSelected('angular');
+    expect(result).toBeTruthy();
+  });
+
+  it('should return false if the selected tag is not in the list of tags', () => {
+    const result = component.checkIfSelected('firebase');
+    expect(result).toBeFalsy();
+  });
+
 });

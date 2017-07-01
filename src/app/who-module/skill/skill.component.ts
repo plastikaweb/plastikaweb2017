@@ -19,12 +19,10 @@ export class SkillComponent implements OnInit {
   years = '';
   proficiency = '';
   $worksRelated: Observable<IWork[]>;
-  imagesService;
+  imagesService = ImagesService;
 
   constructor(private translate: TranslateService,
-              private worksService: WorksService,
-              private _imagesService: ImagesService) {
-    this.imagesService = _imagesService;
+              private worksService: WorksService) {
   }
 
   ngOnInit() {

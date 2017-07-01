@@ -10,7 +10,7 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { afDbMock, workList } from '../../mocks/works.mock';
+import { worksMock, workList } from '../../mocks/works.mock';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SharedModule } from '../../shared/shared.module';
 import { TagsComponent } from '../tags/tags.component';
@@ -45,7 +45,7 @@ describe('WorkComponent', () => {
         BreadcrumbService,
         { provide: APP_BASE_HREF, useValue: '/' },
         { provide: ActivatedRoute, useValue: MockActivatedRoute },
-        { provide: AngularFireDatabase, useValue: afDbMock }
+        { provide: AngularFireDatabase, useValue: worksMock }
       ]
     })
       .compileComponents();

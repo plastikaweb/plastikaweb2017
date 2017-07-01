@@ -5,6 +5,8 @@ import { ContactService } from './contact.service';
 import { contactbMock, contactObject } from '../../mocks/contact.mock';
 
 describe('ContactService', () => {
+  let service: ContactService;
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
@@ -14,11 +16,15 @@ describe('ContactService', () => {
     });
   });
 
-  it('should be created', inject([ ContactService ], (service: ContactService) => {
-    expect(service).toBeTruthy();
+  beforeEach(inject([ ContactService ], s => {
+    service = s;
   }));
 
-  it('should return contact data from firebase', inject([ ContactService ], (service: ContactService) => {
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+  it('should return contact data from firebase', () => {
     const contactObservable = service.findContactData();
     contactObservable.subscribe(data => {
       expect(data.email).toEqual(contactObject.email);
@@ -26,6 +32,6 @@ describe('ContactService', () => {
       expect(data.intro.length).toEqual(contactObject.intro.length);
       expect(data.interests.length).toBe(contactObject.interests.length);
     });
-  }));
+  });
 
 });

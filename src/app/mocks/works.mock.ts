@@ -30,7 +30,7 @@ export const workList: IWork[] = [ {
   slug: 'the-project-2'
 } ];
 
-export const afDbMock = {
+export const worksMock = {
   list: () => Observable.of(workList),
   object: () => Observable.of(workList[ 0 ])
 };

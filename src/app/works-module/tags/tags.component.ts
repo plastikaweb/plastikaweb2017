@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
+import { ImagesService } from '../../shared/images-service/images.service';
 import { ITag } from '../../models/tag.model';
 
 @Component({
@@ -12,10 +13,7 @@ export class TagsComponent {
   @Input() tags: ITag[] = [];
   @Input() selectedTags: string[] = [];
   @Output() emitTagSelection: EventEmitter<string> = new EventEmitter();
-
-  getMainTechImage(name) {
-    return `assets/icons/${name}.svg`;
-  }
+  imagesService = ImagesService;
 
   selectTag(name) {
     this.emitTagSelection.emit(name);

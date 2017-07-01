@@ -146,14 +146,15 @@ app-tags, app-filter-works {
     [td-chip-avatar] {
       background-color: mat-color($primary, 200);
       > .size-20 {
-        @include filter(grayscale, 80%);
+        border-radius: 50%;
+        @include filter(sepia, 80%);
       }
     }
     &:focus {
       [td-chip-avatar] {
         background-color: mat-color($warn, 200);
         > .size-20 {
-          @include filter(grayscale, 0);
+          @include filter(sepia, 0);
         }
       }
     }

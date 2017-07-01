@@ -1,7 +1,7 @@
 import { AngularFireDatabase } from 'angularfire2/database';
 import { TestBed, inject } from '@angular/core/testing';
 
-import { afDbMock } from '../../mocks/works.mock';
+import { worksMock } from '../../mocks/works.mock';
 import { SkillsService } from '../../shared/skills-service/skills.service';
 import { WhoResolver } from './who-resolver.service';
 
@@ -11,7 +11,7 @@ describe('Who Resolver Service', () => {
       providers: [
         SkillsService,
         WhoResolver,
-        { provide: AngularFireDatabase, useValue: afDbMock }
+        { provide: AngularFireDatabase, useValue: worksMock }
       ]
     });
   });

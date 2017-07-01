@@ -9,7 +9,7 @@
   <ng-template td-chip let-chip="chip">
     <div td-chip-avatar>
       <img class="tag size-20"
-           [src]="getMainTechImage(chip)"
+           [src]="imagesService.getMainTechImage(chip)"
            alt="{{chip}}"></div>{{chip}}
   </ng-template>
 </td-chips>

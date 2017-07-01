@@ -37,24 +37,4 @@ describe('Language Menu Component', () => {
     expect(component.currentLang).toBe('es');
   });
 
-  // it('should has the app language to browser language on loading if browser language is on list',
-  //   async(() => {
-  //     expect(component.currentLang).toEqual('es');
-  //   }));
-  //
-  // it('should has the app language to default language on loading if browser language is not on list',
-  //   async(() => {
-  //     component.languages = [ 'en', 'ca' ];
-  //     component.ngOnInit();
-  //     fixture.detectChanges();
-  //     expect(component.currentLang).toEqual('en');
-  //   }));
-  //
-  // it('should apply the app language to catalan from spanish on changing it',
-  //   async(() => {
-  //     component.ngOnInit();
-  //     fixture.detectChanges();
-  //     component.changeLang('ca');
-  //     expect(component.currentLang).toEqual('ca');
-  //   }));
 });

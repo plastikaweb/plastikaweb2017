@@ -2,6 +2,6 @@
    [ngClass]="{selected: checkIfSelected(tag.name)}"
    (click)="selectTag(tag.name)">
   <img class="tag size-24"
-       [src]="getMainTechImage(tag.name)"
+       [src]="imagesService.getMainTechImage(tag.name)"
        alt="{{tag.name}}" title="{{tag.name}}">
 </a>

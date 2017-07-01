@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
+import { ImagesService } from '../../shared/images-service/images.service';
+
 @Component({
   selector: 'app-filter-works',
   templateUrl: './filter-works.component.html',
@@ -31,6 +33,7 @@ export class FilterWorksComponent implements OnInit {
   chipColor = 'warn';
   filteredStrings: string[];
   stringsModel: string[] = this.tags.slice(0, 6);
+  imagesService = ImagesService;
 
   ngOnInit(): void {
     this.filterStrings('');
@@ -50,7 +53,4 @@ export class FilterWorksComponent implements OnInit {
     this.filterBy.emit(this.stringsModel);
   }
 
-  getMainTechImage(name) {
-    return `assets/icons/${name}.svg`;
-  }
 }

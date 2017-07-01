@@ -33,37 +33,40 @@ export class MainContentComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     // update <head> => <title> dynamically
-    this.router.events
+    const routerEvents$ = this.router.events
       .filter(event => event instanceof NavigationEnd)
-      .map((e) => this.activatedRoute)
-      .switchMap(route => {
-        while (route.firstChild) {
-          route = route.firstChild;
+      .map((e) => this.activatedRoute);
+
+    const routeEventsData$ = routerEvents$.switchMap(route => {
+      while (route.firstChild) {
+        route = route.firstChild;
+      }
+      // checks 404 error
+      this.isNotFound$ = Observable.of(NotFoundComponent === route.component);
+      return this.isNotFound$.withLatestFrom(route.url, (a, b) => (
+        { notFound: a, url: b }
+      ));
+    });
+
+    const titleUpdate$ = routeEventsData$.switchMap(data => {
+        if (data.notFound) {
+          return Observable.of('The page does not exist');
         }
-        // checks 404 error
-        this.isNotFound$ = Observable.of(NotFoundComponent === route.component);
-        return this.isNotFound$.withLatestFrom(route.url, (a, b) => (
-          { notFound: a, url: b }
-        ));
-      })
-      .switchMap(data => {
-          if (data.notFound) {
-            return Observable.of('The page does not exist');
-          }
-          const url = data.url;
-          return this.translate
-            .getTranslation(this.translate.currentLang)
-            .switchMap(translation => {
-              if (url[ 1 ]) { // TODO - think a more robust solution
-                return this.worksService.findWorkNameBySlug(url[ 1 ].path);
-              } else if (url[ 0 ] && translation[ url[ 0 ].path ]) {
-                const mainSegment = translation[ url[ 0 ].path ].toUpperCase();
-                return Observable.of(translation[ mainSegment ] [ 'sub' ]);
-              }
-            })
-        }
-      )
-      .subscribe(
+        const url = data.url;
+        return this.translate
+          .getTranslation(this.translate.currentLang)
+          .switchMap(translation => {
+            if (url[ 1 ]) { // TODO - think a more robust solution
+              return this.worksService.findWorkNameBySlug(url[ 1 ].path);
+            } else if (url[ 0 ] && translation[ url[ 0 ].path ]) {
+              const mainSegment = translation[ url[ 0 ].path ].toUpperCase();
+              return Observable.of(translation[ mainSegment ] [ 'sub' ]);
+            }
+          })
+      }
+    );
+
+    titleUpdate$.subscribe(
         title => this.titleService.setTitle('Plastikaweb - ' + title)
       );
 

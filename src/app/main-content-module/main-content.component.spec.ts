@@ -1,6 +1,7 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentLayoutModule, CovalentMediaModule, TdMediaService } from '@covalent/core';
 import { LocalizeRouterModule } from 'localize-router';
 import { MdCardModule, MdIconModule, MdListModule, MdSnackBarModule } from '@angular/material';
@@ -39,6 +40,7 @@ describe('Main Content Component', () => {
       ],
       imports: [
         AppRoutingModule,
+        BrowserAnimationsModule,
         CookiesModule,
         CookiesSnackBarModule,
         ContactModule,
@@ -76,10 +78,4 @@ describe('Main Content Component', () => {
   it('should be created', fakeAsync(() => {
     expect(component).toBeTruthy();
   }));
-// prevent from http json files (must be mocked)
-//   it('should update the breadcrum section language appropiately',
-//     fakeAsync(inject([ BreadcrumbService ], (breadcrumb) => {
-//       fixture.detectChanges();
-//       expect(breadcrumb.getFriendlyNameForRoute('/who')).toEqual('who');
-//     })));
 });

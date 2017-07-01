@@ -32,6 +32,7 @@ export const transMock = {
   getLangs: () => langs,
   getBrowserLang: () => browserLang,
   getTranslation: (trans) => Observable.of(translations),
+  reloadLang: (lang: string) => Observable.of(null),
   setDefaultLang: (lang) => this.defaultLang = lang,
   get: (key) => Observable.of('value'),
   use: (lang) => Observable.of(null)

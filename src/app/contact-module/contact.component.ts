@@ -23,7 +23,7 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.contactData$ =  this.route.data.map(data => data.contact);
+    this.contactData$ = this.route.data.map(data => data.contact);
     // TODO it prevents that translate pipes and directives work on first load
     // TODO find fix
     this.translate.reloadLang(this.translate.currentLang);

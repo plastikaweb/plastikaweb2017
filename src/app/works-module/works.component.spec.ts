@@ -74,7 +74,7 @@ describe('Works Component', () => {
     expect(component.sendTagSelection).toBe('tag3');
   });
 
-  // fit('should return works data from resolver', () => {
+  // it('should return works data from resolver', () => {
   //   let works = null;
   //
   //   component.works$.subscribe(data => {
@@ -86,7 +86,7 @@ describe('Works Component', () => {
   //   expect(works.length).toBe(workList.length);
   // });
   //
-  // fit('should return tags data from resolver', () => {
+  // it('should return tags data from resolver', () => {
   //   let tags = null;
   //   fixture.detectChanges();
   //   component.allTags$.subscribe(data => tags = data[0]);

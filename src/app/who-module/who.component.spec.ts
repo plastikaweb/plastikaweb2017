@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { afDbMock } from '../mocks/works.mock';
+import { worksMock } from '../mocks/works.mock';
 import { SharedModule } from '../shared/shared.module';
 import { SkillComponent } from './skill/skill.component';
 import { WhoComponent } from './who.component';
@@ -35,7 +35,7 @@ describe('Who Component', () => {
         ],
         providers: [
           { provide: APP_BASE_HREF, useValue: '/' },
-          { provide: AngularFireDatabase, useValue: afDbMock }
+          { provide: AngularFireDatabase, useValue: worksMock }
         ],
         declarations: [ WhoComponent, SkillComponent ]
       })

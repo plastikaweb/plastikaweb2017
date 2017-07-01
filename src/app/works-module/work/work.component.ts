@@ -20,13 +20,11 @@ export class WorkComponent implements OnInit {
   work$: Observable<IWork>;
   slug;
   offset = 100;
-  imagesService;
+  imagesService = ImagesService;
 
-  constructor(private _imagesService: ImagesService,
-              private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,
               private breadcrumbService: BreadcrumbService,
               private translate: TranslateService) {
-    this.imagesService = _imagesService;
   }
 
   ngOnInit() {

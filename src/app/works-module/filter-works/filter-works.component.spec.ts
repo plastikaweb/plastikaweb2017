@@ -22,12 +22,14 @@ describe('FilterWorksComponent', () => {
         FilterWorksComponent
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FilterWorksComponent);
     component = fixture.componentInstance;
+    component.tags = [ 'angular', 'firebase', 'css3', 'facebook' ];
+    component.ngOnInit();
     fixture.detectChanges();
   });
 
@@ -36,13 +38,28 @@ describe('FilterWorksComponent', () => {
   });
 
   it('should add to stringsModel on change receiveTag with no existent item', () => {
-    component.receiveTag = 'firebase';
-    expect(component.stringsModel).toContain('firebase');
+    component.receiveTag = 'css3';
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component.stringsModel).toContain('css3');
+    });
   });
 
   it('should remove to stringsModel on change receiveTag with already existent item', () => {
-    component.receiveTag = 'firebase';
-    component.receiveTag = 'firebase';
-    expect(component.stringsModel).not.toContain('firebase');
+    component.receiveTag = 'angular'; // add tag
+    component.receiveTag = 'angular'; // remove tag
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component.stringsModel).not.toContain('angular');
+    });
   });
+
+  it('should add string to the stringsModel if present on tags array but not present on stringsModel', () => {
+    component.filterStrings('firebase');
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component.filteredStrings).toContain('firebase');
+    });
+  });
+
 });

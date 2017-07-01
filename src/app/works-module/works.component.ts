@@ -21,16 +21,14 @@ export class WorksComponent implements OnInit {
   allTags$: Observable<string[]>;
   offset = 100;
   myScrollContainer;
-  imagesService;
+  imagesService = ImagesService;
   tagsFilter: string[] = [];
   sendTagSelection;
 
   constructor(private route: ActivatedRoute,
               private elmRef: ElementRef,
-              private _imagesService: ImagesService,
               private renderer: Renderer2,
               private translate: TranslateService) {
-    this.imagesService = _imagesService;
   }
 
   ngOnInit() {
