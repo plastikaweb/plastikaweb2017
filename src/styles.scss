@@ -5,6 +5,14 @@
 a {
   color: mat-color($primary, 500);
 }
+svg {
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  image-rendering: optimizeQuality;
+  color-rendering: optimizeQuality;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
 
 // Any Menu item selected
 .mat-list-item.active .mat-list-item-content,

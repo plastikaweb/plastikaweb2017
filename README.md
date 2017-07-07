@@ -5,7 +5,7 @@
 [![codecov](https://codecov.io/gh/plastikaweb/plastikaweb2017/branch/master/graph/badge.svg)](https://codecov.io/gh/plastikaweb/plastikaweb2017)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
 
-## Personal Site example using Angular (v 4.0.1).
+## Personal Site example using Angular (> v 4.0.0).
 Just it! You are able to clone, modify, test and use it.
 
 ### Main packages and applications.
