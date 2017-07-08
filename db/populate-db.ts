@@ -15,7 +15,8 @@ contactRef.set(data.contact);
 data.tags.forEach(tag => {
   console.log('adding tag', tag.name);
   tagsRef.push({
-    name: tag.name
+    name: tag.name,
+    active: tag.active
   });
 });
 

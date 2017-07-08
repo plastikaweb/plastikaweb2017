@@ -11,7 +11,11 @@ export class TagsService {
   }
 
   getTagsNames(): Observable<string[]> {
-    return this.db.list('tags')
+    return this.db.list('tags', {
+      query: {
+        orderByChild: 'active', equalTo: true
+      }
+    })
       .map(tags => tags.map(tag => tag.name))
       .first();
   }
