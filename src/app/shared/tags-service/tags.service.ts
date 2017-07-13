@@ -17,7 +17,7 @@ export class TagsService {
       }
     })
       .map(tags => tags.map(tag => tag.name))
-      .first();
+      .take(1);
   }
 
   findTagsByWork(workKey: string): Observable<ITag[]> {

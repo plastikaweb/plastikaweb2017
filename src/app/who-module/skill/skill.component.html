@@ -5,10 +5,10 @@
   <ng-template td-expansion-panel-header>
     <div layout="row" flex="100"
          layout-align="start center">
-      <img md-icon flex="10" flex-gt-xs="5"
+      <img alt="{{skill.name}}" md-icon flex="10" flex-gt-xs="5"
            class="size-24"
            src="/assets/icons/{{skill.icon}}">
-      <h3 flex="90" flex-gt-md="40">{{skill.name}}</h3>
+      <h4 flex="90" flex-gt-md="40">{{skill.name}}</h4>
     </div>
   </ng-template>
 
@@ -20,6 +20,7 @@
   <div layout-wrap layout="row">
     <md-card flex="100" flex-gt-sm="100" flex-gt-md="33">
       <div class="chart-height push-top push-right-sm push-left-sm">
+        <h5 class="not-visible">{{ 'WHO.proficiency' | translate }}</h5>
         <ngx-charts-linear-gauge
           [view]="view"
           [scheme]="{domain: [skill.class]}"
@@ -30,6 +31,7 @@
           [units]="proficiency">
         </ngx-charts-linear-gauge>
         <md-divider></md-divider>
+        <h5 class="not-visible">{{ 'WHO.years' | translate }}</h5>
         <ngx-charts-linear-gauge
           [view]="view"
           [scheme]="{domain: [skill.class]}"
@@ -42,13 +44,13 @@
     </md-card>
     <md-card flex="100" flex-gt-sm="50" flex-gt-md="33">
       <md-card-content>
-        <h3>{{ getRemoteTranslation(skill.legend) }}</h3>
+        <h5>{{ getRemoteTranslation(skill.legend) }}</h5>
         <div [innerHTML]="getRemoteTranslation(skill.description)"></div>
       </md-card-content>
     </md-card>
     <md-card flex="100" flex-gt-sm="50" flex-gt-md="33">
-      <md-card-content><h3>{{ 'WORKS.title' | translate }}</h3>
-
+      <md-card-content>
+        <h5>{{ 'WORKS.title' | translate }}</h5>
         <md-nav-list *ngIf="$worksRelated | async as works;">
           <a *ngFor="let work of works"
              md-list-item [routerLink]="['/works' | localize, work.slug]">

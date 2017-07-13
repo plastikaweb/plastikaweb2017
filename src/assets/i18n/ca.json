@@ -3,7 +3,8 @@
     "changeLang": "canvia idioma"
   },
   "ANY": {
-    "loading": "carregant..."
+    "loading": "carregant...",
+    "skiplink": "Vés al contingut principal"
   },
   "WHO": {
     "title": "Plastikaweb",
@@ -12,7 +13,8 @@
     "position": "Sóc un programador Frontend Freelance de Barcelona.",
     "description": "Durant més de 10 anys m'he dedicat al desenvolupament web, últimament centrat en Angular i Typescript.<br>Intento que la meva feina sigui socialment responsable i apropar les tecnologies més avançades a les persones.",
     "proficiency": "competència",
-    "years": "anys"
+    "years": "anys",
+    "skills": "Tecnologies destacades"
   },
   "WORKS": {
     "title": "Treballs",

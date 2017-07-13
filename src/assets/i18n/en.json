@@ -3,7 +3,8 @@
     "changeLang": "change lang"
   },
   "ANY": {
-    "loading": "loading..."
+    "loading": "loading...",
+    "skiplink": "skip to main content"
   },
   "WHO": {
     "title": "Plastikaweb",
@@ -12,7 +13,8 @@
     "position": "Freelance FrontEnd Developer living in Barcelona.",
     "description": "For more than 10 years I have been dedicated to web development, lately focused in angular and typescript.<br>I try to make my work socially responsible and bring the most advanced technologies to people.",
     "proficiency": "proficiency",
-    "years": "years"
+    "years": "years",
+    "skills": "Main tech skills"
   },
   "WORKS": {
     "title": "Projects",

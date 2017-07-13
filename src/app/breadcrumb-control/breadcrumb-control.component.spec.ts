@@ -1,15 +1,15 @@
 import { AngularFireDatabase } from 'angularfire2/database';
 import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, fakeAsync, inject, TestBed } from '@angular/core/testing';
+import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 import { LocalizeRouterModule } from 'localize-router';
 import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/bundles/app.module';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { worksMock } from '../../mocks/works.mock';
 import { BreadcrumbControlComponent } from './breadcrumb-control.component';
-import { TagsService, WorksService } from '../../shared/shared.module';
-import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
+import { TagsService, WorksService } from '../shared/shared.module';
+import { worksMock } from '../mocks/works.mock';
 
 describe('BreadcrumbControlComponent', () => {
   let component: BreadcrumbControlComponent;

@@ -14,6 +14,6 @@ export class SkillsService {
     return this.db.list('/skills', {
       query: { orderByChild: 'active', equalTo: true }
     })
-      .first();
+      .take(1);
   }
 }

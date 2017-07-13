@@ -1,7 +1,15 @@
-<a md-icon-button *ngFor="let tag of tags"
-   [ngClass]="{selected: checkIfSelected(tag.name)}"
-   (click)="selectTag(tag.name)">
-  <img class="tag size-24"
+<div *ngIf="filtering; else images">
+  <a role="button" attr.aria-label="{{tag.name}}"
+     md-icon-button *ngFor="let tag of tags"
+     [ngClass]="{selected: checkIfSelected(tag.name)}"
+     (click)="selectTag(tag.name)">
+    <img class="tag size-24"
+         [src]="imagesService.getMainTechImage(tag.name)"
+         alt="{{tag.name}}" title="{{tag.name}}">
+  </a>
+</div>
+<ng-template #images>
+  <img *ngFor="let tag of tags" class="tag-image"
        [src]="imagesService.getMainTechImage(tag.name)"
        alt="{{tag.name}}" title="{{tag.name}}">
-</a>
+</ng-template>

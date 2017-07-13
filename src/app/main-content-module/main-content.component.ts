@@ -20,6 +20,7 @@ export class MainContentComponent implements OnInit, AfterViewInit {
 
   snackBarRef: any;
   isNotFound$: Observable<boolean>;
+  activityColor = 'warn';
 
   constructor(public media: TdMediaService,
               private cookieService: CookieService,

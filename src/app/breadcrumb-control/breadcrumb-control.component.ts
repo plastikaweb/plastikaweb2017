@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 import { TranslateService } from '@ngx-translate/core';
 
-import { IWork } from '../../models/work.model';
-import { WorksService } from '../../shared/works-service/works.service';
+import { IWork } from '../models/work.model';
+import { WorksService } from '../shared/works-service/works.service';
 
 @Component({
   selector: 'app-breadcrumb-control',
@@ -24,7 +24,7 @@ export class BreadcrumbControlComponent implements OnInit {
 
     // set all friendly projects name for breadcrumb
     this.worksService.findAllActiveWorks()
-      .first()
+      .take(1)
       .subscribe((data: IWork[]) => {
         data.forEach(work => {
           this.breadcrumbService
@@ -36,7 +36,7 @@ export class BreadcrumbControlComponent implements OnInit {
     this.translate.getLangs().forEach(lang => {
       const tempLang = lang;
       this.translate.getTranslation(lang)
-        .first()
+        .take(1)
         .subscribe(translation => {
           this.breadcrumbService
             .addFriendlyNameForRoute(`/${tempLang}/${translation.who}`, translation.WHO.title);

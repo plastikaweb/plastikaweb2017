@@ -1,7 +1,8 @@
 <md-card-header>
-  <img md-card-avatar class="size-72" src="assets/images/works.jpg">
+  <img alt="{{'WORKS.sub' | translate}}"
+       md-card-avatar class="size-72" src="assets/images/works.jpg">
   <md-card-title>
-    <h3>{{'WORKS.sub' | translate}}</h3>
+    <h2>{{'WORKS.sub' | translate | capitalize}}</h2>
   </md-card-title>
   <md-card-subtitle>{{ 'WORKS.intro' | translate }}</md-card-subtitle>
 </md-card-header>
@@ -25,7 +26,8 @@
             <img md-card-avatar class="size-50"
                  alt="work.name"
                  [src]="imagesService.getImage('works', work.slug, '-avatar.png')">
-            <md-card-title class="md-title">{{ work.name }}</md-card-title>
+            <md-card-title class="md-title">
+              {{ work.name }}</md-card-title>
             <md-card-subtitle>{{ getRemoteTranslation(work.subtitle) }}</md-card-subtitle>
           </md-card-header>
           <div class="work-img-container">
@@ -39,7 +41,8 @@
         <md-card-content>
         </md-card-content>
         <md-card-footer>
-          <app-tags [tags]="work.tags" [selectedTags]="tagsFilter"
+          <app-tags [filtering]="true"
+                    [tags]="work.tags" [selectedTags]="tagsFilter"
                     (emitTagSelection)="tagSelection($event)"></app-tags>
         </md-card-footer>
       </md-card>

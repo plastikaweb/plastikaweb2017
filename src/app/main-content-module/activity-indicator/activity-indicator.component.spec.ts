@@ -1,10 +1,9 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MdProgressBarModule } from '@angular/material';
+import { RouterModule } from '@angular/router';
 
 import { ActivityIndicatorComponent } from './activity-indicator.component';
-import { RouterModule } from '@angular/router';
-import { SharedModule } from '../shared.module';
 
 describe('ActivityIndicatorComponent', () => {
   let component: ActivityIndicatorComponent;
@@ -14,12 +13,12 @@ describe('ActivityIndicatorComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         MdProgressBarModule,
-        RouterModule.forRoot([]),
-        SharedModule
+        RouterModule.forRoot([])
       ],
       providers: [
         { provide: APP_BASE_HREF, useValue: '/' }
-      ]
+      ],
+      declarations: [ ActivityIndicatorComponent ]
     })
       .compileComponents();
   }));

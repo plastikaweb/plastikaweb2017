@@ -3,7 +3,7 @@
 
 // general anchor styling
 a {
-  color: mat-color($primary, 500);
+  color: mat-color($warn, 900);
 }
 svg {
   shape-rendering: geometricPrecision;
@@ -13,9 +13,28 @@ svg {
   fill-rule: evenodd;
   clip-rule: evenodd;
 }
+// general second line list items
+// give accessibility contrast
+p.mat-line {
+  color: mat-color($primary, 800);
+}
+
+// DOM just element, not view visble
+.not-visible {
+  position: absolute;
+  left: -10000px;
+  top: -10000px;
+}
+
+// Main Toolbar (Breadcrumb toolbar)
+// Adjust color contrast (Accessibility issue)
+md-toolbar {
+  background-color: mat-color($primary, 50);
+}
 
 // Any Menu item selected
 .mat-list-item.active .mat-list-item-content,
+.mat-menu-item.active,
 .mat-list-item.router-link-active .mat-list-item-content {
   background-color: mat-color($accent, 200);
   md-icon[md-list-avatar], .mat-list-text > h3 {
@@ -50,7 +69,28 @@ app-header > md-icon {
   margin-right: 5px;
 }
 
+// LANG MENU
+.lang-btn {
+  font-size: 14px;
+  height: 35px;
+  min-height: 35px;
+}
+
 // MAIN-CONTENT //
+app-main-content > md-card {
+  min-height: 30px;
+  h2 {
+    font-size: 1.25em;
+  }
+  h3 {
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  h5 {
+    font-size: 0.95em;
+  }
+}
 breadcrumb {
   ul {
     padding: 0;
@@ -67,12 +107,10 @@ breadcrumb {
   }
 }
 
-// SHARED
-.activity-indicator {
-  text-align: center;
-  md-progress-spinner {
-    margin: 1em auto;
-  }
+// ACTIVITY INDICATOR //
+app-activity-indicator {
+  display: block;
+  height: 5px;
 }
 
 // WORKS //
@@ -117,7 +155,6 @@ app-works {
       border: 1px solid mat-color($primary, 100);
     }
   }
-
 }
 
 app-tags, app-filter-works {
@@ -169,6 +206,12 @@ app-tags, app-filter-works {
   }
 
 }
+// WORK //
+.tag-image {
+  margin: 0 5px 5px;
+  height: 25px;
+  width: 25px;
+}
 
 // CONTACT //
 // get rid of nowrap white-space on contact component lists
@@ -180,10 +223,13 @@ app-contact .mat-list[dense] .mat-list-item .mat-line {
 // fix to return easing to skill expansion panel items in who section
 @mixin skillsEase($position, $direction) {
   app-skill {
-    &:not(:#{$position}) .td-expansion-panel.td-expanded {
+    &:not(:#{$position}) td-expansion-panel.td-expanded {
       margin-#{$direction}: 16px;
     }
   }
+}
+.td-expansion-panel-header:focus {
+  background-color: mat-color($primary, 50);
 }
 
 @include skillsEase(first-of-type, top);

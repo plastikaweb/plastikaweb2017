@@ -20,6 +20,6 @@ export class ContactService {
         data.social = newSocial;
         return data;
       })
-      .first();
+      .take(1);
   }
 }

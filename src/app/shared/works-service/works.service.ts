@@ -20,7 +20,7 @@ export class WorksService {
     return this.db.list('/works', {
       query: { orderByChild: 'active', equalTo: true }
     })
-      .first();
+      .take(1);
   }
 
   /**
@@ -35,7 +35,7 @@ export class WorksService {
         )
       )
       .switchMap(works => Observable.combineLatest(works))
-      .first();
+      .take(1);
   }
 
   /**
@@ -51,7 +51,7 @@ export class WorksService {
       // add tags list
       .switchMap(work => this.findTagsByWork(work)
       )
-      .first();
+      .take(1);
   }
 
   /**

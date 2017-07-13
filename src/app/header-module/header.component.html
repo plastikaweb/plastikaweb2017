@@ -1,16 +1,27 @@
-<a md-icon-button mdTooltip="{{plastikawebIcon.label}}"
-   [routerLink]="['/']">
-  <md-icon class="plastikaweb-icon" [svgIcon]="plastikawebIcon.label"></md-icon>
-</a>
-<span>Plastikaweb</span>
+<!-- skip link blocked: problem with anchor tags https://github.com/akveo/ng2-admin/issues/425 -->
+<!--<a role="button" tabindex="1"-->
+<!--[routerLink]="[]" fragment="main-content-card" class="skip-link">{{ 'ANY.skiplink' | translate }}</a>-->
+
+<h1>
+  <a role="button" attr.aria-label="{{plastikawebIcon.label}} home"
+     md-icon-button mdTooltip="{{plastikawebIcon.label}}"
+     [routerLink]="['/']">
+    <md-icon class="plastikaweb-icon" [svgIcon]="plastikawebIcon.label"></md-icon>
+  </a>
+  <span>Plastikaweb</span>
+</h1>
+
 <span flex></span>
-<a md-icon-button mdTooltip="{{githubIcon.label}}"
+
+<a role="button" attr.aria-label="{{githubIcon.label}}"
+   md-icon-button mdTooltip="{{githubIcon.label}}"
    angulartics2On="click"
    angularticsEvent="githubClick"
    angularticsCategory="externalLinks"
    [href]="githubIcon.link" target="_blank" rel="noopener">
   <md-icon svgIcon="{{githubIcon.label}}"></md-icon>
 </a>
+
 <app-language-menu [languages]="languages"
                    [currentLang]="currentLang"
                    [changeLangMessage]="changeLangMessage$ | async"

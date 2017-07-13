@@ -1,10 +1,41 @@
-<td-layout-nav>
-  <app-header (emitLangChange)="onChangeLang($event)"
-              td-toolbar-content layout="row"
-              layout-align="start center"
-              flex></app-header>
+<td-layout>
+  <td-layout-nav>
+    <!-- header -->
+    <div td-toolbar-content layout="row" layout-align="start center" flex>
+      <app-header (emitLangChange)="onChangeLang($event)"
+                  td-toolbar-content layout="row"
+                  layout-align="start center"
+                  flex></app-header>
+    </div>
 
-  <app-main-content></app-main-content>
-  <app-activity-indicator [color]="activityColor">
-  </app-activity-indicator>
-</td-layout-nav>
+    <!-- body -->
+    <td-layout-manage-list
+      [opened]="media.registerQuery('gt-sm') | async"
+      [mode]="(media.registerQuery('gt-sm') | async) ? 'side' :  'over'"
+      [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+      <!-- sidenav mewu -->
+      <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+        <app-sidenav></app-sidenav>
+      </md-nav-list>
+
+      <!-- toolbar with breadcrumb and activity indicator -->
+      <md-toolbar>
+        <div layout="row" layout-margin layout-align="center center" flex>
+          <button attr.aria-label="show menu" md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+            <span class="not-visible">Show Menu</span>
+            <md-icon>arrow_back</md-icon>
+          </button>
+          <div td-toolbar-content flex
+               layout="row"
+               layout-align="start center">
+            <app-breadcrumb-control [hideBreadcrumb]="isNotFound$ | async"></app-breadcrumb-control>
+          </div>
+        </div>
+      </md-toolbar>
+
+      <!-- main content -->
+      <app-main-content></app-main-content>
+
+    </td-layout-manage-list>
+  </td-layout-nav>
+</td-layout>

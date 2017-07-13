@@ -4,6 +4,7 @@ import { CovalentMenuModule } from '@covalent/core';
 import { NgModule } from '@angular/core';
 import { MdButtonModule, MdIconModule, MdListModule, MdMenuModule, MdTooltipModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { HeaderComponent } from './header.component';
 import { LanguageMenuComponent } from './language-menu/language-menu.component';
@@ -18,7 +19,8 @@ import { LanguageMenuComponent } from './language-menu/language-menu.component';
     MdListModule,
     MdMenuModule,
     MdTooltipModule,
-    RouterModule
+    RouterModule,
+    TranslateModule
   ],
   exports: [
     HeaderComponent

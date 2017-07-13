@@ -1,27 +1,25 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
-import { BreadcrumbService } from 'ng2-breadcrumb/bundles/components/breadcrumbService';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CovalentLayoutModule, CovalentMediaModule, TdMediaService } from '@covalent/core';
 import { LocalizeRouterModule } from 'localize-router';
-import { MdCardModule, MdIconModule, MdListModule, MdSnackBarModule } from '@angular/material';
+import { MdCardModule, MdIconModule, MdListModule, MdProgressBarModule, MdSnackBarModule } from '@angular/material';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/withLatestFrom';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
+import { ActivityIndicatorComponent } from './activity-indicator/activity-indicator.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { BreadcrumbControlComponent } from './breadcrumb-control/breadcrumb-control.component';
 import { ContactModule } from '../contact-module/contact.module';
 import { CookiesModule } from '../cookies-module/cookies.module';
 import { CookieService } from 'ng2-cookies';
 import { CookiesSnackBarModule } from '../cookies-snackbar-module/cookies-snackbar.module';
 import { MainContentComponent } from './main-content.component';
 import { NotFoundComponent } from '../not-found-module/not-found.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
 import { WhoModule } from '../who-module/who.module';
 import { WorksModule } from '../works-module/works.module';
 
@@ -33,7 +31,6 @@ describe('Main Content Component', () => {
     TestBed.configureTestingModule({
       providers: [
         { provide: APP_BASE_HREF, useValue: '/' },
-        BreadcrumbService,
         CookieService,
         TdMediaService,
         TranslateService
@@ -51,6 +48,7 @@ describe('Main Content Component', () => {
         MdCardModule,
         MdIconModule,
         MdListModule,
+        MdProgressBarModule,
         MdSnackBarModule,
         NgxChartsModule,
         Ng2BreadcrumbModule.forRoot(),
@@ -59,9 +57,8 @@ describe('Main Content Component', () => {
         WorksModule
       ],
       declarations: [
+        ActivityIndicatorComponent,
         MainContentComponent,
-        SidenavComponent,
-        BreadcrumbControlComponent,
         NotFoundComponent
       ]
     })
@@ -72,7 +69,6 @@ describe('Main Content Component', () => {
     fixture = TestBed.createComponent(MainContentComponent);
     component = fixture.componentInstance;
     component.ngAfterViewInit();
-    fixture.detectChanges();
   });
 
   it('should be created', fakeAsync(() => {

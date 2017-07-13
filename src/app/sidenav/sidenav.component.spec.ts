@@ -1,11 +1,11 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LocalizeRouterModule } from 'localize-router';
+import { MdIconModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { SidenavComponent } from './sidenav.component';
-import { MdIconModule } from '@angular/material';
 
 describe('SidenavComponent', () => {
   let component: SidenavComponent;

@@ -4,17 +4,19 @@
          alt="work.name"
          [src]="imagesService.getImage('works', work.slug, '-avatar.png')">
     <md-card-title>
-      <h3>{{work.name}}</h3>
+      <h2>{{work.name | capitalize}}</h2>
     </md-card-title>
     <md-card-subtitle>{{ getRemoteTranslation(work.subtitle) }}</md-card-subtitle>
     <span flex></span>
     <div class="pad-top pad-right">
-      <a *ngIf="work.url" md-icon-button mdTooltip="web"
+      <a role="button" attr.aria-label="{{work.name}} web"
+         *ngIf="work.url" md-icon-button mdTooltip="web"
          angulartics2On="click"
          angularticsEvent="{{work.url}}Click"
          angularticsCategory="externalLinks"
          href="{{work.url}}" target="_blank"><md-icon>public</md-icon></a>
-      <a *ngIf="work.repo" md-icon-button mdTooltip="Github"
+      <a role="button" attr.aria-label="{{work.name}} repo"
+         *ngIf="work.repo" md-icon-button mdTooltip="Github"
          angulartics2On="click"
          angularticsEvent="{{work.repo}}Click"
          angularticsCategory="externalLinks"
@@ -30,7 +32,7 @@
        [srcset]="imagesService.getImageSet('works', work.slug)"
        sizes="(min-width: 960px) 960px, 100vw">
   <md-card-content>
-    <app-tags [tags]="work.tags"></app-tags>
+    <app-tags [tags]="work.tags" [filtering]="false"></app-tags>
     <md-divider></md-divider>
     <div [innerHTML]="getRemoteTranslation(work.description)"></div>
     <md-list dense>

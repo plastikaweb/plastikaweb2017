@@ -10,6 +10,7 @@ import { ITag } from '../../models/tag.model';
 })
 export class TagsComponent {
 
+  @Input() filtering: true;
   @Input() tags: ITag[] = [];
   @Input() selectedTags: string[] = [];
   @Output() emitTagSelection: EventEmitter<string> = new EventEmitter();

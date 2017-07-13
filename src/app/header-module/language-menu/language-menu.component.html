@@ -1,18 +1,16 @@
-<button mdTooltip="{{ changeLangMessage }}" md-icon-button [mdMenuTriggerFor]="menu">
+<button role="button" attr.aria-label="{{ changeLangMessage }}"
+        mdTooltip="{{ changeLangMessage }}"
+        md-icon-button [mdMenuTriggerFor]="menu">
   <md-icon>language</md-icon>
 </button>
 
 <md-menu #menu="mdMenu">
-  <td-menu>
-    <md-nav-list dense>
-      <a id="lang-{{ lang }}" md-list-item
-         *ngFor="let lang of languages"
-         [ngClass]="{'active': lang === currentLang}"
-         (click)="changeLang(lang)">
-        <h4 md-line>
-          <span class="text-wrap">{{ lang }}</span>
-        </h4>
-      </a>
-    </md-nav-list>
-  </td-menu>
+  <button md-menu-item role="menuitem"
+          *ngFor="let lang of languages"
+          id="lang-{{ lang }}" md-list-item
+          class="lang-btn"
+          [ngClass]="{'active': lang === currentLang}"
+          (click)="changeLang(lang)">
+    <span class="text-wrap">{{ lang }}</span>
+  </button>
 </md-menu>

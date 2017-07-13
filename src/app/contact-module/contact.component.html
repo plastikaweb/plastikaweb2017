@@ -1,7 +1,8 @@
 <md-card-header>
-  <img md-card-avatar class="size-72" src="assets/images/email.jpg">
+  <img alt="{{'CONTACT.sub' | translate}}"
+  md-card-avatar class="size-72" src="assets/images/email.jpg">
   <md-card-title>
-    <h3 [innerHTML]="'CONTACT.sub' | translate"></h3>
+    <h2 [innerHTML]="'CONTACT.sub' | translate | capitalize"></h2>
   </md-card-title>
   <md-card-subtitle [innerHTML]="'CONTACT.intro' | translate"></md-card-subtitle>
 </md-card-header>
@@ -45,14 +46,15 @@
   <md-divider></md-divider>
 
   <div layout="row" layout-align="space-around center" class="pad">
-    <a *ngFor="let social of contactData.social"
-       md-button class="tc-grey-600" target="_blank"
+    <a role="button" attr.aria-label="plastikaweb {{social.name}} link"
+       *ngFor="let social of contactData.social"
+       md-icon-button class="tc-grey-600" target="_blank"
        href="{{social.url}}"
        angulartics2On="click"
        angularticsEvent="{{social.name}}Click"
        angularticsCategory="externalLinks">
-      <img class="size-24 pull-bottom" src="/assets/icons/{{social.icon}}">
-      <div class="md-caption">{{social.name}}</div>
+      <img alt="{{social.name}}" class="size-24"
+           src="/assets/icons/{{social.icon}}">
     </a>
   </div>
 </div>

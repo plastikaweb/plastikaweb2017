@@ -50,10 +50,10 @@ module.exports = function (config) {
           functions: 70
         },
         each: {
-          statements: 40,
-          branches: 40,
-          lines: 40,
-          functions: 40
+          statements: 30,
+          branches: 30,
+          lines: 30,
+          functions: 30
         }
       }
     },

@@ -20,6 +20,9 @@ import { ResolversModule } from './resolvers/resolvers.module';
 import { SharedModule } from './shared/shared.module';
 import { WhoModule } from './who-module/who.module';
 import { WorksModule } from './works-module/works.module';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { BreadcrumbControlComponent } from './breadcrumb-control/breadcrumb-control.component';
+import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/bundles/app.module';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -27,7 +30,9 @@ export function HttpLoaderFactory(http: Http) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BreadcrumbControlComponent,
+    SidenavComponent
   ],
   imports: [
     Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
@@ -35,6 +40,7 @@ export function HttpLoaderFactory(http: Http) {
     BrowserModule,
     BrowserAnimationsModule,
     CovalentLayoutModule,
+    Ng2BreadcrumbModule.forRoot(),
     NotFoundModule,
     ResolversModule,
     SharedModule,

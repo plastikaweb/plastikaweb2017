@@ -5,6 +5,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Iconography } from '../../data/iconography';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -23,6 +24,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private iconRegistry: MdIconRegistry,
               private sanitizer: DomSanitizer,
+              private router: Router,
               private translate: TranslateService) {
   }
 
