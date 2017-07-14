@@ -67,4 +67,9 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should update notFound correctly', () => {
+    component.isNotFound(true);
+    expect(component.notFound).toBeTruthy();
+  });
+
 });

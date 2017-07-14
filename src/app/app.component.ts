@@ -13,6 +13,8 @@ import { TdMediaService } from '@covalent/core';
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
+  notFound = false;
+
   constructor(public angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
               private translate: TranslateService,
               private localize: LocalizeRouterService,
@@ -50,6 +52,14 @@ export class AppComponent implements OnInit, AfterViewInit {
   changeLangAttr(lang) {
     this.document.getElementsByTagName('html')[ 0 ]
       .setAttribute('lang', lang);
+  }
+
+  /**
+   * if the page returns 404, hide breadcrumbs
+   * @param data
+   */
+  isNotFound(data) {
+    this.notFound = data;
   }
 
 }

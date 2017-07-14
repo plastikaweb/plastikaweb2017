@@ -28,13 +28,13 @@
           <div td-toolbar-content flex
                layout="row"
                layout-align="start center">
-            <app-breadcrumb-control [hideBreadcrumb]="isNotFound$ | async"></app-breadcrumb-control>
+            <app-breadcrumb-control [hideBreadcrumb]="notFound"></app-breadcrumb-control>
           </div>
         </div>
       </md-toolbar>
 
       <!-- main content -->
-      <app-main-content></app-main-content>
+      <app-main-content (isNotFound)="isNotFound($event)"></app-main-content>
 
     </td-layout-manage-list>
   </td-layout-nav>

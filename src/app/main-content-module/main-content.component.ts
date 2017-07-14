@@ -1,5 +1,5 @@
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { TdMediaService } from '@covalent/core';
 import { Title } from '@angular/platform-browser';
@@ -19,7 +19,7 @@ import { NotFoundComponent } from '../not-found-module/not-found.component';
 export class MainContentComponent implements OnInit, AfterViewInit {
 
   snackBarRef: any;
-  isNotFound$: Observable<boolean>;
+  @Output() isNotFound: EventEmitter<boolean> = new EventEmitter();
   activityColor = 'warn';
 
   constructor(public media: TdMediaService,
@@ -43,14 +43,16 @@ export class MainContentComponent implements OnInit, AfterViewInit {
         route = route.firstChild;
       }
       // checks 404 error
-      this.isNotFound$ = Observable.of(NotFoundComponent === route.component);
-      return this.isNotFound$.withLatestFrom(route.url, (a, b) => (
+      const isNotFound = Observable.of(NotFoundComponent === route.component);
+      return isNotFound.withLatestFrom(route.url, (a, b) => (
         { notFound: a, url: b }
       ));
     });
 
     const titleUpdate$ = routeEventsData$.switchMap(data => {
-        if (data.notFound) {
+        const notFound = data.notFound;
+        this.isNotFound.emit(notFound);
+        if (notFound) {
           return Observable.of('The page does not exist');
         }
         const url = data.url;
@@ -68,8 +70,8 @@ export class MainContentComponent implements OnInit, AfterViewInit {
     );
 
     titleUpdate$.subscribe(
-        title => this.titleService.setTitle('Plastikaweb - ' + title)
-      );
+      title => this.titleService.setTitle('Plastikaweb - ' + title)
+    );
 
     // cookies warning
     setTimeout(() => {
