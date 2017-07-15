@@ -13,9 +13,9 @@ export class ImagesService {
 
   static getImageSet(subdirectory, name): string {
     return `
-    assets/${subdirectory}/${name}/${name}1200x600.png 1200w,
-    assets/${subdirectory}/${name}/${name}-1.png 600w,
-    assets/${subdirectory}/${name}/${name}400x600.png 400w
+    assets/${subdirectory}/${name}/${name}1200x600.jpg 1200w,
+    assets/${subdirectory}/${name}/${name}-1.jpg 600w,
+    assets/${subdirectory}/${name}/${name}400x600.jpg 400w
     `;
   }
 

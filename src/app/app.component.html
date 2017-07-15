@@ -21,8 +21,9 @@
       <!-- toolbar with breadcrumb and activity indicator -->
       <md-toolbar>
         <div layout="row" layout-margin layout-align="center center" flex>
-          <button attr.aria-label="show menu" md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
-            <span class="not-visible">Show Menu</span>
+          <button attr.aria-label="{{'ANY.showmenu' | translate}}" md-icon-button
+                  tdLayoutManageListOpen [hideWhenOpened]="true">
+            <span class="not-visible">{{'ANY.showmenu' | translate}}</span>
             <md-icon>arrow_back</md-icon>
           </button>
           <div td-toolbar-content flex

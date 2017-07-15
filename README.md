@@ -20,6 +20,8 @@ Just it! You are able to clone, modify, test and use it.
 ### Other features.
 - It uses [NGX-Charts](https://swimlane.gitbooks.io/ngx-charts/content/) with [D3 library](https://d3js.org/).
 - A breadcrumb trail thanks to [ng2-breadcrumb](https://github.com/gmostert/ng2-breadcrumb)
+- Progressive Web App.
+- Accessible site.
 
 ## Get the app
 ```sh
@@ -33,7 +35,7 @@ git clone git@github.com:plastikaweb/plastikaweb2017.git
 cd plastikaweb2017 {or any custom name}
 
 # Install project dependencies:
-npm install
+yarn
 
 # go to src/config directory, and rename `firebase.config.ts.sample` to `firebase.config.ts`. Fill with your firebase database data.
 

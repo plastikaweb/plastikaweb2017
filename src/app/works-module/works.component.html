@@ -25,14 +25,14 @@
           <md-card-header>
             <img md-card-avatar class="size-50"
                  alt="work.name"
-                 [src]="imagesService.getImage('works', work.slug, '-avatar.png')">
+                 [src]="imagesService.getImage('works', work.slug, '-avatar.jpg')">
             <md-card-title class="md-title">
               {{ work.name }}</md-card-title>
             <md-card-subtitle>{{ getRemoteTranslation(work.subtitle) }}</md-card-subtitle>
           </md-card-header>
           <div class="work-img-container">
             <img md-card-image alt="{{work.name}}"
-                 [lazyLoad]="imagesService.getImage('works', work.slug, '-1.png')"
+                 [lazyLoad]="imagesService.getImage('works', work.slug, '-1.jpg')"
                  [scrollTarget]="myScrollContainer"
                  [offset]="offset"
                  [defaultImage]="imagesService.getDefaultImage()">

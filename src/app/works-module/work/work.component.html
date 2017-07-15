@@ -2,7 +2,7 @@
   <md-card-header>
     <img md-card-avatar class="size-72"
          alt="work.name"
-         [src]="imagesService.getImage('works', work.slug, '-avatar.png')">
+         [src]="imagesService.getImage('works', work.slug, '-avatar.jpg')">
     <md-card-title>
       <h2>{{work.name | capitalize}}</h2>
     </md-card-title>
@@ -28,7 +28,7 @@
   <img md-card-image alt="{{work.name}}"
        [offset]="offset"
        [defaultImage]="imagesService.getDefaultImage()"
-       [lazyLoad]="imagesService.getImage('works', work.slug, '-1.png')"
+       [lazyLoad]="imagesService.getImage('works', work.slug, '-1.jpg')"
        [srcset]="imagesService.getImageSet('works', work.slug)"
        sizes="(min-width: 960px) 960px, 100vw">
   <md-card-content>

@@ -1,5 +1,6 @@
 <div *ngIf="filtering; else images">
-  <a role="button" attr.aria-label="{{tag.name}}"
+  <a role="button"
+     attr.aria-label="{{'WORKS.filterBy' | translate}}: {{tag.name}}"
      md-icon-button *ngFor="let tag of tags"
      [ngClass]="{selected: checkIfSelected(tag.name)}"
      (click)="selectTag(tag.name)">

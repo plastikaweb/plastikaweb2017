@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CapitalizePipe implements PipeTransform {
   transform(value: any) {
-    if (!value) {
+    if (typeof value !== 'string') {
       throw new Error('Requires a String as input');
     }
     return value.charAt(0).toUpperCase() + value.slice(1);

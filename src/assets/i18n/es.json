@@ -4,7 +4,8 @@
   },
   "ANY": {
     "loading": "cargando...",
-    "skiplink": "saltar al contenido principal"
+    "skiplink": "saltar al contenido principal",
+    "showmenu": "desplega el menú"
   },
   "WHO": {
     "title": "Plastikaweb",
