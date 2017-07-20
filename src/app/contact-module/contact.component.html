@@ -1,6 +1,6 @@
 <md-card-header>
   <img alt="{{'CONTACT.sub' | translate}}"
-  md-card-avatar class="size-72" src="assets/images/email.jpg">
+       md-card-avatar class="size-72" src="assets/images/email.jpg">
   <md-card-title>
     <h2 [innerHTML]="'CONTACT.sub' | translate | capitalize"></h2>
   </md-card-title>
@@ -46,7 +46,8 @@
   <md-divider></md-divider>
 
   <div layout="row" layout-align="space-around center" class="pad">
-    <a role="button" attr.aria-label="plastikaweb {{social.name}} link"
+    <a role="button" rel="noopener"
+       attr.aria-label="plastikaweb {{social.name}} link"
        *ngFor="let social of contactData.social"
        md-icon-button class="tc-grey-600" target="_blank"
        href="{{social.url}}"

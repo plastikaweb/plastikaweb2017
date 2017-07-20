@@ -1,6 +1,7 @@
 import { Angulartics2Module } from 'angulartics2';
 import { CommonModule } from '@angular/common';
 import { CovalentMenuModule } from '@covalent/core';
+import { LocalizeRouterModule } from 'localize-router';
 import { NgModule } from '@angular/core';
 import { MdButtonModule, MdIconModule, MdListModule, MdMenuModule, MdTooltipModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
@@ -14,6 +15,7 @@ import { LanguageMenuComponent } from './language-menu/language-menu.component';
     Angulartics2Module,
     CommonModule,
     CovalentMenuModule,
+    LocalizeRouterModule,
     MdButtonModule,
     MdIconModule,
     MdListModule,
