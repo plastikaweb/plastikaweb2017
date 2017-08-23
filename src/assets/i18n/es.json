@@ -10,7 +10,7 @@
   "WHO": {
     "title": "Plastikaweb",
     "sub": "¿quién, qué, porqué?",
-    "cv": "carlos-matheu-cv-es-05-2017.pdf",
+    "cv": "https://firebasestorage.googleapis.com/v0/b/firebase-plastikaweb.appspot.com/o/cv%2Fcarlos-matheu-cv-es-05-2017.pdf?alt=media&token=f7877905-a2cf-4047-bde3-c5863a52970b",
     "position": "Programador Frontend Freelance de Barcelona.",
     "description": "Desde hace más de 10 años me dedico al desarrollo web, últimamente centrado en angular y typescript.<br>Intento que mi trabajo sea socialmente responsable y acerque las tecnologías más avanzadas a la gente.",
     "proficiency": "competencia",
