@@ -1,265 +1,279 @@
-@import "mixins";
+@import 'mixins';
 @import 'theme';
-
 // general anchor styling
 a {
-  color: mat-color($warn, 900);
+    color: mat-color($warn, 900);
 }
+
 svg {
-  shape-rendering: geometricPrecision;
-  text-rendering: geometricPrecision;
-  image-rendering: optimizeQuality;
-  color-rendering: optimizeQuality;
-  fill-rule: evenodd;
-  clip-rule: evenodd;
+    shape-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
+    image-rendering: optimizeQuality;
+    color-rendering: optimizeQuality;
+    fill-rule: evenodd;
+    clip-rule: evenodd;
 }
+
 // general second line list items
 // give accessibility contrast
 p.mat-line {
-  color: mat-color($primary, 800);
+    color: mat-color($primary, 800);
 }
 
 // DOM just element, not view visble
 .not-visible {
-  position: absolute;
-  left: -10000px;
-  top: -10000px;
+    position: absolute;
+    left: -10000px;
+    top: -10000px;
 }
 
 // Main Toolbar (Breadcrumb toolbar)
 // Adjust color contrast (Accessibility issue)
 md-toolbar {
-  background-color: mat-color($primary, 50);
+    background-color: mat-color($primary, 50);
 }
 
 // Any Menu item selected
 .mat-list-item.active .mat-list-item-content,
 .mat-menu-item.active,
 .mat-list-item.router-link-active .mat-list-item-content {
-  background-color: mat-color($accent, 200);
-  md-icon[md-list-avatar], .mat-list-text > h3 {
-    color: mat-color($primary, 900);
-  }
+    background-color: mat-color($accent, 200);
+    md-icon[md-list-avatar],
+    .mat-list-text>h3 {
+        color: mat-color($primary, 900);
+    }
 }
 
 // avatar icon
 .mat-card [md-card-avatar].size-72 {
-  height: 72px;
-  width: 72px;
+    height: 72px;
+    width: 72px;
 }
 
 // lazy load images
 [md-card-image] {
-  &.ng-lazyloaded {
-    animation: fadein 0.3s;
-  }
+    &.ng-lazyloaded {
+        animation: fadein 0.3s;
+    }
 }
 
 @keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 // HEADER component //
-app-header > md-icon {
-  margin-right: 5px;
+app-header>md-icon {
+    margin-right: 5px;
 }
 
 // LANG MENU
 .lang-btn {
-  font-size: 14px;
-  height: 35px;
-  min-height: 35px;
+    font-size: 14px;
+    height: 35px;
+    min-height: 35px;
 }
 
 // MAIN-CONTENT //
-app-main-content > md-card {
-  min-height: 30px;
-  h2 {
-    font-size: 1.25em;
-  }
-  h3 {
-    font-size: inherit;
-    margin: 0;
-    padding: 0;
-  }
-  h5 {
-    font-size: 0.95em;
-  }
-}
-breadcrumb {
-  ul {
-    padding: 0;
-    margin: 0;
-    li {
-      display: initial;
-      &:not(:last-child)::after {
-        content: "\2044"
-      }
-      > a {
-        cursor: pointer;
-      }
+app-main-content>md-card {
+    min-height: 30px;
+    h2 {
+        font-size: 1.25em;
     }
-  }
+    h3 {
+        font-size: inherit;
+        margin: 0;
+        padding: 0;
+    }
+    h5 {
+        font-size: 0.95em;
+    }
+}
+
+breadcrumb {
+    ul {
+        padding: 0;
+        margin: 0;
+        li {
+            display: initial;
+            &:not(:last-child)::after {
+                content: "\2044"
+            }
+            >a {
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 // ACTIVITY INDICATOR //
 app-activity-indicator {
-  display: block;
-  height: 5px;
+    display: block;
+    height: 5px;
 }
 
 // WORKS //
 app-works {
-  .work-info {
-    display: block;
-    text-decoration: none;
-    .mat-card [md-card-avatar] {
-      margin: 16px 0 0 5px;
+    .work-info {
+        display: block;
+        text-decoration: none;
+        .mat-card [md-card-avatar] {
+            margin: 16px 0 0 5px;
+        }
+        .work-img-container {
+            overflow: hidden;
+            >img[md-card-image] {
+                opacity: 0;
+                @include filter(grayscale, 90%);
+                @include transition(0.4s ease-in);
+                &.ng-lazyloaded {
+                    opacity: 1;
+                }
+            }
+        }
+        &:hover {
+            img[md-card-image] {
+                @include filter(grayscale, 0);
+                @include workImageTransform($rotate: 1.15, $scale: 1.2);
+                @include transition(0.2s ease-out);
+            }
+        }
     }
-    .work-img-container {
-      overflow: hidden;
-      > img[md-card-image] {
-        @include filter(grayscale, 90%);
-        @include transition(0.4s ease-in);
-      }
-    }
-    &:hover {
-      img[md-card-image] {
-        @include filter(grayscale, 0);
-        @include workImageTransform($rotate: 1.15, $scale: 1.2);
-        @include transition(0.2s ease-out);
-      }
-    }
-  }
 }
 
 .mat-card app-work {
-  .mat-card-image {
-    border-top: 1px solid mat-color($primary, 100);
-    border-bottom: 1px solid mat-color($primary, 100);
-  }
-  @media (min-width: 1200px) {
     .mat-card-image {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: block;
-    }
-  }
-  @media (min-width: 1500px) {
-    .mat-card-image {
-      border: 1px solid mat-color($primary, 100);
-    }
-  }
-}
-
-app-tags, app-filter-works {
-  [md-icon-button] {
-    margin: 2px 0 4px 4px;
-    &.selected {
-      background-color: mat-color($primary, 100);
-    }
-  }
-  .tag {
-    &.size-16 {
-      height: 16px;
-      width: 16px;
-    }
-    &.size-20 {
-      height: 20px;
-      width: 20px;
-    }
-    &.size-24 {
-      height: 24px;
-      width: 24px;
-    }
-    &.size-32 {
-      height: 32px;
-      width: 32px;
-    }
-    &.size-50 {
-      height: 50px;
-      width: 50px;
-    }
-  }
-  // filter
-  md-basic-chip {
-    [td-chip-avatar] {
-      background-color: mat-color($primary, 200);
-      > .size-20 {
-        border-radius: 50%;
-        @include filter(sepia, 80%);
+        border-top: 1px solid mat-color($primary, 100);
+        border-bottom: 1px solid mat-color($primary, 100);
+        opacity: 0;
+        @include transition(0.4s ease-in);
+        &.ng-lazyloaded {
+          opacity: 1;
       }
     }
-    &:focus {
-      [td-chip-avatar] {
-        background-color: mat-color($warn, 200);
-        > .size-20 {
-          @include filter(sepia, 0);
+    @media (min-width: 1200px) {
+        .mat-card-image {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: block;
         }
-      }
     }
-  }
-
+    @media (min-width: 1500px) {
+        .mat-card-image {
+            border: 1px solid mat-color($primary, 100);
+        }
+    }
 }
+
+app-tags,
+app-filter-works {
+    [md-icon-button] {
+        margin: 2px 0 4px 4px;
+        &.selected {
+            background-color: mat-color($primary, 100);
+        }
+    }
+    .tag {
+        &.size-16 {
+            height: 16px;
+            width: 16px;
+        }
+        &.size-20 {
+            height: 20px;
+            width: 20px;
+        }
+        &.size-24 {
+            height: 24px;
+            width: 24px;
+        }
+        &.size-32 {
+            height: 32px;
+            width: 32px;
+        }
+        &.size-50 {
+            height: 50px;
+            width: 50px;
+        }
+    } // filter
+    md-basic-chip {
+        [td-chip-avatar] {
+            background-color: mat-color($primary, 200);
+            >.size-20 {
+                border-radius: 50%;
+                @include filter(sepia, 80%);
+            }
+        }
+        &:focus {
+            [td-chip-avatar] {
+                background-color: mat-color($warn, 200);
+                >.size-20 {
+                    @include filter(sepia, 0);
+                }
+            }
+        }
+    }
+}
+
 // WORK //
 .tag-image {
-  margin: 0 5px 5px;
-  height: 25px;
-  width: 25px;
+    margin: 0 5px 5px;
+    height: 25px;
+    width: 25px;
 }
 
 // CONTACT //
 // get rid of nowrap white-space on contact component lists
 app-contact .mat-list[dense] .mat-list-item .mat-line {
-  white-space: inherit;
+    white-space: inherit;
 }
 
 // WHO //
 // fix to return easing to skill expansion panel items in who section
 @mixin skillsEase($position, $direction) {
-  app-skill {
-    &:not(:#{$position}) td-expansion-panel.td-expanded {
-      margin-#{$direction}: 16px;
+    app-skill {
+        &:not(:#{$position}) td-expansion-panel.td-expanded {
+            margin-#{$direction}: 16px;
+        }
     }
-  }
 }
+
 .td-expansion-panel-header:focus {
-  background-color: mat-color($primary, 50);
+    background-color: mat-color($primary, 50);
 }
 
 @include skillsEase(first-of-type, top);
 @include skillsEase(last-of-type, bottom);
-
 // PAGE NOT FOUND //
 app-not-found {
-  .mat-card-header-text {
-    width: 100%;
-  }
-  .text-super {
-    font-size: 2.5em;
-    > * {
-      vertical-align: middle;
+    .mat-card-header-text {
+        width: 100%;
     }
-  }
-  .text-super-super {
-    font-size: 8em;
-  }
-}
-@media (max-width: 768px) {
-  app-not-found {
-    .text-super, .material-icons.md-48 {
-      font-size: 1.4em;
+    .text-super {
+        font-size: 2.5em;
+        >* {
+            vertical-align: middle;
+        }
     }
     .text-super-super {
-      font-size: 4em;
+        font-size: 8em;
     }
-    .text-xl {
-      font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    app-not-found {
+        .text-super,
+        .material-icons.md-48 {
+            font-size: 1.4em;
+        }
+        .text-super-super {
+            font-size: 4em;
+        }
+        .text-xl {
+            font-size: 12px;
+        }
     }
-  }
 }

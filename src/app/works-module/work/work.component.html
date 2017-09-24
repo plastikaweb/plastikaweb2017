@@ -28,6 +28,7 @@
   <img md-card-image alt="{{work.name}}"
        [offset]="offset"
        [defaultImage]="imagesService.getDefaultImage()"
+       [scrollTarget]="myScrollContainer"
        [lazyLoad]="imagesService.getImage('works', work.slug, '-1.jpg')"
        [srcset]="imagesService.getImageSet('works', work.slug)"
        sizes="(min-width: 960px) 960px, 100vw">
