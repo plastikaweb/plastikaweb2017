@@ -32,9 +32,9 @@ data.works.forEach(work => {
   // tags per work
   const association1 = database().ref('tagsPerWork');
   const association2 = database().ref('worksPerTag');
-  let {name, active, description, order, partner, client, opensource, repo, slug, subtitle, tools, url, year, tags} = work;
+  let {name, active, progress, description, order, partner, client, opensource, repo, slug, subtitle, tools, url, year, tags} = work;
     let proj = worksRef.push(
-      {name, active, description, order, partner, client, opensource, repo, slug, subtitle, tools, url, year}
+      {name, active, progress, description, order, partner, client, opensource, repo, slug, subtitle, tools, url, year}
       ).key;
 
     work.tags.split(',').forEach((tag: any) => {

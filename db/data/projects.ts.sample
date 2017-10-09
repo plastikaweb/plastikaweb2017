@@ -68,6 +68,7 @@ export const data: any = {
   works: [
     {
       'active': 1,
+      'progress': 0,
       'name': 'work 1',
       'subtitle': {
         es: 'Mi página personal',
