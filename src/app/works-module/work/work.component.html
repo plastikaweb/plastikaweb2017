@@ -1,69 +1,73 @@
 <div *ngIf="work$ | async as work;">
   <md-card-header>
-    <img md-card-avatar class="size-72"
-         alt="work.name"
-         [src]="imagesService.getImage('works', work.slug, '-avatar.jpg')">
-    <md-card-title>
-      <h2>{{work.name | capitalize}}</h2>
-    </md-card-title>
-    <md-card-subtitle>{{ getRemoteTranslation(work.subtitle) }}</md-card-subtitle>
-    <span flex></span>
-    <div class="pad-top pad-right">
-      <a role="button" attr.aria-label="{{work.name}} web"
-         *ngIf="work.url" md-icon-button mdTooltip="web"
-         angulartics2On="click"
-         angularticsEvent="{{work.url}}Click"
-         angularticsCategory="externalLinks"
-         href="{{work.url}}" target="_blank"><md-icon>public</md-icon></a>
-      <a role="button" attr.aria-label="{{work.name}} repo"
-         *ngIf="work.repo" md-icon-button mdTooltip="Github"
-         angulartics2On="click"
-         angularticsEvent="{{work.repo}}Click"
-         angularticsCategory="externalLinks"
-         href="{{work.repo}}" target="_blank" rel="noopener">
-        <md-icon svgIcon="github"></md-icon>
-      </a>
-    </div>
+	<img md-card-avatar class="size-72"
+		 alt="work.name"
+		 [src]="imagesService.getImage('works', work.slug, '-avatar.jpg')">
+	<md-card-title>
+	  <h2>{{work.name | capitalize}}</h2>
+	</md-card-title>
+	<md-card-subtitle>{{ getRemoteTranslation(work.subtitle) }}
+	  <span *ngIf="work.progress" class="progress"> ({{'WORKS.progress' | translate}})</span>
+	</md-card-subtitle>
+	<span flex></span>
+	<div class="pad-top pad-right">
+	  <a role="button" attr.aria-label="{{work.name}} web"
+		 *ngIf="work.url" md-icon-button mdTooltip="web"
+		 angulartics2On="click"
+		 angularticsEvent="{{work.url}}Click"
+		 angularticsCategory="externalLinks"
+		 href="{{work.url}}" target="_blank">
+		<md-icon>public</md-icon>
+	  </a>
+	  <a role="button" attr.aria-label="{{work.name}} repo"
+		 *ngIf="work.repo" md-icon-button mdTooltip="Github"
+		 angulartics2On="click"
+		 angularticsEvent="{{work.repo}}Click"
+		 angularticsCategory="externalLinks"
+		 href="{{work.repo}}" target="_blank" rel="noopener">
+		<md-icon svgIcon="github"></md-icon>
+	  </a>
+	</div>
   </md-card-header>
   <img md-card-image alt="{{work.name}}"
-       [offset]="offset"
-       [defaultImage]="imagesService.getDefaultImage()"
-       [scrollTarget]="myScrollContainer"
-       [lazyLoad]="imagesService.getImage('works', work.slug, '-1.jpg')"
-       [srcset]="imagesService.getImageSet('works', work.slug)"
-       sizes="(min-width: 960px) 960px, 100vw">
+	   [offset]="offset"
+	   [defaultImage]="imagesService.getDefaultImage()"
+	   [scrollTarget]="myScrollContainer"
+	   [lazyLoad]="imagesService.getImage('works', work.slug, '-1.jpg')"
+	   [srcset]="imagesService.getImageSet('works', work.slug)"
+	   sizes="(min-width: 960px) 960px, 100vw">
   <md-card-content>
-    <app-tags [tags]="work.tags" [filtering]="false"></app-tags>
-    <md-divider></md-divider>
-    <div [innerHTML]="getRemoteTranslation(work.description)"></div>
-    <md-list dense>
-      <md-list-item>
-        <md-icon md-list-avatar>date_range</md-icon>
-        <h4 md-line><span class="text-wrap">{{ 'WORKS.year' | translate }}</span></h4>
-        <p md-line>{{work.year}}</p>
-      </md-list-item>
-      <md-divider></md-divider>
-      <div *ngIf="work.client">
-        <md-list-item>
-          <md-icon md-list-avatar>person</md-icon>
-          <h4 md-line><span class="text-wrap">{{ 'WORKS.client' | translate }}</span></h4>
-          <p md-line>{{work.client}}</p>
-        </md-list-item>
-        <md-divider></md-divider>
-      </div>
-      <div *ngIf="work.partner">
-      <md-list-item>
-        <md-icon md-list-avatar>tag_faces</md-icon>
-        <h4 md-line><span class="text-wrap">{{ 'WORKS.partner' | translate }}</span></h4>
-        <p md-line>{{work.partner}}</p>
-      </md-list-item>
-      <md-divider></md-divider>
-      </div>
-      <md-list-item>
-        <md-icon md-list-avatar>settings</md-icon>
-        <h4 md-line><span class="text-wrap">{{ 'WORKS.techs' | translate }}</span></h4>
-        <p md-line>{{work.tools}}</p>
-      </md-list-item>
-    </md-list>
+	<app-tags [tags]="work.tags" [filtering]="false"></app-tags>
+	<md-divider></md-divider>
+	<div [innerHTML]="getRemoteTranslation(work.description)"></div>
+	<md-list dense>
+	  <md-list-item>
+		<md-icon md-list-avatar>date_range</md-icon>
+		<h4 md-line><span class="text-wrap">{{ 'WORKS.year' | translate }}</span></h4>
+		<p md-line>{{work.year}}</p>
+	  </md-list-item>
+	  <md-divider></md-divider>
+	  <div *ngIf="work.client">
+		<md-list-item>
+		  <md-icon md-list-avatar>person</md-icon>
+		  <h4 md-line><span class="text-wrap">{{ 'WORKS.client' | translate }}</span></h4>
+		  <p md-line>{{work.client}}</p>
+		</md-list-item>
+		<md-divider></md-divider>
+	  </div>
+	  <div *ngIf="work.partner">
+		<md-list-item>
+		  <md-icon md-list-avatar>tag_faces</md-icon>
+		  <h4 md-line><span class="text-wrap">{{ 'WORKS.partner' | translate }}</span></h4>
+		  <p md-line>{{work.partner}}</p>
+		</md-list-item>
+		<md-divider></md-divider>
+	  </div>
+	  <md-list-item>
+		<md-icon md-list-avatar>settings</md-icon>
+		<h4 md-line><span class="text-wrap">{{ 'WORKS.techs' | translate }}</span></h4>
+		<p md-line>{{work.tools}}</p>
+	  </md-list-item>
+	</md-list>
   </md-card-content>
 </div>

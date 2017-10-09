@@ -20,6 +20,7 @@
   "WORKS": {
     "title": "Projects",
     "sub": "some projects",
+    "progress": "in progress",
     "intro": "Sorted from the most recent to the oldest",
     "year": "year",
     "partner": "partner(s)",

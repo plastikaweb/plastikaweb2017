@@ -1,8 +1,8 @@
 <md-card-header>
   <img alt="{{'WORKS.sub' | translate}}"
-       md-card-avatar class="size-72" src="assets/images/works.jpg">
+	   md-card-avatar class="size-72" src="assets/images/works.jpg">
   <md-card-title>
-    <h2>{{'WORKS.sub' | translate | capitalize}}</h2>
+	<h2>{{'WORKS.sub' | translate | capitalize}}</h2>
   </md-card-title>
   <md-card-subtitle>{{ 'WORKS.intro' | translate }}</md-card-subtitle>
 </md-card-header>
@@ -10,42 +10,46 @@
 
 <div *ngIf="works$ | async as works;">
   <md-card-content>
-    <app-filter-works (filterBy)="doFilter($event)"
-                      [receiveTag]="sendTagSelection"
-                      *ngIf="allTags$ | async as tags;"
-                      [tags]="tags">
-    </app-filter-works>
-    <div layout="row"
-         layout-wrap
-         layout-align="space-between center">
-      <md-card flex="100" flex-gt-sm="45"
-               flex-gt-lg="30" flex-xl="23"
-               *ngFor="let work of works | pwFilter:tagsFilter">
-        <a class="work-info" [routerLink]="['/works' | localize, work.slug]">
-          <md-card-header>
-            <img md-card-avatar class="size-50"
-                 alt="work.name"
-                 [src]="imagesService.getImage('works', work.slug, '-avatar.jpg')">
-            <md-card-title class="md-title">
-              {{ work.name }}</md-card-title>
-            <md-card-subtitle>{{ getRemoteTranslation(work.subtitle) }}</md-card-subtitle>
-          </md-card-header>
-          <div class="work-img-container">
-            <img md-card-image alt="{{work.name}}"
-                 [lazyLoad]="imagesService.getImage('works', work.slug, '-1.jpg')"
-                 [scrollTarget]="myScrollContainer"
-                 [offset]="offset"
-                 [defaultImage]="imagesService.getDefaultImage()">
-          </div>
-        </a>
-        <md-card-content>
-        </md-card-content>
-        <md-card-footer>
-          <app-tags [filtering]="true"
-                    [tags]="work.tags" [selectedTags]="tagsFilter"
-                    (emitTagSelection)="tagSelection($event)"></app-tags>
-        </md-card-footer>
-      </md-card>
-    </div>
+	<app-filter-works (filterBy)="doFilter($event)"
+					  [receiveTag]="sendTagSelection"
+					  *ngIf="allTags$ | async as tags;"
+					  [tags]="tags">
+	</app-filter-works>
+	<div layout="row"
+		 layout-wrap
+		 layout-align="space-between center">
+	  <md-card flex="100" flex-gt-sm="45"
+			   flex-gt-lg="30" flex-xl="23"
+			   *ngFor="let work of works | pwFilter:tagsFilter">
+		<a class="work-info" [routerLink]="['/works' | localize, work.slug]">
+		  <md-card-header>
+			<img md-card-avatar class="size-50"
+				 alt="work.name"
+				 [src]="imagesService.getImage('works', work.slug, '-avatar.jpg')">
+			<md-card-title class="md-title">
+			  {{ work.name }}
+			</md-card-title>
+			<md-card-subtitle>{{ getRemoteTranslation(work.subtitle) }}
+			  <span *ngIf="work.progress" class="progress"> ({{'WORKS.progress' | translate}})</span>
+			</md-card-subtitle>
+
+		  </md-card-header>
+		  <div class="work-img-container">
+			<img md-card-image alt="{{work.name}}"
+				 [lazyLoad]="imagesService.getImage('works', work.slug, '-1.jpg')"
+				 [scrollTarget]="myScrollContainer"
+				 [offset]="offset"
+				 [defaultImage]="imagesService.getDefaultImage()">
+		  </div>
+		</a>
+		<md-card-content>
+		</md-card-content>
+		<md-card-footer>
+		  <app-tags [filtering]="true"
+					[tags]="work.tags" [selectedTags]="tagsFilter"
+					(emitTagSelection)="tagSelection($event)"></app-tags>
+		</md-card-footer>
+	  </md-card>
+	</div>
   </md-card-content>
 </div>
